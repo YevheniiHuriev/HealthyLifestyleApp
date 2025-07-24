@@ -1,0 +1,56 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: healthy_backend
+    ports:
+      - "5000:8080"
+    depends_on:
+      mssql:
+        condition: service_started
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=mssql,1433;Database=${MSSQL_DB};User Id=${MSSQL_USER};Password=${SA_PASSWORD};TrustServerCertificate=true;MultipleActiveResultSets=True
+      - JWT__Key=${JWT_KEY}
+      - JWT__Issuer=${JWT_ISSUER}
+      - JWT__Audience=${JWT_AUDIENCE}
+    networks:
+      - healthy_net
+
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: healthy_mssql
+    environment:
+      - SA_PASSWORD=${SA_PASSWORD}
+      - ACCEPT_EULA=Y
+      - MSSQL_PID=Express
+    ports:
+      - "${MSSQL_PORT}:1433"
+    volumes:
+      - mssql_data:/var/opt/mssql
+    networks:
+      - healthy_net
+    healthcheck:
+      test: ["CMD", "/opt/mssql-tools/bin/sqlcmd", "-S", "localhost", "-U", "sa", "-P", "${SA_PASSWORD}", "-Q", "SELECT 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: healthy_frontend
+    ports:
+      - "3000:80"
+    networks:
+      - healthy_net
+    depends_on:
+      - backend
+
+volumes:
+  mssql_data:
+
+networks:
+  healthy_net:

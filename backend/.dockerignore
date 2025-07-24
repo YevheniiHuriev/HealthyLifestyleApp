@@ -1,0 +1,42 @@
+# Visual Studio files
+.vs/
+.vscode/
+
+# Git ignore files
+.git/
+.gitignore
+
+# Binaries
+bin/
+obj/
+
+# Package files
+*.nupkg
+*.suo
+*.user
+*.config.user
+*.aps
+*.bak
+*.com
+*.dll
+*.exe
+*.ilk
+*.lib
+*.obj
+*.pdb
+*.tlb
+*.tmp
+*.vspscc
+*.vssscc
+*.builds
+*.log
+*.sql
+*.zip
+*.tar
+*.gz
+*.rar
+*.7z
+*.db
+
+# Environment variables
+.env
