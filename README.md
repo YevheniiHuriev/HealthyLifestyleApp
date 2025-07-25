@@ -31,7 +31,7 @@ Docker Desktop: Включает Docker Engine и Docker Compose. Убедите
    Клонируйте репозиторий:
    Откройте терминал (например, PowerShell или Git Bash) и выполните:
 
-git clone <URL*вашего*репозитория>
+git clone https://github.com/OleksDragon/HealthyLifestyleApp.git
 cd HealthyLifestyle
 
 Создайте файл .env:
@@ -39,11 +39,11 @@ cd HealthyLifestyle
 
 Скопируйте следующее содержимое в ваш файл .env:
 
-SA*PASSWORD=118MtdRtra8LbzVSC
+SA_PASSWORD=118MtdRtra8LbzVSC
 MSSQL_DB=HealthyLifestyleDb
 MSSQL_USER=sa
 MSSQL_PORT=1433
-JWT_KEY=72O3^G4BUrXY$T:LM*7Asdhtp^vpCt>l1CDK4DMua1<+SaUC4viz\04:HnLkLGSh
+JWT_KEY=72O3^G4BUrXY$T:LM\*7Asdhtp^vpCt>l1CDK4DMua1<+SaUC4viz\04:HnLkLGSh
 JWT_ISSUER=HealthyLifestyleApi
 JWT_AUDIENCE=HealthyLifestyleClients
 
