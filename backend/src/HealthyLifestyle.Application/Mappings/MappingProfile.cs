@@ -28,6 +28,7 @@ namespace HealthyLifestyle.Application.Mappings
             ConfigureDoctorDetailsMappings();
             ConfigurePsychologistDetailsMappings();
             ConfigureProductMappings();
+            ConfigureOrderMappings();
         }
         #endregion
 
@@ -206,6 +207,46 @@ namespace HealthyLifestyle.Application.Mappings
                 .ForMember(dest => dest.StockQuantity, opt => opt.Condition(src => src.StockQuantity.HasValue))
                 .ForMember(dest => dest.PlatformCommissionPercentage, opt => opt.Condition(src => src.PlatformCommissionPercentage.HasValue))
                 .ForMember(dest => dest.ImageUrl, opt => opt.Condition(src => src.ImageUrl != null));
+        }
+
+        /// <summary>
+        /// Конфігурує мапінги для сутностей замовлень (Order) та елементів замовлень (OrderItem).
+        /// </summary>
+        private void ConfigureOrderMappings()
+        {
+            // Мапінг з Order (сутності) в OrderDto (DTO)
+            CreateMap<Order, OrderDto>()
+                .ForMember(dest => dest.OrderItems, opt => opt.MapFrom(src => src.OrderItems))
+                .ForMember(dest => dest.UserEmail, opt => opt.Ignore());
+
+            // Мапінг з OrderItem (сутності) в OrderItemDto (DTO)
+            CreateMap<OrderItem, OrderItemDto>()
+                .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.Product != null ? src.Product.Name : null));
+
+            // Мапінг з OrderCreateDto (DTO для створення) в Order (сутність)
+            CreateMap<OrderCreateDto, Order>()
+                .ForMember(dest => dest.OrderItems, opt => opt.Ignore())
+                .ForMember(dest => dest.OrderDate, opt => opt.MapFrom(src => DateTime.UtcNow))
+                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => OrderStatus.Pending))
+                .ForMember(dest => dest.TotalAmount, opt => opt.Ignore())
+                .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(_ => DateTime.UtcNow))
+                .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(_ => DateTime.UtcNow))
+                .ForMember(dest => dest.Id, opt => opt.Ignore());
+
+            // Мапінг для OrderUpdateDto в Order
+            CreateMap<OrderUpdateDto, Order>()
+                .ForMember(dest => dest.Status, opt => opt.Condition(src => src.Status.HasValue))
+                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status!.Value))
+
+                .ForMember(dest => dest.ShippingAddress, opt => opt.Condition(src => src.ShippingAddress != null))
+                .ForMember(dest => dest.ShippingAddress, opt => opt.MapFrom(src => src.ShippingAddress!))
+                .ForMember(dest => dest.Id, opt => opt.Ignore())
+                .ForMember(dest => dest.UserId, opt => opt.Ignore())
+                .ForMember(dest => dest.OrderDate, opt => opt.Ignore())
+                .ForMember(dest => dest.TotalAmount, opt => opt.Ignore())
+                .ForMember(dest => dest.OrderItems, opt => opt.Ignore())
+                .ForMember(dest => dest.CreatedAt, opt => opt.Ignore())
+                .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(_ => DateTime.UtcNow));
         }
         #endregion
     }

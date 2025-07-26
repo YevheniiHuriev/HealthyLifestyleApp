@@ -1,5 +1,6 @@
 ﻿using HealthyLifestyle.Core.Entities;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace HealthyLifestyle.Core.Interfaces
@@ -47,5 +48,12 @@ namespace HealthyLifestyle.Core.Interfaces
         /// </summary>
         /// <returns>IQueryable для поточного набору сутностей.</returns>
         IQueryable<TEntity> AsQueryable();
+
+        /// <summary>
+        /// Асинхронно отримує колекцію сутностей, що задовольняють заданому предикату (умові).
+        /// </summary>
+        /// <param name="predicate">Вираз предиката для фільтрації.</param>
+        /// <returns>Колекція відфільтрованих сутностей.</returns>
+        Task<IEnumerable<TEntity>> FindAsync(Expression<Func<TEntity, bool>> predicate);
     }
 }
