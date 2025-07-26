@@ -2,6 +2,7 @@ using DotNetEnv;
 using HealthyLifestyle.Application.Interfaces;
 using HealthyLifestyle.Application.Mappings;
 using HealthyLifestyle.Application.Services;
+using HealthyLifestyle.Application.Services.Shop;
 using HealthyLifestyle.Core.Entities;
 using HealthyLifestyle.Core.Interfaces;
 using HealthyLifestyle.Infrastructure.Data;
@@ -105,10 +106,12 @@ builder.Services.AddScoped<ITrainerDetailsService, TrainerDetailsService>();
 builder.Services.AddScoped<IDietitianDetailsService, DietitianDetailsService>();
 builder.Services.AddScoped<IDoctorDetailsService, DoctorDetailsService>();
 builder.Services.AddScoped<IPsychologistDetailsService, PsychologistDetailsService>();
+builder.Services.AddScoped<IProductService, ProductService>();
 
 // 6. Регистрация репозитория и Unit of Work
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 // 7. Конфигурация CORS
 builder.Services.AddCors(options =>
