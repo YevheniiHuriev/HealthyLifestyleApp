@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using HealthyLifestyle.Application.DTOs.Auth;
 using HealthyLifestyle.Application.DTOs.ProfessionalQualification;
+using HealthyLifestyle.Application.DTOs.Shop;
 using HealthyLifestyle.Application.DTOs.User;
 using HealthyLifestyle.Core.Entities;
 using HealthyLifestyle.Core.Enums;
@@ -26,6 +27,7 @@ namespace HealthyLifestyle.Application.Mappings
             ConfigureDietitianDetailsMappings();
             ConfigureDoctorDetailsMappings();
             ConfigurePsychologistDetailsMappings();
+            ConfigureProductMappings();
         }
         #endregion
 
@@ -178,6 +180,32 @@ namespace HealthyLifestyle.Application.Mappings
 
             CreateMap<PsychologistDetails, PsychologistDetailsDto>()
                 .ForMember(dest => dest.QualificationId, opt => opt.MapFrom(src => src.Id));
+        }
+
+        /// <summary>
+        /// Конфігурує мапінги для сутності Product.
+        /// </summary>
+        private void ConfigureProductMappings()
+        {
+            CreateMap<Product, ProductDto>(); // Мапінг з сутності Product на ProductDto
+
+            CreateMap<ProductCreateDto, Product>()
+                .ForMember(dest => dest.Id, opt => opt.Ignore()) // Id генерується автоматично
+                .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(_ => DateTime.UtcNow))
+                .ForMember(dest => dest.UpdatedAt, opt => opt.Ignore());
+
+            CreateMap<ProductUpdateDto, Product>()
+                .ForMember(dest => dest.Id, opt => opt.Ignore()) // Id не оновлюється через DTO
+                .ForMember(dest => dest.CreatedAt, opt => opt.Ignore()) // Дата створення не оновлюється
+                .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(_ => DateTime.UtcNow))
+                .ForMember(dest => dest.Name, opt => opt.Condition(src => src.Name != null))
+                .ForMember(dest => dest.Category, opt => opt.Condition(src => src.Category.HasValue)) // Для Enum
+                .ForMember(dest => dest.Price, opt => opt.Condition(src => src.Price.HasValue))
+                .ForMember(dest => dest.Brand, opt => opt.Condition(src => src.Brand != null))
+                .ForMember(dest => dest.Description, opt => opt.Condition(src => src.Description != null))
+                .ForMember(dest => dest.StockQuantity, opt => opt.Condition(src => src.StockQuantity.HasValue))
+                .ForMember(dest => dest.PlatformCommissionPercentage, opt => opt.Condition(src => src.PlatformCommissionPercentage.HasValue))
+                .ForMember(dest => dest.ImageUrl, opt => opt.Condition(src => src.ImageUrl != null));
         }
         #endregion
     }
