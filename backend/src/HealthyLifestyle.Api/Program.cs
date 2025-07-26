@@ -107,11 +107,14 @@ builder.Services.AddScoped<IDietitianDetailsService, DietitianDetailsService>();
 builder.Services.AddScoped<IDoctorDetailsService, DoctorDetailsService>();
 builder.Services.AddScoped<IPsychologistDetailsService, PsychologistDetailsService>();
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 // 6. Регистрация репозитория и Unit of Work
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 
 // 7. Конфигурация CORS
 builder.Services.AddCors(options =>

@@ -86,7 +86,7 @@ namespace HealthyLifestyle.Core.Enums
         Pending,    // В обробці
         Shipped,    // Відправлено
         Delivered,  // Доставлено
-        Canceled    // Скасовано
+        Cancelled    // Скасовано
     }
 
     // Типи соціальних челенджів

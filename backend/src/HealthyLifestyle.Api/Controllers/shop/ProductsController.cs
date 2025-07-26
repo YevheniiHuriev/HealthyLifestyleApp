@@ -6,27 +6,41 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HealthyLifestyle.Api.Controllers.shop
 {
+    /// <summary>
+    /// Контролер для керування продуктами в додатку HealthyLifestyle.
+    /// </summary>
     [ApiController]
     [Route("api/[controller]")]
     public class ProductsController : ControllerBase
     {
         private readonly IProductService _productService;
 
+        /// <summary>
+        /// Ініціалізує новий екземпляр класу <see cref="ProductsController"/>.
+        /// </summary>
+        /// <param name="productService">Сервіс для обробки операцій, пов’язаних із продуктами.</param>
+        /// <exception cref="ArgumentNullException">Викидається, якщо <paramref name="productService"/> є null.</exception>
         public ProductsController(IProductService productService)
         {
             _productService = productService;
         }
 
+        #region Публічні методи API
+
         /// <summary>
-        /// Отримує продукт за його ідентифікатором.
+        /// Отримує продукт за його унікальним ідентифікатором.
         /// </summary>
-        /// <param name="id">Ідентифікатор продукту.</param>
-        /// <returns>Продукт або 404 Not Found, якщо продукт не існує.</returns>
+        /// <param name="id">Унікальний ідентифікатор продукту.</param>
+        /// <returns>DTO продукту, якщо знайдено; інакше 404 Not Found.</returns>
+        /// <response code="200">Продукт успішно отримано.</response>
+        /// <response code="401">Користувач не автентифікований.</response>
+        /// <response code="404">Продукт із вказаним ID не знайдено.</response>
+        /// <response code="500">Помилка сервера під час отримання продукту.</response>
         [HttpGet("{id}")]
-        [ProducesResponseType(typeof(ProductDto), 200)]
-        [ProducesResponseType(404)]
-        [ProducesResponseType(401)] // Unauthorized (якщо не зареєстрований)
-        [Authorize] // <-- Тільки для зареєстрованих користувачів
+        [ProducesResponseType(typeof(ProductDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [Authorize]
         public async Task<IActionResult> GetProductById(Guid id)
         {
             try
@@ -45,12 +59,14 @@ namespace HealthyLifestyle.Api.Controllers.shop
         }
 
         /// <summary>
-        /// Отримує список усіх продуктів.
+        /// Отримує список усіх продуктів у системі.
         /// </summary>
-        /// <returns>Список продуктів.</returns>
+        /// <returns>Список DTO продуктів.</returns>
+        /// <response code="200">Список продуктів успішно отримано.</response>
+        /// <response code="500">Помилка сервера під час отримання продуктів.</response>
         [HttpGet]
-        [ProducesResponseType(typeof(IEnumerable<ProductDto>), 200)]
-        [AllowAnonymous] // <-- Доступно всім (анонімним і зареєстрованим)
+        [ProducesResponseType(typeof(IEnumerable<ProductDto>), StatusCodes.Status200OK)]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAllProducts()
         {
             var products = await _productService.GetAllProductsAsync();
@@ -58,16 +74,21 @@ namespace HealthyLifestyle.Api.Controllers.shop
         }
 
         /// <summary>
-        /// Створює новий продукт.
+        /// Створює новий продукт у системі.
         /// </summary>
-        /// <param name="productCreateDto">Дані для створення продукту.</param>
-        /// <returns>Створений продукт.</returns>
+        /// <param name="productCreateDto">Об’єкт передачі даних із деталями створення продукту.</param>
+        /// <returns>Створений DTO продукту.</returns>
+        /// <response code="201">Продукт успішно створено, повертається DTO продукту.</response>
+        /// <response code="400">Невірні вхідні дані запиту.</response>
+        /// <response code="401">Користувач не автентифікований.</response>
+        /// <response code="403">Користувач не має прав адміністратора.</response>
+        /// <response code="500">Помилка сервера під час створення продукту.</response>
         [HttpPost]
-        [ProducesResponseType(typeof(ProductDto), 201)]
-        [ProducesResponseType(400)]
-        [ProducesResponseType(401)] // Unauthorized
-        [ProducesResponseType(403)] // Forbidden
-        [Authorize(Roles = "Admin")] // <-- Тільки для користувачів з роллю "Admin"
+        [ProducesResponseType(typeof(ProductDto), StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> CreateProduct([FromBody] ProductCreateDto productCreateDto)
         {
             if (!ModelState.IsValid)
@@ -86,18 +107,24 @@ namespace HealthyLifestyle.Api.Controllers.shop
         }
 
         /// <summary>
-        /// Оновлює існуючий продукт.
+        /// Оновлює існуючий продукт за його ідентифікатором.
         /// </summary>
-        /// <param name="id">Ідентифікатор продукту, який потрібно оновити.</param>
-        /// <param name="productUpdateDto">Оновлені дані продукту.</param>
-        /// <returns>Оновлений продукт або 404 Not Found.</returns>
+        /// <param name="id">Унікальний ідентифікатор продукту, який потрібно оновити.</param>
+        /// <param name="productUpdateDto">Об’єкт передачі даних з оновленими даними продукту.</param>
+        /// <returns>Оновлений DTO продукту або 404 Not Found, якщо продукт не знайдено.</returns>
+        /// <response code="200">Продукт успішно оновлено.</response>
+        /// <response code="400">Невірні вхідні дані.</response>
+        /// <response code="401">Користувач не автентифікований.</response>
+        /// <response code="403">Користувач не має прав адміністратора.</response>
+        /// <response code="404">Продукт із вказаним ID не знайдено.</response>
+        /// <response code="500">Помилка сервера під час оновлення продукту.</response>
         [HttpPut("{id}")]
-        [ProducesResponseType(typeof(ProductDto), 200)]
-        [ProducesResponseType(400)]
-        [ProducesResponseType(404)]
-        [ProducesResponseType(401)]
-        [ProducesResponseType(403)]
-        [Authorize(Roles = "Admin")] // <-- Тільки для користувачів з роллю "Admin"
+        [ProducesResponseType(typeof(ProductDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateProduct(Guid id, [FromBody] ProductUpdateDto productUpdateDto)
         {
             if (!ModelState.IsValid)
@@ -122,14 +149,19 @@ namespace HealthyLifestyle.Api.Controllers.shop
         /// <summary>
         /// Видаляє продукт за його ідентифікатором.
         /// </summary>
-        /// <param name="id">Ідентифікатор продукту, який потрібно видалити.</param>
-        /// <returns>204 No Content або 404 Not Found.</returns>
+        /// <param name="id">Унікальний ідентифікатор продукту, який потрібно видалити.</param>
+        /// <returns>204 No Content, якщо продукт успішно видалено, або 404 Not Found, якщо продукт не знайдено.</returns>
+        /// <response code="204">Продукт успішно видалено.</response>
+        /// <response code="401">Користувач не автентифікований.</response>
+        /// <response code="403">Користувач не має прав адміністратора.</response>
+        /// <response code="404">Продукт із вказаним ID не знайдено.</response>
+        /// <response code="500">Помилка сервера під час видалення продукту.</response>
         [HttpDelete("{id}")]
-        [ProducesResponseType(204)]
-        [ProducesResponseType(404)]
-        [ProducesResponseType(401)]
-        [ProducesResponseType(403)]
-        [Authorize(Roles = "Admin")] // <-- Тільки для користувачів з роллю "Admin"
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteProduct(Guid id)
         {
             try
@@ -146,5 +178,7 @@ namespace HealthyLifestyle.Api.Controllers.shop
                 return StatusCode(500, $"Внутрішня помилка сервера: {ex.Message}");
             }
         }
+
+        #endregion
     }
 }

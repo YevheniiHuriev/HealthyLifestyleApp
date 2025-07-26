@@ -2,6 +2,7 @@
 using HealthyLifestyle.Core.Interfaces;
 using HealthyLifestyle.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace HealthyLifestyle.Infrastructure.Repositories
 {
@@ -86,6 +87,16 @@ namespace HealthyLifestyle.Infrastructure.Repositories
         public virtual IQueryable<TEntity> AsQueryable()
         {
             return _dbSet.AsQueryable();
+        }
+
+        /// <summary>
+        /// Асинхронно отримує колекцію сутностей, які відповідають заданому предикату.
+        /// </summary>
+        /// <param name="predicate">Вираз предикату для фільтрації.</param>
+        /// <returns>Колекція відфільтрованих сутностей.</returns>
+        public async Task<IEnumerable<TEntity>> FindAsync(Expression<Func<TEntity, bool>> predicate)
+        {
+            return await _dbSet.Where(predicate).ToListAsync();
         }
     }
 }
