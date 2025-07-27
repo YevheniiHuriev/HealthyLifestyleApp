@@ -3,6 +3,7 @@ using HealthyLifestyle.Application.DTOs.Auth;
 using HealthyLifestyle.Application.DTOs.ProfessionalQualification;
 using HealthyLifestyle.Application.DTOs.Shop;
 using HealthyLifestyle.Application.DTOs.User;
+using HealthyLifestyle.Application.DTOs.Working;
 using HealthyLifestyle.Core.Entities;
 using HealthyLifestyle.Core.Enums;
 
@@ -29,6 +30,7 @@ namespace HealthyLifestyle.Application.Mappings
             ConfigurePsychologistDetailsMappings();
             ConfigureProductMappings();
             ConfigureOrderMappings();
+            ConfigureConsultationMappings();
         }
         #endregion
 
@@ -247,6 +249,34 @@ namespace HealthyLifestyle.Application.Mappings
                 .ForMember(dest => dest.OrderItems, opt => opt.Ignore())
                 .ForMember(dest => dest.CreatedAt, opt => opt.Ignore())
                 .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(_ => DateTime.UtcNow));
+        }
+
+        /// <summary>
+        /// Конфігурує мапінги для сутності Consultation.
+        /// </summary>
+        private void ConfigureConsultationMappings()
+        {
+            CreateMap<Consultation, ConsultationDto>(); // Мапінг з сутності Consultation на ConsultationDto
+
+            CreateMap<ConsultationCreateDto, Consultation>()
+                .ForMember(dest => dest.Id, opt => opt.Ignore()) // Id генерується автоматично
+                .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(_ => DateTime.UtcNow))
+                .ForMember(dest => dest.UpdatedAt, opt => opt.Ignore());
+
+            CreateMap<ConsultationUpdateDto, Consultation>()
+                .ForMember(dest => dest.Id, opt => opt.Ignore()) // Id не оновлюється через DTO
+                .ForMember(dest => dest.CreatedAt, opt => opt.Ignore()) // Дата створення не оновлюється
+                .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(_ => DateTime.UtcNow))
+                .ForMember(dest => dest.ClientId, opt => opt.Ignore())
+                .ForMember(dest => dest.ProfessionalId, opt => opt.Ignore())
+                .ForMember(dest => dest.ProfessionalQualificationId, opt => opt.Ignore())
+                .ForMember(dest => dest.ConsultationDate, opt => opt.Condition(src => src.ConsultationDate != null))
+                .ForMember(dest => dest.DurationMinutes, opt => opt.Condition(src => src.DurationMinutes != null))
+                .ForMember(dest => dest.Cost, opt => opt.Condition(src => src.Cost != null))
+                .ForMember(dest => dest.Status, opt => opt.Condition(src => src.Status.HasValue))
+                .ForMember(dest => dest.PlatformCommission, opt => opt.Condition(src => src.PlatformCommission != null))
+                .ForMember(dest => dest.MeetingLink, opt => opt.Condition(src => src.MeetingLink != null))
+                .ForMember(dest => dest.Notes, opt => opt.Condition(src => src.Notes != null));
         }
         #endregion
     }
