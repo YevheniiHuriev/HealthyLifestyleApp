@@ -20,19 +20,19 @@ using System.Text;
 using System.Text.Json.Serialization;
 
 
-// ������� ������ ��� ���-����������
+// Створюємо білдер для веб-програми
 var builder = WebApplication.CreateBuilder(args);
 
-// ��������� ����������� � �������
+// Додаємо логування в консоль
 builder.Services.AddLogging(configure => configure.AddConsole());
 
-// ��������� .env ����
-Env.Load("../../.env"); 
+// Завантажуємо .env файл
+Env.Load("../../.env");
 
 
-// --- ����������� �������� � DI ���������� ---
+// --- Реєстрація сервісів у DI контейнері ---
 
-// 1. ��������� DbContext � ������������ � SQL Server
+// 1. Налаштування DbContext із підключенням до SQL Server
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -43,35 +43,35 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString);
 });
 
-// 2. ������������ Identity � ��������� User � Role<Guid>
+// 2. Конфігурація Identity з кастомним User та Role<Guid>
 builder.Services.AddIdentity<User, IdentityRole<Guid>>(options =>
 {
-    // ��������� �������� �������
-    options.Password.RequireDigit = true; // ��������� ������� ���� �� ����� ����� � ������ (0-9)
-    options.Password.RequiredLength = 8; // ����������� ����� ������ � 8 ��������
-    options.Password.RequireNonAlphanumeric = false; // �� ��������� ������� ����������� �������� (��������, !, @, #)
-    options.Password.RequireUppercase = true; // ��������� ������� ���� �� ����� ��������� ����� (A-Z)
-    options.Password.RequireLowercase = true; // ��������� ������� ���� �� ����� �������� ����� (a-z)
-    options.Password.RequiredUniqueChars = 1; // ����������� ���������� ���������� �������� � ������ (1 ��������, ��� ��� ����������� �� ���������� ��������)
+    // Налаштування політики паролів
+    options.Password.RequireDigit = true; // Потрібна наявність хоча б однієї цифри у паролі (0-9)
+    options.Password.RequiredLength = 8; // Мінімальна довжина пароля - 8 символів
+    options.Password.RequireNonAlphanumeric = false; // Не потрібна наявність спеціальних символів (наприклад, !, @, #)
+    options.Password.RequireUppercase = true; // Потрібна наявність хоча б однієї великої літери (A-Z)
+    options.Password.RequireLowercase = true; // Потрібна наявність хоча б однієї малої літери (a-z)
+    options.Password.RequiredUniqueChars = 1; // Мінімальна кількість унікальних символів у паролі (1 означає, що немає обмежень на повторення символів)
 
-    // ��������� ���������� ��������
-    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5); // ����� ���������� �������� � 5 ����� ����� ���������� ������ ��������� ������� �����
-    options.Lockout.MaxFailedAccessAttempts = 5; // ������������ ���������� ��������� ������� ����� ����� ����������� � 5
-    options.Lockout.AllowedForNewUsers = true; // ��������� ���������� ��� ����� ������������� (���� false, ����� ������������ �� �����������)
+    // Налаштування блокування облікового запису
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5); // Час блокування облікового запису - 5 хвилин після перевищення ліміту невдалих спроб входу
+    options.Lockout.MaxFailedAccessAttempts = 5; // Максимальна кількість невдалих спроб входу перед блокуванням – 5
+    options.Lockout.AllowedForNewUsers = true; // Дозволити блокування нових користувачів (якщо false, нові користувачі не блокуються)
 
-    // ��������� ������������� ��� �����
-    options.SignIn.RequireConfirmedAccount = false; // �� ��������� ������������� �������� ��� ����� (��������, ����� email ��� �������)
-    options.SignIn.RequireConfirmedEmail = false; // �� ��������� ������������� email ��� �����
-    options.SignIn.RequireConfirmedPhoneNumber = false; // �� ��������� ������������� ����� �������� ��� �����
+    // Установки підтвердження під час входу
+    options.SignIn.RequireConfirmedAccount = false; // Не потрібно підтвердження облікового запису для входу (наприклад, через email або телефон)
+    options.SignIn.RequireConfirmedEmail = false; // Не потрібний підтверджений email для входу
+    options.SignIn.RequireConfirmedPhoneNumber = false; // Не потрібний підтверджений номер телефону для входу
 
-    // ����������� �� ��� ������������
+    // Обмеження на ім'я користувача
     options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
     options.User.RequireUniqueEmail = true;
 })
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
 
-// 3. ��������� �������������� JWT Bearer
+// 3. Налаштування автентифікації JWT Bearer
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -97,10 +97,10 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-// 4. ����������� AutoMapper
+// 4. Реєстрація AutoMapper
 builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 
-// 5. ����������� �������� ����������
+// 5. Реєстрація сервісів програми
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IProfessionalQualificationService, ProfessionalQualificationService>();
@@ -115,7 +115,7 @@ builder.Services.AddScoped<IConsultationService, ConsultationService>();
 builder.Services.AddScoped<IMaleHealthTrackerService, MaleHealthTrackerService>();
 builder.Services.AddScoped<IGroupService, GroupService>();
 
-// 6. ����������� ����������� � Unit of Work
+// 6. Реєстрація репозиторію та Unit of Work
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
@@ -125,7 +125,7 @@ builder.Services.AddScoped<IMaleHealthTrackerRepository, MaleHealthTrackerReposi
 builder.Services.AddScoped<IGroupRepository, GroupRepository>();
 builder.Services.AddScoped<IGroupMembershipRepository, GroupMembershipRepository>();
 
-// 7. ������������ CORS
+// 7. Конфігурація CORS
 builder.Services.AddCors(options =>
 {
     if (builder.Environment.IsDevelopment())
@@ -141,7 +141,7 @@ builder.Services.AddCors(options =>
     {
         options.AddPolicy("AllowSpecificOrigin", builder =>
         {
-            builder.WithOrigins("http://localhost:3000") // URL ���������
+            builder.WithOrigins("http://localhost:3000") // URL фронтенда
                    .AllowAnyHeader()
                    .AllowAnyMethod()
                    .AllowCredentials();
@@ -149,7 +149,7 @@ builder.Services.AddCors(options =>
     }
 });
 
-// 8. ���������� ������������ � ��������� JSON ������������
+// 8. Додавання контролерів та налаштування JSON серіалізації
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
@@ -158,7 +158,7 @@ builder.Services.AddControllers()
         options.JsonSerializerOptions.PropertyNamingPolicy = null;
     });
 
-// 9. ��������� Swagger
+// 9. Додаємо Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -195,11 +195,11 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-// --- ������� � ����������� �������� ��������� �������� ---
+// --- Створюємо та налаштовуємо конвеєр обробки запитів ---
 
 var app = builder.Build();
 
-// �������� ������ ����� ������ ����������
+// Отримуємо логер після складання програми
 var logger = app.Services.GetRequiredService<ILogger<Program>>();
 
 if (app.Environment.IsDevelopment())
@@ -209,14 +209,14 @@ if (app.Environment.IsDevelopment())
 }
 else
 {
-    app.UseHttpsRedirection(); // � ���������� HTTPS-�������� ����� �������
+    app.UseHttpsRedirection(); // У продакшені HTTPS-редирект буде включено
 }
 app.UseCors(builder.Environment.IsDevelopment() ? "AllowAllOrigins" : "AllowSpecificOrigin");
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 
-// --- Seed ������ ��� ������ ���������� ---
+// --- Seed даних при старті програми ---
 if (app.Environment.IsDevelopment())
 {
     using (var scope = app.Services.CreateScope())
@@ -232,11 +232,11 @@ if (app.Environment.IsDevelopment())
             await Task.Delay(TimeSpan.FromSeconds(5));
             logger.LogInformation("Attempting to apply migrations...");
 
-            // ��������� ��������
+            // Застосовуємо міграції
             await dbContext.Database.MigrateAsync();
             logger.LogInformation("Migrations applied successfully.");
 
-            // ���������� ���������� �������
+            // Заповнення початковими даними
             await ApplicationDbContextSeed.SeedDefaultUserAndRolesAsync(userManager, roleManager, dbContext);
             logger.LogInformation("Database seeded successfully.");
         }
@@ -244,7 +244,7 @@ if (app.Environment.IsDevelopment())
         {
             var loggerForSeed = services.GetRequiredService<ILogger<Program>>();
             loggerForSeed.LogError(ex, "An error occurred while seeding the database.");
-            throw; // ������������� ���������� ��� �������
+            throw; // Перекидаємо виняток для налагодження
         }
     }
 }
