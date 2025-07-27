@@ -37,17 +37,17 @@ services:
       timeout: 5s
       retries: 5
 
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    container_name: healthy_frontend
-    ports:
-      - "3000:80"
-    networks:
-      - healthy_net
-    depends_on:
-      - backend
+  # frontend:
+  #   build:
+  #     context: ./frontend
+  #     dockerfile: Dockerfile
+  #   container_name: healthy_frontend
+  #   ports:
+  #     - "3000:80"
+  #   networks:
+  #     - healthy_net
+  #   depends_on:
+  #     - backend
 
 volumes:
   mssql_data:
