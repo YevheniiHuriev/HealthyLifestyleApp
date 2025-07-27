@@ -3,6 +3,7 @@ using HealthyLifestyle.Application.Interfaces;
 using HealthyLifestyle.Application.Mappings;
 using HealthyLifestyle.Application.Services;
 using HealthyLifestyle.Application.Services.Shop;
+using HealthyLifestyle.Application.Services.Tracker;
 using HealthyLifestyle.Application.Services.Working;
 using HealthyLifestyle.Core.Entities;
 using HealthyLifestyle.Core.Interfaces;
@@ -111,6 +112,7 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<IConsultationService, ConsultationService>();
+builder.Services.AddScoped<IMaleHealthTrackerService, MaleHealthTrackerService>();
 
 // 6. Регистрация репозитория и Unit of Work
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
@@ -118,6 +120,7 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IConsultationRepository, ConsultationRepository>();
+builder.Services.AddScoped<IMaleHealthTrackerRepository, MaleHealthTrackerRepository>();
 
 // 7. Конфигурация CORS
 builder.Services.AddCors(options =>

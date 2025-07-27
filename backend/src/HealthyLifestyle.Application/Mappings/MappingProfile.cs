@@ -2,6 +2,7 @@
 using HealthyLifestyle.Application.DTOs.Auth;
 using HealthyLifestyle.Application.DTOs.ProfessionalQualification;
 using HealthyLifestyle.Application.DTOs.Shop;
+using HealthyLifestyle.Application.DTOs.Tracker;
 using HealthyLifestyle.Application.DTOs.User;
 using HealthyLifestyle.Application.DTOs.Working;
 using HealthyLifestyle.Core.Entities;
@@ -31,6 +32,7 @@ namespace HealthyLifestyle.Application.Mappings
             ConfigureProductMappings();
             ConfigureOrderMappings();
             ConfigureConsultationMappings();
+            ConfigureMaleHealthTrackerMappings();
         }
         #endregion
 
@@ -277,6 +279,30 @@ namespace HealthyLifestyle.Application.Mappings
                 .ForMember(dest => dest.PlatformCommission, opt => opt.Condition(src => src.PlatformCommission != null))
                 .ForMember(dest => dest.MeetingLink, opt => opt.Condition(src => src.MeetingLink != null))
                 .ForMember(dest => dest.Notes, opt => opt.Condition(src => src.Notes != null));
+        }
+
+        /// <summary>
+        /// Конфігурує мапінги для MaleHealthTracker.
+        /// </summary>
+        private void ConfigureMaleHealthTrackerMappings()
+        {
+            CreateMap<MaleHealthTracker, MaleHealthTrackerDto>(); // Мапінг з сутності MaleHealthTracker на MaleHealthTrackerDto
+
+            CreateMap<MaleHealthTrackerCreateDto, MaleHealthTracker>()
+                .ForMember(dest => dest.Id, opt => opt.Ignore()) // Id генерується автоматично
+                .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(_ => DateTime.UtcNow))
+                .ForMember(dest => dest.UpdatedAt, opt => opt.Ignore());
+
+            CreateMap<MaleHealthTrackerUpdateDto, MaleHealthTracker>()
+                .ForMember(dest => dest.Id, opt => opt.Ignore()) // Id не оновлюється через DTO
+                .ForMember(dest => dest.CreatedAt, opt => opt.Ignore()) // Дата створення не оновлюється
+                .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(_ => DateTime.UtcNow))
+                .ForMember(dest => dest.UserId, opt => opt.Ignore()) // UserId не оновлюється
+                .ForMember(dest => dest.RecordDate, opt => opt.MapFrom(src => DateTime.UtcNow))
+                .ForMember(dest => dest.TestosteroneLevel, opt => opt.Condition(src => src.TestosteroneLevel.HasValue))
+                .ForMember(dest => dest.EnergyLevelScore, opt => opt.Condition(src => src.EnergyLevelScore.HasValue))
+                .ForMember(dest => dest.Notes, opt => opt.Condition(src => src.Notes != null));
+
         }
         #endregion
     }
