@@ -112,6 +112,7 @@ builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<IConsultationService, ConsultationService>();
 builder.Services.AddScoped<IMaleHealthTrackerService, MaleHealthTrackerService>();
+builder.Services.AddScoped<IFemaleHealthTrackerService, FemaleHealthTrackerService>();
 builder.Services.AddScoped<IGroupService, GroupService>();
 builder.Services.AddScoped<IChallengeService, ChallengeService>();
 
@@ -122,6 +123,7 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IConsultationRepository, ConsultationRepository>();
 builder.Services.AddScoped<IMaleHealthTrackerRepository, MaleHealthTrackerRepository>();
+builder.Services.AddScoped<IFemaleHealthTrackerRepository, FemaleHealthTrackerRepository>();
 builder.Services.AddScoped<IGroupRepository, GroupRepository>();
 builder.Services.AddScoped<IGroupMembershipRepository, GroupMembershipRepository>();
 builder.Services.AddScoped<IChallengeRepository, ChallengeRepository>();
