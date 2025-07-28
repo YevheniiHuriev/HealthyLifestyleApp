@@ -36,6 +36,7 @@ namespace HealthyLifestyle.Application.Mappings
             ConfigureMaleHealthTrackerMappings();
             ConfigureGroupMappings();
             ConfigureFemaleHealthTrackerMappings();
+            ConfigureChallengeMappings();
         }
         #endregion
 
@@ -384,6 +385,59 @@ namespace HealthyLifestyle.Application.Mappings
                 .ForMember(dest => dest.PmsSymptoms, opt => opt.Condition(src => src.PmsSymptoms != null))
                 .ForMember(dest => dest.MoodNotes, opt => opt.Condition(src => src.MoodNotes != null))
                 .ForMember(dest => dest.BleedingLevel, opt => opt.Condition(src => src.BleedingLevel.HasValue)); // Для Enum
+        }
+
+        private void ConfigureChallengeMappings()
+        {
+            CreateMap<SocialChallenge, ChallengeDto>()
+                .ForMember(dest => dest.Participations, opt => opt.MapFrom(src => src.Participations));
+
+            CreateMap<UserChallengeParticipation, ChallengeParticipationDto>()
+                .ForMember(dest => dest.ChallengeId, opt => opt.MapFrom(src => src.ChallengeId))
+                .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.UserId))
+                .ForMember(dest => dest.JoinDate, opt => opt.MapFrom(src => src.JoinDate))
+                .ForMember(dest => dest.Progress, opt => opt.MapFrom(src => src.Progress))
+                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status));
+
+            CreateMap<ChallengeCreateDto, SocialChallenge>()
+                .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
+                .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Description))
+                .ForMember(dest => dest.CreatorId, opt => opt.MapFrom(src => src.CreatorId))
+                .ForMember(dest => dest.StartDate, opt => opt.MapFrom(src => src.StartDate))
+                .ForMember(dest => dest.EndDate, opt => opt.MapFrom(src => src.EndDate))
+                .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.Type))
+                .ForMember(dest => dest.Creator, opt => opt.Ignore())
+                .ForMember(dest => dest.Id, opt => opt.Ignore())
+                .ForMember(dest => dest.Participations, opt => opt.MapFrom(src => src.Participations));
+
+            CreateMap<ChallengeUpdateDto, SocialChallenge>()
+                .ForMember(dest => dest.Name, opt => opt.Condition(src => !string.IsNullOrEmpty(src.Name)))
+                .ForMember(dest => dest.Description, opt => opt.Condition(src => !string.IsNullOrEmpty(src.Description)))
+                .ForMember(dest => dest.CreatorId, opt => opt.Ignore())
+                .ForMember(dest => dest.StartDate, opt => opt.Condition(src => src.StartDate != null))
+                .ForMember(dest => dest.EndDate, opt => opt.Condition(src => src.EndDate != null))
+                .ForMember(dest => dest.Type, opt => opt.Condition(src => src.Type.HasValue))
+                .ForMember(dest => dest.Creator, opt => opt.Ignore())
+                .ForMember(dest => dest.Id, opt => opt.Ignore())
+                .ForMember(dest => dest.Participations, opt => opt.Condition(src => src.Participations != null));
+
+            CreateMap<ChallengeParticipationDto, UserChallengeParticipation>()
+                .ForMember(dest => dest.ChallengeId, opt => opt.MapFrom(src => src.ChallengeId))
+                .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.UserId))
+                .ForMember(dest => dest.JoinDate, opt => opt.MapFrom(src => src.JoinDate))
+                .ForMember(dest => dest.Progress, opt => opt.MapFrom(src => src.Progress))
+                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status))
+                .ForMember(dest => dest.User, opt => opt.Ignore())
+                .ForMember(dest => dest.Challenge, opt => opt.Ignore());
+
+            CreateMap<ChallengeCreateParticipationDto, UserChallengeParticipation>()
+                .ForMember(dest => dest.ChallengeId, opt => opt.Ignore())
+                .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.UserId))
+                .ForMember(dest => dest.JoinDate, opt => opt.MapFrom(src => src.JoinDate))
+                .ForMember(dest => dest.Progress, opt => opt.MapFrom(src => src.Progress))
+                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status))
+                .ForMember(dest => dest.User, opt => opt.Ignore())
+                .ForMember(dest => dest.Challenge, opt => opt.Ignore());
         }
         #endregion
     }
