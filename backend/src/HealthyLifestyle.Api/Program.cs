@@ -29,7 +29,6 @@ builder.Services.AddLogging(configure => configure.AddConsole());
 // Завантажуємо .env файл
 Env.Load("../../.env");
 
-
 // --- Реєстрація сервісів у DI контейнері ---
 
 // 1. Налаштування DbContext із підключенням до SQL Server
@@ -114,7 +113,6 @@ builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<IConsultationService, ConsultationService>();
 builder.Services.AddScoped<IMaleHealthTrackerService, MaleHealthTrackerService>();
 builder.Services.AddScoped<IGroupService, GroupService>();
-builder.Services.AddScoped<IFemaleHealthTrackerService, FemaleHealthTrackerService>();
 builder.Services.AddScoped<IChallengeService, ChallengeService>();
 
 // 6. Реєстрація репозиторію та Unit of Work
@@ -126,7 +124,6 @@ builder.Services.AddScoped<IConsultationRepository, ConsultationRepository>();
 builder.Services.AddScoped<IMaleHealthTrackerRepository, MaleHealthTrackerRepository>();
 builder.Services.AddScoped<IGroupRepository, GroupRepository>();
 builder.Services.AddScoped<IGroupMembershipRepository, GroupMembershipRepository>();
-builder.Services.AddScoped<IFemaleHealthTrackerRepository, FemaleHealthTrackerRepository>();
 builder.Services.AddScoped<IChallengeRepository, ChallengeRepository>();
 builder.Services.AddScoped<IChallengeParticipantRepository, ChallengeParticipantRepository>();
 
