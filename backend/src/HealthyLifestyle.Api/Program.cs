@@ -23,6 +23,8 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.Text.Json.Serialization;
 using YourProject.Application.Services;
+using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Extensions.Caching.StackExchangeRedis;
 
 
 // Створюємо білдер для веб-програми
@@ -178,7 +180,28 @@ builder.Services.AddCors(options =>
     }
 });
 
-// 8. Додавання контролерів та налаштування JSON серіалізації
+// 8. Configuring Redis Distributed Cache
+// We get the connection period to Redis from the configuration
+var redisConnectionString = builder.Configuration.GetValue<string>("Redis:ConnectionString") ?? "localhost:6379";
+
+if (string.IsNullOrEmpty(redisConnectionString))
+{
+    Console.WriteLine("Warning: Redis ConnectionString is not configured. Distributed caching might not work.");
+    throw new InvalidOperationException("Redis ConnectionString 'Redis:ConnectionString' is required but not configured. Application cannot start without it.");
+}
+else
+{
+    // Register IDistributedCache using StackExchangeRedisCache
+    builder.Services.AddStackExchangeRedisCache(options =>
+    {
+        options.Configuration = redisConnectionString;
+        options.InstanceName = "HealthyLifestyle:"; // Prefix for all keys in Redis
+    });
+
+    Console.WriteLine($"Redis connected using: {redisConnectionString}");
+}
+
+// 9. Додавання контролерів та налаштування JSON серіалізації
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
@@ -187,7 +210,7 @@ builder.Services.AddControllers()
         options.JsonSerializerOptions.PropertyNamingPolicy = null;
     });
 
-// 9. Додаємо Swagger
+// 10. Додаємо Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
