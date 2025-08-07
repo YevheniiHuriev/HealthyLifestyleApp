@@ -46,6 +46,7 @@ MSSQL_PORT=1433
 JWT_KEY=72O3^G4BUrXY$T:LM\*7Asdhtp^vpCt>l1CDK4DMua1<+SaUC4viz\04:HnLkLGSh
 JWT_ISSUER=HealthyLifestyleApi
 JWT_AUDIENCE=HealthyLifestyleClients
+REACT_APP_API_URL=http://localhost:5000
 
 Важно: Для продакшн-среды нужно использовать более надежные и безопасные методы управления секретами.
 
