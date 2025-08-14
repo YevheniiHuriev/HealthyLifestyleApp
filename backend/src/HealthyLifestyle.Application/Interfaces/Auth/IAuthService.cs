@@ -19,6 +19,21 @@ namespace HealthyLifestyle.Application.Interfaces.Auth
         Task<AuthResponseDto?> LoginUserAsync(LoginUserDto model);
 
         /// <summary>
+        /// Аутентифікує користувача через Google.
+        /// </summary>
+        /// <param name="idToken">ID Token від Google формат: JWT.</param>
+        /// <returns>AuthResponseDto, що містить інформацію про автентифікованого користувача та токен, або null/помилки.</returns>
+        Task<AuthResponseDto?> LoginWithGoogleAsync(string idToken);
+
+        /// <summary>
+        /// Аутентифікує користувача через Facebook.
+        /// </summary>
+        /// <param name="idToken">Access Token від Facebook формат: рядок.</param>
+        /// <returns>AuthResponseDto, що містить інформацію про автентифікованого користувача та токен, або null/помилки.</returns>
+        Task<AuthResponseDto?> LoginWithFacebookAsync(string accessToken);
+
+
+        /// <summary>
         /// Перевіряє, чи існує користувач з даним email.
         /// </summary>
         /// <param name="email">Email для перевірки.</param>

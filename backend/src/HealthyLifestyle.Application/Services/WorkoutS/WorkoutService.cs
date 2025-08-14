@@ -62,7 +62,7 @@ namespace HealthyLifestyle.Application.Services.WorkoutS
             return _mapper.Map<IEnumerable<WorkoutDto>>(workouts);
         }
 
-        public async Task<WorkoutDto> GetWorkoutByIdAsync(Guid id)
+        public async Task<WorkoutDto?> GetWorkoutByIdAsync(Guid id)
         {
             var workout = await _workoutRepository.GetWorkoutByIdWithActivitiesAsync(id);
             if (workout == null)

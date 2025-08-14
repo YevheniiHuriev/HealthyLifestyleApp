@@ -94,6 +94,39 @@ namespace HealthyLifestyle.Api.Controllers.Auth
             return Ok(authResponse);
         }
 
+        /// <summary>
+        /// Виконує автентифікацію користувача та повертає JWT-токен.
+        /// </summary>
+        /// <param name="dto">Дані для входу (JWT-token від Google).</param>
+        /// <returns>
+        /// - <see cref="Ok(object)"/> з <see cref="AuthResponseDto"/> при успішному вході.
+        /// - <see cref="Unauthorized(object)"/> при невдалому вході.
+        /// </returns>
+        [HttpPost("login/google")]
+        public async Task<IActionResult> LoginWithGoogle([FromBody] ExternalAuthDto dto)
+        {
+            var authResponse = await _authService.LoginWithGoogleAsync(dto.ProviderToken);
+            if (authResponse == null)
+                return Unauthorized(new { Message = "Google авторизація не вдалася" });
+            return Ok(authResponse);
+        }
+        /// <summary>
+        /// Виконує автентифікацію користувача та повертає JWT-токен.
+        /// </summary>
+        /// <param name="dto">Дані для входу (Access-token від Facebook).</param>
+        /// <returns>
+        /// - <see cref="Ok(object)"/> з <see cref="AuthResponseDto"/> при успішному вході.
+        /// - <see cref="Unauthorized(object)"/> при невдалому вході.
+        /// </returns>
+        [HttpPost("login/facebook")]
+        public async Task<IActionResult> LoginWithFacebook([FromBody] ExternalAuthDto dto)
+        {
+            var authResponse = await _authService.LoginWithFacebookAsync(dto.ProviderToken);
+            if (authResponse == null)
+                return Unauthorized(new { Message = "Facebook авторизація не вдалася" });
+            return Ok(authResponse);
+        }
+
         #endregion
     }
 }
