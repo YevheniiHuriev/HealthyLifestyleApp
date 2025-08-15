@@ -11,6 +11,11 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
+
+using Google.Apis.Auth;
+using Newtonsoft.Json.Linq;
+using System.Net.Http;
+
 namespace HealthyLifestyle.Application.Services.Auth
 {
     /// <summary>
@@ -26,6 +31,8 @@ namespace HealthyLifestyle.Application.Services.Auth
         private readonly IConfiguration _configuration;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
+
+        private readonly  IHttpClientFactory _httpClientFactory;
 
         #endregion
 
@@ -45,13 +52,16 @@ namespace HealthyLifestyle.Application.Services.Auth
             SignInManager<User> signInManager,
             IConfiguration configuration,
             IUnitOfWork unitOfWork,
-            IMapper mapper)
+            IMapper mapper,
+            IHttpClientFactory httpClientFactory)
         {
             _userManager = userManager ?? throw new ArgumentNullException(nameof(userManager));
             _signInManager = signInManager ?? throw new ArgumentNullException(nameof(signInManager));
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
             _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+            _httpClientFactory = httpClientFactory ?? throw new ArgumentNullException(nameof(httpClientFactory));
+
         }
 
         #endregion
@@ -151,6 +161,139 @@ namespace HealthyLifestyle.Application.Services.Auth
                 Token = token,
                 Expiration = expiration
             };
+        }
+
+        /// <summary>
+        /// Виконує аутентифікацію користувача за JWT-токеном від Google із видачею свого JWT-токена.
+        /// </summary>
+        /// <param name="idToken">ID Token JWT-токен від Google.</param>
+        /// <returns>DTO з інформацією про аутентифікацію або null, якщо аутентифікація не вдалася.</returns>
+        public async Task<AuthResponseDto?> LoginWithGoogleAsync(string idToken)
+        {
+            GoogleJsonWebSignature.Payload payload;
+
+            try
+            {
+                payload = await GoogleJsonWebSignature.ValidateAsync(idToken);
+            }
+            catch (InvalidJwtException)
+            {
+                return null;
+            }
+
+            var email = payload.Email;
+            if (string.IsNullOrWhiteSpace(email))
+                return null;
+
+            // Перевірка наявності користувача
+            if (!await UserExistsAsync(email))
+            {
+                var user = new User
+                {
+                    Email = email,
+                    UserName = email,
+                    FullName = !string.IsNullOrWhiteSpace(payload.Name) ? payload.Name : string.Empty,
+                    Gender = Gender.Other
+                };
+
+                var createResult = await _userManager.CreateAsync(user);
+                if (!createResult.Succeeded)
+                    return null;
+
+                var (token, expiration) = await GenerateJwtTokenAsync(user);
+
+                return new AuthResponseDto
+                {
+                    UserId = user.Id.ToString(),
+                    FullName = user.FullName ?? string.Empty,
+                    Email = user.Email ?? string.Empty,
+                    Token = token,
+                    Expiration = expiration
+                };
+            }
+            else
+            {
+                var user = await _userManager.FindByEmailAsync(email);
+                var (token, expiration) = await GenerateJwtTokenAsync(user!);
+
+                return new AuthResponseDto
+                {
+                    UserId = user!.Id.ToString(),
+                    FullName = user.FullName ?? string.Empty,
+                    Email = user.Email ?? string.Empty,
+                    Token = token,
+                    Expiration = expiration
+                };
+            }
+        }
+
+        /// <summary>
+        /// Виконує аутентифікацію користувача за токеном від Facebook із видачею свого JWT-токена.
+        /// </summary>
+        /// <param name="accessToken">Access Token токен від Facebook.</param>
+        /// <returns>DTO з інформацією про аутентифікацію або null, якщо аутентифікація не вдалася.</returns>
+        public async Task<AuthResponseDto?> LoginWithFacebookAsync(string accessToken)
+        {
+            JObject fbData;
+            try
+            {
+                var client = _httpClientFactory.CreateClient();
+                var response = await client.GetStringAsync(
+                    $"https://graph.facebook.com/me?fields=id,name,email&access_token={accessToken}"
+                );
+                fbData = JObject.Parse(response);
+            }
+            catch
+            {
+                return null;
+            }
+
+            var email = fbData.Value<string>("email");
+            var name = fbData.Value<string>("name");
+
+            if (string.IsNullOrWhiteSpace(email))
+                return null;
+
+            // Перевірка наявності користувача
+            if (!await UserExistsAsync(email))
+            {
+                var user = new User
+                {
+                    Email = email,
+                    UserName = email,
+                    FullName = !string.IsNullOrWhiteSpace(name) ? name : string.Empty,
+                    Gender = Gender.Other
+                };
+
+                var createResult = await _userManager.CreateAsync(user);
+                if (!createResult.Succeeded)
+                    return null;
+
+                var (token, expiration) = await GenerateJwtTokenAsync(user);
+
+                return new AuthResponseDto
+                {
+                    UserId = user.Id.ToString(),
+                    FullName = user.FullName ?? string.Empty,
+                    Email = user.Email ?? string.Empty,
+                    Token = token,
+                    Expiration = expiration
+                };
+            }
+            else
+            {
+                var user = await _userManager.FindByEmailAsync(email);
+                var (token, expiration) = await GenerateJwtTokenAsync(user!);
+
+                return new AuthResponseDto
+                {
+                    UserId = user!.Id.ToString(),
+                    FullName = user.FullName ?? string.Empty,
+                    Email = user.Email ?? string.Empty,
+                    Token = token,
+                    Expiration = expiration
+                };
+            }
         }
 
         /// <summary>

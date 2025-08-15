@@ -138,6 +138,9 @@ builder.Services.AddAuthentication(options =>
 // 4. Реєстрація AutoMapper
 builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 
+// 4.1 Реєстрація HttpClientFactory
+builder.Services.AddHttpClient();
+
 // 5. Реєстрація сервісів програми
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserService, UserService>();
