@@ -22,6 +22,63 @@ namespace HealthyLifestyle.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("CalendarEventUser", b =>
+                {
+                    b.Property<Guid>("CalendarEventId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("MeetingParticipantsId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("CalendarEventId", "MeetingParticipantsId");
+
+                    b.HasIndex("MeetingParticipantsId");
+
+                    b.ToTable("CalendarEventUser");
+                });
+
+            modelBuilder.Entity("HealthyLifestyle.Core.Entities.CalendarEvent", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("AuthorId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("EndTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("MeetingLink")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("StartTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("WorkoutId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("WorkoutId");
+
+                    b.ToTable("CalendarEvents");
+                });
+
             modelBuilder.Entity("HealthyLifestyle.Core.Entities.Consultation", b =>
                 {
                     b.Property<Guid>("Id")
@@ -1314,6 +1371,31 @@ namespace HealthyLifestyle.Infrastructure.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("CalendarEventUser", b =>
+                {
+                    b.HasOne("HealthyLifestyle.Core.Entities.CalendarEvent", null)
+                        .WithMany()
+                        .HasForeignKey("CalendarEventId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("HealthyLifestyle.Core.Entities.User", null)
+                        .WithMany()
+                        .HasForeignKey("MeetingParticipantsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("HealthyLifestyle.Core.Entities.CalendarEvent", b =>
+                {
+                    b.HasOne("HealthyLifestyle.Core.Entities.Workout", "Workout")
+                        .WithMany()
+                        .HasForeignKey("WorkoutId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.Navigation("Workout");
                 });
 
             modelBuilder.Entity("HealthyLifestyle.Core.Entities.Consultation", b =>
