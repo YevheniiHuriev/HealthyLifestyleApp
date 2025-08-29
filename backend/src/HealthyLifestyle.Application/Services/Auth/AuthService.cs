@@ -15,6 +15,8 @@ using System.Text;
 using Google.Apis.Auth;
 using Newtonsoft.Json.Linq;
 using System.Net.Http;
+using Google.Apis.Auth.OAuth2;
+using System.Text.Json.Nodes;
 
 namespace HealthyLifestyle.Application.Services.Auth
 {
@@ -297,6 +299,38 @@ namespace HealthyLifestyle.Application.Services.Auth
         }
 
         /// <summary>
+        /// Конвертує код авторизації в токен
+        /// </summary>
+        /// <param name="code">Код, що буде конвертовано.</param>
+        /// <returns>Токен, що був отриманий з коду.</returns>
+        public async Task<string?> ExchangeCodeForToken(string code)
+        {
+            var clientId = _configuration["GoogleAuth:ClientId"];
+            var clientSecret = _configuration["GoogleAuth:ClientSecret"];
+
+            var request = new HttpRequestMessage(HttpMethod.Post, "https://oauth2.googleapis.com/token");
+            var content = new FormUrlEncodedContent(new[]
+            {
+                new KeyValuePair<string,string>("code", code),
+                new KeyValuePair<string,string>("client_id", clientId),
+                new KeyValuePair<string,string>("client_secret", clientSecret),
+                new KeyValuePair<string,string>("redirect_uri", "postmessage"),
+                new KeyValuePair<string,string>("grant_type", "authorization_code")
+            });
+
+            request.Content = content;
+
+            var client = _httpClientFactory.CreateClient();
+            var response = await client.SendAsync(request);
+            response.EnsureSuccessStatusCode();
+
+            var json = await response.Content.ReadAsStringAsync();
+            var node = JsonNode.Parse(json);
+            string idToken2 = node?["id_token"]?.GetValue<string>();
+            return idToken2;
+        }
+
+        /// <summary>
         /// Перевіряє, чи існує користувач із заданим Email.
         /// </summary>
         /// <param name="email">Email для перевірки.</param>
@@ -308,6 +342,23 @@ namespace HealthyLifestyle.Application.Services.Auth
 
             var user = await _userManager.FindByEmailAsync(email);
             return user != null;
+        }
+
+        /// <summary>
+        /// Змінює пароль користувача
+        /// </summary>
+        /// <param name="email">Email користувача.</param>
+        /// <param name="password">Новий пароль.</param>
+        /// <returns>true, якщо пароль вдало змінено; інакше false.</returns>
+        public async Task<bool> ChangePassword(string email, string password)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+            if (user == null) return false;
+
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+            var result = await _userManager.ResetPasswordAsync(user, token, password);
+
+            return result.Succeeded;
         }
 
         #endregion

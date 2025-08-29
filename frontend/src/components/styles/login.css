@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kodchasan:wght@200;300;400;500;600;700&display=swap');
+
+.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/FigureBack.png"), url("../img/RectangleBack.png");
+    background-size: cover, cover;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    display: flex;
+    z-index: -1; 
+    align-items: center;
+    justify-content: center;
+}
+
+.nomyfy {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    z-index: 10;
+}
+
+.nomyfy img {
+    width: 240px;
+    height: auto;
+}
+
+.bgb {
+    z-index: 5;
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    animation: floatBall1 8s ease-in-out infinite;
+}
+
+.bgb img {
+    width: 360px;
+    height: auto;
+}
+
+.mgb {
+    z-index: 5;
+    position: absolute;
+    top: -30px;
+    right: 200px;
+    animation: floatBall2 8s ease-in-out infinite;
+}
+
+.mgb img {
+    width: 240px;
+    height: auto;
+}
+
+.sgb {
+    z-index: 5;
+    position: absolute;
+    bottom: 30%;
+    right: 31%;
+    animation: floatBall3 8s ease-in-out infinite;
+}
+
+.sgb img {
+    width: 160px;
+    height: auto;
+}
+
+.bb {
+    z-index: 5;
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    animation: floatBall4 8s ease-in-out infinite;
+}
+
+.bb img {
+    width: 360px;
+    height: auto;
+}
+
+@keyframes floatBall1 {
+  0%   { transform: translate(0, 0); }
+  20%  { transform: translate(4px, -2px); }
+  40%  { transform: translate(-3px, 3px); }
+  60%  { transform: translate(5px, 5px); }
+  80%  { transform: translate(-2px, -4px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes floatBall2 {
+  0%   { transform: translate(0, 0); }
+  20%  { transform: translate(-5px, 3px); }
+  40%  { transform: translate(3px, -2px); }
+  60%  { transform: translate(-4px, 4px); }
+  80%  { transform: translate(2px, -5px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes floatBall3 {
+  0%   { transform: translate(0, 0); }
+  20%  { transform: translate(6px, 2px); }
+  40%  { transform: translate(-5px, -3px); }
+  60%  { transform: translate(3px, 5px); }
+  80%  { transform: translate(-3px, -2px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes floatBall4 {
+  0%   { transform: translate(0, 0); }
+  20%  { transform: translate(-4px, -3px); }
+  40%  { transform: translate(2px, 4px); }
+  60%  { transform: translate(-6px, 3px); }
+  80%  { transform: translate(5px, -2px); }
+  100% { transform: translate(0, 0); }
+}
+
+.glass {
+    text-align: center;
+    z-index: 8;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.648);
+    width: 430px;
+    height: 480px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+}
+
+.glass input {
+    font-family: 'Kumbh Sans', sans-serif;
+    color: white;
+    width: 320px;
+    height: 46px;
+    border-radius: 30px;
+    border: 2px solid transparent;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    font-size: 16px;
+    outline: none;
+    padding-left: 20px;
+    margin: 12px;
+}
+
+input::placeholder {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight: 300;
+    color: white;
+}
+
+.eye {
+    width: 24px;
+    height: auto;
+    position: absolute;
+    right: 15%;
+    top: 40px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: white;
+    padding: 0;
+    line-height: 1;
+    margin-top: auto;
+}
+
+.eye:hover {
+    color: white !important;
+    background: none !important;
+    transform: translateY(-50%) !important;
+}
+
+.login {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight: bold;
+    width: 265px;
+    height: 56px;
+    border-radius: 28px;
+    border: none;
+    background: #D6FF00;
+    color: black;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 22px;
+
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.login:hover {
+    background: #D6FF00 !important;
+}
+
+.login:disabled {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    
+    color: rgba(0, 0, 0, 0.4);
+    cursor: not-allowed;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) inset;
+}
+
+/* .login:disabled {
+    background: #bce102;
+} */
+
+.forgot-password {
+    margin-top: -2px;
+    font-family: 'Kumbh Sans', sans-serif;
+    text-decoration: none;
+    font-size: 12px;
+    color: #EBFFB3;
+    align-self: flex-end;
+    display: block;
+    padding-left: 45%;
+    text-decoration: underline;
+    letter-spacing: 0.5px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.no-login {
+    font-family: 'Kumbh Sans', sans-serif;
+    margin-top: 5px;
+    color: #EBFFB3;
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.register {
+    color: white;
+    cursor: pointer;
+    font-weight: 530;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.social-btns {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 24px;
+}
+
+.btn-log-another-way {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    color: #333;
+}
+
+.btn-log-another-way:hover {
+    background: #fff !important;
+    transform: none !important;
+}
+
+.incorrect-data {
+    font-family: 'Kumbh Sans', sans-serif;
+    text-decoration: none;
+    font-size: 12px;
+    color: red;
+    align-self: flex-end;
+    display: block;
+    letter-spacing: 0.5px;
+    font-weight: 300;
+}

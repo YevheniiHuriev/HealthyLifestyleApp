@@ -39,5 +39,20 @@ namespace HealthyLifestyle.Application.Interfaces.Auth
         /// <param name="email">Email для перевірки.</param>
         /// <returns>True, якщо користувач з таким email існує; інакше false.</returns>
         Task<bool> UserExistsAsync(string email);
+
+        /// <summary>
+        /// Конвертує код авторизації в токен
+        /// </summary>
+        /// <param name="code">Код, що буде конвертовано.</param>
+        /// <returns>Токен, що був отриманий з коду.</returns>
+        Task<string?> ExchangeCodeForToken(string code);
+
+        /// <summary>
+        /// Змінює пароль користувача
+        /// </summary>
+        /// <param name="email">Email користувача.</param>
+        /// <param name="password">Новий пароль.</param>
+        /// <returns>true, якщо пароль вдало змінено; інакше false.</returns>
+        Task<bool> ChangePassword(string email, string password);
     }
 }

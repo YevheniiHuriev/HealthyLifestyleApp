@@ -1,6 +1,11 @@
-﻿using HealthyLifestyle.Application.DTOs.Auth;
+﻿using Azure.Core;
+using HealthyLifestyle.Application.DTOs.Auth;
 using HealthyLifestyle.Application.Interfaces.Auth;
+using HealthyLifestyle.Application.Interfaces.Email;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Concurrent;
+using System.Drawing.Printing;
+using System.Drawing;
 
 namespace HealthyLifestyle.Api.Controllers.Auth
 {
@@ -15,6 +20,9 @@ namespace HealthyLifestyle.Api.Controllers.Auth
         #region Private Fields
 
         private readonly IAuthService _authService;
+        private readonly IConfiguration _configuration;
+        private static ConcurrentDictionary<string, string> EmailsOneTimeCodes = new ConcurrentDictionary<string, string>();
+        private readonly IEmailService _emailService;
 
         #endregion
 
@@ -24,14 +32,96 @@ namespace HealthyLifestyle.Api.Controllers.Auth
         /// Конструктор із вбудовуванням залежності сервісу автентифікації.
         /// </summary>
         /// <param name="authService">Сервіс автентифікації для обробки логіки реєстрації та входу.</param>
-        public AuthController(IAuthService authService)
+        public AuthController(IAuthService authService, IConfiguration configuration, IEmailService emailService)
         {
             _authService = authService ?? throw new ArgumentNullException(nameof(authService));
+            _configuration = configuration;
+            _emailService = emailService ?? throw new ArgumentNullException(nameof(emailService));
         }
 
         #endregion
 
         #region Public Methods
+
+        /// <summary>
+        /// Генерує код підтвердження для реєстрації нового користувача.
+        /// </summary>
+        /// <param name="email">Пошта, яку треба підтвердити</param>
+        [HttpPost("confirmation/{email}")]
+        public async Task<IActionResult> CreateConfirmationCode(string email)
+        {
+            var code = new Random().Next(0, 99999).ToString("D5");
+            EmailsOneTimeCodes[email] = code;
+
+            Task.Delay(TimeSpan.FromMinutes(5)).ContinueWith(_ =>
+            {
+                EmailsOneTimeCodes.TryRemove(email, out var _);
+            });
+
+            var html = $@"
+                <html>
+                    <body>
+                        <h1>Код підтвердження</h1>
+                        <p>Ваш код підтвердження: <strong>{code}</strong></p>
+                        <p>Будь ласка, введіть цей код для завершення реєстрації.</p>
+                    </body>
+                </html>";
+
+            _emailService.SendEmailAsync(email, "Код підтвердження", html);
+
+            return Ok();
+        }
+
+        /// <summary>
+        /// Перевіряє код підтвердження для реєстрації нового користувача.
+        /// </summary>
+        /// <param name="email">Пошта, яку треба підтвердити</param>
+        /// <param name="code">Згенерований код</param>
+        [HttpPost("confirmation/{email}/{code}")]
+        public async Task<IActionResult> ConfirmEmail(string email, string code)
+        {
+            if (EmailsOneTimeCodes.TryGetValue(email, out var storedCode))
+            {
+                if (storedCode == code)
+                {
+                    EmailsOneTimeCodes.TryRemove(email, out _);
+                    return Ok();
+                }
+            }
+
+            return BadRequest();
+        }
+
+
+        /// <summary>
+        /// Перевіряє чи існує користувач с заданою поштою.
+        /// </summary>
+        /// <param name="email">Пошта, яку треба перевірити</param>
+        [HttpPost("exist/{email}")]
+        public async Task<IActionResult> ExistEmail(string email)
+        {
+            if (await _authService.UserExistsAsync(email))return Ok();
+
+            return BadRequest();
+        }
+
+        /// <summary>
+        /// Змінює пароль користувача.
+        /// </summary>
+        /// <param name="model">Дані для зміни паролю.</param>
+        [HttpPost("change/password")]
+        public async Task<IActionResult> ChangePassword([FromBody] LoginUserDto model)
+        {
+            if (await _authService.UserExistsAsync(model.Email))
+            {
+                if (await _authService.ChangePassword(model.Email, model.Password))
+                {
+                    return Ok();
+                }
+            }
+
+            return BadRequest();
+        }
 
         /// <summary>
         /// Реєструє нового користувача та повертає JWT-токен.
@@ -105,9 +195,14 @@ namespace HealthyLifestyle.Api.Controllers.Auth
         [HttpPost("login/google")]
         public async Task<IActionResult> LoginWithGoogle([FromBody] ExternalAuthDto dto)
         {
-            var authResponse = await _authService.LoginWithGoogleAsync(dto.ProviderToken);
+            var token = await _authService.ExchangeCodeForToken(dto.ProviderToken);
+            if (token == null)
+                return BadRequest(new { Message = "Не вдалося обміняти код на токен" });
+
+            var authResponse = await _authService.LoginWithGoogleAsync(token);
             if (authResponse == null)
                 return Unauthorized(new { Message = "Google авторизація не вдалася" });
+
             return Ok(authResponse);
         }
         /// <summary>
