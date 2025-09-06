@@ -1,10 +1,10 @@
-/* CustomBirthdateDatePicker.css */
 .custom-datepicker-container {
   position: relative;
   width: 100%;
 }
 
-.custom-datepicker-input {
+/* Стилі для альтернативного відображення */
+.custom-datepicker-display {
   height: 75px;
   background: rgba(255, 255, 255, 0.4);
   border: none;
@@ -19,15 +19,36 @@
   backdrop-filter: blur(10px);
   cursor: pointer;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.custom-datepicker-input::placeholder {
+.date-with-dots {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dot-separator {
+  color: #D6FF00;
+  font-weight: bold;
+  margin: 3px 30px 0 30px;
+}
+
+.date-part {
+  min-width: 2ch;
+  text-align: center;
+}
+
+.placeholder {
   color: #116FCF;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   font-weight: 500;
 }
 
+/* Решта стилів залишаються незмінними */
 .react-datepicker {
   font-family: 'Roboto', sans-serif;
   border: 2px solid #D6FF00;
@@ -89,7 +110,7 @@
 
 .year-select option,
 .month-select option {
-  background-color: white;
+  background-color: #FFF;
   color: #116FCF;
   font-weight: 600;
   padding: 8px 12px;
@@ -127,7 +148,7 @@
   font-size: 24px;
   cursor: pointer;
   font-weight: bold;
-  padding: 5px 15px;
+  padding: 5px 45px;
   border-radius: 50%;
   transition: background-color 0.3s ease;
 }
@@ -242,7 +263,3 @@
     font-size: 16px;
   }
 } */
-
-.react-datepicker__day {
-  max-height: 27.5px;
-}

@@ -7,6 +7,8 @@
   margin-bottom: 20px;
   border-radius: 40px;
   transition: all 0.3s ease;
+  /* Додаємо фон для контейнера */
+  background: rgba(255, 255, 255, 0.40);
 }
 
 .custom-select.expanded {
@@ -16,6 +18,10 @@
   transition: all 0.1s ease;
 }
 
+.custom-select.has-value {
+  background: rgba(255, 255, 255, 0.50) !important;
+}
+
 .select-header {
   display: flex;
   align-items: center;
@@ -23,11 +29,13 @@
   height: 75px;
   cursor: pointer;
   position: relative;
+  /* Видаляємо фон з заголовка, бо він тепер у батьківського контейнера */
+  background: transparent !important;
 }
 
 .select-input {
   flex: 1;
-  background: transparent;
+  background: transparent !important; /* Робимо прозорим */
   border: none;
   outline: none;
   color: #FFF;
@@ -76,7 +84,7 @@
 .select-options-container {
   position: absolute;
   top: 100%;
-  left: -1.4px;
+  left: -1.5px;
   right: -1.4px;
   background: #D6FF00;
   border-radius: 0 0 40px 40px;
@@ -117,15 +125,13 @@
 
 .select-options::-webkit-scrollbar-track {
   background: #0661CC; /* Колір доріжки (полоси) */
-  border-radius: 4px; /* Закруглення доріжки */
+  border-radius: 10px; /* Закруглення доріжки */
   margin: 5px 0; /* Відступи зверху і знизу для доріжки */
 }
 
 .select-options::-webkit-scrollbar-thumb {
   background: #FFF; /* Колір повзунка */
-  border-radius: 4px; /* Закруглення повзунка */
-  border: 1px solid #0661CC; /* Межа навколо повзунка для контрасту */
-
+  border-radius: 10px; /* Закруглення повзунка */
 }
 
 .select-options::-webkit-scrollbar-thumb:hover {
@@ -164,4 +170,9 @@
   border-top: none;
   /* ВИПРАВЛЕНО: прибрано лінію між інпутом та опціями */
   margin-top: -2px;
+}
+
+/* ВИЩИЙ ПРІОРІТЕТ - для розгорнутого селекта з значенням */
+.custom-select.expanded.has-value {
+  background: #D6FF00 !important;
 }

@@ -1,16 +1,27 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
+// import { useTranslation } from 'react-i18next';
+import axios from "axios";
 import "../styles/UserProfile.css";
 import ProfileIcon from "../icons/ProfileIcon.svg";
-import CustomSelect from "../elements/CustomSelect";
-import CustomDatePicker from "../elements/CustomBirthdateDatePicker";
+import CustomSelect from "../elements/custom-profile-date-select/CustomSelect";
+import CustomDatePicker from "../elements/custom-birthdate-date-picker/CustomBirthdateDatePicker";
+import TruncatedInput from '../elements/truncated-input/TruncatedInput';
+import AchievementsCard from '../elements/achievements-card/AchievementsCard';
+import PurchasesCard from '../elements/purchases-card/PurchasesCard';
 
 const UserProfile = () => {
+  // const { t } = useTranslation();
+  const navigate = useNavigate();
   const [activeView, setActiveView] = useState({ achievements: 'list', purchases: 'list' });
   const [selectedItem, setSelectedItem] = useState(null);
   const [hasChanges, setHasChanges] = useState(false);
   const [avatarPreview, setAvatarPreview] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
+  const [isSaving, setIsSaving] = useState(false);
+  const [isSaved, setIsSaved] = useState(false); // Новий стан для відстеження успішного збереження
 
-  // Початкові дані (можна отримати з API)
+  // Початкові дані
   const initialFormData = {
     firstName: '',
     lastName: '',
@@ -24,18 +35,126 @@ const UserProfile = () => {
     phoneCode: '',
     phoneNumber: '',
     about: '',
-    avatarUrl: '' // Додаємо поле для посилання на аватар
+    avatarUrl: ''
   };
 
   const [formData, setFormData] = useState(initialFormData);
+  const [originalFormData, setOriginalFormData] = useState(initialFormData);
+
+  // Отримання токена
+  const getToken = () => {
+    return localStorage.getItem("helth-token");
+  };
+
+  // Завантаження даних профілю
+  const fetchUserProfile = async () => {
+    try {
+      setIsLoading(true);
+      const token = getToken();
+      if (!token) {
+        console.warn("Токен не знайдено");
+        return;
+      }
+
+      const response = await axios.get(
+        `${process.env.REACT_APP_API_URL}/api/User/profile`,
+        {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        }
+      );
+
+      const userData = response.data;
+      
+      // Розбиваємо FullName на firstName та lastName
+      const nameParts = userData.FullName?.split(' ') || [];
+      const firstName = nameParts[0] || '';
+      const lastName = nameParts.slice(1).join(' ') || '';
+
+      // Конвертуємо дату народження
+      const birthDate = userData.DateOfBirth && userData.DateOfBirth !== "0001-01-01T00:00:00" 
+        ? formatDateFromBackend(userData.DateOfBirth)
+        : '';
+
+      // Конвертуємо стать
+      const genderMapping = {
+        'Male': 'Чоловік',
+        'Female': 'Жінка', 
+        'Other': 'Інше'
+      };
+      const gender = genderMapping[userData.Gender] || '';
+
+      // Розбиваємо телефон на код та номер
+      let phoneCode = '';
+      let phoneNumber = '';
+      if (userData.Phone) {
+        const phoneParts = userData.Phone.match(/^(\+\d{1,3})(\d+)$/);
+        if (phoneParts) {
+          phoneCode = phoneParts[1];
+          phoneNumber = phoneParts[2];
+        }
+      }
+
+      const newFormData = {
+        firstName,
+        lastName,
+        gender,
+        birthDate,
+        height: userData.Height > 0 ? userData.Height.toString() : '',
+        weight: userData.Weight > 0 ? userData.Weight.toString() : '',
+        country: userData.Country || '',
+        city: userData.City || '',
+        street: userData.Street || '',
+        phoneCode,
+        phoneNumber,
+        about: userData.Bio || '',
+        avatarUrl: userData.ProfilePictureUrl || ''
+      };
+
+      setFormData(newFormData);
+      setOriginalFormData(newFormData);
+      
+      // Якщо є аватар, встановлюємо попередній перегляд
+      if (userData.ProfilePictureUrl) {
+        setAvatarPreview(userData.ProfilePictureUrl);
+      }
+
+    } catch (error) {
+      console.error("Помилка при завантаженні профілю:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Форматування дати з бекенду
+  const formatDateFromBackend = (dateString) => {
+    try {
+      const date = new Date(dateString);
+      if (isNaN(date.getTime())) return '';
+      
+      const day = date.getDate().toString().padStart(2, '0');
+      const month = (date.getMonth() + 1).toString().padStart(2, '0');
+      const year = date.getFullYear();
+      return `${day} ${month} ${year}`;
+    } catch (error) {
+      console.error("Помилка форматування дати:", error);
+      return '';
+    }
+  };
+
+  // Ефект для завантаження даних при монтуванні
+  useEffect(() => {
+    fetchUserProfile();
+  }, []);
 
   // Ефект для перевірки змін
   useEffect(() => {
     const hasFormChanged = Object.keys(formData).some(key => {
-      return formData[key] !== initialFormData[key];
+      return formData[key] !== originalFormData[key];
     });
     setHasChanges(hasFormChanged);
-  }, [formData]);
+  }, [formData, originalFormData]);
 
   const genderOptions = ['Чоловік', 'Жінка', 'Інше'];
   const countryOptions = [
@@ -47,29 +166,31 @@ const UserProfile = () => {
     '+454', '+455', '+456', '+457', '+458'
   ];
 
+  // Функція для перевірки чи поле має значення
+  const hasValue = (value) => {
+    return value !== null && value !== undefined && value !== '';
+  };
+
+  // Функція для отримання класу в залежності від наявності значення
+  const getInputClassName = (value, baseClassName) => {
+    return hasValue(value) ? `${baseClassName} has-value` : baseClassName;
+  };
+
   // Обробка вибору аватару
   const handleAvatarSelect = (event) => {
     const file = event.target.files[0];
     if (file) {
-      // Перевірка типу файлу
       if (!file.type.startsWith('image/')) {
         alert('Будь ласка, виберіть зображення');
         return;
       }
 
-      // Створення попереднього перегляду
       const reader = new FileReader();
       reader.onload = (e) => {
         setAvatarPreview(e.target.result);
-        
-        // Генеруємо шлях до файлу в папці assets/profil_pictures/
-        const fileName = file.name;
-        const avatarUrl = `../../assets/profil_pictures/${fileName}`;
-        
-        // Оновлюємо стан форми з шляхом до аватару
         setFormData(prev => ({
           ...prev,
-          avatarUrl: avatarUrl
+          avatarUrl: ''
         }));
       };
       reader.readAsDataURL(file);
@@ -91,72 +212,7 @@ const UserProfile = () => {
     }));
   };
 
-  // Функція для відправки даних на бекенд
-  const handleSubmit = () => {
-    const genderMapping = {
-      'Чоловік': 'Male',
-      'Жінка': 'Female', 
-      'Інше': 'Other'
-    };
-
-    const dataToSend = {
-      fullName: `${formData.firstName} ${formData.lastName}`.trim(),
-      gender: genderMapping[formData.gender] || formData.gender,
-      birthDate: formData.birthDate,
-      height: formData.height,
-      weight: formData.weight,
-      country: formData.country,
-      city: formData.city,
-      street: formData.street,
-      phone: `${formData.phoneCode}${formData.phoneNumber}`,
-      about: formData.about,
-      avatarUrl: formData.avatarUrl // Передаємо шлях до аватару
-    };
-    
-    console.log("Дані для відправки на бекенд:", dataToSend);
-    
-    // Тут буде логіка відправки на бекенд
-    // fetch('/api/update-profile', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(dataToSend)
-    // })
-    
-    // Після успішного збереження скидаємо прапорець змін
-    setHasChanges(false);
-
-    alert("Профіль успішно оновлено! Шлях до аватару: " + formData.avatarUrl);
-  };
-
-  const achievements = [
-    { 
-      id: 1,
-      date: "31.08", 
-      text: "Тренування", 
-      extra: "1 год",
-      details: {
-        fullDate: "31.08.2025\n17:05 - 18:10",
-        message: "Масш успіхи!\nПродуктивний день!\nПройдено тренування 'NOMYFY ST'",
-        duration: "1 год 05 хв",
-        calories: "175 кКал",
-        motivation: "ТІЛЬКИ ВПЕРЕД!"
-      }
-    },
-    { id: 2, date: "11.07", text: "Пройдено марафон..." },
-    { id: 3, date: "11.07", text: "Втрата ваги" },
-    { id: 4, date: "11.07", text: "Ти молодець!" },
-    { id: 5, date: "11.07", text: "Ти молодець!" },
-  ];
-
-  const purchases = [
-    { id: 1, date: "31.08", text: "Футболка Nomy" },
-    { id: 2, date: "11.07", text: "Підписка на тренування" },
-    { id: 3, date: "11.07", text: "Футболка Nomy" },
-    { id: 4, date: "11.07", text: "Футболка Nomy" },
-    { id: 5, date: "11.07", text: "Футболка Nomy" },
-    { id: 6, date: "11.07", text: "Футболка Nomy" },
-  ];
-
+  // Обробники для карток
   const handleItemClick = (type, item) => {
     setActiveView({ ...activeView, [type]: 'details' });
     setSelectedItem(item);
@@ -167,75 +223,67 @@ const UserProfile = () => {
     setSelectedItem(null);
   };
 
-  const renderAchievementsList = () => (
-    <div className="list">
-      {achievements.map((a, i) => (
-        <div key={i} className="list-item" onClick={() => handleItemClick('achievements', a)}>
-          <span className="date">{a.date}</span>
-          <span className="text">{a.text}</span>
-          {a.extra && <span className="extra">{a.extra}</span>}
-          <span className="dots">•••</span>
-        </div>
-      ))}
-    </div>
-  );
+  // Функція для відправки даних на бекенд
+  const handleSubmit = async () => {
+    try {
+      setIsSaving(true);
+      const token = getToken();
+      if (!token) {
+        alert("Токен не знайдено. Будь ласка, увійдіть знову.");
+        return;
+      }
 
-  const renderPurchasesList = () => (
-    <div className="list">
-      {purchases.map((p, i) => (
-        <div key={i} className="list-item" onClick={() => handleItemClick('purchases', p)}>
-          <span className="date">{p.date}</span>
-          <span className="text">{p.text}</span>
-          <span className="dots">•••</span>
-        </div>
-      ))}
-    </div>
-  );
+      const genderMapping = {
+        'Чоловік': 'Male',
+        'Жінка': 'Female', 
+        'Інше': 'Other'
+      };
 
-  const renderAchievementDetails = () => (
-    <div className="details-view">
-      <div className="details-header">
-        <button className="back-button" onClick={() => handleBackClick('achievements')}>
-          ←
-        </button>
-        <h4>Деталі успіху</h4>
-      </div>
-      <div className="details-content">
-        <div className="detail-date">{selectedItem.details.fullDate}</div>
-        <div className="detail-message">{selectedItem.details.message}</div>
-        <div className="detail-stats">
-          <div className="stat">
-            <span className="stat-label">Тривалість</span>
-            <span className="stat-value">{selectedItem.details.duration}</span>
-          </div>
-          <div className="stat">
-            <span className="stat-label">Спалено</span>
-            <span className="stat-value">{selectedItem.details.calories}</span>
-          </div>
-        </div>
-        <div className="detail-motivation">{selectedItem.details.motivation}</div>
-      </div>
-    </div>
-  );
+      // Форматуємо дату для бекенду
+      let formattedBirthDate = "0001-01-01";
+      if (formData.birthDate) {
+        const [day, month, year] = formData.birthDate.split(' ');
+        formattedBirthDate = `${year}-${month}-${day}`;
+      }
 
-  const renderPurchaseDetails = () => (
-    <div className="details-view">
-      <div className="details-header">
-        <button className="back-button" onClick={() => handleBackClick('purchases')}>
-          ←
-        </button>
-        <h4>Деталі покупки</h4>
-      </div>
-      <div className="details-content">
-        <div className="purchase-info">
-          <div className="purchase-date">{selectedItem.date}</div>
-          <div className="purchase-title">{selectedItem.text}</div>
-          <div className="purchase-status">Статус: Доставлено</div>
-          <div className="purchase-tracking">Трек номер: NMF-{selectedItem.id}247</div>
-        </div>
-      </div>
-    </div>
-  );
+      const dataToSend = {
+        FullName: `${formData.firstName} ${formData.lastName}`.trim(),
+        DateOfBirth: formattedBirthDate,
+        Gender: genderMapping[formData.gender] || 'Other',
+        Weight: parseInt(formData.weight) || 0,
+        Height: parseInt(formData.height) || 0,
+        ProfilePictureUrl: 'https://webmaestro.com.ua/img/blog/20201016122530_.jpeg',
+        Bio: formData.about || '',
+        Phone: `${formData.phoneCode}${formData.phoneNumber}`,
+        Country: formData.country || '',
+        City: formData.city || '',
+        Street: formData.street || ''
+      };
+
+      const response = await axios.put(
+        `${process.env.REACT_APP_API_URL}/api/User/profile`,
+        dataToSend,
+        {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+          }
+        }
+      );
+
+      if (response.status === 200) {
+        setOriginalFormData(formData);
+        setHasChanges(false);
+        setIsSaved(true); // Встановлюємо статус успішного збереження
+      }
+
+    } catch (error) {
+      console.error("Помилка при оновленні профілю:", error);
+      alert(`Не вдалося оновити профіль!`);
+    } finally {
+      setIsSaving(false);
+    }
+  };
 
   const formatDate = (date) => {
     const day = date.getDate().toString().padStart(2, '0');
@@ -244,8 +292,40 @@ const UserProfile = () => {
     return `${day} ${month} ${year}`;
   };
 
+  if (isLoading) {
+    // можна додати виклик кастомного лоадера
+    return;
+  }
+
+  const handleDirectMain = () => {
+    navigate("/userpage");
+  }
+
+  // Якщо дані успішно збережено, показуємо повідомлення
+  if (isSaved) {
+    return (
+    <div className="success-message-wrapper">
+      <div className="success-message-container">
+        <div className="success-message">
+          <div className="success-title">Дякую, за інформацію!</div>
+          <div className="success-subtitle">
+            Тепер наші поради будуть ще кращими!
+          </div>
+        </div>
+      </div>
+
+      {/* кнопка тепер окремо від текстового блоку */}
+      <div className="profile-actions">
+        <button onClick={handleDirectMain} className="save">
+          На головну
+        </button>
+      </div>
+    </div>
+    );
+  }
+
   return (
-    <div className="user-profile-wrapper">
+    <div className="user-profile-wrapper success-message-wrapper">
       <div className="user-profile">
         {/* Лівий стовпець */}
         <div className="profile-info">
@@ -271,36 +351,43 @@ const UserProfile = () => {
               style={{ display: 'none' }}
             />
           </div>
+
           <div className="about">
-            <input 
-              type="text" 
-              placeholder="Про себе..." 
+            <TruncatedInput
               value={formData.about}
-              onChange={(e) => handleInputChange('about', e.target.value)}
+              onChange={(value) => handleInputChange('about', value)}
+              placeholder="Про себе..."
+              maxVisibleChars={29}
+              className={getInputClassName(formData.about, 'about-input')}
             />
           </div>
         </div>
         
-        <div className="achievements card">
-          <h3>Твої успіхи</h3>
-          {activeView.achievements === 'list' ? renderAchievementsList() : renderAchievementDetails()}
-        </div>
+        <AchievementsCard
+          activeView={activeView.achievements}
+          selectedItem={selectedItem}
+          onItemClick={handleItemClick}
+          onBackClick={handleBackClick}
+        />
 
         {/* Центральний стовпець */}
         <div className="profile-fields">
-          <input 
-            type="text" 
-            placeholder="Ім'я" 
-            className="long profile-fields-input" 
+          <TruncatedInput
+            type="text"
+            placeholder="Ім'я"
+            className={getInputClassName(formData.firstName, 'long profile-fields-input')}
             value={formData.firstName}
-            onChange={(e) => handleInputChange('firstName', e.target.value)}
+            onChange={(value) => handleInputChange('firstName', value)}
+            maxVisibleChars={108}
           />
-          <input 
-            type="text" 
-            placeholder="Прізвище" 
-            className="long profile-fields-input" 
+
+          <TruncatedInput
+            type="text"
+            placeholder="Прізвище"
+            className={getInputClassName(formData.lastName, 'long profile-fields-input')}
             value={formData.lastName}
-            onChange={(e) => handleInputChange('lastName', e.target.value)}
+            onChange={(value) => handleInputChange('lastName', value)}
+            maxVisibleChars={108}
           />
           
           <CustomSelect
@@ -309,7 +396,7 @@ const UserProfile = () => {
             options={genderOptions}
             value={formData.gender}
             onChange={(value) => handleSelectChange('gender', value)}
-            className="profile-fields-input short"
+            className={getInputClassName(formData.gender, 'profile-fields-input short')}
           />
 
           <CustomDatePicker
@@ -325,18 +412,14 @@ const UserProfile = () => {
             <input 
               type="number" 
               placeholder="Зріст, см" 
-              className="short profile-fields-input" 
+              className={getInputClassName(formData.height, 'short profile-fields-input')}
               value={formData.height}
               onChange={(e) => {
                 const value = e.target.value.slice(0, 5);
                 handleInputChange('height', value);
               }}
+              min="0"
               maxLength={5}
-              onInput={(e) => {
-                if (e.target.value.length > 5) {
-                  e.target.value = e.target.value.slice(0, 5);
-                }
-              }}
             />
             {formData.height && <span className="input-suffix">см</span>}
           </div>
@@ -345,27 +428,25 @@ const UserProfile = () => {
             <input 
               type="number" 
               placeholder="Вага, кг" 
-              className="short profile-fields-short-cor profile-fields-input" 
+              className={getInputClassName(formData.weight, 'short profile-fields-short-cor profile-fields-input')}
               value={formData.weight}
               onChange={(e) => {
                 const value = e.target.value.slice(0, 7);
                 handleInputChange('weight', value);
               }}
+              min="0"
               maxLength={7}
-              onInput={(e) => {
-                if (e.target.value.length > 7) {
-                  e.target.value = e.target.value.slice(0, 7);
-                }
-              }}
             />
             {formData.weight && <span className="input-suffix">кг</span>}
           </div>
         </div>
         
-        <div className="purchases card">
-          <h3>Твої покупки</h3>
-          {activeView.purchases === 'list' ? renderPurchasesList() : renderPurchaseDetails()}
-        </div>
+        <PurchasesCard
+          activeView={activeView.purchases}
+          selectedItem={selectedItem}
+          onItemClick={handleItemClick}
+          onBackClick={handleBackClick}
+        />
 
         {/* Правий стовпець */}
         <div className="extra-fields">
@@ -375,7 +456,8 @@ const UserProfile = () => {
             options={countryOptions}
             value={formData.country}
             onChange={(value) => handleSelectChange('country', value)}
-            className="extra-fields-input short"
+            className={getInputClassName(formData.country, 'extra-fields-input short')}
+            maxVisibleChars={39}
           />
           <CustomSelect
             id="city"
@@ -383,7 +465,8 @@ const UserProfile = () => {
             options={countryOptions}
             value={formData.city}
             onChange={(value) => handleSelectChange('city', value)}
-            className="extra-fields-input short"
+            className={getInputClassName(formData.city, 'extra-fields-input short')}
+            maxVisibleChars={39}
           />
           <CustomSelect
             id="street"
@@ -391,7 +474,8 @@ const UserProfile = () => {
             options={countryOptions}
             value={formData.street}
             onChange={(value) => handleSelectChange('street', value)}
-            className="extra-fields-input short"
+            className={getInputClassName(formData.street, 'extra-fields-input short')}
+            maxVisibleChars={39}
           />
 
           <div className="phone">
@@ -401,10 +485,10 @@ const UserProfile = () => {
               options={phoneNumberOptions}
               value={formData.phoneCode}
               onChange={(value) => handleSelectChange('phoneCode', value)}
-              className="extra-fields-input phone-code"
+              className={getInputClassName(formData.phoneCode, 'extra-fields-input phone-code')}
             />
             <input 
-              className="extra-fields-input" 
+              className={getInputClassName(formData.phoneNumber, 'extra-fields-input')}
               type="number" 
               placeholder="Номер" 
               value={formData.phoneNumber}
@@ -412,12 +496,8 @@ const UserProfile = () => {
                 const value = e.target.value.slice(0, 9);
                 handleInputChange('phoneNumber', value);
               }}
+              min="0"
               maxLength={9}
-              onInput={(e) => {
-                if (e.target.value.length > 9) {
-                  e.target.value = e.target.value.slice(0, 9);
-                }
-              }}
             />
           </div>
         </div>
@@ -428,9 +508,9 @@ const UserProfile = () => {
         <button 
           onClick={handleSubmit}
           className={hasChanges ? 'save' : 'save disabled'}
-          disabled={!hasChanges}
+          disabled={!hasChanges || isSaving}
         >
-          Зберегти зміни
+          {isSaving ? 'Збереження...' : 'Зберегти'}
         </button>
       </div>
     </div>

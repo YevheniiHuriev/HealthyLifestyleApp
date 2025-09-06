@@ -1,11 +1,19 @@
 import React, { useState, useRef, useEffect } from 'react';
-import '../styles/CustomSelect.css';
-import SelectArrov from "../icons/SelectArrow.svg"
+import './CustomSelect.css';
 
-const CustomSelect = ({ id, placeholder, options, value, onChange, className = '' }) => {
+const CustomSelect = ({ 
+  id, 
+  placeholder, 
+  options, 
+  value, 
+  onChange, 
+  className = '', 
+  maxVisibleChars = null
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [inputValue, setInputValue] = useState(value || '');
   const [filteredOptions, setFilteredOptions] = useState(options);
+  const [displayValue, setDisplayValue] = useState('');
   const selectRef = useRef(null);
 
   useEffect(() => {
@@ -27,9 +35,29 @@ const CustomSelect = ({ id, placeholder, options, value, onChange, className = '
     );
   }, [inputValue, options]);
 
+  // Ефект для обробки відображення значення з трьома крапками
+  useEffect(() => {
+    if (isOpen || !maxVisibleChars || !value || value.length <= maxVisibleChars) {
+      // Показуємо повне значення при відкритті dropdown або якщо немає обмеження
+      setDisplayValue(value || '');
+    } else {
+      // Обрізаємо текст і додаємо три крапки
+      const truncated = value.substring(0, maxVisibleChars) + '...';
+      setDisplayValue(truncated);
+    }
+  }, [value, isOpen, maxVisibleChars]);
+
   const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-    onChange(e.target.value);
+    let value = e.target.value;
+    
+    if (id === "phoneCode") {
+      value = value.replace(/[^\d]/g, '');
+      value = '+' + value;
+      value = value.slice(0, 4);
+    }
+
+    setInputValue(value);
+    onChange(value);
     setIsOpen(true);
   };
 
@@ -43,13 +71,17 @@ const CustomSelect = ({ id, placeholder, options, value, onChange, className = '
     setIsOpen(!isOpen);
   };
 
+  const hasValue = (value) => {
+  return value !== null && value !== undefined && value !== '';
+};
+
   return (
-    <div className={`custom-select ${className} ${isOpen ? 'expanded' : ''}`} ref={selectRef} id={id}>
+    <div className={`custom-select ${className} ${isOpen ? 'expanded' : ''} ${hasValue(value) ? 'has-value' : ''}`} ref={selectRef} id={id}>
       <div className="select-header" onClick={toggleDropdown}>
         <input
           type="text"
           className="select-input"
-          value={inputValue}
+          value={isOpen ? inputValue : displayValue}
           onChange={handleInputChange}
           placeholder={placeholder}
           onClick={(e) => {

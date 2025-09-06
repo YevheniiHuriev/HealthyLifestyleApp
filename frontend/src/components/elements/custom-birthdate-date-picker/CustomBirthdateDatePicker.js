@@ -1,14 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import '../styles/CustomBirthdateDatePicker.css';
+import './CustomBirthdateDatePicker.css';
 
 const months = [
   "СІЧЕНЬ", "ЛЮТИЙ", "БЕРЕЗЕНЬ", "КВІТЕНЬ", "ТРАВЕНЬ", "ЧЕРВЕНЬ",
   "ЛИПЕНЬ", "СЕРПЕНЬ", "ВЕРЕСЕНЬ", "ЖОВТЕНЬ", "ЛИСТОПАД", "ГРУДЕНЬ"
 ];
 
-// Мапинг англійських назв днів тижня на українські скорочення
 const weekdayMap = {
   'Monday': 'Пн',
   'Tuesday': 'Вт',
@@ -19,17 +18,15 @@ const weekdayMap = {
   'Sunday': 'Нд'
 };
 
-const CustomBirthdateDatePicker = ({ selected, onChange, placeholder }) => {
+const CustomBirthdateDatePicker = ({ selected, onChange, placeholder, className = '' }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [displayDate, setDisplayDate] = useState(() => (selected instanceof Date ? selected : new Date()));
   const yearSelectRef = useRef(null);
 
-  // роки
   const currentYear = new Date().getFullYear();
   const years = Array.from({ length: currentYear - 1900 + 1 }, (_, i) => currentYear - i);
   const monthsOptions = months.map((m, idx) => ({ value: idx, label: m }));
 
-  // Синхронізуємо displayDate тільки коли зовнішній selected реальна дата
   useEffect(() => {
     if (selected instanceof Date) {
       if (!displayDate || selected.getTime() !== displayDate.getTime()) {
@@ -77,31 +74,43 @@ const CustomBirthdateDatePicker = ({ selected, onChange, placeholder }) => {
     return d;
   };
 
-  // Функція для форматування дня тижня
   const formatWeekDay = (weekdayName) => {
     return weekdayMap[weekdayName] || weekdayName;
   };
 
-  // обмеження висоти селекта років
   useEffect(() => {
     if (yearSelectRef.current) {
       yearSelectRef.current.classList.add('year-select-limited');
     }
   }, []);
 
-const CustomInput = React.forwardRef(({ value, onClick, placeholder }, ref) => (
-  <input
-    ref={ref}
-    value={value}
-    onClick={onClick}
-    readOnly
-    placeholder={placeholder}   // 🔹 додали
-    className="custom-datepicker-input"
-  />
-));
+  const hasValue = (value) => {
+    return value !== null && value !== undefined && value !== '';
+  };
+
+  // Альтернативний CustomInput з форматом "04 ● 12 ● 1990"
+  const CustomInput = React.forwardRef(({ value, onClick, placeholder }, ref) => (
+    <div 
+      ref={ref}
+      onClick={onClick}
+      className={`custom-datepicker-display ${hasValue(selected) ? 'has-value' : ''} ${className}`}
+    >
+      {selected ? (
+        <div className="date-with-dots">
+          <span className="date-part">{selected.getDate().toString().padStart(2, '0')}</span>
+          <span className="dot-separator"> ● </span>
+          <span className="date-part">{(selected.getMonth() + 1).toString().padStart(2, '0')}</span>
+          <span className="dot-separator"> ● </span>
+          <span className="date-part">{selected.getFullYear()}</span>
+        </div>
+      ) : (
+        <span className="placeholder">{placeholder}</span>
+      )}
+    </div>
+  ));
 
   return (
-    <div className="custom-datepicker-container">
+    <div className={`custom-datepicker-container ${hasValue(selected) ? 'has-value' : ''} ${className}`}>
       <DatePicker
         selected={selected}
         onChange={handleDayClick}
@@ -111,7 +120,6 @@ const CustomInput = React.forwardRef(({ value, onClick, placeholder }, ref) => (
         onClickOutside={() => setIsOpen(false)}
         dateFormat="dd MM yyyy"
         placeholderText={placeholder}
-        className="custom-datepicker-input"
         renderCustomHeader={({
           decreaseMonth,
           increaseMonth,
@@ -156,7 +164,7 @@ const CustomInput = React.forwardRef(({ value, onClick, placeholder }, ref) => (
             </div>
           </div>
         )}
-        formatWeekDay={formatWeekDay} // Використовуємо функцію форматування
+        formatWeekDay={formatWeekDay}
         dayClassName={(date) =>
           selected &&
           date.getDate() === selected.getDate() &&

@@ -1,0 +1,9 @@
+.truncated-input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.truncated-input.disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+}
