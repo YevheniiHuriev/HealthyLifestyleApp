@@ -1,60 +1,19 @@
-.custom-datepicker-container {
-  position: relative;
-  width: 100%;
-}
-
-/* Стилі для альтернативного відображення */
-.custom-datepicker-display {
-  height: 75px;
-  background: rgba(255, 255, 255, 0.4);
-  border: none;
-  border-radius: 40px;
-  padding: 0 40px;
-  color: #FFF;
-  font-size: 20px;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 600;
-  outline: none;
-  border: 0px solid transparent;
-  backdrop-filter: blur(10px);
-  cursor: pointer;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.date-with-dots {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.dot-separator {
-  color: #D6FF00;
-  font-weight: bold;
-  margin: 3px 30px 0 30px;
-}
-
-.date-part {
-  min-width: 2ch;
-  text-align: center;
-}
-
-.placeholder {
-  color: #116FCF;
-  font-family: 'Roboto', sans-serif;
-  font-size: 20px;
-  font-weight: 500;
-}
-
-/* Решта стилів залишаються незмінними */
 .react-datepicker {
   font-family: 'Roboto', sans-serif;
   border: 2px solid #D6FF00;
   border-radius: 15px;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
+  width: 350px;
+  min-height: 400px;
+  overflow: visible; /* щоб дропдауни не обрізались */
+}
+
+.react-datepicker__month-container {
+  width: 100%;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
 }
 
 .react-datepicker__header {
@@ -62,6 +21,7 @@
   border-bottom: 2px solid #D6FF00;
   border-radius: 13px 13px 0 0;
   padding: 0;
+  flex-shrink: 0;
 }
 
 .custom-header {
@@ -79,65 +39,9 @@
   justify-content: center;
 }
 
-.select-wrapper {
-  position: relative;
-  flex: 1;
-  max-width: 150px;
-}
-
-.year-select,
-.month-select {
-  padding: 12px 40px 12px 15px;
-  border: 2px solid #4d98e3;
-  border-radius: 25px;
-  font-size: 16px;
-  background-color: white;
-  color: #116FCF;
-  font-weight: 550;
-  cursor: pointer;
-  outline: none;
-  appearance: none;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23116FCF'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  background-position: right 15px center;
-  background-size: 16px;
-}
-
-.year-select-limited {
-  max-height: 100px !important;
-  overflow-y: auto !important;
-}
-
-.year-select option,
-.month-select option {
-  background-color: #FFF;
-  color: #116FCF;
-  font-weight: 600;
-  padding: 8px 12px;
-  font-size: 14px;
-}
-
-.year-select::-webkit-scrollbar {
-  width: 8px;
-}
-
-.year-select::-webkit-scrollbar-track {
-  background: rgba(214, 255, 0, 0.2);
-  border-radius: 4px;
-}
-
-.year-select::-webkit-scrollbar-thumb {
-  background: #116FCF;
-  border-radius: 4px;
-}
-
-.year-select::-webkit-scrollbar-thumb:hover {
-  background: #0d5bb0;
-}
-
 .month-navigation {
   display: flex;
-  gap: 30px;
+  gap: 40px;
   align-items: center;
 }
 
@@ -145,28 +49,95 @@
   background: none;
   border: none;
   color: #116FCF;
-  font-size: 24px;
+  font-size: 30px;
   cursor: pointer;
   font-weight: bold;
-  padding: 5px 45px;
+  padding: 0px 40px;
   border-radius: 50%;
-  transition: background-color 0.3s ease;
 }
 
-.nav-button:hover:not(:disabled) {
-  background-color: rgba(17, 111, 207, 0.1);
-}
-
+/* --- ефект наведення для кнопок навігації місяців --- */
 .nav-button:disabled {
   opacity: 0.3;
   cursor: not-allowed;
 }
+/* ----------------------------------------------- */
 
+/* ---------------- Custom Select ---------------- */
+.inline-select {
+  position: relative;
+  flex: 1;
+  max-width: 150px;
+}
+
+.select-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 15px;
+  border: 2px solid #4d98e3;
+  border-radius: 25px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #116FCF;
+  font-weight: 550;
+  cursor: pointer;
+}
+
+.select-trigger .chevron {
+  margin-left: 8px;
+}
+
+.select-b-date-option {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 8px);
+  max-height: 200px;
+  overflow-y: auto;
+  background: #fff;
+  border: 2px solid #4d98e3;
+  border-radius: 12px;
+  z-index: 10000;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.select-b-date-option .option {
+  padding: 10px 12px;
+  cursor: pointer;
+  color: #116FCF;
+  font-weight: 600;
+}
+
+/* --- ефект наведення для елементів у кастомному select --- */
+.select-b-date-option .option:hover {
+  background: rgba(214, 255, 0, 0.3);
+}
+/* --------------------------------------------------------- */
+
+.select-b-date-option .option.is-selected {
+  background: rgba(214, 255, 0, 0.5);
+  font-weight: 700;
+}
+
+.select-b-date-option::-webkit-scrollbar { width: 8px; }
+.select-b-date-option::-webkit-scrollbar-track { background: rgba(214,255,0,0.2); border-radius: 4px; }
+.select-b-date-option::-webkit-scrollbar-thumb { background: #116FCF; border-radius: 4px; }
+.select-b-date-option::-webkit-scrollbar-thumb:hover { background: #0d5bb0; }
+/* ------------------------------------------------ */
+
+/* Дні */
 .react-datepicker__day-names {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   margin: 0;
   padding: 10px;
+  flex-shrink: 0;
 }
 
 .react-datepicker__day-name {
@@ -179,11 +150,17 @@
 .react-datepicker__month {
   margin: 0;
   padding: 10px;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .react-datepicker__week {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
+  height: 40px;
+  flex-shrink: 0;
 }
 
 .react-datepicker__day {
@@ -201,10 +178,12 @@
   transition: all 0.2s ease;
 }
 
+/* --- ефект наведення на день у календарі --- */
 .react-datepicker__day:hover {
   background-color: rgba(214, 255, 0, 0.3);
   transform: scale(1.1);
 }
+/* -------------------------------------------- */
 
 .react-datepicker__day--selected {
   background-color: #D6FF00;
@@ -223,43 +202,9 @@
   cursor: not-allowed;
 }
 
+/* --- ефект наведення для disabled дня (відключено) --- */
 .react-datepicker__day--disabled:hover {
   background-color: transparent;
   transform: none;
 }
-
-.year-select:focus,
-.month-select:focus {
-  border-color: #116FCF;
-  box-shadow: 0 0 0 3px rgba(214, 255, 0, 0.3);
-}
-
-/* Адаптивність */
-/* @media (max-width: 480px) {
-  .year-month-selectors {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .select-wrapper {
-    max-width: 200px;
-  }
-  
-  .year-select,
-  .month-select {
-    font-size: 14px;
-    padding: 10px 35px 10px 12px;
-    background-position: right 10px center;
-  }
-  
-  .custom-datepicker-input {
-    height: 60px;
-    font-size: 16px;
-    padding: 0 20px;
-  }
-  
-  .custom-datepicker-input::placeholder {
-    font-size: 16px;
-  }
-} */
+/* ----------------------------------------------------- */

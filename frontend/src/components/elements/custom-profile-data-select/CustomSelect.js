@@ -28,6 +28,10 @@ const CustomSelect = ({
   }, []);
 
   useEffect(() => {
+    setInputValue(value || '');
+  }, [value]);
+
+  useEffect(() => {
     setFilteredOptions(
       options.filter(option =>
         option.toLowerCase().includes(inputValue.toLowerCase())
@@ -49,7 +53,7 @@ const CustomSelect = ({
 
   const handleInputChange = (e) => {
     let value = e.target.value;
-    
+
     if (id === "phoneCode") {
       value = value.replace(/[^\d]/g, '');
       value = '+' + value;
