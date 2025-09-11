@@ -3,11 +3,78 @@ import DatePicker from 'react-datepicker';
 import { useTranslation } from 'react-i18next';
 import 'react-datepicker/dist/react-datepicker.css';
 import './CustomBirthdateDatePicker.css';
+import arrow_v_blue from '../../../assets/profile-icons/arrow_v_blue.svg';
+
+// Спеціалізований CustomSelect для вибору місяців/років у стилі CustomSelect
+const YearMonthSelect = ({ value, options, onChange, className = '' }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const selectRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (selectRef.current && !selectRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const currentOption = options.find(option => option.value === value);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleOptionClick = (optionValue) => {
+    onChange(optionValue);
+    setIsOpen(false);
+  };
+
+  const hasValue = (value) => {
+    return value !== null && value !== undefined && value !== '';
+  };
+
+  return (
+    <div className={`custom-select year-month-select ${className} ${isOpen ? 'expanded' : ''} ${hasValue(value) ? 'has-value' : ''}`} ref={selectRef}>
+      <div className="select-header" onClick={toggleDropdown}>
+        <div className="select-input">
+          {currentOption?.label || '—'}
+          <span className="date-select-arrow">
+          <img src={arrow_v_blue} alt="arrow down" className="date-arrow-v-blue" />
+        </span>
+        </div>
+        
+      </div>
+      
+      {isOpen && (
+        <div className="select-options-container">
+          <div className='supp-date-container'>
+            <div className="select-options">
+            {options.map((option, index) => (
+              <div
+                key={index}
+                className={`select-option ${option.value === value ? 'selected' : ''}`}
+                onClick={() => handleOptionClick(option.value)}
+              >
+                {option.label}
+              </div>
+            ))}
+          </div>
+          </div>
+          
+        </div>
+      )}
+    </div>
+  );
+};
 
 const CustomBirthdateDatePicker = ({ selected, onChange, placeholder, className = '' }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [displayDate, setDisplayDate] = useState(() => (selected instanceof Date ? selected : new Date()));
   const { t } = useTranslation();
+  const minAge = 16;
 
   const months = [
     t("p_january"), t("p_february"), t("p_march"), t("p_april"), t("p_may"), t("p_june"),
@@ -36,67 +103,51 @@ const CustomBirthdateDatePicker = ({ selected, onChange, placeholder, className 
     }
   }, [selected, displayDate]);
 
+  // Функція для перевірки віку та корекції дати
+  const validateAndCorrectAge = (date) => {
+    const today = new Date();
+    const minBirthDate = new Date();
+    minBirthDate.setFullYear(today.getFullYear() - minAge);
+    minBirthDate.setHours(0, 0, 0, 0);
+    
+    let correctedDate = new Date(date);
+    correctedDate.setHours(0, 0, 0, 0);
+
+    if (correctedDate > minBirthDate) {
+      correctedDate = new Date(minBirthDate);
+    }
+
+    return correctedDate;
+  };
+
   const handleYearChange = (year) => {
     const newDate = new Date(displayDate);
     newDate.setFullYear(year);
     const normalized = normalizeDate(newDate);
-    onChange(normalized);
-    setDisplayDate(normalized);
+    const validatedDate = validateAndCorrectAge(normalized);
+    onChange(validatedDate);
+    setDisplayDate(validatedDate);
   };
 
   const handleMonthChange = (monthIndex) => {
     const newDate = new Date(displayDate);
     newDate.setMonth(monthIndex);
     const normalized = normalizeDate(newDate);
-    onChange(normalized);
-    setDisplayDate(normalized);
+    const validatedDate = validateAndCorrectAge(normalized);
+    onChange(validatedDate);
+    setDisplayDate(validatedDate);
   };
 
   const handleDayClick = (date) => {
-  // Створюємо нову дату на основі displayDate (яка містить правильний місяць та рік)
-  // але встановлюємо день з обраної дати
-  const newDate = new Date(displayDate);
-  newDate.setDate(date.getDate());
-  newDate.setHours(0, 0, 0, 0);
+    const newDate = new Date(displayDate);
+    newDate.setDate(date.getDate());
+    newDate.setHours(0, 0, 0, 0);
 
-  // Перевіряємо, чи обрана дата не молодша за 16 років
-  const today = new Date();
-  const minBirthDate = new Date();
-  minBirthDate.setFullYear(today.getFullYear() - 16);
-  minBirthDate.setHours(0, 0, 0, 0);
-  
-  let finalDate = new Date(newDate);
-  finalDate.setHours(0, 0, 0, 0);
-
-  // Якщо обрана дата молодша за 16 років, встановлюємо мінімальну допустиму дату
-  if (finalDate > minBirthDate) {
-    finalDate = new Date(minBirthDate);
-  }
-
-  onChange(finalDate);
-  setDisplayDate(finalDate);
-  setIsOpen(false);
-};
-
-  const handleNavigation = (navigationFunc, direction) => {
-    setDisplayDate((prev) => {
-      const newDate = new Date(prev);
-      newDate.setMonth(prev.getMonth() + (direction === 'prev' ? -1 : 1));
-
-      // Забороняємо майбутнє (більше поточного року або поточного місяця в цьому році)
-      const now = new Date();
-      if (
-        newDate.getFullYear() > now.getFullYear() ||
-        (newDate.getFullYear() === now.getFullYear() && newDate.getMonth() > now.getMonth())
-      ) {
-        return prev; // не змінюємо, залишаємо як було
-      }
-
-      navigationFunc();
-      return newDate;
-    });
+    const validatedDate = validateAndCorrectAge(newDate);
+    onChange(validatedDate);
+    setDisplayDate(validatedDate);
+    setIsOpen(false);
   };
-
 
   const normalizeDate = (date) => {
     const d = new Date(date);
@@ -112,55 +163,6 @@ const CustomBirthdateDatePicker = ({ selected, onChange, placeholder, className 
     return value !== null && value !== undefined && value !== '';
   };
 
-  // ---------------- Custom Select ----------------
-  const InlineSelect = ({ value, options, onChange, className = '' }) => {
-    const [open, setOpen] = useState(false);
-    const ref = useRef(null);
-
-    useEffect(() => {
-      const onDocClick = (e) => {
-        if (ref.current && !ref.current.contains(e.target)) setOpen(false);
-      };
-      document.addEventListener('mousedown', onDocClick);
-      return () => document.removeEventListener('mousedown', onDocClick);
-    }, []);
-
-    const current = options.find(o => o.value === value);
-
-    return (
-      <div ref={ref} className={`select-wrapper inline-select ${className}`}>
-        <button
-          type="button"
-          className="select-trigger"
-          onClick={() => setOpen(v => !v)}
-          aria-haspopup="listbox"
-          aria-expanded={open}
-        >
-          <span>{current?.label ?? '—'}</span>
-          <span className="chevron">▾</span>
-        </button>
-
-        {open && (
-          <ul className="select-b-date-option" role="listbox" tabIndex={-1}>
-            {options.map(o => (
-              <li
-                key={o.value}
-                role="option"
-                aria-selected={o.value === value}
-                className={`option ${o.value === value ? 'is-selected' : ''}`}
-                onClick={() => { onChange(o.value); setOpen(false); }}
-              >
-                {o.label}
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-    );
-  };
-  // ------------------------------------------------
-
-  // Альтернативний CustomInput з форматом "04 ● 12 ● 1990"
   const CustomInput = React.forwardRef(({ value, onClick, placeholder }, ref) => (
     <div 
       ref={ref}
@@ -192,37 +194,21 @@ const CustomBirthdateDatePicker = ({ selected, onChange, placeholder, className 
         onClickOutside={() => setIsOpen(false)}
         dateFormat="dd MM yyyy"
         placeholderText={placeholder}
-        renderCustomHeader={({
-          decreaseMonth,
-          increaseMonth,
-          prevMonthButtonDisabled,
-          nextMonthButtonDisabled,
-        }) => (
+        renderCustomHeader={() => (
           <div className="custom-header">
             <div className="year-month-selectors">
-              <InlineSelect
-                value={displayDate.getFullYear()}
-                options={years.map(y => ({ value: y, label: y }))}
-                onChange={(val) => handleYearChange(val)}
-              />
-              <InlineSelect
+              <YearMonthSelect
                 value={displayDate.getMonth()}
                 options={monthsOptions}
-                onChange={(val) => handleMonthChange(val)}
+                onChange={handleMonthChange}
+                className="month-selector"
               />
-            </div>
-
-            <div className="month-navigation">
-              <button
-                onClick={() => handleNavigation(decreaseMonth, 'prev')}
-                disabled={prevMonthButtonDisabled}
-                className="nav-button"
-              >‹</button>
-              <button
-                onClick={() => handleNavigation(increaseMonth, 'next')}
-                disabled={nextMonthButtonDisabled}
-                className="nav-button"
-              >›</button>
+              <YearMonthSelect
+                value={displayDate.getFullYear()}
+                options={years.map(y => ({ value: y, label: y }))}
+                onChange={handleYearChange}
+                className="year-selector"
+              />
             </div>
           </div>
         )}

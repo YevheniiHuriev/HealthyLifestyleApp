@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './CustomSelect.css';
+import arrow_v_white from '../../../assets/profile-icons/arrow_v_white.svg'
+import arrow_v_blue from '../../../assets/profile-icons/arrow_v_blue.svg'
 
 const CustomSelect = ({ 
   id, 
@@ -39,13 +41,10 @@ const CustomSelect = ({
     );
   }, [inputValue, options]);
 
-  // Ефект для обробки відображення значення з трьома крапками
   useEffect(() => {
     if (isOpen || !maxVisibleChars || !value || value.length <= maxVisibleChars) {
-      // Показуємо повне значення при відкритті dropdown або якщо немає обмеження
       setDisplayValue(value || '');
     } else {
-      // Обрізаємо текст і додаємо три крапки
       const truncated = value.substring(0, maxVisibleChars) + '...';
       setDisplayValue(truncated);
     }
@@ -76,8 +75,20 @@ const CustomSelect = ({
   };
 
   const hasValue = (value) => {
-  return value !== null && value !== undefined && value !== '';
-};
+    return value !== null && value !== undefined && value !== '';
+  };
+
+  const getArrowIcon = () => {
+    if (isOpen) {
+      return <img src={arrow_v_white} alt="arrow down" className="arrow-v-white" />;
+    }
+
+    if (hasValue(value)) {
+      return <img src={arrow_v_white} alt="arrow down" />;
+    }
+    
+    return <img src={arrow_v_blue} alt="arrow down" className="arrow-v-blue" />;
+  };
 
   return (
     <div className={`custom-select ${className} ${isOpen ? 'expanded' : ''} ${hasValue(value) ? 'has-value' : ''}`} ref={selectRef} id={id}>
@@ -94,8 +105,8 @@ const CustomSelect = ({
           }}
           readOnly={!isOpen}
         />
-        <span className={`select-arrow ${isOpen ? 'open' : ''}`}>
-          ⮟
+        <span className="select-arrow">
+          {getArrowIcon()}
         </span>
       </div>
       

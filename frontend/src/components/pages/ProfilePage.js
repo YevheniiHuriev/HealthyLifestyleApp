@@ -3,24 +3,24 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import axios from "axios";
 import "../styles/profile.css";
-import ProfileIcon from "../icons/ProfileIcon.svg";
+import ProfileIcon from "../../assets/profile-icons/ProfileIcon.svg";
 import CustomSelect from "../elements/custom-profile-data-select/CustomSelect";
 import CustomDatePicker from "../elements/custom-birthdate-date-picker/CustomBirthdateDatePicker";
-import TruncatedInput from '../elements/truncated-input/TruncatedInput';
 import DataCard from "../elements/data-card/DataCard";
+import TruncatedInput from '../elements/truncated-input/TruncatedInput';
 
 // Імпорт сервісних функцій
-import {
-  getCurrentLanguage,
-  fetchCities,
-  fetchStreets
-} from '../services/LocationService';
+import { getCurrentLanguage, fetchCities, fetchStreets } from '../services/LocationService';
+import { achievementsData, purchasesData } from '../services/achiev_purchases_test_data'
 
 const UserProfile = () => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const [activeView, setActiveView] = useState({ achievements: 'list', purchases: 'list' });
-  const [selectedItem, setSelectedItem] = useState(null);
+  const [selectedItem, setSelectedItem] = useState({
+    achievements: null,
+    purchases: null
+  });
   const [hasChanges, setHasChanges] = useState(false);
   const [avatarPreview, setAvatarPreview] = useState("");
   const [isLoading, setIsLoading] = useState(true);
@@ -56,35 +56,8 @@ const UserProfile = () => {
   const [formData, setFormData] = useState(initialFormData);
   const [originalFormData, setOriginalFormData] = useState(initialFormData);
 
-  const achievementsData = [
-  { 
-    id: 1,
-    date: "31.08", 
-    text: "Тренування", 
-    extra: "1 год",
-    details: {
-      fullDate: "31.08.2025\n17:05 - 18:10",
-      message: "Масш успіхи!\nПродуктивний день!\nПройдено тренування 'NOMYFY ST'",
-      duration: "1 год 05 хв",
-      calories: "175 кКал",
-      motivation: "ТІЛЬКИ ВПЕРЕД!"
-    }
-  },
-  { id: 2, date: "11.07", text: "Пройдено марафон..." },
-  { id: 3, date: "11.07", text: "Втрата ваги" },
-  { id: 4, date: "11.07", text: "Ти молодець!" },
-  { id: 5, date: "11.07", text: "Ти молодець!" },
-];
-
-// Дані для покупок
-const purchasesData = [
-  { id: 1, date: "31.08", text: "Футболка Nomy" },
-  { id: 2, date: "11.07", text: "Підписка на тренування" },
-  { id: 3, date: "11.07", text: "Футболка Nomy" },
-  { id: 4, date: "11.07", text: "Футболка Nomy" },
-  { id: 5, date: "11.07", text: "Футболка Nomy" },
-  { id: 6, date: "11.07", text: "Футболка Nomy" },
-];
+  const achievements = achievementsData;
+  const purchases = purchasesData;
 
   // Отримання токена
   const getToken = () => {
@@ -402,12 +375,12 @@ const handleCountryChange = async (value) => {
   // Обробники для карток
   const handleItemClick = (type, item) => {
     setActiveView({ ...activeView, [type]: 'details' });
-    setSelectedItem(item);
+    setSelectedItem(prev => ({ ...prev, [type]: item }));
   };
 
   const handleBackClick = (type) => {
     setActiveView({ ...activeView, [type]: 'list' });
-    setSelectedItem(null);
+    setSelectedItem(prev => ({ ...prev, [type]: null }));
   };
 
   // Функція для відправки даних на бекенд
@@ -537,8 +510,8 @@ const handleWeightChange = (value, currentValue) => {
     if (beforeDot.length > 1 && beforeDot.startsWith('0') && beforeDot !== '0') {
       beforeDot = beforeDot.replace(/^0+/, '');
     }
-    // Обмежуємо до 2 цифр після крапки
-    afterDot = afterDot.slice(0, 2);
+    // Обмежуємо до 1 цифри після крапки
+    afterDot = afterDot.slice(0, 1);
     // Перевіряємо, щоб значення не перевищувало 350
     if (beforeDot && parseInt(beforeDot) > 350) {
       beforeDot = '350';
@@ -638,7 +611,6 @@ const handleWeightKeyPress = (e, currentValue) => {
 
   return (
     <div className="user-profile-wrapper">
-      <hr className="header-line-blure"/>
       <div className="user-profile">
         {/* Лівий стовпець */}
         <div className="profile-info">
@@ -670,7 +642,7 @@ const handleWeightKeyPress = (e, currentValue) => {
               value={formData.about}
               onChange={(value) => handleInputChange('about', value)}
               placeholder={t("p_about_placeholder")}
-              maxVisibleChars={23}
+              maxVisibleChars={30}
               maxLength={1000}
               className={getInputClassName(formData.about, 'about-input')}
             />
@@ -680,9 +652,9 @@ const handleWeightKeyPress = (e, currentValue) => {
         <DataCard
           title={t("p_your_achievements")}
           type="achievements"
-          data={achievementsData}
+          data={achievements}
           activeView={activeView.achievements}
-          selectedItem={selectedItem}
+          selectedItem={selectedItem.achievements}
           onItemClick={handleItemClick}
           onBackClick={handleBackClick}
         />
@@ -695,7 +667,7 @@ const handleWeightKeyPress = (e, currentValue) => {
             className={getInputClassName(formData.firstName, 'long profile-fields-input first-name')}
             value={formData.firstName}
             onChange={(value) => handleInputChange('firstName', value)}
-            maxVisibleChars={74}
+            maxVisibleChars={95}
             maxLength={128}
           />
 
@@ -705,7 +677,7 @@ const handleWeightKeyPress = (e, currentValue) => {
             className={getInputClassName(formData.lastName, 'long profile-fields-input last-name')}
             value={formData.lastName}
             onChange={(value) => handleInputChange('lastName', value)}
-            maxVisibleChars={74}
+            maxVisibleChars={95}
             maxLength={128}
           />
           
@@ -766,9 +738,9 @@ const handleWeightKeyPress = (e, currentValue) => {
         <DataCard
           title={t("p_your_purchases")}
           type="purchases"
-          data={purchasesData}
+          data={purchases}
           activeView={activeView.purchases}
-          selectedItem={selectedItem}
+          selectedItem={selectedItem.purchases}
           onItemClick={handleItemClick}
           onBackClick={handleBackClick}
         />
@@ -782,7 +754,7 @@ const handleWeightKeyPress = (e, currentValue) => {
             value={formData.country}
             onChange={handleCountryChange}
             className={getInputClassName(formData.country, 'extra-fields-input short country')}
-            maxVisibleChars={25}
+            maxVisibleChars={34}
           />
           <CustomSelect
             id="city"
@@ -791,7 +763,7 @@ const handleWeightKeyPress = (e, currentValue) => {
             value={formData.city}
             onChange={handleCityChange}
             className={getInputClassName(formData.city, 'extra-fields-input short city')}
-            maxVisibleChars={25}
+            maxVisibleChars={34}
             disabled={loadingCities || !formData.country}
           />
           <CustomSelect
@@ -801,7 +773,7 @@ const handleWeightKeyPress = (e, currentValue) => {
             value={formData.street}
             onChange={(value) => handleSelectChange('street', value)}
             className={getInputClassName(formData.street, 'extra-fields-input short street')}
-            maxVisibleChars={25}
+            maxVisibleChars={34}
             disabled={loadingStreets || !formData.city}
           />
 
@@ -818,8 +790,7 @@ const handleWeightKeyPress = (e, currentValue) => {
               className={getInputClassName(formData.phoneNumber, 'extra-fields-input p_phone_number')}
               type="text"
               inputMode="numeric"
-              pattern="[0-9]*"
-              placeholder={t("p_phone_number_placeholder")} 
+              pattern="[0-9]*" 
               value={formData.phoneNumber}
               onChange={(e) => {
                 let value = e.target.value.replace(/[^0-9]/g, '');

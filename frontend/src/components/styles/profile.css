@@ -1,75 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;600;700&display=swap');
 
 .user-profile-wrapper {
   margin-right: 0;
   margin-top: 10px;
-  padding: 20px;
-  overflow-y: auto;
-  height: calc(100vh - 100px);
-  scroll-behavior: smooth;
-}
-
-.header-line-blure {
-  margin-right: 0;
-  margin-left: -20px;
-  top: 71px;
-  border: none;
-  position: fixed;
-  width: 79%;
-  height: 30px;
-  z-index: 1000;
-  
-  background: transparent;
-  /* Маска для створення прозорих країв */
-  mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    black 20px,
-    black calc(100% - 10px),
-    transparent 100%
-  );
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    black 10px,
-    black calc(100% - 10px),
-    transparent 100%
-  );
-  
-  /* Додаткові ефекти */
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.user-profile-wrapper::-webkit-scrollbar {
-  width: 12px;
-}
-
-.user-profile-wrapper::-webkit-scrollbar-track {
-  background: transparent; /* Колір доріжки (полоси) #0661CC */
-  border-radius: 10px; /* Закруглення доріжки */
-  margin: 5px 0; /* Відступи зверху і знизу для доріжки */
-}
-
-.user-profile-wrapper::-webkit-scrollbar-thumb {
-  background: #FFF; /* Колір повзунка */
-  border-radius: 10px; /* Закруглення повзунка */
-}
-
-.user-profile-wrapper::-webkit-scrollbar-thumb:hover {
-  background: #f8f6f6; /* Колір повзунка при наведенні */
+  padding: 0 20px;
+  height: calc(100vh - 100px); /* залишаємо місце для кнопки виходу */
 }
 
 .user-profile {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1150px;
   margin: 0 auto;
   color: #FFF;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: repeat(8, auto);
   gap: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 /* ==== Лівий стовпець ==== */
@@ -81,7 +28,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  margin-left: 3px;
+  margin-bottom: 15px;
 }
 
 /* Аватар всередині */
@@ -90,9 +37,9 @@
   grid-row: 1 / span 3;
   background: #D6FF00;
   border-radius: 50%;
-  width: 230px;
-  height: 230px;
-  margin-bottom: 20px;
+  width: 181px;
+  height: 181px;
+  margin-bottom: 17px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -141,11 +88,11 @@
   grid-column: 1;
   grid-row: 4;
   width: 340px;
-  height: 60px;
+  height: 46px;
   border-radius: 40px;
   color: #FFF;
-  padding: 0 43px;
-  font-size: 20px;
+  padding: 0 30px;
+  font-size: 17px;
   resize: none;
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
@@ -157,7 +104,7 @@
 
 .about input::placeholder {
   font-family: 'Roboto', sans-serif;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 500; 
   color: #116FCF;
 }
@@ -170,7 +117,7 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(4, auto);
   padding: 0 20px;
-  margin-top: 10px;
+  margin-top: 7px;
 }
 
 /* всередині profile-fields */
@@ -201,14 +148,13 @@
 
 .profile-fields-input {
   border-radius: 40px;
-  padding: 0 40px;
+  padding: 0 30px;
   color: #FFF;
   font-family: 'Roboto', sans-serif;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 600;
-  height: 60px; 
-  margin-bottom: 20px;
-
+  height: 46px; 
+  margin-bottom: 18px;
   border: 0px solid transparent;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(10px);
@@ -223,12 +169,12 @@
 
 .input-suffix {
   position: absolute;
-  right: 50px;
+  right: 60px;
   top: 35%;
   transform: translateY(-50%);
   color: #FFF;
   font-family: 'Roboto', sans-serif;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 600;
   pointer-events: none;
 }
@@ -239,57 +185,16 @@
   width: 100%;
 }
 
-#gender .select-options-container {
-  left: -1.7px;
-  right: -1.6px;
-}
-#gender .select-options {
-  min-height: 85px;
-  max-height: 85px;
-}
-#gender .select-arrow {
-  left: 40px;
-}
-
-#country .select-options {
-  min-height: 260px;
-  max-height: 260px;
-}
-
-#city .select-options {
-  min-height: 180px;
-  max-height: 180px;
-}
-
-#street .select-options {
-  min-height: 100px;
-  max-height: 100px;
-}
-
-#phoneCode .select-arrow {
-  margin-left: -10px;
-  left: 13px;
-}
-
-#phoneCode .select-options {
-  min-height: 260px;
-  max-height: 260px;
-}
-
-#phoneCode .select-options-container {
-  right: -1.6px;
-}
-
 .profile-fields input::placeholder {
   color: #116FCF;
   font-family: 'Roboto', sans-serif;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 500;
 } 
 
 .profile-fields .long {
   grid-column: span 2;
-  width: 710px;
+  width: 700px;
 }
 
 .profile-fields .short {
@@ -297,7 +202,6 @@
 }
 
 /* додаткові стилі для поля дати */
-
 .custom-datepicker-container {
   position: relative;
   width: 100%;
@@ -305,13 +209,13 @@
 
 .custom-datepicker-display {
   width: 340px;
-  height: 60px;
+  height: 46px;
   background: rgba(255, 255, 255, 0.4);
   border: none;
   border-radius: 40px;
   padding: 0 40px;
   color: #FFF;
-  font-size: 20px;
+  font-size: 17px;
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
   outline: none;
@@ -344,11 +248,10 @@
 .data-picker-placeholder {
   color: #116FCF;
   font-family: 'Roboto', sans-serif;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 500;
   display: inline-block;
   width: 100%;
-
 }
 
 /* ==== Правий стовпець ==== */
@@ -379,14 +282,13 @@
 .extra-fields-input {
   border: none;
   border-radius: 40px;
-  padding-left: 41px;
-  height: 60px;
+  padding-left: 30px;
+  height: 46px;
   color: #FFF;
   font-family: 'Roboto', sans-serif;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 600;
   max-width: 340px;
-
   border: 0px solid transparent;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(10px);
@@ -397,80 +299,41 @@
 .extra-fields input::placeholder {
   color: #116FCF;
   font-family: 'Roboto', sans-serif;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 500;
 }
 
 .extra-fields-core {
-    margin-top: 4px;
+  margin-top: 4px;
 }
 
 .phone {
   display: flex;
-  margin-top: 15px;
+  margin-top: 13px;
 }
 
 .phone-code {
-  max-width: 131px;
+  max-width: 125px;
 }
 
 .phone input:last-child {
-  max-width: 180px;
+  max-width: 190px;
   margin-left: auto;
 }
 
 .p_phone_number {
-  padding: 0 27px;
+  padding: 0;
+  text-align: center;
 }
 
-/* Стилі для випадання вгору тільки для phoneCode */
-#phoneCode.custom-select.expanded {
-  border-radius: 0 0 40px 40px;
-  border: 2px solid #D6FF00;
-  border-top: none;
-}
-
-#phoneCode .select-options-container {
-  position: absolute;
-  bottom: 100% !important;
-  top: auto !important;
-  border-radius: 40px 40px 0 0;
-  transform-origin: bottom center;
-  animation: slideUp 0.3s ease;
-  border: 2px solid #D6FF00;
-  border-bottom: none;
-  margin-bottom: -2px;
-}
-
-#phoneCode .select-options {
-  top: 6px;
-  right: 25px;
-}
-
-#phoneCode .select-option {
-  padding: 10px 0 10px 65px;
-}
-
-/* Анімація для випадання вгору */
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ==== Кнопка під профілем ==== */
+/* ==== Кнопка під формою ==== */
 .profile-actions {
   text-align: center;
 }
 
 .profile-actions .save {
   font-family: 'Roboto', sans-serif;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 600;
   width: 606px;
   height: 49px;
@@ -479,7 +342,6 @@
   background: #D6FF00;
   color: #116FCF;
   cursor: pointer;
-  font-size: 18px;
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
@@ -510,7 +372,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 840px;
+  max-width: 760px;
   width: 100%;
   max-height: 150px;
   background: rgba(255, 255, 255, 0.5);
@@ -518,7 +380,7 @@
   padding: 40px;
   color: #fff;
   font-family: 'Roboto', sans-serif;
-  font-size: 18px;
+  font-size: 17px;
   margin-bottom: 30px;
   border: 0 solid transparent;
   backdrop-filter: blur(4px);
@@ -526,7 +388,7 @@
 }
 
 .success-btn {
-  max-width: 500px;
+  max-width: 450px;
 }
 
 .success-title {
@@ -540,14 +402,14 @@
 /* Для браузерів на рушіях WebKit (Chrome, Safari, новий Edge) */
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /* Для Firefox */
 input[type="number"] {
-    -moz-appearance: textfield;
-    appearance: none;
+  -moz-appearance: textfield;
+  appearance: none;
 }
 
 /* ==== Позиціонування карток achievements та purchases ==== */
@@ -555,7 +417,7 @@ input[type="number"] {
   grid-column: 1;
   grid-row: 5 / span 4;
   width: 341px;
-  margin-left: 21px;
+  margin-left: 14px;
 }
 
 .purchases.card {
@@ -566,14 +428,12 @@ input[type="number"] {
 }
 
 /* Стилі для прозорості полів (з даними та без) */
-
-/* Стилі для полів з значенням 0.50 */
 .profile-fields-input.has-value,
 .extra-fields-input.has-value,
 .about-input.has-value,
 .custom-datepicker-display.has-value,
 .custom-select.has-value,
-.about input.has-value
+.about input.has-value,
 input.has-value {
   background: rgba(255, 255, 255, 0.50) !important;
   caret-color: #FFF !important;
@@ -589,4 +449,106 @@ input.has-value {
 input {
   background: rgba(255, 255, 255, 0.40);
   caret-color: #116FCF;
+}
+
+/* ===== СТИЛІ ДЛЯ CUSTOMSELECT В КОНТЕКСТІ ПРОФІЛЮ ===== */
+
+/* Загальні стилі для CustomSelect */
+.custom-select {
+  background: rgba(255, 255, 255, 0.40);
+}
+
+.custom-select.expanded {
+  background: #D6FF00;
+  border: 2px solid #D6FF00;
+}
+
+.custom-select.expanded .select-input {
+  color: #116FCF;
+}
+
+.custom-select.expanded .select-input::placeholder {
+  color: #116FCF;
+}
+
+.select-options-container {
+  background: #D6FF00;
+  border: 2px solid #D6FF00;
+}
+
+/* Специфічні стилі для окремих селектів */
+#gender .select-options-container {
+  left: -1.7px;
+  right: -1.6px;
+}
+#gender .select-options {
+  height: 65px;
+}
+#gender .select-arrow {
+  left: 30px;
+}
+
+#country .select-options {
+  height: 206px;
+}
+
+#city .select-options {
+  height: 142px;
+}
+
+#street .select-options {
+  height: 78px;
+}
+
+#phoneCode .select-arrow {
+  margin-left: -10px;
+  left: 13px;
+}
+
+#phoneCode .select-options {
+  min-height: 260px;
+  max-height: 260px;
+}
+
+#phoneCode .select-options-container {
+  right: -1.6px;
+}
+
+/* Специфічні стилі для phoneCode (випадання вгору) */
+#phoneCode.custom-select.expanded {
+  border-radius: 0 0 40px 40px;
+  border: 2px solid #D6FF00;
+  border-top: none;
+}
+
+#phoneCode .select-options-container {
+  position: absolute;
+  bottom: 100% !important;
+  top: auto !important;
+  border-radius: 40px 40px 0 0;
+  transform-origin: bottom center;
+  animation: slideUp 0.3s ease;
+  border: 2px solid #D6FF00;
+  border-bottom: none;
+  margin-bottom: -2px;
+}
+
+#phoneCode .select-options {
+  top: 6px;
+  right: 25px;
+}
+
+#phoneCode .select-option {
+  padding: 10px 0 10px 65px;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

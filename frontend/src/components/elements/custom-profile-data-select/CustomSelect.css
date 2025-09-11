@@ -4,16 +4,13 @@
   position: relative;
   width: 100%;
   font-family: 'Roboto', sans-serif;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   border-radius: 40px;
   transition: all 0.3s ease;
-  /* Додаємо фон для контейнера */
-  background: rgba(255, 255, 255, 0.40);
 }
 
 .custom-select.expanded {
-  border-radius: 40px 40px 0 0;
-  background: #D6FF00;
+  border-radius: 27px 27px 0 0;
   z-index: 1001;
   transition: all 0.1s ease;
 }
@@ -25,47 +22,39 @@
 .select-header {
   display: flex;
   align-items: center;
-  padding: 0 34px 14px 0;
+  padding: 0 34px 30px 0;
   height: 75px;
   cursor: pointer;
   position: relative;
-  /* Видаляємо фон з заголовка, бо він тепер у батьківського контейнера */
   background: transparent !important;
 }
 
 .select-input {
   flex: 1;
-  background: transparent !important; /* Робимо прозорим */
+  background: transparent !important;
   border: none;
   outline: none;
   color: #FFF;
-  font-size: 20px;
+  font-size: 17px;
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
   padding: 0;
+  padding-left: -2px;
   cursor: pointer;
   width: 100%;
   height: 100%;
 }
 
-.custom-select.expanded .select-input {
-  color: #116FCF;
-}
-
 .select-input::placeholder {
   color: #116FCF;
   font-family: 'Roboto', sans-serif;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 500;
-}
-
-.custom-select.expanded .select-input::placeholder {
-  color: #116FCF;
 }
 
 .select-arrow {
   color: #116FCF;
-  font-size: 20px;
+  font-size: 17px;
   transition: transform 0.3s ease;
   margin-left: 10px;
   flex-shrink: 0;
@@ -74,10 +63,6 @@
 }
 
 .custom-select.expanded .select-arrow {
-  color: #FFF;
-}
-
-.select-arrow.open {
   transform: rotate(180deg);
 }
 
@@ -86,12 +71,10 @@
   top: 100%;
   left: -1.5px;
   right: -1.4px;
-  background: #D6FF00;
-  border-radius: 0 0 40px 40px;
+  border-radius: 0 0 25px 25px;
   overflow: hidden;
   transform-origin: top center;
-  transition: all 0.9s ease; 
-  /* швидкість контейнеру */
+  transition: all 0.9s ease;
 }
 
 .select-options {
@@ -99,25 +82,25 @@
   overflow-y: auto;
   overflow-x: hidden;
   padding: 5px 0;
-  
   position: relative;
   top: -5px;
-  right: 35px;
+  right: 34px;
 }
 
 .select-option {
-  padding: 10px 0 10px 76px;
+  padding: 4px 0 8px 74px;
+  margin-left: -10px;
   color: #116FCF;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 17px;
   transition: all 0.2s ease;
   border-bottom: none;
   background: transparent;
 }
 
-.select-option:hover {
+/* .select-option:hover {
   background: rgba(93, 113, 226, 0.1);
-}
+} */
 
 /* Стилі для прокрутки */
 .select-options::-webkit-scrollbar {
@@ -125,21 +108,21 @@
 }
 
 .select-options::-webkit-scrollbar-track {
-  background: #0661CC; /* Колір доріжки (полоси) */
-  border-radius: 10px; /* Закруглення доріжки */
-  margin: 5px 0; /* Відступи зверху і знизу для доріжки */
+  background: #0661CC;
+  border-radius: 10px;
+  margin: 5px 0;
 }
 
 .select-options::-webkit-scrollbar-thumb {
-  background: #FFF; /* Колір повзунка */
-  border-radius: 10px; /* Закруглення повзунка */
+  background: #FFF;
+  border-radius: 10px;
 }
 
 .select-options::-webkit-scrollbar-thumb:hover {
-  background: #f8f6f6; /* Колір повзунка при наведенні */
+  background: #f8f6f6;
 }
 
-/* ВИПРАВЛЕНО: анімація без scale для плавності */
+/* Анімація */
 .select-options-container {
   animation: slideDown 0.3s ease;
 }
@@ -155,21 +138,18 @@
   }
 }
 
-/* Для ефекту моноблока */
+/* Базові стилі бордера */
 .custom-select {
   border: 2px solid transparent;
   transition: all 0.3s ease;
 }
 
 .custom-select.expanded {
-  border: 2px solid #D6FF00;
   border-bottom: none;
 }
 
 .select-options-container {
-  border: 2px solid #D6FF00;
   border-top: none;
-  /* ВИПРАВЛЕНО: прибрано лінію між інпутом та опціями */
   margin-top: -2px;
 }
 
