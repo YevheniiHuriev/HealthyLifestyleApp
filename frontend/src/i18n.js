@@ -117,6 +117,16 @@ i18n
           welcome: "Hi",
           health_one_place: "Your health in one place!",
 
+           // Переклади для віджетів дашборду
+          kkal: "Calories",
+          current_week: "Current week",
+          water: "Water",
+          L: "L",
+          sleep: "Sleep",
+          H: "H",
+          bmi: "BMI",
+          bmi_requires: "Fill in the information about height and weight",
+
           // --- Переклади для профілю користувача ---
           p_error_upadate: "Failed to update profile. Please fill in all fields.",
           p_male: "Male",
@@ -172,7 +182,6 @@ i18n
           p_france_country: "France",
           p_spain_country: "Spain",
           p_usa_country: "USA",
-
 
         },
       },
@@ -286,6 +295,16 @@ i18n
           welcome: "Привіт",
           health_one_place: "Твоє здоров'я в одному місці!",
 
+        // Переклади для віджетів дашборду
+          kkal: "Калорії",
+          current_week: "Поточний тиждень",
+          water: "Вода",
+          L: "Л",
+          sleep: "Сон",
+          H: "Г",
+          bmi: "ІМТ",
+          bmi_requires: "Заповніть інформацію щодо зросту та ваги",
+
           // --- Переклади для профілю користувача ---
           p_error_upadate: "Не вдалося оновити профіль. Будь ласка, заповніть усі поля.",
           p_male: "Чоловік",
@@ -341,7 +360,6 @@ i18n
           p_france_country: "Франція",
           p_spain_country: "Іспанія",
           p_usa_country: "США",
-
         },
       },
       de: {
@@ -454,6 +472,16 @@ i18n
           welcome: "Hi",
           health_one_place: "Deine Gesundheit an einem Ort!",
 
+          // Переклади для віджетів дашборду
+          kkal: "Kalorien",
+          current_week: "Aktuelle Woche",
+          water: "Wasser",
+          L: "L",
+          sleep: "Schlaf",
+          H: "S",
+          bmi: "BMI",
+          bmi_requires: "Füllen Sie die Angaben zu Größe und Gewicht aus",
+
           // --- Переклади для профілю користувача ---
           p_error_upadate: "Profil konnte nicht aktualisiert werden. Bitte füllen Sie alle Felder aus.",
           p_male: "Männlich",
@@ -509,6 +537,7 @@ i18n
           p_france_country: "Frankreich",
           p_spain_country: "Spanien",
           p_usa_country: "USA",
+
         },
       },
       fr: {
@@ -620,6 +649,16 @@ i18n
           search_placeholder: "Recherche",
           welcome: "Salut",
           health_one_place: "Votre santé en un seul endroit!",
+
+          // Переклади для віджетів дашборду
+          kkal: "Calories",
+          current_week: "Semaine en cours",
+          water: "Eau",
+          L: "L",
+          sleep: "Sommeil",
+          H: "H",
+          bmi: "IMC",
+          bmi_requires: "Remplissez les informations concernant la taille et le poids",
 
           // --- Переклади для профілю користувача ---
           p_error_upadate: "Échec de la mise à jour du profil. Veuillez remplir tous les champs.",
@@ -787,6 +826,16 @@ i18n
           search_placeholder: "Búsqueda",
           welcome: "Hola",
           health_one_place: "Tu salud en un solo lugar!",
+
+          // Переклади для віджетів дашборду
+          kkal: "Calorías",
+          current_week: "Semana en curso",
+          water: "Agua",
+          L: "L",
+          sleep: "Sueño",
+          H: "H",
+          bmi: "IMC",
+          bmi_requires: "Complete la información sobre la altura y el peso",
 
           // --- Переклади для профілю користувача ---
           p_error_upadate: "No se pudo actualizar el perfil. Por favor, complete todos los campos.",

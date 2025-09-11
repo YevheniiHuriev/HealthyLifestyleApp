@@ -380,7 +380,6 @@
   padding: 40px;
   color: #fff;
   font-family: 'Roboto', sans-serif;
-  font-size: 17px;
   margin-bottom: 30px;
   border: 0 solid transparent;
   backdrop-filter: blur(4px);
@@ -393,9 +392,12 @@
 
 .success-title {
   margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .success-subtitle {
+  font-size: 17px;
   font-weight: 300;
 }
 
