@@ -1,0 +1,30 @@
+.health-links {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+}
+
+.health-link-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #e0e0e0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    min-width: 120px;
+}
+
+.health-link-btn:hover {
+    background-color: #d0d0d0;
+    transform: translateY(-2px);
+}
+
+.health-link-btn.active {
+    background-color: #007bff;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.3);
+}

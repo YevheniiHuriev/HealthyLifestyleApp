@@ -10,7 +10,7 @@ import LoginPage from "./components/pages/LoginPage";
 import HomePage from "./components/pages/HomePage";
 import DashboardPage from "./components/pages/DashboardPage";
 import ProfilePage from "./components/pages/ProfilePage";
-import HealthPage from "./components/pages/HealthPage";
+import HealthPageMenu from "./components/elements/Health/HealthPageMenu/HealthPageMenu";
 import MentalHealthPage from "./components/pages/MentalHealthPage";
 import RestorePasswordPage from "./components/pages/RestorePasswordPage";
 import { GoogleOAuthProvider } from "@react-oauth/google";
@@ -42,8 +42,8 @@ function AppRoutes() {
       <Route path="/restore" element={<RestorePasswordPage />} />
       <Route path="/dashboard" element={<PrivateRoute><Menu><DashboardPage/></Menu></PrivateRoute>} />
       <Route path="/profile" element={<PrivateRoute><Menu><ProfilePage /></Menu></PrivateRoute>} />
-      <Route path="/health" element={<PrivateRoute><Menu><HealthPage /></Menu></PrivateRoute>} />
-      <Route path="/health/mental" element={<PrivateRoute><Menu><HealthPage><MentalHealthPage /></HealthPage></Menu></PrivateRoute>} />
+      <Route path="/health" element={<PrivateRoute><Menu><HealthPageMenu /></Menu></PrivateRoute>} />
+      <Route path="/health/mental-health" element={<PrivateRoute><Menu><HealthPageMenu><MentalHealthPage /></HealthPageMenu></Menu></PrivateRoute>} />
     </Routes>
   );
 }
