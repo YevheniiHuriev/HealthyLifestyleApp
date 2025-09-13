@@ -13,6 +13,7 @@ import ProfilePage from "./components/pages/ProfilePage";
 import RestorePasswordPage from "./components/pages/RestorePasswordPage";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import Menu from "./components/elements/Menu";
+import SpecialistsPage from "./components/pages/SpecialistsPage";
 
 function App() {
   console.log("Using ", process.env.REACT_APP_API_URL, "as API URL");
@@ -39,7 +40,11 @@ function AppRoutes() {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/restore" element={<RestorePasswordPage />} />
       <Route path="/dashboard" element={<PrivateRoute><Menu><DashboardPage/></Menu></PrivateRoute>} />
+
+      <Route path="/specialists" element={<PrivateRoute><Menu><SpecialistsPage/></Menu></PrivateRoute>} />
+
       <Route path="/profile" element={<PrivateRoute><Menu><ProfilePage /></Menu></PrivateRoute>} />
+
     </Routes>
   );
 }

@@ -15,6 +15,7 @@ import "../styles/menu.css";
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import LanguageSelector from "../LanguageSelector";
+import Breadcrumbs from "../elements/Specialists/Breadcrumbs/Breadcrumbs";
 
 function Menu({ children }) {
     const { t } = useTranslation();
@@ -51,6 +52,10 @@ function Menu({ children }) {
                         <img style={{ opacity: window.location.pathname == "/social" ? 1 : 0 }} src={socialIcon} alt="social"/>
                         <span className="menu-opt-text">{t("social")}</span>
                     </div>
+                    <div className="menu-option" onClick={() => navegate('/specialists')}>
+                        <img style={{ opacity: window.location.pathname == "/specialists" ? 1 : 0 }} src={socialIcon} alt="specialists"/>
+                        <span className="menu-opt-text">{t("specialists")}</span>
+                    </div>
                     <div className="menu-option" onClick={() => navegate('/marketplace')}>
                         <img style={{ opacity: window.location.pathname == "/marketplace" ? 1 : 0 }} src={marketplaceIcon} alt="marketplace"/>
                         <span className="menu-opt-text">{t("marketplace_menu")}</span>
@@ -70,6 +75,7 @@ function Menu({ children }) {
                     <div className="search_wrapper">
                         <img className="search-icon" src={searchIcon} alt="search"/>
                         <input className="search_place" type="text" placeholder={t("search_placeholder")} />
+                        
                     </div>
                     <div className="options">
                         <img src={settingsIcon} alt="settings" />
@@ -77,6 +83,7 @@ function Menu({ children }) {
                         <img src={stringsIcon} alt="strings" />
                     </div>
                 </div>
+                <Breadcrumbs/>
                 {children}
             </div>
         </div>
