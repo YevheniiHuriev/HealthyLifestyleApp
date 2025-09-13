@@ -62,6 +62,10 @@
   top: -2px;
 }
 
+.arrow-v-blue {
+  transform: rotate(180deg);
+}
+
 .custom-select.expanded .select-arrow {
   transform: rotate(180deg);
 }
