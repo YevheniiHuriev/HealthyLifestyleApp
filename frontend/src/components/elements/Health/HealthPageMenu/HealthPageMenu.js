@@ -8,7 +8,7 @@ const HealthPage = ({ children }) => {
     const location = useLocation();
 
     const healthSections = [
-        { path: '/health', label: 'Твоє здоров\'я' },
+        { path: '/health/your_health', label: 'Твоє здоров\'я' },
         { path: '/health/mental', label: 'Ментальне здоров\'я' },
         { path: '/health/gender', label: 'Здоров\'я за статтю' }
     ];
@@ -18,7 +18,7 @@ const HealthPage = ({ children }) => {
     };
 
     const isActive = (path) => {
-        return location.pathname === path;
+        return location.pathname.startsWith(path);
     };
 
     return (

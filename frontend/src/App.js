@@ -10,11 +10,19 @@ import LoginPage from "./components/pages/LoginPage";
 import HomePage from "./components/pages/HomePage";
 import DashboardPage from "./components/pages/DashboardPage";
 import ProfilePage from "./components/pages/ProfilePage";
-import HealthPageMenu from "./components/elements/Health/HealthPageMenu/HealthPageMenu";
-import MentalHealthPage from "./components/pages/MentalHealthPage";
 import RestorePasswordPage from "./components/pages/RestorePasswordPage";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import Menu from "./components/elements/Menu";
+import SpecialistsPage from "./components/pages/SpecialistsPage";
+
+import HealthPageMenu from "./components/elements/Health/HealthPageMenu/HealthPageMenu";
+
+import MentalHealthPage from "./components/pages/HealthPages/MentalHealthPages/MentalHealthPage";
+import EmotionDiaryPage from "./components/pages/HealthPages/MentalHealthPages/EmotionDiaryPage";
+import ArticlesPage from "./components/pages/HealthPages/MentalHealthPages/ArticlesPage";
+import ArticleDetailPage from "./components/pages/HealthPages/MentalHealthPages/ArticleDetailPage";
+
+import GenderHealthPage from "./components/pages/HealthPages/GenderHealthPages/GenderHealthPage";
 
 function App() {
   console.log("Using ", process.env.REACT_APP_API_URL, "as API URL");
@@ -41,9 +49,18 @@ function AppRoutes() {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/restore" element={<RestorePasswordPage />} />
       <Route path="/dashboard" element={<PrivateRoute><Menu><DashboardPage/></Menu></PrivateRoute>} />
+      <Route path="/specialists" element={<PrivateRoute><Menu><SpecialistsPage/></Menu></PrivateRoute>} />
       <Route path="/profile" element={<PrivateRoute><Menu><ProfilePage /></Menu></PrivateRoute>} />
+
       <Route path="/health" element={<PrivateRoute><Menu><HealthPageMenu /></Menu></PrivateRoute>} />
-      <Route path="/health/mental-health" element={<PrivateRoute><Menu><HealthPageMenu><MentalHealthPage /></HealthPageMenu></Menu></PrivateRoute>} />
+
+      <Route path="/health/mental" element={<PrivateRoute><Menu><HealthPageMenu><MentalHealthPage /></HealthPageMenu></Menu></PrivateRoute>} />
+      <Route path="/health/mental/diary" element={<PrivateRoute><Menu><HealthPageMenu><EmotionDiaryPage /></HealthPageMenu></Menu></PrivateRoute>} />
+      <Route path="/health/mental/articles" element={<PrivateRoute><Menu><HealthPageMenu><ArticlesPage /></HealthPageMenu></Menu></PrivateRoute>} />
+      <Route path="/health/mental/articles/:articleId" element={<PrivateRoute><Menu><HealthPageMenu><ArticleDetailPage /></HealthPageMenu></Menu></PrivateRoute> } />
+
+      <Route path="/health/gender" element={<PrivateRoute><Menu><HealthPageMenu><GenderHealthPage /></HealthPageMenu></Menu></PrivateRoute>} />
+
     </Routes>
   );
 }
