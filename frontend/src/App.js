@@ -16,9 +16,17 @@ import Menu from "./components/elements/Menu";
 import SpecialistsPage from "./components/pages/SpecialistsPage";
 
 import HealthPageMenu from "./components/elements/Health/HealthPageMenu/HealthPageMenu";
+import HealthPage from "./components/pages/HealthPages/HealthPage";
+
+import YourHealthPage from "./components/pages/HealthPages/YourHealthPages/YourHealthPage";
 
 import MentalHealthPage from "./components/pages/HealthPages/MentalHealthPages/MentalHealthPage";
 import EmotionDiaryPage from "./components/pages/HealthPages/MentalHealthPages/EmotionDiaryPage";
+import MentalTestPage from "./components/pages/HealthPages/MentalHealthPages/MentalTestPage";
+import BreathingPracticesPage from "./components/pages/HealthPages/MentalHealthPages/BreathingPracticesPage";
+import DiaphragmaticBreathingPage from "./components/pages/HealthPages/MentalHealthPages/DiaphragmaticBreathingPage";
+import SquareBreathingPage from "./components/pages/HealthPages/MentalHealthPages/SquareBreathingPage";
+import NadiShodhanaPage from "./components/pages/HealthPages/MentalHealthPages/NadiShodhanaPage";
 import ArticlesPage from "./components/pages/HealthPages/MentalHealthPages/ArticlesPage";
 import ArticleDetailPage from "./components/pages/HealthPages/MentalHealthPages/ArticleDetailPage";
 
@@ -57,10 +65,16 @@ function AppRoutes() {
 
       <Route path="/profile" element={<PrivateRoute><Menu><ProfilePage /></Menu></PrivateRoute>} />
 
-      <Route path="/health" element={<PrivateRoute><Menu><HealthPageMenu /></Menu></PrivateRoute>} />
-
+      <Route path="/health" element={<PrivateRoute><Menu><HealthPageMenu /><HealthPage /></Menu></PrivateRoute>} />
+      <Route path="/health/your" element={<PrivateRoute><Menu><HealthPageMenu><YourHealthPage /></HealthPageMenu></Menu></PrivateRoute>} />
+      
       <Route path="/health/mental" element={<PrivateRoute><Menu><HealthPageMenu><MentalHealthPage /></HealthPageMenu></Menu></PrivateRoute>} />
       <Route path="/health/mental/diary" element={<PrivateRoute><Menu><HealthPageMenu><EmotionDiaryPage /></HealthPageMenu></Menu></PrivateRoute>} />
+      <Route path="/health/mental/mentaltest" element={<PrivateRoute><Menu><HealthPageMenu><MentalTestPage /></HealthPageMenu></Menu></PrivateRoute>} />
+      <Route path="/health/mental/breathing" element={<PrivateRoute><Menu><HealthPageMenu><BreathingPracticesPage /></HealthPageMenu></Menu></PrivateRoute>} />
+      <Route path="/health/mental/breathing/diaphragmatic" element={<PrivateRoute><Menu><HealthPageMenu><DiaphragmaticBreathingPage /></HealthPageMenu></Menu></PrivateRoute>} />
+      <Route path="/health/mental/breathing/square" element={<PrivateRoute><Menu><HealthPageMenu><SquareBreathingPage /></HealthPageMenu></Menu></PrivateRoute>} />
+      <Route path="/health/mental/breathing/nadishodhana" element={<PrivateRoute><Menu><HealthPageMenu><NadiShodhanaPage /></HealthPageMenu></Menu></PrivateRoute>} />
       <Route path="/health/mental/articles" element={<PrivateRoute><Menu><HealthPageMenu><ArticlesPage /></HealthPageMenu></Menu></PrivateRoute>} />
       <Route path="/health/mental/articles/:articleId" element={<PrivateRoute><Menu><HealthPageMenu><ArticleDetailPage /></HealthPageMenu></Menu></PrivateRoute> } />
 
