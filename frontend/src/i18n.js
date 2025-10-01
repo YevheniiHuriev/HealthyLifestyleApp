@@ -20,32 +20,45 @@ i18n
           more_energy: "MORE ENERGY.",
           healthy_lifestyle: "YOUR HEALTHY LIFESTYLE IN ONE PLACE.",
           register: "Register",
-          description_part1: "— a platform that helps you take care of yourself easily and with a smile.",
-          description_part2: "Track your nutrition and workouts, monitor your health, and get support from specialists.",
-          description_part3: "Find useful products and share motivation with the community.",
-          description_part4: "Together with Nomyfy, you form healthy habits and feel better every day.",
+          description_part1:
+            "— a platform that helps you take care of yourself easily and with a smile.",
+          description_part2:
+            "Track your nutrition and workouts, monitor your health, and get support from specialists.",
+          description_part3:
+            "Find useful products and share motivation with the community.",
+          description_part4:
+            "Together with Nomyfy, you form healthy habits and feel better every day.",
           specialist_title_line1: "YOUR TALENT IS NEEDED HERE!",
           specialist_title_line2: "WE ARE LOOKING FOR PROS LIKE YOU!",
-          specialist_text_line1: "If you are a specialist in psychology, nutrition, or you are a trainer,",
-          specialist_text_line2: "let's make this world a better place. Work with professionals.",
+          specialist_text_line1:
+            "If you are a specialist in psychology, nutrition, or you are a trainer,",
+          specialist_text_line2:
+            "let's make this world a better place. Work with professionals.",
           specialist_text_line3: "You belong with us!",
           become_specialist: "Become a specialist",
           marketplace_title: "MARKETPLACE OF HEALTHY SOLUTIONS.",
-          marketplace_subtitle: "Everything that helps you live a healthy life collected in one place.",
+          marketplace_subtitle:
+            "Everything that helps you live a healthy life collected in one place.",
           marketplace_button: "Marketplace",
           faq_title: "Frequently Asked Questions",
           faq_q1_title: "What is NOMYFY?",
-          faq_q1_answer: "NOMYFY is an individual therapy for emotional burnout.",
+          faq_q1_answer:
+            "NOMYFY is an individual therapy for emotional burnout.",
           faq_q2_title: "Who is NOMYFY for?",
-          faq_q2_answer: "For those who are looking for ways to improve their mental health.",
+          faq_q2_answer:
+            "For those who are looking for ways to improve their mental health.",
           faq_q3_title: "How is NOMYFY useful?",
-          faq_q3_answer: "NOMYFY helps you organize your life, starting with yourself.",
+          faq_q3_answer:
+            "NOMYFY helps you organize your life, starting with yourself.",
           faq_q4_title: "Can I use the services for free?",
-          faq_q4_answer: "Yes, we have free options, but most services are paid.",
+          faq_q4_answer:
+            "Yes, we have free options, but most services are paid.",
           faq_q5_title: "How to start using it?",
-          faq_q5_answer: "You need to register on our platform and choose a service.",
+          faq_q5_answer:
+            "You need to register on our platform and choose a service.",
           faq_q6_title: "How to become a NOMYFY partner?",
-          faq_q6_answer: "Leave a request on our website, and we will contact you.",
+          faq_q6_answer:
+            "Leave a request on our website, and we will contact you.",
 
           // --- Footer translations ---
           specialists: "Specialists",
@@ -116,7 +129,8 @@ i18n
           bmi_requires: "Fill in the information about height and weight",
 
           // --- User profile translations ---
-          p_error_upadate: "Failed to update profile. Please fill in all fields.",
+          p_error_upadate:
+            "Failed to update profile. Please fill in all fields.",
           p_male: "Male",
           p_female: "Female",
           p_other: "Other",
@@ -217,7 +231,8 @@ i18n
           yes: "Yes",
           no: "No",
           ch_confirmDeleteTitle: "Confirm Deleting Challenge",
-          ch_confirmDeleteText: "Are you sure you want to delete this challenge? This action cannot be undone.",
+          ch_confirmDeleteText:
+            "Are you sure you want to delete this challenge? This action cannot be undone.",
           ch_joinedTitle: "Success!",
           ch_joinedText: "You have successfully joined the challenge.",
           ok: "OK",
@@ -240,7 +255,8 @@ i18n
           ch_leftTitle: "Challenge Left",
           ch_leftText: "You have successfully left the challenge.",
           ch_completedTitle: "Challenge Completed",
-          ch_completedText: "Congratulations! You have completed the challenge.",
+          ch_completedText:
+            "Congratulations! You have completed the challenge.",
 
           // --- Menstrual calendar translations ---
           last_cycle_first_day: "1st day of last cycle",
@@ -249,7 +265,8 @@ i18n
           female: "Female",
           gender: "Health by gender",
           female_health: "Women's health",
-          female_health_fine: "Women's health without taboos - honestly, simply, and with care for you.",
+          female_health_fine:
+            "Women's health without taboos - honestly, simply, and with care for you.",
           cycle_info: "All about your cycle",
           reproductive_health: "Reproductive health",
           hormonas: "Hormones",
@@ -265,39 +282,55 @@ i18n
           cycle_health: "Is the cycle important?",
           cycle_important: "Why it's important to track each cycle",
           examination_health: "General examinations",
-          examination_important: "Why is it important to monitor hormone levels",
+          examination_important:
+            "Why is it important to monitor hormone levels",
           find_doctor: "Find a doctor near you",
           your_cycle: "Your cycle",
-          cycle_control: "Track your cycle, monitor your well-being and receive timely reminders",
+          cycle_control:
+            "Track your cycle, monitor your well-being and receive timely reminders",
           calendar_cycle: "Menstrual calendar",
           calc_cycle: "Calculate my menstrual calendar",
-          warning_calc: "*Our menstrual calendar calculations may not be 100% accurate because every body and every cycle is different. Help us make your calendar more accurate.",
+          warning_calc:
+            "*Our menstrual calendar calculations may not be 100% accurate because every body and every cycle is different. Help us make your calendar more accurate.",
           cycle: "Cycle",
           why_should_calendar: "Why keep a menstrual calendar?",
-          preview_calendar: "Keeping a menstrual calendar isn't just about remembering «those days». It's a little self-care ritual that helps you better understand your body and mood.",
+          preview_calendar:
+            "Keeping a menstrual calendar isn't just about remembering «those days». It's a little self-care ritual that helps you better understand your body and mood.",
           predict_cycle: "Predict the cycle",
-          predict_cycle_desc: "You always know when your period and ovulation will start. This helps plan events, vacations, or important meetings.",
+          predict_cycle_desc:
+            "You always know when your period and ovulation will start. This helps plan events, vacations, or important meetings.",
           listen_yourself: "Listen to yourself",
-          listen_yourself_desc: "The calendar helps you notice how your energy, mood, and appetite change in different phases of the cycle.",
+          listen_yourself_desc:
+            "The calendar helps you notice how your energy, mood, and appetite change in different phases of the cycle.",
           regularity: "Detect regularity",
-          regularity_desc: "Pain, PMS, mood swings, or skin changes become more noticeable. It's easy to track what repeats and what helps you feel better.",
+          regularity_desc:
+            "Pain, PMS, mood swings, or skin changes become more noticeable. It's easy to track what repeats and what helps you feel better.",
           doctor_help: "Helps the doctor",
-          doctor_help_desc: "If you need to see a gynecologist, accurate records of your cycle and symptoms make the consultation more effective.",
+          doctor_help_desc:
+            "If you need to see a gynecologist, accurate records of your cycle and symptoms make the consultation more effective.",
           planing: "Health and fitness planning",
-          planing_desc: "You can adjust workouts, nutrition, or rest to your rhythm to get the most benefit.",
-          finalize_calendar: "A period calendar is not an obligation, but a tool for self-awareness. It helps you feel more confident, predict mood changes, and simply care for yourself.",
+          planing_desc:
+            "You can adjust workouts, nutrition, or rest to your rhythm to get the most benefit.",
+          finalize_calendar:
+            "A period calendar is not an obligation, but a tool for self-awareness. It helps you feel more confident, predict mood changes, and simply care for yourself.",
           phase: "Phases of the menstrual cycle",
           proccess_in_body: "What happens in a woman's body",
-          proccess_in_body_desc: "The menstrual cycle is not just 'those days'. It is a natural rhythm that helps the body function harmoniously. It is divided into several phases, each affecting our well-being, mood, and energy.",
+          proccess_in_body_desc:
+            "The menstrual cycle is not just 'those days'. It is a natural rhythm that helps the body function harmoniously. It is divided into several phases, each affecting our well-being, mood, and energy.",
           phase_1_5: "Menstrual phase\n(1 — 5)",
-          phase_1_5_desc: "This is the start of the cycle. The body sheds the old uterine lining, which causes menstrual bleeding. Energy may be lower during this time, so it's good to allow yourself extra rest.",
+          phase_1_5_desc:
+            "This is the start of the cycle. The body sheds the old uterine lining, which causes menstrual bleeding. Energy may be lower during this time, so it's good to allow yourself extra rest.",
           phase_6_13: "Follicular phase\n(6 — 13)",
-          phase_6_13_desc: "Estrogen gradually rises, bringing back strength and motivation. This is a great period for new ideas, active work, and sports.",
+          phase_6_13_desc:
+            "Estrogen gradually rises, bringing back strength and motivation. This is a great period for new ideas, active work, and sports.",
           phase_14_16: "Ovulatory phase\n(14 — 16)",
-          phase_14_16_desc: "A mature egg is released. Women may feel confident, attractive, and full of energy. These are the 'peak' days when the body is ready for conception.",
+          phase_14_16_desc:
+            "A mature egg is released. Women may feel confident, attractive, and full of energy. These are the 'peak' days when the body is ready for conception.",
           phase_17_28: "Luteal phase\n(17 — 28)",
-          phase_17_28_desc: "If pregnancy does not occur, progesterone becomes dominant. Sleepiness, mood changes, and cravings for sweets may appear. It's important to listen to yourself, rest more, and take care of emotional comfort during this time.",
-          finalize_cycle: "The menstrual cycle is not the enemy, but a natural calendar of our body. By paying attention to its phases, you can better plan your day, understand mood changes, and be more in harmony with yourself.",
+          phase_17_28_desc:
+            "If pregnancy does not occur, progesterone becomes dominant. Sleepiness, mood changes, and cravings for sweets may appear. It's important to listen to yourself, rest more, and take care of emotional comfort during this time.",
+          finalize_cycle:
+            "The menstrual cycle is not the enemy, but a natural calendar of our body. By paying attention to its phases, you can better plan your day, understand mood changes, and be more in harmony with yourself.",
           go_back: "Go back",
           now: "now",
           menstruation: "menstruation",
@@ -310,22 +343,28 @@ i18n
           high_chance: "High chance of getting pregnant",
           no_chance: "Very low chance of getting pregnant",
           myth_facts: "Myths and facts",
-          one: 'day',
-          other: 'days',
+          one: "day",
+          other: "days",
           c_long: "Your cycle lasted {{cLong}} days. Which is normal!",
-          phase_1: "You are currently in your menstrual phase!\nThis is the beginning of your cycle.\nYou may feel low on energy!\nIt is best to take care of yourself and rest during this time!",
-          phase_2: "You are now in the follicular phase!\nThe hormone estrogen is actively increasing.\nYour mood is improving. Your skin is improving!\nYou are ready to conquer the whole world!",
-          phase_3: "You are now in the ovulatory phase!\nA mature egg is being released.\nYou feel confident and full of energy!\nToday is a great day to do what brings you joy!",
-          phase_4: "You are now in the luteal phase!\nProgesterone begins to dominate!\nDuring this period, you may experience mood swings and drowsiness!\nTake care of your comfort and listen to your feelings!",
+          phase_1:
+            "You are currently in your menstrual phase!\nThis is the beginning of your cycle.\nYou may feel low on energy!\nIt is best to take care of yourself and rest during this time!",
+          phase_2:
+            "You are now in the follicular phase!\nThe hormone estrogen is actively increasing.\nYour mood is improving. Your skin is improving!\nYou are ready to conquer the whole world!",
+          phase_3:
+            "You are now in the ovulatory phase!\nA mature egg is being released.\nYou feel confident and full of energy!\nToday is a great day to do what brings you joy!",
+          phase_4:
+            "You are now in the luteal phase!\nProgesterone begins to dominate!\nDuring this period, you may experience mood swings and drowsiness!\nTake care of your comfort and listen to your feelings!",
           super: "Super!",
-          gynecology_sub: "Everything about regular check-ups, prevention, and caring for women's health — in simple language without taboos.",
+          gynecology_sub:
+            "Everything about regular check-ups, prevention, and caring for women's health — in simple language without taboos.",
           womens_tests: "Examinations and tests",
           regular_review: "Regular check-ups",
           articles_: "Articles",
           read: "Read",
           how_often: "How often should\nyou visit\na gynecologist?",
           top_5_tests: "TOP 5 tests for\nwomen's health",
-          review_sub: "Taking care of your health starts with prevention. Once a year, you're one step ahead of the problem.",
+          review_sub:
+            "Taking care of your health starts with prevention. Once a year, you're one step ahead of the problem.",
           what_to_check_regulary: "What should be done regularly?",
           gynecology_review: "Examination by a gynecologist",
           one_time_per_year: "once a year",
@@ -337,33 +376,45 @@ i18n
           mammography: "Mammography",
           after_40_years: "after 40 years",
           examination_head: "Examinations and tests",
-          examination_desc: "The right tests on time are the key to health confidence. Find out which tests and examinations you should have regularly.",
+          examination_desc:
+            "The right tests on time are the key to health confidence. Find out which tests and examinations you should have regularly.",
           base_review: "Basic examination",
           gynecology_examination: "Gynecological examination",
           add_to_calendar: "Add to calendar",
           ultrasound_glands: "Breast ultrasound",
           need_I_test: "Do I need to do tests if I feel well?",
-          examination_tip_need: "Regular medical check-ups are important even when you have no complaints. Many diseases develop silently in their early stages, and timely basic tests (blood, urine, blood sugar, cholesterol) help detect problems before symptoms appear.\n\nAnnual check-ups are an investment in your health. They allow you to monitor your body, adjust your diet and lifestyle, and prevent complications.\n\nFeeling well is great, but prevention is always easier and cheaper than treatment.",
+          examination_tip_need:
+            "Regular medical check-ups are important even when you have no complaints. Many diseases develop silently in their early stages, and timely basic tests (blood, urine, blood sugar, cholesterol) help detect problems before symptoms appear.\n\nAnnual check-ups are an investment in your health. They allow you to monitor your body, adjust your diet and lifestyle, and prevent complications.\n\nFeeling well is great, but prevention is always easier and cheaper than treatment.",
           what_needed_blood: "What should I prepare before a blood test?",
-          what_needed_blood_info: "To get accurate blood test results, prepare in advance:\n\nFast before the test, your last meal should be 8–12 hours prior\n\nDrink only plain water, it does not affect results\n\nAvoid alcohol, fatty and very sweet foods for a day or two before\n\nOn the day of the test avoid intense physical activity and stress\n\nIf you take medications, be sure to inform your doctor",
-          what_diff_ultrasound_mam: "What is the difference between ultrasound and mammography?",
-          what_diff_ultrasound_mam_info: "Ultrasound uses sound waves to visualize tissues and shows soft structures of the breast well, especially in young women with dense tissue\n\nMammography is an X-ray examination that can detect small calcifications and early signs of tumors before lumps appear\n\nUltrasound does not use radiation and is suitable for additional control\nMammography remains the main screening method for women over 40\n\nBoth methods are often used together for more accurate diagnosis",
+          what_needed_blood_info:
+            "To get accurate blood test results, prepare in advance:\n\nFast before the test, your last meal should be 8–12 hours prior\n\nDrink only plain water, it does not affect results\n\nAvoid alcohol, fatty and very sweet foods for a day or two before\n\nOn the day of the test avoid intense physical activity and stress\n\nIf you take medications, be sure to inform your doctor",
+          what_diff_ultrasound_mam:
+            "What is the difference between ultrasound and mammography?",
+          what_diff_ultrasound_mam_info:
+            "Ultrasound uses sound waves to visualize tissues and shows soft structures of the breast well, especially in young women with dense tissue\n\nMammography is an X-ray examination that can detect small calcifications and early signs of tumors before lumps appear\n\nUltrasound does not use radiation and is suitable for additional control\nMammography remains the main screening method for women over 40\n\nBoth methods are often used together for more accurate diagnosis",
           why_pap_test: "Why get a Pap smear and how often?",
-          why_pap_test_info: "A Pap smear helps detect changes in cervical cells at early stages when there are no symptoms\n\nRegular screening prevents the development of cancer and allows timely treatment of inflammatory processes\n\nUsually a Pap test is done once a year if there are no problems or more often as recommended by a doctor\n\nThe test is quick, painless, and takes only a few minutes\n\nEven if you feel well, the test helps take care of your health",
+          why_pap_test_info:
+            "A Pap smear helps detect changes in cervical cells at early stages when there are no symptoms\n\nRegular screening prevents the development of cancer and allows timely treatment of inflammatory processes\n\nUsually a Pap test is done once a year if there are no problems or more often as recommended by a doctor\n\nThe test is quick, painless, and takes only a few minutes\n\nEven if you feel well, the test helps take care of your health",
           reproductive: "Reproductive health",
-          reproductive_sub: "Plan with us! Take care of your body and plan for the future with confidence.",
+          reproductive_sub:
+            "Plan with us! Take care of your body and plan for the future with confidence.",
           myth_main: "There are plenty of myths around periods.",
           myth_sub: "Here's a little selection for you)",
           cant_sport: "You can't exercise during your period",
-          cant_sport_desc: "In fact, light physical activity such as yoga, walking, or even moderate workouts can ease cramps and improve mood.",
+          cant_sport_desc:
+            "In fact, light physical activity such as yoga, walking, or even moderate workouts can ease cramps and improve mood.",
           c_long_: "The cycle always lasts exactly 28 days",
-          c_long_desc: "Everyone's cycle is individual: an interval of about 21 to 35 days is considered normal.",
+          c_long_desc:
+            "Everyone's cycle is individual: an interval of about 21 to 35 days is considered normal.",
           cant_swim: "You can't bathe or swim during your period",
-          cant_swim_desc: "Bathing and showering are safe. Hygiene products (tampons, menstrual cups) let you swim comfortably and stay clean.",
+          cant_swim_desc:
+            "Bathing and showering are safe. Hygiene products (tampons, menstrual cups) let you swim comfortably and stay clean.",
           cant_get_pregnant: "You can't get pregnant during your period",
-          cant_get_pregnant_desc: "The chance is lower but not zero: sperm can survive in the body for several days, and ovulation may occur earlier or later than expected.",
+          cant_get_pregnant_desc:
+            "The chance is lower but not zero: sperm can survive in the body for several days, and ovulation may occur earlier or later than expected.",
           pain_is_ok: "Menstrual pain is always normal",
-          pain_is_ok_desc: "Mild discomfort is typical, but severe or debilitating pain may indicate endometriosis or other conditions and should be checked by a doctor.",
+          pain_is_ok_desc:
+            "Mild discomfort is typical, but severe or debilitating pain may indicate endometriosis or other conditions and should be checked by a doctor.",
 
           // --- Mental Health translations ---
           your: "Your Health",
@@ -388,7 +439,8 @@ i18n
 
           // --- Mental health translations ---
           mp_aew_notes: "Note",
-          mp_aew_describe_your_feelings: "Describe your feelings in more detail...",
+          mp_aew_describe_your_feelings:
+            "Describe your feelings in more detail...",
           mp_articles_title: "Useful Articles",
           mp_article_1: "10 Simple Daily Stress Reduction Techniques",
           mp_article_2: "How to Cope with Anxiety",
@@ -622,7 +674,8 @@ i18n
           mp_aew_wizard_title_step_1: "I feel",
           mp_aew_wizard_title_step_2: "What was the cause of these emotions?",
           mp_aew_wizard_title_step_3: "Want to write something about",
-          mp_aew_wizard_description_step_3: "Your note is private and visible only to you.",
+          mp_aew_wizard_description_step_3:
+            "Your note is private and visible only to you.",
           mp_return_back: "Go back",
           mp_btn_next: "Next",
           mp_btn_add: "Add",
@@ -636,8 +689,10 @@ i18n
           mp_btn_try_again: "Try again",
           mp_bpp_title: "Breathing Practices",
           mp_bpp_subtitle: "Exhale stress — inhale calm 🌿",
-          mp_bpp_description_1: "Simple breathing exercises help relieve tension, restore energy, and bring back mental clarity. You can start anywhere: at home, at work, or even on the go.",
-          mp_bpp_description_2: "Try it — and feel your body relax and your mood lighten.",
+          mp_bpp_description_1:
+            "Simple breathing exercises help relieve tension, restore energy, and bring back mental clarity. You can start anywhere: at home, at work, or even on the go.",
+          mp_bpp_description_2:
+            "Try it — and feel your body relax and your mood lighten.",
           mp_bpp_card_title_1: "Diaphragmatic Breathing",
           mp_bpp_card_description_1_1: "Reduces stress and anxiety.",
           mp_bpp_card_description_1_2: "Relaxes, relieves tension.",
@@ -649,7 +704,8 @@ i18n
           mp_bpp_card_description_3_3: "Restores inner balance.",
           mp_dbp_title: "Diaphragmatic Breathing",
           mp_dbp_subtitle: "Breathing that brings back calm",
-          mp_dbp_description_1_1: "Sit comfortably. Relax your shoulders. Perform for at least 3 - 5 minutes.",
+          mp_dbp_description_1_1:
+            "Sit comfortably. Relax your shoulders. Perform for at least 3 - 5 minutes.",
           mp_dbp_description_1_2: "Return to breathing when you feel tension.",
           mp_dbp_inhale: "INHALE",
           mp_dbp_hold: "HOLD",
@@ -658,22 +714,28 @@ i18n
           mp_ebp_title: "Emotion Journal",
           mp_ebp_factor_title: "Mood Factors",
           mp_ebp_factor_info_p_1: "All factors are your potential triggers.",
-          mp_ebp_factor_info_p_2: "For example, you might not notice that sports, coffee, or drugs affect your mood and form behavioral patterns.",
-          mp_ebp_factor_info_p_3: "You can track the influence of factors on your well-being later in the analytics section.",
+          mp_ebp_factor_info_p_2:
+            "For example, you might not notice that sports, coffee, or drugs affect your mood and form behavioral patterns.",
+          mp_ebp_factor_info_p_3:
+            "You can track the influence of factors on your well-being later in the analytics section.",
           mp_ebp_factor_info_p_4: "Example",
           mp_ebp_factor_info_p_5: "Nutrition and Stimulants:",
-          mp_ebp_factor_info_p_6: "Record your consumption of coffee, vitamins, or foods that may affect your energy levels.",
+          mp_ebp_factor_info_p_6:
+            "Record your consumption of coffee, vitamins, or foods that may affect your energy levels.",
           mp_ebp_factor_info_p_7: "Activity and Physical Exercise:",
-          mp_ebp_factor_info_p_8: "Track the amount of physical exercise or participation in other forms of physical activity.",
+          mp_ebp_factor_info_p_8:
+            "Track the amount of physical exercise or participation in other forms of physical activity.",
           mp_ebp_factor_info_p_9: "Biological Cycles:",
-          mp_ebp_factor_info_p_10: "By tracking your periods, you can understand how they affect your emotional well-being.",
+          mp_ebp_factor_info_p_10:
+            "By tracking your periods, you can understand how they affect your emotional well-being.",
           mp_ebp_selected_factors: "Selected factors:",
           mp_ebp_available_factors: "Available factors:",
           mp_ebp_hello_how_are_you: "Hello! How are you?",
           mp_ebp_factor: "Factors",
           mp_ebp_add_factor: "Add factor",
           mp_mhp_title: "Your calm starts here.",
-          mp_mhp_sub_title: "We've gathered tools to help you stay balanced even on the most stressful days.",
+          mp_mhp_sub_title:
+            "We've gathered tools to help you stay balanced even on the most stressful days.",
           mp_mhp_test_card_title: "State Tests",
           mp_mhp_test_card_btn_text: "Take the test",
           mp_mhp_breathing_card_title: "Breathing Practices",
@@ -683,12 +745,15 @@ i18n
           mp_mhp_choose_specialist: "Choose a specialist",
           mp_mtp_test_data_question_1: "How do you wake up in the morning?",
           mp_mtp_test_data_answers_1_1: "With enthusiasm and plans",
-          mp_mtp_test_data_answers_1_2: "With a glass of water and a heavy sigh",
-          mp_mtp_test_data_answers_1_3: "\"This day again?\"",
-          mp_mtp_test_data_question_2: "When something goes wrong, your reaction is:",
+          mp_mtp_test_data_answers_1_2:
+            "With a glass of water and a heavy sigh",
+          mp_mtp_test_data_answers_1_3: '"This day again?"',
+          mp_mtp_test_data_question_2:
+            "When something goes wrong, your reaction is:",
           mp_mtp_test_data_answers_2_1: "Ok, I'll figure out how to fix it",
           mp_mtp_test_data_answers_2_2: "Well, that's life",
-          mp_mtp_test_data_answers_2_3: "Everything is lost, I'm going into my blanket",
+          mp_mtp_test_data_answers_2_3:
+            "Everything is lost, I'm going into my blanket",
           mp_mtp_test_data_question_3: "What saves you from stress most often?",
           mp_mtp_test_data_answers_3_1: "Sports or a walk",
           mp_mtp_test_data_answers_3_2: "Food, series, or memes",
@@ -696,56 +761,80 @@ i18n
           mp_mtp_test_data_question_4: "Your feeling of energy lately:",
           mp_mtp_test_data_answers_4_1: "Normal, charge holds up",
           mp_mtp_test_data_answers_4_2: "Like a battery at 30%",
-          mp_mtp_test_data_answers_4_3: "Like a phone shutting down in the cold",
-          mp_mtp_test_data_question_5: "What do you think when you hear the word \"rest\"?",
+          mp_mtp_test_data_answers_4_3:
+            "Like a phone shutting down in the cold",
+          mp_mtp_test_data_question_5:
+            'What do you think when you hear the word "rest"?',
           mp_mtp_test_data_answers_5_1: "Planning something nice",
           mp_mtp_test_data_answers_5_2: "Lying at home and doing nothing",
           mp_mtp_test_data_answers_5_3: "I don't have time to rest",
           mp_mtp_test_result_title_1: "Your mental state is fine.",
-          mp_mtp_test_result_description_1: "You have a great level of energy and optimism. Keep taking care of yourself and maintaining this state!",
+          mp_mtp_test_result_description_1:
+            "You have a great level of energy and optimism. Keep taking care of yourself and maintaining this state!",
           mp_mtp_test_result_title_2: "Mental state mostly fine.",
-          mp_mtp_test_result_description_2: "Most things are going well, but some areas need a little more attention and care.",
+          mp_mtp_test_result_description_2:
+            "Most things are going well, but some areas need a little more attention and care.",
           mp_mtp_test_result_title_3: "Mental state is a bit exhausted",
-          mp_mtp_test_result_description_3: "You feel a little tired. Find time for rest and little joys.",
+          mp_mtp_test_result_description_3:
+            "You feel a little tired. Find time for rest and little joys.",
           mp_mtp_test_result_title_4: "Mental state asks for care",
-          mp_mtp_test_result_description_4: "You need more rest, joy, and support. Pay attention to your needs.",
+          mp_mtp_test_result_description_4:
+            "You need more rest, joy, and support. Pay attention to your needs.",
           mp_mtp_test_result_title_5: "Mental state screams SOS",
-          mp_mtp_test_result_description_5: "You might be experiencing burnout. Don't be shy to ask for help and find time for serious rest.",
-          mp_mtp_test_result_title_6: "Your mental state is like a roller coaster.",
-          mp_mtp_test_result_description_6: "Your state changes often. Some days are great, others are more difficult. Try to find balance.",
-          mp_mtp_start_message: "Attention! The test is not diagnostic, but shows your level of stress or burnout.",
+          mp_mtp_test_result_description_5:
+            "You might be experiencing burnout. Don't be shy to ask for help and find time for serious rest.",
+          mp_mtp_test_result_title_6:
+            "Your mental state is like a roller coaster.",
+          mp_mtp_test_result_description_6:
+            "Your state changes often. Some days are great, others are more difficult. Try to find balance.",
+          mp_mtp_start_message:
+            "Attention! The test is not diagnostic, but shows your level of stress or burnout.",
           mp_mtp_test_title: "Test on the state of your mental health",
           mp_mtp_test_description: "Tap the answers that match your state)",
           mp_nsp_title: "Nadi Shodhana",
           mp_nsp_subtitle: "Breathing that balances energy",
-          mp_nsp_description_1: "Alternate nostril breathing technique to harmonize mind and body.",
-          mp_nsp_description_2: "Perform for 3-5 minutes to achieve the effect.",
+          mp_nsp_description_1:
+            "Alternate nostril breathing technique to harmonize mind and body.",
+          mp_nsp_description_2:
+            "Perform for 3-5 minutes to achieve the effect.",
           mp_nsp_technique_title: "Technique:",
           mp_nsp_technique_step_1: "Sit comfortably, straighten your back.",
-          mp_nsp_technique_step_2: "With your hand, close your right nostril, inhale through the left.",
-          mp_nsp_technique_step_3: "Then close the left — exhale through the right.",
-          mp_nsp_technique_step_4: "Inhale through the right — exhale through the left.",
+          mp_nsp_technique_step_2:
+            "With your hand, close your right nostril, inhale through the left.",
+          mp_nsp_technique_step_3:
+            "Then close the left — exhale through the right.",
+          mp_nsp_technique_step_4:
+            "Inhale through the right — exhale through the left.",
           mp_nsp_technique_step_5: "Continue for a few minutes at a calm pace.",
           mp_nsp_result_title: "Result:",
-          mp_nsp_result_description_1: "After just a few minutes, a feeling of calm appears. The level of tension decreases. The mind clears, as if after a short rest.",
-          mp_nsp_result_description_2: "Regular practice helps you fall asleep better, concentrate, and maintain inner balance even in stressful situations.",
+          mp_nsp_result_description_1:
+            "After just a few minutes, a feeling of calm appears. The level of tension decreases. The mind clears, as if after a short rest.",
+          mp_nsp_result_description_2:
+            "Regular practice helps you fall asleep better, concentrate, and maintain inner balance even in stressful situations.",
           mp_sbp_title: "Box Breathing",
           mp_sbp_subtitle: "Breathing that brings back calm",
-          mp_sbp_description_1: "Sit comfortably. Relax your shoulders. Perform for at least 3 - 5 minutes.",
+          mp_sbp_description_1:
+            "Sit comfortably. Relax your shoulders. Perform for at least 3 - 5 minutes.",
           mp_sbp_description_2: "Return to breathing when you feel tension.",
 
           // --- Your Health translations ---
           mp_yhp_main_title: "Your Health —",
           mp_yhp_main_subtitle: "Your superpower. It stands on 3 pillars:",
           mp_yhp_activity_title: "Activity",
-          mp_yhp_activity_description_1: "Even 15 minutes a day makes a difference.",
-          mp_yhp_activity_description_2: "Walking, jump rope, pilates – choose what you like, and your body will say 'thank you'.",
+          mp_yhp_activity_description_1:
+            "Even 15 minutes a day makes a difference.",
+          mp_yhp_activity_description_2:
+            "Walking, jump rope, pilates – choose what you like, and your body will say 'thank you'.",
           mp_yhp_sleep_title: "Sleep",
-          mp_yhp_sleep_description_1: "This is the most important thing of all!",
-          mp_yhp_sleep_description_2: "Sleep is not laziness, but your internal charging cable. 7-8 hours of quality rest helps the body recover and the brain to work quickly and creatively.",
+          mp_yhp_sleep_description_1:
+            "This is the most important thing of all!",
+          mp_yhp_sleep_description_2:
+            "Sleep is not laziness, but your internal charging cable. 7-8 hours of quality rest helps the body recover and the brain to work quickly and creatively.",
           mp_yhp_nutrition_title: "Nutrition",
-          mp_yhp_nutrition_description_1: "Food is fuel. The higher its quality, the better your 'engine' works.",
-          mp_yhp_nutrition_description_2: "Not about diets, but about balance: more vegetables, less stress about snacks.",
+          mp_yhp_nutrition_description_1:
+            "Food is fuel. The higher its quality, the better your 'engine' works.",
+          mp_yhp_nutrition_description_2:
+            "Not about diets, but about balance: more vegetables, less stress about snacks.",
 
           // --- Male Health translations ---
           hormonas_diagram: "Male Health Chart",
@@ -777,27 +866,37 @@ i18n
           mp_analyses_block_content_value_5: "as recommended by doctor",
           mp_reproductive_block_title: "Reproductive health",
           mp_reproductive_block_content_label_1: "Fertility",
-          mp_reproductive_block_content_value_1: "sperm quality depends on lifestyle",
+          mp_reproductive_block_content_value_1:
+            "sperm quality depends on lifestyle",
           mp_reproductive_block_content_label_2: "Risks",
-          mp_reproductive_block_content_value_2: "overheating, alcohol, smoking, obesity",
+          mp_reproductive_block_content_value_2:
+            "overheating, alcohol, smoking, obesity",
           mp_reproductive_block_content_label_3: "Recommendations",
-          mp_reproductive_block_content_value_3: "Urologist once a year, spermogram",
+          mp_reproductive_block_content_value_3:
+            "Urologist once a year, spermogram",
           mp_urinary_block_title: "Urinary system",
           mp_urinary_block_content_label_1: "Prostate check",
-          mp_urinary_block_content_value_1: "from 40 years — PSA and ultrasound yearly",
+          mp_urinary_block_content_value_1:
+            "from 40 years — PSA and ultrasound yearly",
           mp_urinary_block_content_label_2: "Warning!",
-          mp_urinary_block_content_value_2: "pain, blood in urine, frequent urination",
+          mp_urinary_block_content_value_2:
+            "pain, blood in urine, frequent urination",
           mp_urinary_block_content_label_3: "What to do?",
-          mp_urinary_block_content_value_3: "don't ignore discomfort, go to urologist",
+          mp_urinary_block_content_value_3:
+            "don't ignore discomfort, go to urologist",
           mp_potency_block_title: "Potency",
           mp_potency_block_content_label_1: "Why does it decrease?",
-          mp_potency_block_content_value_1: "stress, alcohol, smoking, heart disease",
+          mp_potency_block_content_value_1:
+            "stress, alcohol, smoking, heart disease",
           mp_potency_block_content_label_2: "How to maintain?",
-          mp_potency_block_content_value_2: "sports, quality sleep, balanced diet",
+          mp_potency_block_content_value_2:
+            "sports, quality sleep, balanced diet",
           mp_potency_block_content_label_3: "When to see a doctor?",
-          mp_potency_block_content_value_3: "if problems last more than 2 months",
+          mp_potency_block_content_value_3:
+            "if problems last more than 2 months",
           mp_subtitle_2: "Take care of yourself like your favorite car",
-          mp_form_subtitle: "Fill in the fields if you have current data, and we will create a chart",
+          mp_form_subtitle:
+            "Fill in the fields if you have current data, and we will create a chart",
           mp_form_testosterone: "Testosterone",
           mp_form_free_testosterone: "Free testosterone",
           mp_form_free_testosterone_2: "Free T",
@@ -811,14 +910,16 @@ i18n
           mp_form_pg_ml: "pg/ml",
           mp_form_mO_l: "mU/l",
           mp_form_save_btn: "Save indicators",
-          mp_diagram_hormons_value_not_found: "Hormone data not found. Please enter your indicators.",
-          mp_diagram_hormons_data_not_found: "Error loading data. Please contact support.",
+          mp_diagram_hormons_value_not_found:
+            "Hormone data not found. Please enter your indicators.",
+          mp_diagram_hormons_data_not_found:
+            "Error loading data. Please contact support.",
           mp_diagram_low: "Low",
           mp_diagram_norm: "Normal",
           mp_diagram_high: "High",
         },
       },
-            uk: {
+      uk: {
         translation: {
           // === ОСНОВНІ ПЕРЕКЛАДИ ПЛАТФОРМИ ===
           about_platform: "Про платформу",
@@ -832,38 +933,51 @@ i18n
           more_energy: "БІЛЬШЕ ЕНЕРГІЇ.",
           healthy_lifestyle: "ТВІЙ ЗДОРОВИЙ ЛАЙФСТАЙЛ В ОДНОМУ МІСЦІ.",
           register: "Зареєструватись",
-          description_part1: "— це платформа, що допомагає дбати про себе легко та з усмішкою.",
-          description_part2: "Відстежуй харчування й тренування, слідкуй за здоров'ям і отримуй підтримку спеціалістів.",
-          description_part3: "Знаходь корисні товари та ділися мотивацією зі спільнотою.",
-          description_part4: "Разом із Nomyfy ти крок за кроком формуєш здорові звички та почуваєшся краще щодня.",
+          description_part1:
+            "— це платформа, що допомагає дбати про себе легко та з усмішкою.",
+          description_part2:
+            "Відстежуй харчування й тренування, слідкуй за здоров'ям і отримуй підтримку спеціалістів.",
+          description_part3:
+            "Знаходь корисні товари та ділися мотивацією зі спільнотою.",
+          description_part4:
+            "Разом із Nomyfy ти крок за кроком формуєш здорові звички та почуваєшся краще щодня.",
 
           // === СЕКЦІЯ ФАХІВЦІВ ===
           specialist_title_line1: "ТВІЙ ТАЛАНТ ТУТ ПОТРІБЕН!",
           specialist_title_line2: "МИ ШУКАЄМО ПРОФІ ЯК ТИ!",
-          specialist_text_line1: "Якщо ти спеціаліст в психології, нутриціології або ти тренер,",
-          specialist_text_line2: "давай робити цей світ краще. Працювати з професіоналами.",
+          specialist_text_line1:
+            "Якщо ти спеціаліст в психології, нутриціології або ти тренер,",
+          specialist_text_line2:
+            "давай робити цей світ краще. Працювати з професіоналами.",
           specialist_text_line3: "Тобі до нас!",
           become_specialist: "Стати фахівцем",
 
           // === МАРКЕТПЛЕЙС ===
           marketplace_title: "МАРКЕТПЛЕЙС ЗДОРОВИХ РІШЕНЬ.",
-          marketplace_subtitle: "Все, що допомагає здорово жити зібрали в одному місці.",
+          marketplace_subtitle:
+            "Все, що допомагає здорово жити зібрали в одному місці.",
           marketplace_button: "Маркетплейс",
 
           // === FAQ ===
           faq_title: "Часті запитання",
           faq_q1_title: "Що таке NOMYFY?",
-          faq_q1_answer: "NOMYFY - це індивідуальна терапія від емоційного вигорання.",
+          faq_q1_answer:
+            "NOMYFY - це індивідуальна терапія від емоційного вигорання.",
           faq_q2_title: "Для кого NOMYFY?",
-          faq_q2_answer: "Для тих, хто шукає способи покращити своє ментальне здоровʼя.",
+          faq_q2_answer:
+            "Для тих, хто шукає способи покращити своє ментальне здоровʼя.",
           faq_q3_title: "Чим корисний NOMYFY?",
-          faq_q3_answer: "NOMYFY допомагає впорядкувати життя, починаючи із себе.",
+          faq_q3_answer:
+            "NOMYFY допомагає впорядкувати життя, починаючи із себе.",
           faq_q4_title: "Чи можна скористатися послугами безкоштовно?",
-          faq_q4_answer: "Так, у нас є безкоштовні можливості, але більшість послуг платні.",
+          faq_q4_answer:
+            "Так, у нас є безкоштовні можливості, але більшість послуг платні.",
           faq_q5_title: "Як почати користуватись?",
-          faq_q5_answer: "Необхідно зареєструватись на нашій платформі та обрати послугу.",
+          faq_q5_answer:
+            "Необхідно зареєструватись на нашій платформі та обрати послугу.",
           faq_q6_title: "Як стати партнером NOMYFY?",
-          faq_q6_answer: "Залиште заявку на нашому сайті, і ми звʼяжемося з вами.",
+          faq_q6_answer:
+            "Залиште заявку на нашому сайті, і ми звʼяжемося з вами.",
 
           // === ФУТЕР ===
           specialists: "Фахівці",
@@ -934,7 +1048,8 @@ i18n
           bmi_requires: "Заповніть інформацію щодо зросту та ваги",
 
           // === ПРОФІЛЬ КОРИСТУВАЧА ===
-          p_error_upadate: "Не вдалося оновити профіль. Будь ласка, заповніть усі поля.",
+          p_error_upadate:
+            "Не вдалося оновити профіль. Будь ласка, заповніть усі поля.",
           p_male: "Чоловік",
           p_female: "Жінка",
           p_other: "Інше",
@@ -1031,11 +1146,13 @@ i18n
           ch_create_success: "Челендж успішно створено!",
           ch_create_error: "Не вдалося створити челендж.",
           ch_confirmJoinTitle: "Підтвердіть приєднання до челленджа",
-          ch_confirmJoinText: "Ви впевнені, що хочете приєднатися до цього челленджа?",
+          ch_confirmJoinText:
+            "Ви впевнені, що хочете приєднатися до цього челленджа?",
           yes: "Так",
           no: "Ні",
           ch_confirmDeleteTitle: "Підтвердіть видалення челленджа",
-          ch_confirmDeleteText: "Ви впевнені, що хочете видалити цей челлендж? Цю дію не можна скасувати.",
+          ch_confirmDeleteText:
+            "Ви впевнені, що хочете видалити цей челлендж? Цю дію не можна скасувати.",
           ch_joinedTitle: "Успіх!",
           ch_joinedText: "Ви успішно приєдналися до челленджа.",
           ok: "ОК",
@@ -1067,7 +1184,8 @@ i18n
           female: "Жінка",
           gender: "Здоров'я за статтю",
           female_health: "Жіноче здоров'я",
-          female_health_fine: "Жіноче здоров'я без табу - чесно, просто і з турботою про тебе.",
+          female_health_fine:
+            "Жіноче здоров'я без табу - чесно, просто і з турботою про тебе.",
           cycle_info: "Все про ваш цикл",
           reproductive_health: "Репродуктивне здоров'я",
           hormonas: "Гормони",
@@ -1086,36 +1204,51 @@ i18n
           examination_important: "Чому важливо контролювати рівень гормонів",
           find_doctor: "Знайди лікаря поруч",
           your_cycle: "Ваш цикл",
-          cycle_control: "Відстежуйте свій цикл, контролюй самопочуття та отримуй нагадування вчасно",
+          cycle_control:
+            "Відстежуйте свій цикл, контролюй самопочуття та отримуй нагадування вчасно",
           calendar_cycle: "Календар місячних",
           calc_cycle: "Розрахувати мій календар місячних",
-          warning_calc: "*Розрахунки за наши календарем місячних можуть бути не на 100% точними, тому що кожне тіло і кожний цикл відрізняється. Допоможи нам зробити твій календар більш точним.",
+          warning_calc:
+            "*Розрахунки за наши календарем місячних можуть бути не на 100% точними, тому що кожне тіло і кожний цикл відрізняється. Допоможи нам зробити твій календар більш точним.",
           cycle: "Цикл",
           why_should_calendar: "Навіщо вести календар місячних?",
-          preview_calendar: "Вести календар місячних — це не лише про пам'ять про «ті дні». Це маленький ритуал турботи про себе, який допомагає краще розуміти своє тіло і настрій.",
+          preview_calendar:
+            "Вести календар місячних — це не лише про пам'ять про «ті дні». Це маленький ритуал турботи про себе, який допомагає краще розуміти своє тіло і настрій.",
           predict_cycle: "Прогнозує цикл",
-          predict_cycle_desc: "Ти завжди знаєш, коли почнуться менструації та овуляція. Це допомагає планувати події, відпустки чи важливі зустрічі.",
+          predict_cycle_desc:
+            "Ти завжди знаєш, коли почнуться менструації та овуляція. Це допомагає планувати події, відпустки чи важливі зустрічі.",
           listen_yourself: "Слухати себе",
-          listen_yourself_desc: "Календар допомагає помітити, як змінюється енергія, настрій і апетит у різні фази циклу.",
+          listen_yourself_desc:
+            "Календар допомагає помітити, як змінюється енергія, настрій і апетит у різні фази циклу.",
           regularity: "Виявляти закономірність",
-          regularity_desc: "Біль, ПМС, коливання настрою чи зміни шкіри стають помітнішими. Можна легко відстежувати, що повторюється, і що допомагає почуватися краще.",
+          regularity_desc:
+            "Біль, ПМС, коливання настрою чи зміни шкіри стають помітнішими. Можна легко відстежувати, що повторюється, і що допомагає почуватися краще.",
           doctor_help: "Допомагає лікарю",
-          doctor_help_desc: "Якщо потрібно звернутися до гінеколога, точний запис циклу та симптомів робить консультацію ефективнішою.",
+          doctor_help_desc:
+            "Якщо потрібно звернутися до гінеколога, точний запис циклу та симптомів робить консультацію ефективнішою.",
           planing: "Планування здоров'я та фітнесу",
-          planing_desc: "Ти можеш підлаштовувати тренування, харчування чи відпочинок під свій ритм, щоб отримати максимальну користь.",
-          finalize_calendar: "Календар місячних -це не обов'язок, а інструмент самопізнання. Він допомагає відчувати себе впевненіше, передбачати зміни настрою і просто піклуватись про себе.",
+          planing_desc:
+            "Ти можеш підлаштовувати тренування, харчування чи відпочинок під свій ритм, щоб отримати максимальну користь.",
+          finalize_calendar:
+            "Календар місячних -це не обов'язок, а інструмент самопізнання. Він допомагає відчувати себе впевненіше, передбачати зміни настрою і просто піклуватись про себе.",
           phase: "Фази менструального циклу",
           proccess_in_body: "Що відбувається в тілі жінки",
-          proccess_in_body_desc: "Менструальний цикл — це не лише «ті дні». Це цілий природний ритм, який допомагає організму працювати злагоджено. Він ділиться на кілька фаз, і кожна з них впливає на наше самопочуття, настрій та енергію.",
+          proccess_in_body_desc:
+            "Менструальний цикл — це не лише «ті дні». Це цілий природний ритм, який допомагає організму працювати злагоджено. Він ділиться на кілька фаз, і кожна з них впливає на наше самопочуття, настрій та енергію.",
           phase_1_5: "Менструальна фаза\n(1 — 5)",
-          phase_1_5_desc: "Це початок циклу. Організм позбувається старого шару слизової оболонки матки, тому з'являються менструальні виділення. У цей час енергії може бути менше, тож варто дозволити собі більше відпочинку.",
+          phase_1_5_desc:
+            "Це початок циклу. Організм позбувається старого шару слизової оболонки матки, тому з'являються менструальні виділення. У цей час енергії може бути менше, тож варто дозволити собі більше відпочинку.",
           phase_6_13: "Фолікулярна фаза\n(6 — 13)",
-          phase_6_13_desc: "Поступово зростає рівень естрогену, і разом з ним повертається сила та мотивація. Це гарний період для нових ідей, активної роботи та спорту",
+          phase_6_13_desc:
+            "Поступово зростає рівень естрогену, і разом з ним повертається сила та мотивація. Це гарний період для нових ідей, активної роботи та спорту",
           phase_14_16: "Овуляторна фаза\n(14 — 16)",
-          phase_14_16_desc: "Відбувається вихід зрілої яйцеклітини. Жінка може відчувати себе впевненою, привабливою, сповненою енергії. Це «пікові» дні, коли організм готовий до зачаття.",
+          phase_14_16_desc:
+            "Відбувається вихід зрілої яйцеклітини. Жінка може відчувати себе впевненою, привабливою, сповненою енергії. Це «пікові» дні, коли організм готовий до зачаття.",
           phase_17_28: "Лютеїнова фаза\n(17 — 28)",
-          phase_17_28_desc: "Якщо вагітність не настала, починає домінувати прогестерон. Може з'явитися сонливість, зміни настрою, тяга до солодкого. У цей час важливо слухати себе, більше відпочивати й піклуватися про емоційний комфорт.",
-          finalize_cycle: "Менструальний цикл — це не ворог, а природний календар нашого тіла. Якщо прислухатися до його фаз, можна краще планувати свій день, розуміти зміни настрою та бути більш гармонійною із собою.",
+          phase_17_28_desc:
+            "Якщо вагітність не настала, починає домінувати прогестерон. Може з'явитися сонливість, зміни настрою, тяга до солодкого. У цей час важливо слухати себе, більше відпочивати й піклуватися про емоційний комфорт.",
+          finalize_cycle:
+            "Менструальний цикл — це не ворог, а природний календар нашого тіла. Якщо прислухатися до його фаз, можна краще планувати свій день, розуміти зміни настрою та бути більш гармонійною із собою.",
           go_back: "Повернутися назад",
           now: "зараз",
           menstruation: "місячні",
@@ -1128,23 +1261,29 @@ i18n
           high_chance: "Високий шанс завагітніти",
           no_chance: "Дуже низька ймовірність завагітніти",
           myth_facts: "Міфи і факти",
-          one: 'день',
-          few: 'дні',
-          other: 'днів',
+          one: "день",
+          few: "дні",
+          other: "днів",
           c_long: "Твій цикл тривав {{cLong}} днів. Що є нормою!",
-          phase_1: "Зараз ти знаходишся у менструальній фазі!\nЦе початок циклу.\nТи можеш відчувати недостачу енергії!\nУ цей час краще потурбуватися про себе та відпочити!",
-          phase_2: "Зараз ти знаходишся у фолікулярній фазі!\nАктивно зростає гормон естроген.\nТвій настрій зростає. Покращується шкіра!\nТи готова до підкорення цілого світу!",
-          phase_3: "Зараз ти знаходишся у овуляторній фазі!\nВідбувається вихід зрілої яйцеклітини.\nТи відчуваєш себе впевненою та сповненою енергії!\nСьогодні - чудовий день, щоб робити те, що приносить тобі радість!",
-          phase_4: "Зараз ти знаходишся у лютеїновій фазі!\nПочинає домінувати прогестерон!\nУ цей період може відбуватися зміна настрою та відчуватися сонливість!\nПіклуйся про свій комфорт та прислухайся до відчуттів!",
+          phase_1:
+            "Зараз ти знаходишся у менструальній фазі!\nЦе початок циклу.\nТи можеш відчувати недостачу енергії!\nУ цей час краще потурбуватися про себе та відпочити!",
+          phase_2:
+            "Зараз ти знаходишся у фолікулярній фазі!\nАктивно зростає гормон естроген.\nТвій настрій зростає. Покращується шкіра!\nТи готова до підкорення цілого світу!",
+          phase_3:
+            "Зараз ти знаходишся у овуляторній фазі!\nВідбувається вихід зрілої яйцеклітини.\nТи відчуваєш себе впевненою та сповненою енергії!\nСьогодні - чудовий день, щоб робити те, що приносить тобі радість!",
+          phase_4:
+            "Зараз ти знаходишся у лютеїновій фазі!\nПочинає домінувати прогестерон!\nУ цей період може відбуватися зміна настрою та відчуватися сонливість!\nПіклуйся про свій комфорт та прислухайся до відчуттів!",
           super: "Супер!",
-          gynecology_sub: "Все про регулярні обстеження, профілактику, турботу про жіноче здоров'я — без табу простою мовою.",
+          gynecology_sub:
+            "Все про регулярні обстеження, профілактику, турботу про жіноче здоров'я — без табу простою мовою.",
           womens_tests: "Обстеження та аналізи",
           regular_review: "Регулярні огляди",
           articles_: "Статті",
           read: "Читати",
           how_often: "Як часто потрібно\nвідвідувати\nгінеколога?",
           top_5_tests: "ТОП-5 аналізів для\nжіночого здоров'я",
-          review_sub: "Турбота про здоров'я починається з профілактики. Раз на рік — і ти вже на крок попереду проблеми.",
+          review_sub:
+            "Турбота про здоров'я починається з профілактики. Раз на рік — і ти вже на крок попереду проблеми.",
           what_to_check_regulary: "Що проходити регулярно?",
           gynecology_review: "Огляд у гінеколога",
           one_time_per_year: "раз на рік",
@@ -1156,33 +1295,45 @@ i18n
           mammography: "Мамографія",
           after_40_years: "після 40 років",
           examination_head: "Обстеження та аналізи",
-          examination_desc: "Правильні тести вчасно — запорукавпевненності у здоров'ї. Дізнайся, які аналізи та обстеження варто робити регулярно.",
+          examination_desc:
+            "Правильні тести вчасно — запорукавпевненності у здоров'ї. Дізнайся, які аналізи та обстеження варто робити регулярно.",
           base_review: "Базовий огляд",
           gynecology_examination: "Гінекологічний огляд",
           add_to_calendar: "Додати в календар",
           ultrasound_glands: "УЗД молочних залоз",
           need_I_test: "Чи потрібно робити аналізи, якщо я почуваюсь добре?",
-          examination_tip_need: "Регулярні медичні обстеження важливі навіть тоді, коли немає жодних скарг. Багато захворювань на ранніх етапах розвиваються безсимптомно, і вчасно зроблені базові аналізи (загальний аналіз крові, сечі, рівень цукру, холестерину) допомагають виявити проблеми ще до появи перших ознак.\n\nПланові перевірки раз на рік – це інвестиція у власне здоров'я. Вони дають можливість контролювати стан організму, своєчасно коригувати харчування, спосіб життя та уникати ускладнень.\n\nПочуваєтесь добре – чудово, але профілактика завжди легша та дешевша за лікування.",
+          examination_tip_need:
+            "Регулярні медичні обстеження важливі навіть тоді, коли немає жодних скарг. Багато захворювань на ранніх етапах розвиваються безсимптомно, і вчасно зроблені базові аналізи (загальний аналіз крові, сечі, рівень цукру, холестерину) допомагають виявити проблеми ще до появи перших ознак.\n\nПланові перевірки раз на рік – це інвестиція у власне здоров'я. Вони дають можливість контролювати стан організму, своєчасно коригувати харчування, спосіб життя та уникати ускладнень.\n\nПочуваєтесь добре – чудово, але профілактика завжди легша та дешевша за лікування.",
           what_needed_blood: "Що підготувати перед сдачею крові?",
-          what_needed_blood_info: "Щоб аналіз крові був точним підготуйтеся заздалегідь:\n\nЗдавайте кров натще останній прийом їжі має бути за 8–12 годин\n\nПийте тільки чисту воду без газу це не впливає на показники\n\nЗа день два не вживайте алкоголь жирні та дуже солодкі страви\n\nУ день здачі уникайте сильних фізичних навантажень і стресу\n\nЯкщо приймаєте ліки обов'язково скажіть про це лікарю",
+          what_needed_blood_info:
+            "Щоб аналіз крові був точним підготуйтеся заздалегідь:\n\nЗдавайте кров натще останній прийом їжі має бути за 8–12 годин\n\nПийте тільки чисту воду без газу це не впливає на показники\n\nЗа день два не вживайте алкоголь жирні та дуже солодкі страви\n\nУ день здачі уникайте сильних фізичних навантажень і стресу\n\nЯкщо приймаєте ліки обов'язково скажіть про це лікарю",
           what_diff_ultrasound_mam: "Чим відрізняється УЗД від мамографії?",
-          what_diff_ultrasound_mam_info: "УЗД (ультразвукове дослідження) використовує звукові хвилі для візуалізації тканин і добре показує м'які структури грудей, особливо у молодих жінок з щільною тканиною\n\nМамографія – це рентгенівське обстеження, яке дозволяє виявити дрібні кальцинати і ранні ознаки пухлин навіть до появи ущільнень\n\nУЗД не використовує випромінювання і підходить для додаткового контролю\nМамографія залишається основним скринінговим методом для жінок старше 40 років\n\nОбидва методи часто використовують разом для більш точної діагностики",
-          why_pap_test: "Навіщо робити цитологічний мазок (ПАП-тест) і як часто",
-          why_pap_test_info: "Цитологічний мазок або ПАП-тест допомагає виявити зміни клітин шийки матки на ранніх стадіях коли ще немає симптомів\n\nРегулярне обстеження дозволяє запобігти розвитку раку і своєчасно лікувати запальні процеси\n\nЗазвичай ПАП-тест роблять раз на рік якщо немає проблем або за рекомендацією лікаря частіше\n\nОбстеження швидке безболісне і займає кілька хвилин\n\nНавіть якщо ви почуваєтесь добре тест допомагає дбати про своє здоров'я",
+          what_diff_ultrasound_mam_info:
+            "УЗД (ультразвукове дослідження) використовує звукові хвилі для візуалізації тканин і добре показує м'які структури грудей, особливо у молодих жінок з щільною тканиною\n\nМамографія – це рентгенівське обстеження, яке дозволяє виявити дрібні кальцинати і ранні ознаки пухлин навіть до появи ущільнень\n\nУЗД не використовує випромінювання і підходить для додаткового контролю\nМамографія залишається основним скринінговим методом для жінок старше 40 років\n\nОбидва методи часто використовують разом для більш точної діагностики",
+          why_pap_test:
+            "Навіщо робити цитологічний мазок (ПАП-тест) і як часто",
+          why_pap_test_info:
+            "Цитологічний мазок або ПАП-тест допомагає виявити зміни клітин шийки матки на ранніх стадіях коли ще немає симптомів\n\nРегулярне обстеження дозволяє запобігти розвитку раку і своєчасно лікувати запальні процеси\n\nЗазвичай ПАП-тест роблять раз на рік якщо немає проблем або за рекомендацією лікаря частіше\n\nОбстеження швидке безболісне і займає кілька хвилин\n\nНавіть якщо ви почуваєтесь добре тест допомагає дбати про своє здоров'я",
           reproductive: "Репродуктивне здоров'я",
-          reproductive_sub: "Плануй з нами! Дбай про своє тіло і плануй майбутнє з упевненністю.",
+          reproductive_sub:
+            "Плануй з нами! Дбай про своє тіло і плануй майбутнє з упевненністю.",
           myth_main: "Існує купа міфів навкруги місячних.",
           myth_sub: "Ось для тебе маленька підборка)",
           cant_sport: "Під час місячних не можна займатись спортом",
-          cant_sport_desc: "Насправді легка фізична активність, як-от йога, піші прогулянки чи навіть помірні тренування, може полегшити спазми та покращити настрій.",
+          cant_sport_desc:
+            "Насправді легка фізична активність, як-от йога, піші прогулянки чи навіть помірні тренування, може полегшити спазми та покращити настрій.",
           c_long_: "Цикл завжди триває рівно 28 днів",
-          c_long_desc: "Цикл у кожної людини індивідуальний: нормою вважають інтервал приблизно від 21 до 35 днів.",
+          c_long_desc:
+            "Цикл у кожної людини індивідуальний: нормою вважають інтервал приблизно від 21 до 35 днів.",
           cant_swim: "Не можна купатися чи приймати ванну під час місячних",
-          cant_swim_desc: "Купання та душ безпечні. Гігієнічні засоби (тампони, менструальні чаші) дозволяють комфортно плавати й підтримувати чистоту.",
+          cant_swim_desc:
+            "Купання та душ безпечні. Гігієнічні засоби (тампони, менструальні чаші) дозволяють комфортно плавати й підтримувати чистоту.",
           cant_get_pregnant: "Під час місячних не можна завагітніти",
-          cant_get_pregnant_desc: "Ймовірність нижча, але не нульова: сперматозоїди можуть жити в тілі кілька днів, а овуляція інколи настає раніше або пізніше, ніж очікується.",
+          cant_get_pregnant_desc:
+            "Ймовірність нижча, але не нульова: сперматозоїди можуть жити в тілі кілька днів, а овуляція інколи настає раніше або пізніше, ніж очікується.",
           pain_is_ok: "Менструальний біль — це завжди нормально",
-          pain_is_ok_desc: "Легкий дискомфорт типовий, але сильний або виснажливий біль може свідчити про ендометріоз чи інші захворювання, і варто звернутися до лікаря.",
+          pain_is_ok_desc:
+            "Легкий дискомфорт типовий, але сильний або виснажливий біль може свідчити про ендометріоз чи інші захворювання, і варто звернутися до лікаря.",
 
           // === МЕНТАЛЬНЕ ЗДОРОВ'Я ===
           your: "Твоє здоров'я",
@@ -1310,7 +1461,8 @@ i18n
           mp_aew_wizard_title_step_1: "Я відчуваю",
           mp_aew_wizard_title_step_2: "Що було причиною цих емоцій?",
           mp_aew_wizard_title_step_3: "Хочеш написати щось про",
-          mp_aew_wizard_description_step_3: "Ваша замітка є приватною і її видно тільки вам.",
+          mp_aew_wizard_description_step_3:
+            "Ваша замітка є приватною і її видно тільки вам.",
           mp_return_back: "Повернутись назад",
           mp_btn_next: "Далі",
           mp_btn_add: "Додати",
@@ -1326,13 +1478,16 @@ i18n
           // === ДИХАЛЬНІ ПРАКТИКИ ===
           mp_bpp_title: "Дихальні практики",
           mp_bpp_subtitle: "Видихни стрес — вдихни спокій 🌿",
-          mp_bpp_description_1: "Прості вправи на дихання допомагають зняти напругу, відновити енергію та повернути ясність думок. Почати можна будь-де: вдома, на роботі чи навіть у транспорті.",
-          mp_bpp_description_2: "Спробуй — і відчуй, як тіло розслабляється, а настрій стає легшим.",
+          mp_bpp_description_1:
+            "Прості вправи на дихання допомагають зняти напругу, відновити енергію та повернути ясність думок. Почати можна будь-де: вдома, на роботі чи навіть у транспорті.",
+          mp_bpp_description_2:
+            "Спробуй — і відчуй, як тіло розслабляється, а настрій стає легшим.",
           mp_bpp_card_title_1: "Діафрагмальне дихання",
           mp_bpp_card_description_1_1: "Зменшить стрес і тривогу.",
           mp_bpp_card_description_1_2: "Розслабляє, знімає напругу.",
           mp_bpp_card_title_2: "Дихання Квадрат",
-          mp_bpp_card_description_2_1: "Знімає тривогу й допомагає зосередитись.",
+          mp_bpp_card_description_2_1:
+            "Знімає тривогу й допомагає зосередитись.",
           mp_bpp_card_title_3: "Наді шодхана",
           mp_bpp_card_description_3_1: "Дихання по черзі через ніздрі.",
           mp_bpp_card_description_3_2: "Допомагає зняти стрес.",
@@ -1341,7 +1496,8 @@ i18n
           // === ДІАФРАГМАЛЬНЕ ДИХАННЯ ===
           mp_dbp_title: "Діафрагмальне дихання",
           mp_dbp_subtitle: "Дихання, що повертає спокій",
-          mp_dbp_description_1_1: "Сядь зручно. Розслаб плечі. Виконуй хочаб 3 - 5 хвилин.",
+          mp_dbp_description_1_1:
+            "Сядь зручно. Розслаб плечі. Виконуй хочаб 3 - 5 хвилин.",
           mp_dbp_description_1_2: "Повертайся до дихання, як відчуєш напругу.",
           mp_dbp_inhale: "ВДИХ",
           mp_dbp_hold: "ТРИМАЙ",
@@ -1352,15 +1508,20 @@ i18n
           mp_ebp_title: "Щоденник емоцій",
           mp_ebp_factor_title: "Фактори настрою",
           mp_ebp_factor_info_p_1: "Всі фактори - твої можливі тригери.",
-          mp_ebp_factor_info_p_2: "Наприклад, ви можете не помічати, що спорт, кава або наркотики впливають на ваш настрій і формують поведінкові патерни.",
-          mp_ebp_factor_info_p_3: "Ви можете відстежити вплив факторів на ваше самопочуття пізніше в розділі аналітики.",
+          mp_ebp_factor_info_p_2:
+            "Наприклад, ви можете не помічати, що спорт, кава або наркотики впливають на ваш настрій і формують поведінкові патерни.",
+          mp_ebp_factor_info_p_3:
+            "Ви можете відстежити вплив факторів на ваше самопочуття пізніше в розділі аналітики.",
           mp_ebp_factor_info_p_4: "Приклад",
           mp_ebp_factor_info_p_5: "Харчування та стимулятори:",
-          mp_ebp_factor_info_p_6: "Записуй споживання кави, вітамінів або продуктів, які можуть вплинути на рівень енергії.",
+          mp_ebp_factor_info_p_6:
+            "Записуй споживання кави, вітамінів або продуктів, які можуть вплинути на рівень енергії.",
           mp_ebp_factor_info_p_7: "Активність та фізичні вправи:",
-          mp_ebp_factor_info_p_8: "Відстежуй кількість фізичних вправ або участь у інших формах фізичної активності.",
+          mp_ebp_factor_info_p_8:
+            "Відстежуй кількість фізичних вправ або участь у інших формах фізичної активності.",
           mp_ebp_factor_info_p_9: "Біологічні цикли:",
-          mp_ebp_factor_info_p_10: "Відстежуючи свої місячні, ви зможете зрозуміти, як вони впливають на ваше емоційне самопочуття.",
+          mp_ebp_factor_info_p_10:
+            "Відстежуючи свої місячні, ви зможете зрозуміти, як вони впливають на ваше емоційне самопочуття.",
           mp_ebp_selected_factors: "Обрані фактори:",
           mp_ebp_available_factors: "Доступні фактори:",
           mp_ebp_hello_how_are_you: "Привіт! Ти як?",
@@ -1369,7 +1530,8 @@ i18n
 
           // === ГОЛОВНА МЕНТАЛЬНОГО ЗДОРОВ'Я ===
           mp_mhp_title: "Твій спокій починається тут.",
-          mp_mhp_sub_title: "Ми зібрали інструменти, які допоможуть залишитись врівноваженим навіть у найстресовіші дні.",
+          mp_mhp_sub_title:
+            "Ми зібрали інструменти, які допоможуть залишитись врівноваженим навіть у найстресовіші дні.",
           mp_mhp_test_card_title: "Тести на стан",
           mp_mhp_test_card_btn_text: "Пройти тест",
           mp_mhp_breathing_card_title: "Дихальні практики",
@@ -1395,59 +1557,80 @@ i18n
           mp_mtp_test_data_answers_4_1: "Нормально, заряд тримається",
           mp_mtp_test_data_answers_4_2: "Як батарейка на 30%",
           mp_mtp_test_data_answers_4_3: "Як телефон, що вимикається на холоді",
-          mp_mtp_test_data_question_5: "Що ти думаєш, коли чуєш слово \"відпочинок\"?",
+          mp_mtp_test_data_question_5:
+            'Що ти думаєш, коли чуєш слово "відпочинок"?',
           mp_mtp_test_data_answers_5_1: "Планую, щось приємне",
           mp_mtp_test_data_answers_5_2: "Лежати вдома й нічого не робити",
           mp_mtp_test_data_answers_5_3: "У мене немає часу на відпочинок",
           mp_mtp_test_result_title_1: "Твоя менталочка в нормі.",
-          mp_mtp_test_result_description_1: "Ти маєш чудовий рівень енергії та оптимізму. Продовжуй дбати про себе та підтримувати цей стан!",
+          mp_mtp_test_result_description_1:
+            "Ти маєш чудовий рівень енергії та оптимізму. Продовжуй дбати про себе та підтримувати цей стан!",
           mp_mtp_test_result_title_2: "Менталочка переважно в нормі.",
-          mp_mtp_test_result_description_2: "Більшість справ йдуть добре, але деякі сфери потребують трохи більше уваги та турботи.",
+          mp_mtp_test_result_description_2:
+            "Більшість справ йдуть добре, але деякі сфери потребують трохи більше уваги та турботи.",
           mp_mtp_test_result_title_3: "Менталочка трохи виснажена",
-          mp_mtp_test_result_description_3: "Ти відчуваєш легку втому. Знайди час для відпочинку та маленьких радощів.",
+          mp_mtp_test_result_description_3:
+            "Ти відчуваєш легку втому. Знайди час для відпочинку та маленьких радощів.",
           mp_mtp_test_result_title_4: "Менталочка просить турботи",
-          mp_mtp_test_result_description_4: "Тобі треба більше відпочинку, радощів і підтримки. Зверни увагу на свої потреби.",
+          mp_mtp_test_result_description_4:
+            "Тобі треба більше відпочинку, радощів і підтримки. Зверни увагу на свої потреби.",
           mp_mtp_test_result_title_5: "Менталочка кричить SOS",
-          mp_mtp_test_result_description_5: "Ти можеш відчувати вигорання. Не соромся звертатися за допомогою та знайди час для серйозного відпочинку.",
-          mp_mtp_test_result_title_6: "Твоя менталочка — як американські гірки.",
-          mp_mtp_test_result_description_6: "Твій стан часто міняється. Деякі дні чудові, інші - складніші. Намагайся знайти баланс.",
-          mp_mtp_start_message: "Увага! Тест не має діагностичної сили, але показує твій рівень стресу чи вигорання.",
+          mp_mtp_test_result_description_5:
+            "Ти можеш відчувати вигорання. Не соромся звертатися за допомогою та знайди час для серйозного відпочинку.",
+          mp_mtp_test_result_title_6:
+            "Твоя менталочка — як американські гірки.",
+          mp_mtp_test_result_description_6:
+            "Твій стан часто міняється. Деякі дні чудові, інші - складніші. Намагайся знайти баланс.",
+          mp_mtp_start_message:
+            "Увага! Тест не має діагностичної сили, але показує твій рівень стресу чи вигорання.",
           mp_mtp_test_title: "Тест на стан твоєї менталочки",
-          mp_mtp_test_description: "Тицяй відповіді, які відповідають твоєму стану)",
+          mp_mtp_test_description:
+            "Тицяй відповіді, які відповідають твоєму стану)",
 
           // === НАДІ ШОДХАНА ===
           mp_nsp_title: "Наді Шодхана",
           mp_nsp_subtitle: "Дихання, що балансує енергію",
-          mp_nsp_description_1: "Техніка чергування ніздрей для гармонізації розуму та тіла.",
+          mp_nsp_description_1:
+            "Техніка чергування ніздрей для гармонізації розуму та тіла.",
           mp_nsp_description_2: "Виконуй 3-5 хвилин для досягнення ефекту.",
           mp_nsp_technique_title: "Техніка:",
           mp_nsp_technique_step_1: "Сядь зручно, вирівняй спину.",
-          mp_nsp_technique_step_2: "Рукою закрий праву ніздрю, вдихни через ліву.",
+          mp_nsp_technique_step_2:
+            "Рукою закрий праву ніздрю, вдихни через ліву.",
           mp_nsp_technique_step_3: "Потім закрий ліву — видихни через праву.",
           mp_nsp_technique_step_4: "Вдихни правою — видихни лівою.",
-          mp_nsp_technique_step_5: "Продовжуй кілька хвилин у спокійному темпі.",
+          mp_nsp_technique_step_5:
+            "Продовжуй кілька хвилин у спокійному темпі.",
           mp_nsp_result_title: "Результат:",
-          mp_nsp_result_description_1: "Вже через кілька хвилин з'являється відчуття спокою. Знижується рівень напруги. Розум прояснюється, наче після короткого відпочинку.",
-          mp_nsp_result_description_2: "Регулярна практика допомагає краще засинати, концентруватися та зберігати внутрішню рівновагу навіть у стресових ситуаціях.",
+          mp_nsp_result_description_1:
+            "Вже через кілька хвилин з'являється відчуття спокою. Знижується рівень напруги. Розум прояснюється, наче після короткого відпочинку.",
+          mp_nsp_result_description_2:
+            "Регулярна практика допомагає краще засинати, концентруватися та зберігати внутрішню рівновагу навіть у стресових ситуаціях.",
 
           // === ДИХАННЯ КВАДРАТ ===
           mp_sbp_title: "Дихання Квадрат",
           mp_sbp_subtitle: "Дихання, що повертає спокій",
-          mp_sbp_description_1: "Сядь зручно. Розслаб плечі. Виконуй хочаб 3 - 5 хвилин.",
+          mp_sbp_description_1:
+            "Сядь зручно. Розслаб плечі. Виконуй хочаб 3 - 5 хвилин.",
           mp_sbp_description_2: "Повертайся до дихання, як відчуєш напругу.",
 
           // === ТВОЄ ЗДОРОВ'Я ===
           mp_yhp_main_title: "Твоє здоров'я —",
           mp_yhp_main_subtitle: "Твоя суперсила. Вона стоїть на 3х китах:",
           mp_yhp_activity_title: "Активність",
-          mp_yhp_activity_description_1: "Навіть 15 хвилин на день, вже роблять різницю.",
-          mp_yhp_activity_description_2: "Прогулянка, скакалка, пілатес – оберіть те, що подобається, і тіло скаже 'дякую'.",
+          mp_yhp_activity_description_1:
+            "Навіть 15 хвилин на день, вже роблять різницю.",
+          mp_yhp_activity_description_2:
+            "Прогулянка, скакалка, пілатес – оберіть те, що подобається, і тіло скаже 'дякую'.",
           mp_yhp_sleep_title: "Сон",
           mp_yhp_sleep_description_1: "Це найважливіше за все!",
-          mp_yhp_sleep_description_2: "Сон – це не лінь, а твій внутрішній зарядний кабель. 7-8 годин якісного відпочинку допомагають тілу відновитися, а мозку – працювати швидко та креативно.",
+          mp_yhp_sleep_description_2:
+            "Сон – це не лінь, а твій внутрішній зарядний кабель. 7-8 годин якісного відпочинку допомагають тілу відновитися, а мозку – працювати швидко та креативно.",
           mp_yhp_nutrition_title: "Харчування",
-          mp_yhp_nutrition_description_1: "Їжа - це пальне. Чим вона якісніше, тим краще працює твій 'двигун'.",
-          mp_yhp_nutrition_description_2: "Не про дієти, а про баланс: більше овочів, менше стресу з перекусами.",
+          mp_yhp_nutrition_description_1:
+            "Їжа - це пальне. Чим вона якісніше, тим краще працює твій 'двигун'.",
+          mp_yhp_nutrition_description_2:
+            "Не про дієти, а про баланс: більше овочів, менше стресу з перекусами.",
 
           // === ЧОЛОВІЧЕ ЗДОРОВ'Я ===
           hormonas_diagram: "Графік чоловічого здоров'я",
@@ -1479,27 +1662,35 @@ i18n
           mp_analyses_block_content_value_5: "за рекомендацією лікаря",
           mp_reproductive_block_title: "Репродуктивне здоров'я",
           mp_reproductive_block_content_label_1: "Фертильність",
-          mp_reproductive_block_content_value_1: "якість сперми залежить від способу життя",
+          mp_reproductive_block_content_value_1:
+            "якість сперми залежить від способу життя",
           mp_reproductive_block_content_label_2: "Ризики",
-          mp_reproductive_block_content_value_2: "перегрів, алкоголь, куріння, ожиріння",
+          mp_reproductive_block_content_value_2:
+            "перегрів, алкоголь, куріння, ожиріння",
           mp_reproductive_block_content_label_3: "Рекомендації",
           mp_reproductive_block_content_value_3: "Уролог 1/рік, спермограма",
           mp_urinary_block_title: "Сечова система",
           mp_urinary_block_content_label_1: "Перевірка простати",
           mp_urinary_block_content_value_1: "з 40 років — ПСА і УЗД 1/рік",
           mp_urinary_block_content_label_2: "Тривога!",
-          mp_urinary_block_content_value_2: "біль, кров у сечі, часте сечевипускання",
+          mp_urinary_block_content_value_2:
+            "біль, кров у сечі, часте сечевипускання",
           mp_urinary_block_content_label_3: "Що робити?",
-          mp_urinary_block_content_value_3: "не терпимо дискомфорт, біжливо до уролога",
+          mp_urinary_block_content_value_3:
+            "не терпимо дискомфорт, біжливо до уролога",
           mp_potency_block_title: "Потенція",
           mp_potency_block_content_label_1: "Чому знижується?",
-          mp_potency_block_content_value_1: "стрес, алкоголь, куріння, хвороби серця",
+          mp_potency_block_content_value_1:
+            "стрес, алкоголь, куріння, хвороби серця",
           mp_potency_block_content_label_2: "Як підтримати?",
-          mp_potency_block_content_value_2: "спорт, якісний сон, збалансоване харчування",
+          mp_potency_block_content_value_2:
+            "спорт, якісний сон, збалансоване харчування",
           mp_potency_block_content_label_3: "Коли до лікаря?",
-          mp_potency_block_content_value_3: "якщо проблеми тривають понад 2 місяці",
+          mp_potency_block_content_value_3:
+            "якщо проблеми тривають понад 2 місяці",
           mp_subtitle_2: "Турбуйся про себе, як про улюблену автівку",
-          mp_form_subtitle: "Заповни поля, якщо є актуальні данні, і ми складемо тобі графік",
+          mp_form_subtitle:
+            "Заповни поля, якщо є актуальні данні, і ми складемо тобі графік",
           mp_form_testosterone: "Тестостерон",
           mp_form_free_testosterone: "Вільний тестостерон",
           mp_form_free_testosterone_2: "Вільний Т",
@@ -1513,8 +1704,10 @@ i18n
           mp_form_pg_ml: "пг/мл",
           mp_form_mO_l: "мО/л",
           mp_form_save_btn: "Зберегти показники",
-          mp_diagram_hormons_value_not_found: "Дані про гормони не знайдено. Будь ласка, внесіть свої показники.",
-          mp_diagram_hormons_data_not_found: "Помилка при завантаженні даних. Зверніться в тех підтримку.",
+          mp_diagram_hormons_value_not_found:
+            "Дані про гормони не знайдено. Будь ласка, внесіть свої показники.",
+          mp_diagram_hormons_data_not_found:
+            "Помилка при завантаженні даних. Зверніться в тех підтримку.",
           mp_diagram_low: "Низький",
           mp_diagram_norm: "Норма",
           mp_diagram_high: "Високий",
@@ -1534,38 +1727,51 @@ i18n
           more_energy: "MEHR ENERGIE.",
           healthy_lifestyle: "DEINEN GESUNDEN LEBENSSTIL AN EINEM ORT.",
           register: "Registrieren",
-          description_part1: " ist eine Plattform, die dir hilft, auf einfache und lässige Weise auf dich selbst aufzupassen.",
-          description_part2: "Verfolge deine Ernährung und Training, achte auf deine Gesundheit und erhalte Unterstützung von Experten.",
-          description_part3: "Finde nützliche Produkte und teile deine Motivation mit der Community.",
-          description_part4: "Gemeinsam mit Nomyfy entwickelst du Schritt für Schritt gesunde Gewohnheiten und fühlst dich jeden Tag besser.",
+          description_part1:
+            " ist eine Plattform, die dir hilft, auf einfache und lässige Weise auf dich selbst aufzupassen.",
+          description_part2:
+            "Verfolge deine Ernährung und Training, achte auf deine Gesundheit und erhalte Unterstützung von Experten.",
+          description_part3:
+            "Finde nützliche Produkte und teile deine Motivation mit der Community.",
+          description_part4:
+            "Gemeinsam mit Nomyfy entwickelst du Schritt für Schritt gesunde Gewohnheiten und fühlst dich jeden Tag besser.",
 
           // === EXPERTENSEKTION ===
           specialist_title_line1: "DEIN TALENT IST HIER GEFRAGT!",
           specialist_title_line2: "WIR SUCHEN PROFIS WIE DICH!",
-          specialist_text_line1: "Wenn du ein Spezialist in Psychologie, Ernährung oder ein Trainer bist,",
-          specialist_text_line2: "lass uns diese Welt besser machen. Mit Profis zusammenarbeiten.",
+          specialist_text_line1:
+            "Wenn du ein Spezialist in Psychologie, Ernährung oder ein Trainer bist,",
+          specialist_text_line2:
+            "lass uns diese Welt besser machen. Mit Profis zusammenarbeiten.",
           specialist_text_line3: "Du passt zu uns!",
           become_specialist: "Experte werden",
 
           // === MARKTPLATZ ===
           marketplace_title: "MARKTPLATZ FÜR GESUNDE LÖSUNGEN.",
-          marketplace_subtitle: "Alles, was dir hilft, gesund zu leben, an einem Ort gesammelt.",
+          marketplace_subtitle:
+            "Alles, was dir hilft, gesund zu leben, an einem Ort gesammelt.",
           marketplace_button: "Marktplatz",
 
           // === FAQ ===
           faq_title: "Häufig gestellte Fragen",
           faq_q1_title: "Was ist NOMYFY?",
-          faq_q1_answer: "NOMYFY ist individuelle Therapie bei emotionalem Burnout.",
+          faq_q1_answer:
+            "NOMYFY ist individuelle Therapie bei emotionalem Burnout.",
           faq_q2_title: "Für wen ist NOMYFY?",
-          faq_q2_answer: "Für diejenigen, die nach Wegen suchen, ihre psychische Gesundheit zu verbessern.",
+          faq_q2_answer:
+            "Für diejenigen, die nach Wegen suchen, ihre psychische Gesundheit zu verbessern.",
           faq_q3_title: "Was sind die Vorteile von NOMYFY?",
-          faq_q3_answer: "NOMYFY hilft, dein Leben in Ordnung zu bringen, beginnend bei dir selbst.",
+          faq_q3_answer:
+            "NOMYFY hilft, dein Leben in Ordnung zu bringen, beginnend bei dir selbst.",
           faq_q4_title: "Kann man die Dienstleistungen kostenlos nutzen?",
-          faq_q4_answer: "Ja, wir haben kostenlose Möglichkeiten, aber die meisten Dienstleistungen sind kostenpflichtig.",
+          faq_q4_answer:
+            "Ja, wir haben kostenlose Möglichkeiten, aber die meisten Dienstleistungen sind kostenpflichtig.",
           faq_q5_title: "Wie fange ich an?",
-          faq_q5_answer: "Du musst dich auf unserer Plattform registrieren und eine Dienstleistung auswählen.",
+          faq_q5_answer:
+            "Du musst dich auf unserer Plattform registrieren und eine Dienstleistung auswählen.",
           faq_q6_title: "Wie wird man Partner von NOMYFY?",
-          faq_q6_answer: "Hinterlasse eine Anfrage auf unserer Website und wir werden uns mit dir in Verbindung setzen.",
+          faq_q6_answer:
+            "Hinterlasse eine Anfrage auf unserer Website und wir werden uns mit dir in Verbindung setzen.",
 
           // === FUßZEILE ===
           specialists: "Experten",
@@ -1598,7 +1804,8 @@ i18n
           password_new: "Neues Passwort",
 
           // === PASSWORT ZURÜCKSETZEN ===
-          enter_email_to_restore: "Gib deine E-Mail ein, um einen Code zu senden",
+          enter_email_to_restore:
+            "Gib deine E-Mail ein, um einen Code zu senden",
           send_code2: "Code senden",
           reset_password: "Passwort zurücksetzen",
           password_confirm: "Passwort bestätigen",
@@ -1606,7 +1813,8 @@ i18n
           password_update_success: "Passwort erfolgreich aktualisiert",
           to_login: "Zurück zur Anmeldung",
           user_not_exist: "Benutzer mit dieser E-Mail existiert nicht",
-          reset_password_error: "Fehler beim Zurücksetzen des Passworts. Bitte versuche es erneut.",
+          reset_password_error:
+            "Fehler beim Zurücksetzen des Passworts. Bitte versuche es erneut.",
           user_exist: "Ein Benutzer mit dieser E-Mail existiert bereits",
           auth_fail: "Authentifizierungsfehler. Bitte überprüfe deine Daten.",
 
@@ -1636,7 +1844,8 @@ i18n
           bmi_requires: "Bitte gib Informationen zu Größe und Gewicht ein",
 
           // === BENUTZERPROFIL ===
-          p_error_upadate: "Profil konnte nicht aktualisiert werden. Bitte fülle alle Felder aus.",
+          p_error_upadate:
+            "Profil konnte nicht aktualisiert werden. Bitte fülle alle Felder aus.",
           p_male: "Mann",
           p_female: "Frau",
           p_other: "Andere",
@@ -1698,7 +1907,8 @@ i18n
           article_1: "10 einfache Techniken zum Stressabbau",
           article_2: "Effektive Methoden zur Bewältigung von Angst",
           article_3: "Atemtechniken zur Entspannung",
-          article_4: "Der Zusammenhang zwischen Schlaf und psychischer Gesundheit",
+          article_4:
+            "Der Zusammenhang zwischen Schlaf und psychischer Gesundheit",
           article_5: "Grundlagen der Meditation für Anfänger",
           article_6: "Strategien zur Verbesserung des Selbstwertgefühls",
           article_7: "Prävention und Überwindung von Burnout",
@@ -1733,11 +1943,13 @@ i18n
           ch_create_success: "Challenge erfolgreich erstellt!",
           ch_create_error: "Challenge konnte nicht erstellt werden.",
           ch_confirmJoinTitle: "Beitritt zur Challenge bestätigen",
-          ch_confirmJoinText: "Bist du sicher, dass du dieser Challenge beitreten möchtest?",
+          ch_confirmJoinText:
+            "Bist du sicher, dass du dieser Challenge beitreten möchtest?",
           yes: "Ja",
           no: "Nein",
           ch_confirmDeleteTitle: "Löschen der Challenge bestätigen",
-          ch_confirmDeleteText: "Bist du sicher, dass du diese Challenge löschen möchtest? Diese Aktion kann nicht rückgängig gemacht werden.",
+          ch_confirmDeleteText:
+            "Bist du sicher, dass du diese Challenge löschen möchtest? Diese Aktion kann nicht rückgängig gemacht werden.",
           ch_joinedTitle: "Erfolg!",
           ch_joinedText: "Du bist der Challenge erfolgreich beigetreten.",
           ok: "OK",
@@ -1752,15 +1964,18 @@ i18n
           ch_saving: "Wird gespeichert...",
           ch_edit_success: "Challenge erfolgreich aktualisiert!",
           ch_edit_success_title: "Erfolg!",
-          ch_edit_error: "Challenge konnte nicht aktualisiert werden. Bitte versuche es erneut.",
+          ch_edit_error:
+            "Challenge konnte nicht aktualisiert werden. Bitte versuche es erneut.",
           ch_leave: "Verlassen",
           ch_complete: "Abschließen",
           ch_confirmLeaveTitle: "Verlassen der Challenge bestätigen",
-          ch_confirmLeaveText: "Bist du sicher, dass du diese Challenge verlassen möchtest?",
+          ch_confirmLeaveText:
+            "Bist du sicher, dass du diese Challenge verlassen möchtest?",
           ch_leftTitle: "Challenge verlassen",
           ch_leftText: "Du hast die Challenge erfolgreich verlassen.",
           ch_completedTitle: "Challenge abgeschlossen",
-          ch_completedText: "Herzlichen Glückwunsch! Du hast die Challenge erfolgreich abgeschlossen.",
+          ch_completedText:
+            "Herzlichen Glückwunsch! Du hast die Challenge erfolgreich abgeschlossen.",
 
           // === MENSTRUATIONSKALENDER ===
           last_cycle_first_day: "1. Tag der letzten Periode",
@@ -1769,7 +1984,8 @@ i18n
           female: "Frau",
           gender: "Gesundheit nach Geschlecht",
           female_health: "Weibliche Gesundheit",
-          female_health_fine: "Weibliche Gesundheit ohne Tabus - ehrlich, einfach und mit Sorge um dich.",
+          female_health_fine:
+            "Weibliche Gesundheit ohne Tabus - ehrlich, einfach und mit Sorge um dich.",
           cycle_info: "Alles über deinen Zyklus",
           reproductive_health: "Reproduktive Gesundheit",
           hormonas: "Hormone",
@@ -1781,43 +1997,60 @@ i18n
           plan: "Planen",
           preventive_check: "Vorsorgeuntersuchung mindestens einmal im Jahr",
           hormonas_health: "Gesunde Hormone",
-          hormonas_important: "Warum es wichtig ist, den Hormonspiegel zu kontrollieren",
+          hormonas_important:
+            "Warum es wichtig ist, den Hormonspiegel zu kontrollieren",
           cycle_health: "Ist der Zyklus wichtig?",
           cycle_important: "Warum es wichtig ist, jeden Zyklus zu verfolgen",
           examination_health: "Allgemeine Untersuchungen",
-          examination_important: "Warum es wichtig ist, den Hormonspiegel zu kontrollieren",
+          examination_important:
+            "Warum es wichtig ist, den Hormonspiegel zu kontrollieren",
           find_doctor: "Finde einen Arzt in deiner Nähe",
           your_cycle: "Dein Zyklus",
-          cycle_control: "Verfolge deinen Zyklus, kontrolliere dein Wohlbefinden und erhalte rechtzeitig Erinnerungen",
+          cycle_control:
+            "Verfolge deinen Zyklus, kontrolliere dein Wohlbefinden und erhalte rechtzeitig Erinnerungen",
           calendar_cycle: "Menstruationskalender",
           calc_cycle: "Meinen Menstruationskalender berechnen",
-          warning_calc: "*Berechnungen mit unserem Menstruationskalender sind möglicherweise nicht 100 % genau, da jeder Körper und jeder Zyklus unterschiedlich ist. Hilf uns, deinen Kalender genauer zu machen.",
+          warning_calc:
+            "*Berechnungen mit unserem Menstruationskalender sind möglicherweise nicht 100 % genau, da jeder Körper und jeder Zyklus unterschiedlich ist. Hilf uns, deinen Kalender genauer zu machen.",
           cycle: "Zyklus",
           why_should_calendar: "Warum einen Menstruationskalender führen?",
-          preview_calendar: "Einen Menstruationskalender zu führen geht nicht nur darum, an „diese Tage“ zu denken. Es ist ein kleines Ritual der Selbstfürsorge, das hilft, den eigenen Körper und die Stimmung besser zu verstehen.",
+          preview_calendar:
+            "Einen Menstruationskalender zu führen geht nicht nur darum, an „diese Tage“ zu denken. Es ist ein kleines Ritual der Selbstfürsorge, das hilft, den eigenen Körper und die Stimmung besser zu verstehen.",
           predict_cycle: "Prognostiziert den Zyklus",
-          predict_cycle_desc: "Du weißt immer, wann deine Periode und der Eisprung beginnen. Das hilft, Ereignisse, Urlaub oder wichtige Meetings zu planen.",
+          predict_cycle_desc:
+            "Du weißt immer, wann deine Periode und der Eisprung beginnen. Das hilft, Ereignisse, Urlaub oder wichtige Meetings zu planen.",
           listen_yourself: "Auf sich selbst hören",
-          listen_yourself_desc: "Der Kalender hilft zu bemerken, wie sich Energie, Stimmung und Appetit in den verschiedenen Zyklusphasen verändern.",
+          listen_yourself_desc:
+            "Der Kalender hilft zu bemerken, wie sich Energie, Stimmung und Appetit in den verschiedenen Zyklusphasen verändern.",
           regularity: "Regelmäßigkeiten erkennen",
-          regularity_desc: "Schmerzen, PMS, Stimmungsschwankungen oder Hautveränderungen werden deutlicher. Du kannst leicht verfolgen, was sich wiederholt und was dir hilft, dich besser zu fühlen.",
+          regularity_desc:
+            "Schmerzen, PMS, Stimmungsschwankungen oder Hautveränderungen werden deutlicher. Du kannst leicht verfolgen, was sich wiederholt und was dir hilft, dich besser zu fühlen.",
           doctor_help: "Hilft dem Arzt",
-          doctor_help_desc: "Wenn du einen Frauenarzt aufsuchen musst, macht eine genaue Aufzeichnung des Zyklus und der Symptome die Beratung effektiver.",
+          doctor_help_desc:
+            "Wenn du einen Frauenarzt aufsuchen musst, macht eine genaue Aufzeichnung des Zyklus und der Symptome die Beratung effektiver.",
           planing: "Planung von Gesundheit und Fitness",
-          planing_desc: "Du kannst Training, Ernährung oder Entspannung an deinen Rhythmus anpassen, um den maximalen Nutzen zu erhalten.",
-          finalize_calendar: "Ein Menstruationskalender ist keine Pflicht, sondern ein Werkzeug der Selbsterkenntnis. Er hilft, sich sicherer zu fühlen, Stimmungsänderungen vorherzusehen und einfach auf sich selbst aufzupassen.",
+          planing_desc:
+            "Du kannst Training, Ernährung oder Entspannung an deinen Rhythmus anpassen, um den maximalen Nutzen zu erhalten.",
+          finalize_calendar:
+            "Ein Menstruationskalender ist keine Pflicht, sondern ein Werkzeug der Selbsterkenntnis. Er hilft, sich sicherer zu fühlen, Stimmungsänderungen vorherzusehen und einfach auf sich selbst aufzupassen.",
           phase: "Phasen des Menstruationszyklus",
           proccess_in_body: "Was passiert im Körper einer Frau",
-          proccess_in_body_desc: "Der Menstruationszyklus ist nicht nur „diese Tage“. Es ist ein ganzer natürlicher Rhythmus, der dem Körper hilft, reibungslos zu funktionieren. Er teilt sich in mehrere Phasen, und jede beeinflusst unser Wohlbefinden, unsere Stimmung und Energie.",
+          proccess_in_body_desc:
+            "Der Menstruationszyklus ist nicht nur „diese Tage“. Es ist ein ganzer natürlicher Rhythmus, der dem Körper hilft, reibungslos zu funktionieren. Er teilt sich in mehrere Phasen, und jede beeinflusst unser Wohlbefinden, unsere Stimmung und Energie.",
           phase_1_5: "Menstruationsphase\n(1. — 5. Tag)",
-          phase_1_5_desc: "Das ist der Beginn des Zyklus. Der Körper stößt die alte Gebärmutterschleimhaut ab, daher kommt es zur Menstruationsblutung. In dieser Zeit kann die Energie weniger sein, also gönn dir mehr Ruhe.",
+          phase_1_5_desc:
+            "Das ist der Beginn des Zyklus. Der Körper stößt die alte Gebärmutterschleimhaut ab, daher kommt es zur Menstruationsblutung. In dieser Zeit kann die Energie weniger sein, also gönn dir mehr Ruhe.",
           phase_6_13: "Follikelphase\n(6. — 13. Tag)",
-          phase_6_13_desc: "Allmählich steigt der Östrogenspiegel und mit ihm kehren Kraft und Motivation zurück. Dies ist eine gute Zeit für neue Ideen, aktive Arbeit und Sport.",
+          phase_6_13_desc:
+            "Allmählich steigt der Östrogenspiegel und mit ihm kehren Kraft und Motivation zurück. Dies ist eine gute Zeit für neue Ideen, aktive Arbeit und Sport.",
           phase_14_16: "Ovulationsphase\n(14. — 16. Tag)",
-          phase_14_16_desc: "Eine reife Eizelle wird freigesetzt. Die Frau kann sich selbstbewusst, attraktiv und voller Energie fühlen. Dies sind die „Peak“-Tage, an denen der Körper zur Empfängnis bereit ist.",
+          phase_14_16_desc:
+            "Eine reife Eizelle wird freigesetzt. Die Frau kann sich selbstbewusst, attraktiv und voller Energie fühlen. Dies sind die „Peak“-Tage, an denen der Körper zur Empfängnis bereit ist.",
           phase_17_28: "Lutealphase\n(17. — 28. Tag)",
-          phase_17_28_desc: "Wenn keine Schwangerschaft eintritt, dominiert Progesteron. Müdigkeit, Stimmungsschwankungen, Heißhunger auf Süßes können auftreten. In dieser Zeit ist es wichtig, auf sich selbst zu hören, sich mehr zu entspannen und für emotionalen Komfort zu sorgen.",
-          finalize_cycle: "Der Menstruationszyklus ist kein Feind, sondern ein natürlicher Kalender unseres Körpers. Wenn du auf seine Phasen hörst, kannst du deinen Tag besser planen, Stimmungsänderungen verstehen und harmonischer mit dir selbst sein.",
+          phase_17_28_desc:
+            "Wenn keine Schwangerschaft eintritt, dominiert Progesteron. Müdigkeit, Stimmungsschwankungen, Heißhunger auf Süßes können auftreten. In dieser Zeit ist es wichtig, auf sich selbst zu hören, sich mehr zu entspannen und für emotionalen Komfort zu sorgen.",
+          finalize_cycle:
+            "Der Menstruationszyklus ist kein Feind, sondern ein natürlicher Kalender unseres Körpers. Wenn du auf seine Phasen hörst, kannst du deinen Tag besser planen, Stimmungsänderungen verstehen und harmonischer mit dir selbst sein.",
           go_back: "Zurück",
           now: "jetzt",
           menstruation: "Menstruation",
@@ -1830,23 +2063,29 @@ i18n
           high_chance: "Hohe Chance schwanger zu werden",
           no_chance: "Sehr geringe Wahrscheinlichkeit schwanger zu werden",
           myth_facts: "Mythen und Fakten",
-          one: 'Tag',
-          few: 'Tage',
-          other: 'Tage',
+          one: "Tag",
+          few: "Tage",
+          other: "Tage",
           c_long: "Dein Zyklus dauerte {{cLong}} Tage. Was normal ist!",
-          phase_1: "Du befindest dich jetzt in der Menstruationsphase!\nDas ist der Beginn des Zyklus.\nDu könntest einen Energiemangel spüren!\nIn dieser Zeit ist es besser, auf dich aufzupassen und dich auszuruhen!",
-          phase_2: "Du befindest dich jetzt in der Follikelphase!\nDas Hormon Östrogen steigt aktiv an.\nDeine Stimmung steigt. Die Haut verbessert sich!\nDu bist bereit, die Welt zu erobern!",
-          phase_3: "Du befindest dich jetzt in der Ovulationsphase!\nEine reife Eizelle wird freigesetzt.\nDu fühlst dich selbstbewusst und voller Energie!\nHeute ist ein wunderbarer Tag, um das zu tun, was dir Freude bringt!",
-          phase_4: "Du befindest dich jetzt in der Lutealphase!\nProgesteron beginnt zu dominieren!\nIn dieser Zeit kann es zu Stimmungsschwankungen und Müdigkeit kommen!\nKümmere dich um deinen Komfort und höre auf deine Gefühle!",
+          phase_1:
+            "Du befindest dich jetzt in der Menstruationsphase!\nDas ist der Beginn des Zyklus.\nDu könntest einen Energiemangel spüren!\nIn dieser Zeit ist es besser, auf dich aufzupassen und dich auszuruhen!",
+          phase_2:
+            "Du befindest dich jetzt in der Follikelphase!\nDas Hormon Östrogen steigt aktiv an.\nDeine Stimmung steigt. Die Haut verbessert sich!\nDu bist bereit, die Welt zu erobern!",
+          phase_3:
+            "Du befindest dich jetzt in der Ovulationsphase!\nEine reife Eizelle wird freigesetzt.\nDu fühlst dich selbstbewusst und voller Energie!\nHeute ist ein wunderbarer Tag, um das zu tun, was dir Freude bringt!",
+          phase_4:
+            "Du befindest dich jetzt in der Lutealphase!\nProgesteron beginnt zu dominieren!\nIn dieser Zeit kann es zu Stimmungsschwankungen und Müdigkeit kommen!\nKümmere dich um deinen Komfort und höre auf deine Gefühle!",
           super: "Super!",
-          gynecology_sub: "Alles über regelmäßige Untersuchungen, Prävention, Fürsorge für die weibliche Gesundheit — ohne Tabus in einfacher Sprache.",
+          gynecology_sub:
+            "Alles über regelmäßige Untersuchungen, Prävention, Fürsorge für die weibliche Gesundheit — ohne Tabus in einfacher Sprache.",
           womens_tests: "Untersuchungen und Tests",
           regular_review: "Regelmäßige Untersuchungen",
           articles_: "Artikel",
           read: "Lesen",
           how_often: "Wie oft sollte man\nzum\nFrauenarzt gehen?",
           top_5_tests: "TOP-5 Tests für\ndie weibliche Gesundheit",
-          review_sub: "Fürsorge für die Gesundheit beginnt mit Prävention. Einmal im Jahr — und du bist den Problemen einen Schritt voraus.",
+          review_sub:
+            "Fürsorge für die Gesundheit beginnt mit Prävention. Einmal im Jahr — und du bist den Problemen einen Schritt voraus.",
           what_to_check_regulary: "Was sollte man regelmäßig machen?",
           gynecology_review: "Untersuchung beim Frauenarzt",
           one_time_per_year: "einmal im Jahr",
@@ -1858,33 +2097,48 @@ i18n
           mammography: "Mammographie",
           after_40_years: "nach dem 40. Lebensjahr",
           examination_head: "Untersuchungen und Tests",
-          examination_desc: "Die richtigen Tests zur richtigen Zeit — die Garantie für Sicherheit in Bezug auf die Gesundheit. Erfahre, welche Tests und Untersuchungen du regelmäßig machen solltest.",
+          examination_desc:
+            "Die richtigen Tests zur richtigen Zeit — die Garantie für Sicherheit in Bezug auf die Gesundheit. Erfahre, welche Tests und Untersuchungen du regelmäßig machen solltest.",
           base_review: "Basisuntersuchung",
           gynecology_examination: "Gynäkologische Untersuchung",
           add_to_calendar: "Zum Kalender hinzufügen",
           ultrasound_glands: "Ultraschall der Brustdrüsen",
           need_I_test: "Sollte ich Tests machen, wenn ich mich gut fühle?",
-          examination_tip_need: "Regelmäßige medizinische Untersuchungen sind wichtig, auch wenn keine Beschwerden vorliegen. Viele Krankheiten entwickeln sich in frühen Stadien symptomlos, und rechtzeitig durchgeführte Basistests (Blutbild, Urin, Blutzucker, Cholesterin) helfen, Probleme zu erkennen, bevor die ersten Anzeichen auftreten.\n\nPlanmäßige Kontrollen einmal im Jahr – das ist eine Investition in die eigene Gesundheit. Sie ermöglichen es, den Zustand des Körpers zu kontrollieren, Ernährung und Lebensstil rechtzeitig anzupassen und Komplikationen zu vermeiden.\n\nFühlst du dich gut – wunderbar, aber Prävention ist immer einfacher und günstiger als Behandlung.",
+          examination_tip_need:
+            "Regelmäßige medizinische Untersuchungen sind wichtig, auch wenn keine Beschwerden vorliegen. Viele Krankheiten entwickeln sich in frühen Stadien symptomlos, und rechtzeitig durchgeführte Basistests (Blutbild, Urin, Blutzucker, Cholesterin) helfen, Probleme zu erkennen, bevor die ersten Anzeichen auftreten.\n\nPlanmäßige Kontrollen einmal im Jahr – das ist eine Investition in die eigene Gesundheit. Sie ermöglichen es, den Zustand des Körpers zu kontrollieren, Ernährung und Lebensstil rechtzeitig anzupassen und Komplikationen zu vermeiden.\n\nFühlst du dich gut – wunderbar, aber Prävention ist immer einfacher und günstiger als Behandlung.",
           what_needed_blood: "Was ist vor der Blutabnahme zu beachten?",
-          what_needed_blood_info: "Damit dein Bluttest genau ist, bereite dich bitte vorher vor:\n\nBlutabnahme nüchtern die letzte Mahlzeit sollte 8–12 Stunden zurückliegen\n\nTrinke nur stilles Wasser das hat keinen Einfluss auf die Werte\n\nVermeide 1-2 Tage vorher Alkohol, fettige und sehr süße Speisen\n\nAm Tag der Abnahme vermeide starke körperliche Anstrengung und Stress\n\nWenn du Medikamente nimmst, informiere unbedingt deinen Arzt",
-          what_diff_ultrasound_mam: "Was ist der Unterschied zwischen Ultraschall und Mammographie?",
-          what_diff_ultrasound_mam_info: "Ultraschall (Sonographie) verwendet Schallwellen zur Darstellung von Gewebe und zeigt Weichteilstrukturen der Brust gut, besonders bei jungen Frauen mit dichtem Brustgewebe\n\nMammographie ist eine Röntgenuntersuchung, die kleine Verkalkungen und frühe Anzeichen von Tumoren erkennen lässt, noch bevor Knoten tastbar sind\n\nUltraschall verwendet keine Strahlung und eignet sich zur zusätzlichen Kontrolle\nMammographie bleibt die primäre Screening-Methode für Frauen über 40\n\nBeide Methoden werden oft kombiniert für eine genauere Diagnose",
-          why_pap_test: "Wozu dient der zytologische Abstrich (PAP-Test) und wie oft?",
-          why_pap_test_info: "Der zytologische Abstrich oder PAP-Test hilft, Veränderungen der Zellen des Gebärmutterhalses in frühen Stadien zu erkennen, wenn noch keine Symptome vorliegen\n\nRegelmäßige Untersuchungen ermöglichen es, die Entwicklung von Krebs zu verhindern und entzündliche Prozesse rechtzeitig zu behandeln\n\nIn der Regel wird der PAP-Test einmal jährlich durchgeführt, wenn keine Probleme vorliegen, oder auf Empfehlung des Arztes häufiger\n\nDie Untersuchung ist schnell, schmerzlos und dauert nur wenige Minuten\n\nAuch wenn du dich wohlfühlst, hilft der Test, auf deine Gesundheit zu achten",
+          what_needed_blood_info:
+            "Damit dein Bluttest genau ist, bereite dich bitte vorher vor:\n\nBlutabnahme nüchtern die letzte Mahlzeit sollte 8–12 Stunden zurückliegen\n\nTrinke nur stilles Wasser das hat keinen Einfluss auf die Werte\n\nVermeide 1-2 Tage vorher Alkohol, fettige und sehr süße Speisen\n\nAm Tag der Abnahme vermeide starke körperliche Anstrengung und Stress\n\nWenn du Medikamente nimmst, informiere unbedingt deinen Arzt",
+          what_diff_ultrasound_mam:
+            "Was ist der Unterschied zwischen Ultraschall und Mammographie?",
+          what_diff_ultrasound_mam_info:
+            "Ultraschall (Sonographie) verwendet Schallwellen zur Darstellung von Gewebe und zeigt Weichteilstrukturen der Brust gut, besonders bei jungen Frauen mit dichtem Brustgewebe\n\nMammographie ist eine Röntgenuntersuchung, die kleine Verkalkungen und frühe Anzeichen von Tumoren erkennen lässt, noch bevor Knoten tastbar sind\n\nUltraschall verwendet keine Strahlung und eignet sich zur zusätzlichen Kontrolle\nMammographie bleibt die primäre Screening-Methode für Frauen über 40\n\nBeide Methoden werden oft kombiniert für eine genauere Diagnose",
+          why_pap_test:
+            "Wozu dient der zytologische Abstrich (PAP-Test) und wie oft?",
+          why_pap_test_info:
+            "Der zytologische Abstrich oder PAP-Test hilft, Veränderungen der Zellen des Gebärmutterhalses in frühen Stadien zu erkennen, wenn noch keine Symptome vorliegen\n\nRegelmäßige Untersuchungen ermöglichen es, die Entwicklung von Krebs zu verhindern und entzündliche Prozesse rechtzeitig zu behandeln\n\nIn der Regel wird der PAP-Test einmal jährlich durchgeführt, wenn keine Probleme vorliegen, oder auf Empfehlung des Arztes häufiger\n\nDie Untersuchung ist schnell, schmerzlos und dauert nur wenige Minuten\n\nAuch wenn du dich wohlfühlst, hilft der Test, auf deine Gesundheit zu achten",
           reproductive: "Reproduktive Gesundheit",
-          reproductive_sub: "Plane mit uns! Kümmere dich um deinen Körper und plane deine Zukunft mit Zuversicht.",
+          reproductive_sub:
+            "Plane mit uns! Kümmere dich um deinen Körper und plane deine Zukunft mit Zuversicht.",
           myth_main: "Es gibt jede Menge Mythen rund um die Menstruation.",
           myth_sub: "Hier ist eine kleine Auswahl für dich)",
           cant_sport: "Während der Menstruation darf man keinen Sport treiben",
-          cant_sport_desc: "Tatsächlich kann leichte körperliche Aktivität wie Yoga, Spaziergänge oder sogar moderates Training Krämpfe lindern und die Stimmung verbessern.",
+          cant_sport_desc:
+            "Tatsächlich kann leichte körperliche Aktivität wie Yoga, Spaziergänge oder sogar moderates Training Krämpfe lindern und die Stimmung verbessern.",
           c_long_: "Der Zyklus dauert immer genau 28 Tage",
-          c_long_desc: "Der Zyklus ist bei jeder Person individuell: Ein Intervall von etwa 21 bis 35 Tagen gilt als normal.",
-          cant_swim: "Man kann während der Menstruation nicht baden oder duschen",
-          cant_swim_desc: "Baden und Duschen sind sicher. Hygieneprodukte (Tampons, Menstruationstassen) ermöglichen komfortables Schwimmen und die Aufrechterhaltung der Sauberkeit.",
-          cant_get_pregnant: "Während der Menstruation kann man nicht schwanger werden",
-          cant_get_pregnant_desc: "Die Wahrscheinlichkeit ist niedriger, aber nicht Null: Spermien können mehrere Tage im Körper überleben, und der Eisprung kann manchmal früher oder später als erwartet auftreten.",
+          c_long_desc:
+            "Der Zyklus ist bei jeder Person individuell: Ein Intervall von etwa 21 bis 35 Tagen gilt als normal.",
+          cant_swim:
+            "Man kann während der Menstruation nicht baden oder duschen",
+          cant_swim_desc:
+            "Baden und Duschen sind sicher. Hygieneprodukte (Tampons, Menstruationstassen) ermöglichen komfortables Schwimmen und die Aufrechterhaltung der Sauberkeit.",
+          cant_get_pregnant:
+            "Während der Menstruation kann man nicht schwanger werden",
+          cant_get_pregnant_desc:
+            "Die Wahrscheinlichkeit ist niedriger, aber nicht Null: Spermien können mehrere Tage im Körper überleben, und der Eisprung kann manchmal früher oder später als erwartet auftreten.",
           pain_is_ok: "Menstruationsbeschwerden sind immer normal",
-          pain_is_ok_desc: "Leichtes Unbehagen ist typisch, aber starke oder erschöpfende Schmerzen können auf Endometriose oder andere Erkrankungen hinweisen, und es lohnt sich, einen Arzt aufzusuchen.",
+          pain_is_ok_desc:
+            "Leichtes Unbehagen ist typisch, aber starke oder erschöpfende Schmerzen können auf Endometriose oder andere Erkrankungen hinweisen, und es lohnt sich, einen Arzt aufzusuchen.",
 
           // === PSYCHISCHE GESUNDHEIT ===
           your: "Deine Gesundheit",
@@ -2012,7 +2266,8 @@ i18n
           mp_aew_wizard_title_step_1: "Ich fühle",
           mp_aew_wizard_title_step_2: "Was war der Grund für diese Emotionen?",
           mp_aew_wizard_title_step_3: "Möchtest du etwas notieren über",
-          mp_aew_wizard_description_step_3: "Dein Eintrag ist privat und nur für dich sichtbar.",
+          mp_aew_wizard_description_step_3:
+            "Dein Eintrag ist privat und nur für dich sichtbar.",
           mp_return_back: "Zurück",
           mp_btn_next: "Weiter",
           mp_btn_add: "Hinzufügen",
@@ -2028,23 +2283,29 @@ i18n
           // === ATEMÜBUNGEN ===
           mp_bpp_title: "Atemübungen",
           mp_bpp_subtitle: "Atme Stress aus — atme Ruhe ein 🌿",
-          mp_bpp_description_1: "Einfache Atemübungen helfen, Anspannung abzubauen, Energie zurückzugewinnen und Klarheit im Kopf zu finden. Du kannst überall anfangen: zu Hause, bei der Arbeit oder sogar unterwegs.",
-          mp_bpp_description_2: "Probiere es aus — und spüre, wie dein Körper sich entspannt und deine Stimmung leichter wird.",
+          mp_bpp_description_1:
+            "Einfache Atemübungen helfen, Anspannung abzubauen, Energie zurückzugewinnen und Klarheit im Kopf zu finden. Du kannst überall anfangen: zu Hause, bei der Arbeit oder sogar unterwegs.",
+          mp_bpp_description_2:
+            "Probiere es aus — und spüre, wie dein Körper sich entspannt und deine Stimmung leichter wird.",
           mp_bpp_card_title_1: "Zwerchfellatmung",
           mp_bpp_card_description_1_1: "Reduziert Stress und Angst.",
           mp_bpp_card_description_1_2: "Entspannt, löst Verspannungen.",
           mp_bpp_card_title_2: "Quadratisches Atmen",
-          mp_bpp_card_description_2_1: "Lindert Angst und hilft, sich zu konzentrieren.",
+          mp_bpp_card_description_2_1:
+            "Lindert Angst und hilft, sich zu konzentrieren.",
           mp_bpp_card_title_3: "Nadi Shodhana",
           mp_bpp_card_description_3_1: "Wechselatmung durch die Nasenlöcher.",
           mp_bpp_card_description_3_2: "Hilft, Stress abzubauen.",
-          mp_bpp_card_description_3_3: "Bringt das innere Gleichgewicht zurück.",
+          mp_bpp_card_description_3_3:
+            "Bringt das innere Gleichgewicht zurück.",
 
           // === ZWERCHFELLATMUNG ===
           mp_dbp_title: "Zwerchfellatmung",
           mp_dbp_subtitle: "Atmung, die Ruhe zurückbringt",
-          mp_dbp_description_1_1: "Setz dich bequem hin. Entspanne deine Schultern. Führe es für mindestens 3 - 5 Minuten durch.",
-          mp_dbp_description_1_2: "Kehre zur Atmung zurück, wenn du Anspannung spürst.",
+          mp_dbp_description_1_1:
+            "Setz dich bequem hin. Entspanne deine Schultern. Führe es für mindestens 3 - 5 Minuten durch.",
+          mp_dbp_description_1_2:
+            "Kehre zur Atmung zurück, wenn du Anspannung spürst.",
           mp_dbp_inhale: "EINATMEN",
           mp_dbp_hold: "HALTEN",
           mp_dbp_exhale: "AUSATMEN",
@@ -2054,15 +2315,20 @@ i18n
           mp_ebp_title: "Emotionstagebuch",
           mp_ebp_factor_title: "Stimmungsfaktoren",
           mp_ebp_factor_info_p_1: "Alle Faktoren - deine möglichen Trigger.",
-          mp_ebp_factor_info_p_2: "Zum Beispiel könntest du nicht bemerken, dass Sport, Kaffee oder Drogen deine Stimmung beeinflussen und Verhaltensmuster formen.",
-          mp_ebp_factor_info_p_3: "Du kannst den Einfluss der Faktoren auf dein Wohlbefinden später im Analysebereich verfolgen.",
+          mp_ebp_factor_info_p_2:
+            "Zum Beispiel könntest du nicht bemerken, dass Sport, Kaffee oder Drogen deine Stimmung beeinflussen und Verhaltensmuster formen.",
+          mp_ebp_factor_info_p_3:
+            "Du kannst den Einfluss der Faktoren auf dein Wohlbefinden später im Analysebereich verfolgen.",
           mp_ebp_factor_info_p_4: "Beispiel",
           mp_ebp_factor_info_p_5: "Ernährung und Stimulanzien:",
-          mp_ebp_factor_info_p_6: "Notiere deinen Kaffeekonsum, Vitamine oder Lebensmittel, die dein Energieniveau beeinflussen könnten.",
+          mp_ebp_factor_info_p_6:
+            "Notiere deinen Kaffeekonsum, Vitamine oder Lebensmittel, die dein Energieniveau beeinflussen könnten.",
           mp_ebp_factor_info_p_7: "Aktivität und körperliche Übungen:",
-          mp_ebp_factor_info_p_8: "Verfolge die Menge an körperlicher Bewegung oder die Teilnahme an anderen Formen körperlicher Aktivität.",
+          mp_ebp_factor_info_p_8:
+            "Verfolge die Menge an körperlicher Bewegung oder die Teilnahme an anderen Formen körperlicher Aktivität.",
           mp_ebp_factor_info_p_9: "Biologische Zyklen:",
-          mp_ebp_factor_info_p_10: "Indem du deine Periode trackst, kannst du verstehen, wie sie sich auf dein emotionales Wohlbefinden auswirkt.",
+          mp_ebp_factor_info_p_10:
+            "Indem du deine Periode trackst, kannst du verstehen, wie sie sich auf dein emotionales Wohlbefinden auswirkt.",
           mp_ebp_selected_factors: "Ausgewählte Faktoren:",
           mp_ebp_available_factors: "Verfügbare Faktoren:",
           mp_ebp_hello_how_are_you: "Hallo! Wie geht's dir?",
@@ -2071,7 +2337,8 @@ i18n
 
           // === STARTSEITE PSYCHISCHE GESUNDHEIT ===
           mp_mhp_title: "Deine Ruhe beginnt hier.",
-          mp_mhp_sub_title: "Wir haben Werkzeuge zusammengestellt, die helfen, auch an den stressigsten Tagen ausgeglichen zu bleiben.",
+          mp_mhp_sub_title:
+            "Wir haben Werkzeuge zusammengestellt, die helfen, auch an den stressigsten Tagen ausgeglichen zu bleiben.",
           mp_mhp_test_card_title: "Zustandstests",
           mp_mhp_test_card_btn_text: "Test machen",
           mp_mhp_breathing_card_title: "Atemübungen",
@@ -2083,78 +2350,111 @@ i18n
           // === ZUSTANDSTEST ===
           mp_mtp_test_data_question_1: "Wie wachst du morgens auf?",
           mp_mtp_test_data_answers_1_1: "Mit Enthusiasmus und Plänen",
-          mp_mtp_test_data_answers_1_2: "Mit einem Glas Wasser und einem schweren Seufzer",
+          mp_mtp_test_data_answers_1_2:
+            "Mit einem Glas Wasser und einem schweren Seufzer",
           mp_mtp_test_data_answers_1_3: "„Was, schon wieder dieser Tag?“",
-          mp_mtp_test_data_question_2: "Wenn etwas schiefgeht, ist deine Reaktion:",
-          mp_mtp_test_data_answers_2_1: "Ok, ich überlege, wie ich es repariere",
+          mp_mtp_test_data_question_2:
+            "Wenn etwas schiefgeht, ist deine Reaktion:",
+          mp_mtp_test_data_answers_2_1:
+            "Ok, ich überlege, wie ich es repariere",
           mp_mtp_test_data_answers_2_2: "Nun, so ist das Leben",
-          mp_mtp_test_data_answers_2_3: "Alles ist verloren, ich verkrieche mich in meine Decke",
-          mp_mtp_test_data_question_3: "Was rettet dich am häufigsten vor Stress?",
+          mp_mtp_test_data_answers_2_3:
+            "Alles ist verloren, ich verkrieche mich in meine Decke",
+          mp_mtp_test_data_question_3:
+            "Was rettet dich am häufigsten vor Stress?",
           mp_mtp_test_data_answers_3_1: "Sport oder ein Spaziergang",
           mp_mtp_test_data_answers_3_2: "Essen, Serien oder Memes",
           mp_mtp_test_data_answers_3_3: "Ich hänge einfach kraftlos rum",
           mp_mtp_test_data_question_4: "Dein Energiegefühl in letzter Zeit:",
           mp_mtp_test_data_answers_4_1: "Normal, die Batterie hält",
           mp_mtp_test_data_answers_4_2: "Wie eine Batterie bei 30%",
-          mp_mtp_test_data_answers_4_3: "Wie ein Handy, das sich in der Kälte ausschaltet",
-          mp_mtp_test_data_question_5: "Was denkst du, wenn du das Wort „Erholung“ hörst?",
+          mp_mtp_test_data_answers_4_3:
+            "Wie ein Handy, das sich in der Kälte ausschaltet",
+          mp_mtp_test_data_question_5:
+            "Was denkst du, wenn du das Wort „Erholung“ hörst?",
           mp_mtp_test_data_answers_5_1: "Ich plane etwas Schönes",
           mp_mtp_test_data_answers_5_2: "Zu Hause liegen und nichts tun",
           mp_mtp_test_data_answers_5_3: "Ich habe keine Zeit für Erholung",
           mp_mtp_test_result_title_1: "Deine Psyche ist in Ordnung.",
-          mp_mtp_test_result_description_1: "Du hast ein großartiges Energieniveau und Optimismus. Kümmere dich weiter um dich und halte diesen Zustand aufrecht!",
-          mp_mtp_test_result_title_2: "Deine Psyche ist größtenteils in Ordnung.",
-          mp_mtp_test_result_description_2: "Die meisten Dinge laufen gut, aber einige Bereiche brauchen etwas mehr Aufmerksamkeit und Fürsorge.",
+          mp_mtp_test_result_description_1:
+            "Du hast ein großartiges Energieniveau und Optimismus. Kümmere dich weiter um dich und halte diesen Zustand aufrecht!",
+          mp_mtp_test_result_title_2:
+            "Deine Psyche ist größtenteils in Ordnung.",
+          mp_mtp_test_result_description_2:
+            "Die meisten Dinge laufen gut, aber einige Bereiche brauchen etwas mehr Aufmerksamkeit und Fürsorge.",
           mp_mtp_test_result_title_3: "Deine Psyche ist etwas erschöpft",
-          mp_mtp_test_result_description_3: "Du spürst leichte Müdigkeit. Nimm dir Zeit für Erholung und kleine Freuden.",
+          mp_mtp_test_result_description_3:
+            "Du spürst leichte Müdigkeit. Nimm dir Zeit für Erholung und kleine Freuden.",
           mp_mtp_test_result_title_4: "Deine Psyche bittet um Fürsorge",
-          mp_mtp_test_result_description_4: "Du brauchst mehr Erholung, Freude und Unterstützung. Achte auf deine Bedürfnisse.",
+          mp_mtp_test_result_description_4:
+            "Du brauchst mehr Erholung, Freude und Unterstützung. Achte auf deine Bedürfnisse.",
           mp_mtp_test_result_title_5: "Deine Psyche schreit SOS",
-          mp_mtp_test_result_description_5: "Du könntest Burnout erleben. Scheue dich nicht, Hilfe zu suchen, und nimm dir Zeit für ernsthafte Erholung.",
+          mp_mtp_test_result_description_5:
+            "Du könntest Burnout erleben. Scheue dich nicht, Hilfe zu suchen, und nimm dir Zeit für ernsthafte Erholung.",
           mp_mtp_test_result_title_6: "Deine Psyche ist wie eine Achterbahn.",
-          mp_mtp_test_result_description_6: "Dein Zustand wechselt oft. Einige Tage sind großartig, andere - schwieriger. Versuche, eine Balance zu finden.",
-          mp_mtp_start_message: "Achtung! Der Test hat keine diagnostische Kraft, zeigt aber dein Stress- oder Burnout-Level.",
+          mp_mtp_test_result_description_6:
+            "Dein Zustand wechselt oft. Einige Tage sind großartig, andere - schwieriger. Versuche, eine Balance zu finden.",
+          mp_mtp_start_message:
+            "Achtung! Der Test hat keine diagnostische Kraft, zeigt aber dein Stress- oder Burnout-Level.",
           mp_mtp_test_title: "Test zum Zustand deiner Psyche",
-          mp_mtp_test_description: "Klick auf die Antworten, die deinem Zustand entsprechen)",
+          mp_mtp_test_description:
+            "Klick auf die Antworten, die deinem Zustand entsprechen)",
 
           // === NADI SHODHANA ===
           mp_nsp_title: "Nadi Shodhana",
           mp_nsp_subtitle: "Atmung, die Energie balanciert",
-          mp_nsp_description_1: "Technik des abwechselnden Atmens durch die Nasenlöcher zur Harmonisierung von Geist und Körper.",
-          mp_nsp_description_2: "Führe es 3-5 Minuten durch, um die Wirkung zu erzielen.",
+          mp_nsp_description_1:
+            "Technik des abwechselnden Atmens durch die Nasenlöcher zur Harmonisierung von Geist und Körper.",
+          mp_nsp_description_2:
+            "Führe es 3-5 Minuten durch, um die Wirkung zu erzielen.",
           mp_nsp_technique_title: "Technik:",
-          mp_nsp_technique_step_1: "Setze dich bequem hin, richte deinen Rücken auf.",
-          mp_nsp_technique_step_2: "Schließe mit deiner Hand das rechte Nasenloch, atme durch das linke ein.",
-          mp_nsp_technique_step_3: "Dann schließe das linke — atme durch das rechte aus.",
-          mp_nsp_technique_step_4: "Atme durch das rechte ein — atme durch das linke aus.",
-          mp_nsp_technique_step_5: "Fahre einige Minuten in einem ruhigen Tempo fort.",
+          mp_nsp_technique_step_1:
+            "Setze dich bequem hin, richte deinen Rücken auf.",
+          mp_nsp_technique_step_2:
+            "Schließe mit deiner Hand das rechte Nasenloch, atme durch das linke ein.",
+          mp_nsp_technique_step_3:
+            "Dann schließe das linke — atme durch das rechte aus.",
+          mp_nsp_technique_step_4:
+            "Atme durch das rechte ein — atme durch das linke aus.",
+          mp_nsp_technique_step_5:
+            "Fahre einige Minuten in einem ruhigen Tempo fort.",
           mp_nsp_result_title: "Ergebnis:",
-          mp_nsp_result_description_1: "Schon nach wenigen Minuten stellt sich ein Gefühl der Ruhe ein. Das Anspannungsniveau sinkt. Der Geist klärt sich, als nach einer kurzen Pause.",
-          mp_nsp_result_description_2: "Regelmäßige Praxis hilft, besser einzuschlafen, sich zu konzentrieren und innere Balance auch in stressigen Situationen zu bewahren.",
+          mp_nsp_result_description_1:
+            "Schon nach wenigen Minuten stellt sich ein Gefühl der Ruhe ein. Das Anspannungsniveau sinkt. Der Geist klärt sich, als nach einer kurzen Pause.",
+          mp_nsp_result_description_2:
+            "Regelmäßige Praxis hilft, besser einzuschlafen, sich zu konzentrieren und innere Balance auch in stressigen Situationen zu bewahren.",
 
           // === QUADRATISCHES ATMEN ===
           mp_sbp_title: "Quadratisches Atmen",
           mp_sbp_subtitle: "Atmung, die Ruhe zurückbringt",
-          mp_sbp_description_1: "Setz dich bequem hin. Entspanne deine Schultern. Führe es für mindestens 3 - 5 Minuten durch.",
-          mp_sbp_description_2: "Kehre zur Atmung zurück, wenn du Anspannung spürst.",
+          mp_sbp_description_1:
+            "Setz dich bequem hin. Entspanne deine Schultern. Führe es für mindestens 3 - 5 Minuten durch.",
+          mp_sbp_description_2:
+            "Kehre zur Atmung zurück, wenn du Anspannung spürst.",
 
           // === DEINE GESUNDHEIT ===
           mp_yhp_main_title: "Deine Gesundheit —",
           mp_yhp_main_subtitle: "Deine Superkraft. Sie steht auf 3 Säulen:",
           mp_yhp_activity_title: "Aktivität",
-          mp_yhp_activity_description_1: "Selbst 15 Minuten am Tag machen einen Unterschied.",
-          mp_yhp_activity_description_2: "Spaziergang, Seilspringen, Pilates – wähle, was dir gefällt, und dein Körper wird sich bedanken.",
+          mp_yhp_activity_description_1:
+            "Selbst 15 Minuten am Tag machen einen Unterschied.",
+          mp_yhp_activity_description_2:
+            "Spaziergang, Seilspringen, Pilates – wähle, was dir gefällt, und dein Körper wird sich bedanken.",
           mp_yhp_sleep_title: "Schlaf",
           mp_yhp_sleep_description_1: "Das ist das Allerwichtigste!",
-          mp_yhp_sleep_description_2: "Schlaf ist keine Faulheit, sondern dein inneres Ladekabel. 7-8 Stunden qualitativer Erholung helfen dem Körper, sich zu regenerieren, und dem Gehirn, schnell und kreativ zu arbeiten.",
+          mp_yhp_sleep_description_2:
+            "Schlaf ist keine Faulheit, sondern dein inneres Ladekabel. 7-8 Stunden qualitativer Erholung helfen dem Körper, sich zu regenerieren, und dem Gehirn, schnell und kreativ zu arbeiten.",
           mp_yhp_nutrition_title: "Ernährung",
-          mp_yhp_nutrition_description_1: "Essen ist Treibstoff. Je höher die Qualität, desto besser läuft dein „Motor“.",
-          mp_yhp_nutrition_description_2: "Es geht nicht um Diäten, sondern um Balance: mehr Gemüse, weniger Stress mit Snacks.",
+          mp_yhp_nutrition_description_1:
+            "Essen ist Treibstoff. Je höher die Qualität, desto besser läuft dein „Motor“.",
+          mp_yhp_nutrition_description_2:
+            "Es geht nicht um Diäten, sondern um Balance: mehr Gemüse, weniger Stress mit Snacks.",
 
           // === MÄNNLICHE GESUNDHEIT ===
           hormonas_diagram: "Diagramm der männlichen Gesundheit",
           mp_male_health: "Männliche Gesundheit",
-          mp_subtitle_1: "Ein Mann zu sein, bedeutet auch, sich um die Gesundheit zu kümmern",
+          mp_subtitle_1:
+            "Ein Mann zu sein, bedeutet auch, sich um die Gesundheit zu kümmern",
           mp_hormones_block_title: "Hormone",
           mp_hormones_block_content_label_1: "Testosteronspiegel",
           mp_hormones_block_content_value_1_1: "Norm 300-1000 ng/dl",
@@ -2181,27 +2481,36 @@ i18n
           mp_analyses_block_content_value_5: "auf Empfehlung des Arztes",
           mp_reproductive_block_title: "Reproduktive Gesundheit",
           mp_reproductive_block_content_label_1: "Fertilität",
-          mp_reproductive_block_content_value_1: "Spermienqualität hängt vom Lebensstil ab",
+          mp_reproductive_block_content_value_1:
+            "Spermienqualität hängt vom Lebensstil ab",
           mp_reproductive_block_content_label_2: "Risiken",
-          mp_reproductive_block_content_value_2: "Überhitzung, Alkohol, Rauchen, Fettleibigkeit",
+          mp_reproductive_block_content_value_2:
+            "Überhitzung, Alkohol, Rauchen, Fettleibigkeit",
           mp_reproductive_block_content_label_3: "Empfehlungen",
           mp_reproductive_block_content_value_3: "Urologe 1/Jahr, Spermiogramm",
           mp_urinary_block_title: "Harnsystem",
           mp_urinary_block_content_label_1: "Prostatakontrolle",
-          mp_urinary_block_content_value_1: "ab 40 Jahren — PSA und Ultraschall 1/Jahr",
+          mp_urinary_block_content_value_1:
+            "ab 40 Jahren — PSA und Ultraschall 1/Jahr",
           mp_urinary_block_content_label_2: "Alarm!",
-          mp_urinary_block_content_value_2: "Schmerzen, Blut im Urin, häufiges Wasserlassen",
+          mp_urinary_block_content_value_2:
+            "Schmerzen, Blut im Urin, häufiges Wasserlassen",
           mp_urinary_block_content_label_3: "Was tun?",
-          mp_urinary_block_content_value_3: "Unbehagen nicht ertragen, sofort zum Urologen",
+          mp_urinary_block_content_value_3:
+            "Unbehagen nicht ertragen, sofort zum Urologen",
           mp_potency_block_title: "Potenz",
           mp_potency_block_content_label_1: "Warum nimmt sie ab?",
-          mp_potency_block_content_value_1: "Stress, Alkohol, Rauchen, Herzerkrankungen",
+          mp_potency_block_content_value_1:
+            "Stress, Alkohol, Rauchen, Herzerkrankungen",
           mp_potency_block_content_label_2: "Wie unterstützen?",
-          mp_potency_block_content_value_2: "Sport, qualitativer Schlaf, ausgewogene Ernährung",
+          mp_potency_block_content_value_2:
+            "Sport, qualitativer Schlaf, ausgewogene Ernährung",
           mp_potency_block_content_label_3: "Wann zum Arzt?",
-          mp_potency_block_content_value_3: "wenn Probleme länger als 2 Monate andauern",
+          mp_potency_block_content_value_3:
+            "wenn Probleme länger als 2 Monate andauern",
           mp_subtitle_2: "Kümmere dich um dich wie um dein Lieblingsauto",
-          mp_form_subtitle: "Fülle die Felder aus, wenn du aktuelle Daten hast, und wir erstellen dir ein Diagramm",
+          mp_form_subtitle:
+            "Fülle die Felder aus, wenn du aktuelle Daten hast, und wir erstellen dir ein Diagramm",
           mp_form_testosterone: "Testosteron",
           mp_form_free_testosterone: "Freies Testosteron",
           mp_form_free_testosterone_2: "Freies T",
@@ -2215,13 +2524,15 @@ i18n
           mp_form_pg_ml: "pg/ml",
           mp_form_mO_l: "mU/l",
           mp_form_save_btn: "Werte speichern",
-          mp_diagram_hormons_value_not_found: "Keine Hormondaten gefunden. Bitte trage deine Werte ein.",
-          mp_diagram_hormons_data_not_found: "Fehler beim Laden der Daten. Bitte wende dich an den technischen Support.",
+          mp_diagram_hormons_value_not_found:
+            "Keine Hormondaten gefunden. Bitte trage deine Werte ein.",
+          mp_diagram_hormons_data_not_found:
+            "Fehler beim Laden der Daten. Bitte wende dich an den technischen Support.",
           mp_diagram_low: "Niedrig",
           mp_diagram_norm: "Normal",
           mp_diagram_high: "Hoch",
         },
-      }
+      },
       fr: {
         translation: {
           // === TRADUCTIONS PRINCIPALES DE LA PLATEFORME ===
@@ -2236,38 +2547,51 @@ i18n
           more_energy: "PLUS D'ÉNERGIE.",
           healthy_lifestyle: "TON MODE DE VIE SAIN AU MÊME ENDROIT.",
           register: "S'inscrire",
-          description_part1: " est une plateforme qui t'aide à prendre soin de toi facilement et avec le sourire.",
-          description_part2: "Suis ton alimentation et tes entraînements, surveille ta santé et bénéficie du soutien de spécialistes.",
-          description_part3: "Trouve des produits utiles et partage ta motivation avec la communauté.",
-          description_part4: "Avec Nomyfy, tu développes pas à pas des habitudes saines et te sens mieux chaque jour.",
+          description_part1:
+            " est une plateforme qui t'aide à prendre soin de toi facilement et avec le sourire.",
+          description_part2:
+            "Suis ton alimentation et tes entraînements, surveille ta santé et bénéficie du soutien de spécialistes.",
+          description_part3:
+            "Trouve des produits utiles et partage ta motivation avec la communauté.",
+          description_part4:
+            "Avec Nomyfy, tu développes pas à pas des habitudes saines et te sens mieux chaque jour.",
 
           // === SECTION SPÉCIALISTES ===
           specialist_title_line1: "TON TALENT EST NÉCESSAIRE ICI !",
           specialist_title_line2: "NOUS RECHERCHONS DES PROS COMME TOI !",
-          specialist_text_line1: "Si tu es spécialiste en psychologie, nutrition ou si tu es coach,",
-          specialist_text_line2: "ensemble, rendons ce monde meilleur. Travailler avec des professionnels.",
+          specialist_text_line1:
+            "Si tu es spécialiste en psychologie, nutrition ou si tu es coach,",
+          specialist_text_line2:
+            "ensemble, rendons ce monde meilleur. Travailler avec des professionnels.",
           specialist_text_line3: "Tu es fait(e) pour nous !",
           become_specialist: "Devenir expert",
 
           // === MARKETPLACE ===
           marketplace_title: "MARKETPLACE DE SOLUTIONS SAINES.",
-          marketplace_subtitle: "Tout ce qui aide à vivre sainement, réuni au même endroit.",
+          marketplace_subtitle:
+            "Tout ce qui aide à vivre sainement, réuni au même endroit.",
           marketplace_button: "Marketplace",
 
           // === FAQ ===
           faq_title: "Questions fréquentes",
           faq_q1_title: "Qu'est-ce que NOMYFY ?",
-          faq_q1_answer: "NOMYFY est une thérapie individuelle contre l'épuisement émotionnel.",
+          faq_q1_answer:
+            "NOMYFY est une thérapie individuelle contre l'épuisement émotionnel.",
           faq_q2_title: "Pour qui est NOMYFY ?",
-          faq_q2_answer: "Pour ceux qui cherchent des moyens d'améliorer leur santé mentale.",
+          faq_q2_answer:
+            "Pour ceux qui cherchent des moyens d'améliorer leur santé mentale.",
           faq_q3_title: "Quels sont les avantages de NOMYFY ?",
-          faq_q3_answer: "NOMYFY aide à mettre de l'ordre dans ta vie, en commençant par toi-même.",
+          faq_q3_answer:
+            "NOMYFY aide à mettre de l'ordre dans ta vie, en commençant par toi-même.",
           faq_q4_title: "Peut-on utiliser les services gratuitement ?",
-          faq_q4_answer: "Oui, nous avons des options gratuites, mais la plupart des services sont payants.",
+          faq_q4_answer:
+            "Oui, nous avons des options gratuites, mais la plupart des services sont payants.",
           faq_q5_title: "Comment commencer ?",
-          faq_q5_answer: "Tu dois t'inscrire sur notre plateforme et choisir un service.",
+          faq_q5_answer:
+            "Tu dois t'inscrire sur notre plateforme et choisir un service.",
           faq_q6_title: "Comment devenir partenaire de NOMYFY ?",
-          faq_q6_answer: "Laisse une demande sur notre site et nous te recontacterons.",
+          faq_q6_answer:
+            "Laisse une demande sur notre site et nous te recontacterons.",
 
           // === PIED DE PAGE ===
           specialists: "Experts",
@@ -2290,7 +2614,8 @@ i18n
           reg_top: "INSCRIPTION",
           success: "SUCCÈS",
           or: "ou",
-          code_create_error: "Erreur lors de la création du code de confirmation",
+          code_create_error:
+            "Erreur lors de la création du code de confirmation",
           code_error: "Code de confirmation incorrect",
           check_email: "veuillez vérifier votre email",
           code_send: "le code a été envoyé à ",
@@ -2308,7 +2633,8 @@ i18n
           password_update_success: "mot de passe mis à jour avec succès",
           to_login: "Retour à la connexion",
           user_not_exist: "L'utilisateur avec cet email n'existe pas",
-          reset_password_error: "Erreur lors de la réinitialisation du mot de passe. Réessaye.",
+          reset_password_error:
+            "Erreur lors de la réinitialisation du mot de passe. Réessaye.",
           user_exist: "Un utilisateur avec cet email existe déjà",
           auth_fail: "Erreur d'authentification. Vérifie tes données.",
 
@@ -2338,12 +2664,14 @@ i18n
           bmi_requires: "Renseigne des informations sur ta taille et ton poids",
 
           // === PROFIL UTILISATEUR ===
-          p_error_upadate: "Impossible de mettre à jour le profil. Merci de remplir tous les champs.",
+          p_error_upadate:
+            "Impossible de mettre à jour le profil. Merci de remplir tous les champs.",
           p_male: "Homme",
           p_female: "Femme",
           p_other: "Autre",
           p_success_title: "Merci pour les informations !",
-          p_success_subtitle: "Maintenant, nos conseils seront encore meilleurs !",
+          p_success_subtitle:
+            "Maintenant, nos conseils seront encore meilleurs !",
           p_btn_home: "Vers l'accueil",
           p_about_placeholder: "À propos de moi...",
           p_first_name_placeholder: "Prénom",
@@ -2412,7 +2740,8 @@ i18n
           ch_no_challenges_message: "Aucun défi pour le moment.",
           ch_loading: "Chargement...",
           ch_error_loading: "Impossible de charger les défis.",
-          ch_details_error_loading: "Erreur lors du chargement des détails du défi.",
+          ch_details_error_loading:
+            "Erreur lors du chargement des détails du défi.",
           ch_not_found: "Défi non trouvé.",
           ch_join: "Rejoindre",
           ch_edit: "Modifier",
@@ -2439,7 +2768,8 @@ i18n
           yes: "Oui",
           no: "Non",
           ch_confirmDeleteTitle: "Confirmer la suppression du défi",
-          ch_confirmDeleteText: "Es-tu sûr de vouloir supprimer ce défi ? Cette action est irréversible.",
+          ch_confirmDeleteText:
+            "Es-tu sûr de vouloir supprimer ce défi ? Cette action est irréversible.",
           ch_joinedTitle: "Succès !",
           ch_joinedText: "Tu as rejoint le défi avec succès.",
           ok: "OK",
@@ -2462,7 +2792,8 @@ i18n
           ch_leftTitle: "Défi quitté",
           ch_leftText: "Tu as quitté le défi avec succès.",
           ch_completedTitle: "Défi terminé",
-          ch_completedText: "Félicitations ! Tu as terminé le défi avec succès.",
+          ch_completedText:
+            "Félicitations ! Tu as terminé le défi avec succès.",
 
           // === CALENDRIER MENSTRUEL ===
           last_cycle_first_day: "1er jour des dernières règles",
@@ -2471,7 +2802,8 @@ i18n
           female: "Femme",
           gender: "Santé par genre",
           female_health: "Santé féminine",
-          female_health_fine: "Santé féminine sans tabous - honnête, simple et bienveillante.",
+          female_health_fine:
+            "Santé féminine sans tabous - honnête, simple et bienveillante.",
           cycle_info: "Tout sur ton cycle",
           reproductive_health: "Santé reproductive",
           hormonas: "Hormones",
@@ -2483,43 +2815,60 @@ i18n
           plan: "Planifier",
           preventive_check: "examen préventif au moins une fois par an",
           hormonas_health: "Hormones saines",
-          hormonas_important: "Pourquoi il est important de contrôler son taux d'hormones",
+          hormonas_important:
+            "Pourquoi il est important de contrôler son taux d'hormones",
           cycle_health: "Le cycle, est-ce important ?",
           cycle_important: "Pourquoi il est important de suivre chaque cycle",
           examination_health: "Examens généraux",
-          examination_important: "Pourquoi il est important de contrôler son taux d'hormones",
+          examination_important:
+            "Pourquoi il est important de contrôler son taux d'hormones",
           find_doctor: "Trouver un médecin à proximité",
           your_cycle: "Ton cycle",
-          cycle_control: "Suis ton cycle, contrôle ton bien-être et reçois des rappels en temps utile",
+          cycle_control:
+            "Suis ton cycle, contrôle ton bien-être et reçois des rappels en temps utile",
           calendar_cycle: "Calendrier menstruel",
           calc_cycle: "Calculer mon calendrier menstruel",
-          warning_calc: "*Les calculs de notre calendrier menstruel peuvent ne pas être précis à 100 %, car chaque corps et chaque cycle est différent. Aide-nous à rendre ton calendrier plus précis.",
+          warning_calc:
+            "*Les calculs de notre calendrier menstruel peuvent ne pas être précis à 100 %, car chaque corps et chaque cycle est différent. Aide-nous à rendre ton calendrier plus précis.",
           cycle: "Cycle",
           why_should_calendar: "Pourquoi tenir un calendrier menstruel ?",
-          preview_calendar: "Tenir un calendrier menstruel, ce n'est pas seulement se souvenir de « ces jours ». C'est un petit rituel de soin personnel qui aide à mieux comprendre son corps et son humeur.",
+          preview_calendar:
+            "Tenir un calendrier menstruel, ce n'est pas seulement se souvenir de « ces jours ». C'est un petit rituel de soin personnel qui aide à mieux comprendre son corps et son humeur.",
           predict_cycle: "Prédit le cycle",
-          predict_cycle_desc: "Tu sais toujours quand tes règles et ton ovulation vont commencer. Cela aide à planifier les événements, les vacances ou les réunions importantes.",
+          predict_cycle_desc:
+            "Tu sais toujours quand tes règles et ton ovulation vont commencer. Cela aide à planifier les événements, les vacances ou les réunions importantes.",
           listen_yourself: "S'écouter",
-          listen_yourself_desc: "Le calendrier aide à remarquer comment l'énergie, l'humeur et l'appétit changent selon les phases du cycle.",
+          listen_yourself_desc:
+            "Le calendrier aide à remarquer comment l'énergie, l'humeur et l'appétit changent selon les phases du cycle.",
           regularity: "Détecter des régularités",
-          regularity_desc: "La douleur, le SPM, les sautes d'humeur ou les changements cutanés deviennent plus perceptibles. Tu peux facilement suivre ce qui se répète et ce qui t'aide à te sentir mieux.",
+          regularity_desc:
+            "La douleur, le SPM, les sautes d'humeur ou les changements cutanés deviennent plus perceptibles. Tu peux facilement suivre ce qui se répète et ce qui t'aide à te sentir mieux.",
           doctor_help: "Aide le médecin",
-          doctor_help_desc: "Si tu dois consulter un gynécologue, une trace précise de ton cycle et de tes symptômes rend la consultation plus efficace.",
+          doctor_help_desc:
+            "Si tu dois consulter un gynécologue, une trace précise de ton cycle et de tes symptômes rend la consultation plus efficace.",
           planing: "Planifier sa santé et son fitness",
-          planing_desc: "Tu peux adapter tes entraînements, ton alimentation ou ta détente à ton rythme pour en tirer un bénéfice maximal.",
-          finalize_calendar: "Un calendrier menstruel n'est pas une obligation, mais un outil de connaissance de soi. Il aide à se sentir plus confiant(e), à anticiper les changements d'humeur et simplement à prendre soin de soi.",
+          planing_desc:
+            "Tu peux adapter tes entraînements, ton alimentation ou ta détente à ton rythme pour en tirer un bénéfice maximal.",
+          finalize_calendar:
+            "Un calendrier menstruel n'est pas une obligation, mais un outil de connaissance de soi. Il aide à se sentir plus confiant(e), à anticiper les changements d'humeur et simplement à prendre soin de soi.",
           phase: "Phases du cycle menstruel",
           proccess_in_body: "Ce qui se passe dans le corps d'une femme",
-          proccess_in_body_desc: "Le cycle menstruel, ce n'est pas seulement « ces jours ». C'est tout un rythme naturel qui aide l'organisme à fonctionner de manière harmonieuse. Il se divise en plusieurs phases, et chacune influence notre bien-être, notre humeur et notre énergie.",
+          proccess_in_body_desc:
+            "Le cycle menstruel, ce n'est pas seulement « ces jours ». C'est tout un rythme naturel qui aide l'organisme à fonctionner de manière harmonieuse. Il se divise en plusieurs phases, et chacune influence notre bien-être, notre humeur et notre énergie.",
           phase_1_5: "Phase menstruelle\n(jours 1 à 5)",
-          phase_1_5_desc: "C'est le début du cycle. Le corps se débarrasse de l'ancienne muqueuse utérine, d'où les saignements. Durant cette période, l'énergie peut être moindre, alors accorde-toi plus de repos.",
+          phase_1_5_desc:
+            "C'est le début du cycle. Le corps se débarrasse de l'ancienne muqueuse utérine, d'où les saignements. Durant cette période, l'énergie peut être moindre, alors accorde-toi plus de repos.",
           phase_6_13: "Phase folliculaire\n(jours 6 à 13)",
-          phase_6_13_desc: "Le taux d'œstrogène augmente progressivement, et avec lui reviennent la force et la motivation. C'est une bonne période pour les nouvelles idées, le travail actif et le sport.",
+          phase_6_13_desc:
+            "Le taux d'œstrogène augmente progressivement, et avec lui reviennent la force et la motivation. C'est une bonne période pour les nouvelles idées, le travail actif et le sport.",
           phase_14_16: "Phase d'ovulation\n(jours 14 à 16)",
-          phase_14_16_desc: "Un ovule mature est libéré. La femme peut se sentir confiante, attractive, pleine d'énergie. Ce sont les jours « de pic », où le corps est prêt pour la conception.",
+          phase_14_16_desc:
+            "Un ovule mature est libéré. La femme peut se sentir confiante, attractive, pleine d'énergie. Ce sont les jours « de pic », où le corps est prêt pour la conception.",
           phase_17_28: "Phase lutéale\n(jours 17 à 28)",
-          phase_17_28_desc: "Si la grossesse ne survient pas, la progestérone domine. Une somnolence, des sautes d'humeur, des envies de sucreries peuvent apparaître. Durant cette période, il est important de s'écouter, de se reposer davantage et de veiller à son confort émotionnel.",
-          finalize_cycle: "Le cycle menstruel n'est pas un ennemi, mais un calendrier naturel de notre corps. Si tu écoutes ses phases, tu peux mieux planifier ta journée, comprendre les changements d'humeur et être plus en harmonie avec toi-même.",
+          phase_17_28_desc:
+            "Si la grossesse ne survient pas, la progestérone domine. Une somnolence, des sautes d'humeur, des envies de sucreries peuvent apparaître. Durant cette période, il est important de s'écouter, de se reposer davantage et de veiller à son confort émotionnel.",
+          finalize_cycle:
+            "Le cycle menstruel n'est pas un ennemi, mais un calendrier naturel de notre corps. Si tu écoutes ses phases, tu peux mieux planifier ta journée, comprendre les changements d'humeur et être plus en harmonie avec toi-même.",
           go_back: "Retour",
           now: "maintenant",
           menstruation: "règles",
@@ -2532,23 +2881,29 @@ i18n
           high_chance: "Forte chance de tomber enceinte",
           no_chance: "Très faible probabilité de tomber enceinte",
           myth_facts: "Mythes et faits",
-          one: 'jour',
-          few: 'jours',
-          other: 'jours',
+          one: "jour",
+          few: "jours",
+          other: "jours",
           c_long: "Ton cycle a duré {{cLong}} jours. Ce qui est normal !",
-          phase_1: "Tu es actuellement en phase menstruelle !\nC'est le début du cycle.\nTu peux manquer d'énergie !\nDurant cette période, mieux vaut prendre soin de toi et te reposer !",
-          phase_2: "Tu es actuellement en phase folliculaire !\nL'hormone œstrogène augmente activement.\nTon humeur s'améliore. La peau s'améliore !\nTu es prête à conquérir le monde !",
-          phase_3: "Tu es actuellement en phase d'ovulation !\nUn ovule mature est libéré.\nTu te sens confiante et pleine d'énergie !\nAujourd'hui est un jour merveilleux pour faire ce qui te procure de la joie !",
-          phase_4: "Tu es actuellement en phase lutéale !\nLa progestérone commence à dominer !\nDurant cette période, des sautes d'humeur et de la somnolence peuvent survenir !\nPrends soin de ton confort et écoute tes sensations !",
+          phase_1:
+            "Tu es actuellement en phase menstruelle !\nC'est le début du cycle.\nTu peux manquer d'énergie !\nDurant cette période, mieux vaut prendre soin de toi et te reposer !",
+          phase_2:
+            "Tu es actuellement en phase folliculaire !\nL'hormone œstrogène augmente activement.\nTon humeur s'améliore. La peau s'améliore !\nTu es prête à conquérir le monde !",
+          phase_3:
+            "Tu es actuellement en phase d'ovulation !\nUn ovule mature est libéré.\nTu te sens confiante et pleine d'énergie !\nAujourd'hui est un jour merveilleux pour faire ce qui te procure de la joie !",
+          phase_4:
+            "Tu es actuellement en phase lutéale !\nLa progestérone commence à dominer !\nDurant cette période, des sautes d'humeur et de la somnolence peuvent survenir !\nPrends soin de ton confort et écoute tes sensations !",
           super: "Super !",
-          gynecology_sub: "Tout sur les examens réguliers, la prévention, les soins de santé féminine — sans tabous, dans un langage simple.",
+          gynecology_sub:
+            "Tout sur les examens réguliers, la prévention, les soins de santé féminine — sans tabous, dans un langage simple.",
           womens_tests: "Examens et analyses",
           regular_review: "Examens réguliers",
           articles_: "Articles",
           read: "Lire",
           how_often: "À quelle fréquence\nconsulter\nun gynécologue ?",
           top_5_tests: "TOP 5 des analyses\npour la santé féminine",
-          review_sub: "Prendre soin de sa santé commence par la prévention. Une fois par an — et tu as une longueur d'avance sur les problèmes.",
+          review_sub:
+            "Prendre soin de sa santé commence par la prévention. Une fois par an — et tu as une longueur d'avance sur les problèmes.",
           what_to_check_regulary: "Que faire régulièrement ?",
           gynecology_review: "Examen gynécologique",
           one_time_per_year: "une fois par an",
@@ -2560,33 +2915,48 @@ i18n
           mammography: "Mammographie",
           after_40_years: "après 40 ans",
           examination_head: "Examens et analyses",
-          examination_desc: "Les bons tests au bon moment — la clé pour être serein(e) concernant sa santé. Découvre quelles analyses et examens faire régulièrement.",
+          examination_desc:
+            "Les bons tests au bon moment — la clé pour être serein(e) concernant sa santé. Découvre quelles analyses et examens faire régulièrement.",
           base_review: "Examen de base",
           gynecology_examination: "Examen gynécologique",
           add_to_calendar: "Ajouter au calendrier",
           ultrasound_glands: "Échographie mammaire",
           need_I_test: "Faut-il faire des analyses si je me sens bien ?",
-          examination_tip_need: "Les examens médicaux réguliers sont importants, même en l'absence de symptômes. De nombreuses maladies se développent de manière asymptomatique aux premiers stades, et des analyses de base faites à temps (numération sanguine, urine, glycémie, cholestérol) aident à détecter les problèmes avant l'apparition des premiers signes.\n\nDes contrôles planifiés une fois par an – c'est un investissement dans ta santé. Ils permettent de surveiller l'état de ton organisme, d'ajuster ton alimentation et ton mode de vie en temps utile, et d'éviter les complications.\n\nTu te sens bien – c'est super, mais la prévention est toujours plus simple et moins coûteuse que le traitement.",
+          examination_tip_need:
+            "Les examens médicaux réguliers sont importants, même en l'absence de symptômes. De nombreuses maladies se développent de manière asymptomatique aux premiers stades, et des analyses de base faites à temps (numération sanguine, urine, glycémie, cholestérol) aident à détecter les problèmes avant l'apparition des premiers signes.\n\nDes contrôles planifiés une fois par an – c'est un investissement dans ta santé. Ils permettent de surveiller l'état de ton organisme, d'ajuster ton alimentation et ton mode de vie en temps utile, et d'éviter les complications.\n\nTu te sens bien – c'est super, mais la prévention est toujours plus simple et moins coûteuse que le traitement.",
           what_needed_blood: "Que préparer avant une prise de sang ?",
-          what_needed_blood_info: "Pour que ton analyse de sang soit précise, prépare-toi à l'avance :\n\nPrise de sang à jeun le dernier repas doit être pris 8 à 12 heures avant\n\n Bois uniquement de l'eau plate cela n'affecte pas les résultats\n\nÉvite l'alcool, les plats gras et très sucrés 1 à 2 jours avant\n\nLe jour du prélèvement, évite les efforts physiques intenses et le stress\n\nSi tu prends des médicaments, informe obligatoirement ton médecin",
-          what_diff_ultrasound_mam: "Quelle est la différence entre une échographie et une mammographie ?",
-          what_diff_ultrasound_mam_info: "L'échographie utilise des ondes sonores pour visualiser les tissus et montre bien les structures molles du sein, particulièrement chez les jeunes femmes ayant un tissu mammaire dense\n\nLa mammographie est un examen radiographique qui permet de détecter de fines microcalcifications et des signes précoces de tumeurs, avant même que des nodules ne soient palpables\n\nL'échographie n'utilise pas de rayonnement et convient pour un contrôle complémentaire\nLa mammographie reste la méthode de dépistage principale pour les femmes de plus de 40 ans\n\nLes deux méthodes sont souvent combinées pour un diagnostic plus précis",
-          why_pap_test: "À quoi sert le frottis cervico-utérin (test PAP) et à quelle fréquence ?",
-          why_pap_test_info: "Le frottis cervico-utérin ou test PAP aide à détecter les modifications des cellules du col de l'utérus à un stade précoce, lorsqu'il n'y a encore aucun symptôme\n\nDes examens réguliers permettent de prévenir le développement d'un cancer et de traiter à temps les processus inflammatoires\n\nEn général, le test PAP est effectué une fois par an en l'absence de problèmes, ou plus souvent sur recommandation du médecin\n\nL'examen est rapide, indolore et ne prend que quelques minutes\n\nMême si tu te sens bien, le test t'aide à prendre soin de ta santé",
+          what_needed_blood_info:
+            "Pour que ton analyse de sang soit précise, prépare-toi à l'avance :\n\nPrise de sang à jeun le dernier repas doit être pris 8 à 12 heures avant\n\n Bois uniquement de l'eau plate cela n'affecte pas les résultats\n\nÉvite l'alcool, les plats gras et très sucrés 1 à 2 jours avant\n\nLe jour du prélèvement, évite les efforts physiques intenses et le stress\n\nSi tu prends des médicaments, informe obligatoirement ton médecin",
+          what_diff_ultrasound_mam:
+            "Quelle est la différence entre une échographie et une mammographie ?",
+          what_diff_ultrasound_mam_info:
+            "L'échographie utilise des ondes sonores pour visualiser les tissus et montre bien les structures molles du sein, particulièrement chez les jeunes femmes ayant un tissu mammaire dense\n\nLa mammographie est un examen radiographique qui permet de détecter de fines microcalcifications et des signes précoces de tumeurs, avant même que des nodules ne soient palpables\n\nL'échographie n'utilise pas de rayonnement et convient pour un contrôle complémentaire\nLa mammographie reste la méthode de dépistage principale pour les femmes de plus de 40 ans\n\nLes deux méthodes sont souvent combinées pour un diagnostic plus précis",
+          why_pap_test:
+            "À quoi sert le frottis cervico-utérin (test PAP) et à quelle fréquence ?",
+          why_pap_test_info:
+            "Le frottis cervico-utérin ou test PAP aide à détecter les modifications des cellules du col de l'utérus à un stade précoce, lorsqu'il n'y a encore aucun symptôme\n\nDes examens réguliers permettent de prévenir le développement d'un cancer et de traiter à temps les processus inflammatoires\n\nEn général, le test PAP est effectué une fois par an en l'absence de problèmes, ou plus souvent sur recommandation du médecin\n\nL'examen est rapide, indolore et ne prend que quelques minutes\n\nMême si tu te sens bien, le test t'aide à prendre soin de ta santé",
           reproductive: "Santé reproductive",
-          reproductive_sub: "Planifie avec nous ! Prends soin de ton corps et planifie ton avenir en toute confiance.",
+          reproductive_sub:
+            "Planifie avec nous ! Prends soin de ton corps et planifie ton avenir en toute confiance.",
           myth_main: "Il existe une tonne de mythes autour des règles.",
           myth_sub: "Voici une petite sélection pour toi)",
           cant_sport: "On ne peut pas faire de sport pendant les règles",
-          cant_sport_desc: "En réalité, une activité physique légère, comme le yoga, la marche ou même un entraînement modéré, peut soulager les crampes et améliorer l'humeur.",
+          cant_sport_desc:
+            "En réalité, une activité physique légère, comme le yoga, la marche ou même un entraînement modéré, peut soulager les crampes et améliorer l'humeur.",
           c_long_: "Le cycle dure toujours exactement 28 jours",
-          c_long_desc: "Le cycle est propre à chaque personne : un intervalle d'environ 21 à 35 jours est considéré comme normal.",
-          cant_swim: "On ne peut pas se baigner ou prendre un bain pendant les règles",
-          cant_swim_desc: "Se baigner et se doucher est sans danger. Les produits d'hygiène (tampons, coupes menstruelles) permettent de nager confortablement et de maintenir la propreté.",
-          cant_get_pregnant: "On ne peut pas tomber enceinte pendant les règles",
-          cant_get_pregnant_desc: "La probabilité est plus faible, mais pas nulle : les spermatozoïdes peuvent survivre dans le corps plusieurs jours, et l'ovulation peut parfois survenir plus tôt ou plus tard que prévu.",
+          c_long_desc:
+            "Le cycle est propre à chaque personne : un intervalle d'environ 21 à 35 jours est considéré comme normal.",
+          cant_swim:
+            "On ne peut pas se baigner ou prendre un bain pendant les règles",
+          cant_swim_desc:
+            "Se baigner et se doucher est sans danger. Les produits d'hygiène (tampons, coupes menstruelles) permettent de nager confortablement et de maintenir la propreté.",
+          cant_get_pregnant:
+            "On ne peut pas tomber enceinte pendant les règles",
+          cant_get_pregnant_desc:
+            "La probabilité est plus faible, mais pas nulle : les spermatozoïdes peuvent survivre dans le corps plusieurs jours, et l'ovulation peut parfois survenir plus tôt ou plus tard que prévu.",
           pain_is_ok: "Les douleurs menstruelles sont toujours normales",
-          pain_is_ok_desc: "Un léger inconfort est typique, mais une douleur intense ou épuisante peut indiquer une endométriose ou d'autres maladies, et il vaut mieux consulter un médecin.",
+          pain_is_ok_desc:
+            "Un léger inconfort est typique, mais une douleur intense ou épuisante peut indiquer une endométriose ou d'autres maladies, et il vaut mieux consulter un médecin.",
 
           // === SANTÉ MENTALE ===
           your: "Ta santé",
@@ -2604,17 +2974,20 @@ i18n
 
           // === ARTICLES SANTÉ MENTALE ===
           mp_articles_title: "Articles utiles",
-          mp_article_1: "10 techniques simples pour réduire le stress quotidien",
+          mp_article_1:
+            "10 techniques simples pour réduire le stress quotidien",
           mp_article_2: "Comment gérer l'anxiété",
           mp_article_3: "Exercices de respiration pour la relaxation",
           mp_article_4: "Sommeil sain et santé mentale",
           mp_article_5: "Méditation pour débutants",
           mp_article_6: "Comment améliorer l'estime de soi",
-          mp_article_7: "Méthodes efficaces pour lutter contre l'épuisement professionnel",
+          mp_article_7:
+            "Méthodes efficaces pour lutter contre l'épuisement professionnel",
 
           // === JOURNAL DES ÉMOTIONS ===
           mp_aew_notes: "Note",
-          mp_aew_describe_your_feelings: "Décris tes sensations plus en détail...",
+          mp_aew_describe_your_feelings:
+            "Décris tes sensations plus en détail...",
           mp_aew_ok: "Ok",
           mp_aew_balance: "Équilibre",
           mp_aew_safety: "Sécurité",
@@ -2714,7 +3087,8 @@ i18n
           mp_aew_wizard_title_step_1: "Je me sens",
           mp_aew_wizard_title_step_2: "Quelle a été la cause de ces émotions ?",
           mp_aew_wizard_title_step_3: "Veux-tu écrire quelque chose sur",
-          mp_aew_wizard_description_step_3: "Ta note est privée et visible uniquement par toi.",
+          mp_aew_wizard_description_step_3:
+            "Ta note est privée et visible uniquement par toi.",
           mp_return_back: "Retour",
           mp_btn_next: "Suivant",
           mp_btn_add: "Ajouter",
@@ -2730,13 +3104,16 @@ i18n
           // === EXERCICES DE RESPIRATION ===
           mp_bpp_title: "Exercices de respiration",
           mp_bpp_subtitle: "Expire le stress — inspire le calme 🌿",
-          mp_bpp_description_1: "Des exercices de respiration simples aident à relâcher les tensions, à retrouver de l'énergie et à clarifier l'esprit. Tu peux commencer n'importe où : à la maison, au travail ou même dans les transports.",
-          mp_bpp_description_2: "Essaie — et sens ton corps se détendre et ton humeur s'alléger.",
+          mp_bpp_description_1:
+            "Des exercices de respiration simples aident à relâcher les tensions, à retrouver de l'énergie et à clarifier l'esprit. Tu peux commencer n'importe où : à la maison, au travail ou même dans les transports.",
+          mp_bpp_description_2:
+            "Essaie — et sens ton corps se détendre et ton humeur s'alléger.",
           mp_bpp_card_title_1: "Respiration diaphragmatique",
           mp_bpp_card_description_1_1: "Réduit le stress et l'anxiété.",
           mp_bpp_card_description_1_2: "Détend, soulage les tensions.",
           mp_bpp_card_title_2: "Respiration carrée",
-          mp_bpp_card_description_2_1: "Soulage l'anxiété et aide à se concentrer.",
+          mp_bpp_card_description_2_1:
+            "Soulage l'anxiété et aide à se concentrer.",
           mp_bpp_card_title_3: "Nadi Shodhana",
           mp_bpp_card_description_3_1: "Respiration alternée par les narines.",
           mp_bpp_card_description_3_2: "Aide à réduire le stress.",
@@ -2745,8 +3122,10 @@ i18n
           // === RESPIRATION DIAPHRAGMATIQUE ===
           mp_dbp_title: "Respiration diaphragmatique",
           mp_dbp_subtitle: "Une respiration qui ramène le calme",
-          mp_dbp_description_1_1: "Assieds-toi confortablement. Détends tes épaules. Pratique pendant au moins 3 à 5 minutes.",
-          mp_dbp_description_1_2: "Reviens à la respiration dès que tu sens une tension.",
+          mp_dbp_description_1_1:
+            "Assieds-toi confortablement. Détends tes épaules. Pratique pendant au moins 3 à 5 minutes.",
+          mp_dbp_description_1_2:
+            "Reviens à la respiration dès que tu sens une tension.",
           mp_dbp_inhale: "INSPIRE",
           mp_dbp_hold: "MAINTIENS",
           mp_dbp_exhale: "EXPIRE",
@@ -2755,16 +3134,22 @@ i18n
           // === JOURNAL DES ÉMOTIONS ===
           mp_ebp_title: "Journal des émotions",
           mp_ebp_factor_title: "Facteurs d'humeur",
-          mp_ebp_factor_info_p_1: "Tous les facteurs - tes déclencheurs potentiels.",
-          mp_ebp_factor_info_p_2: "Par exemple, tu pourrais ne pas remarquer que le sport, le café ou les drogues influencent ton humeur et forment des schémas comportementaux.",
-          mp_ebp_factor_info_p_3: "Tu pourras suivre l'influence des facteurs sur ton bien-être plus tard dans la section analyse.",
+          mp_ebp_factor_info_p_1:
+            "Tous les facteurs - tes déclencheurs potentiels.",
+          mp_ebp_factor_info_p_2:
+            "Par exemple, tu pourrais ne pas remarquer que le sport, le café ou les drogues influencent ton humeur et forment des schémas comportementaux.",
+          mp_ebp_factor_info_p_3:
+            "Tu pourras suivre l'influence des facteurs sur ton bien-être plus tard dans la section analyse.",
           mp_ebp_factor_info_p_4: "Exemple",
           mp_ebp_factor_info_p_5: "Alimentation et stimulants :",
-          mp_ebp_factor_info_p_6: "Note ta consommation de café, de vitamines ou d'aliments qui pourraient affecter ton niveau d'énergie.",
+          mp_ebp_factor_info_p_6:
+            "Note ta consommation de café, de vitamines ou d'aliments qui pourraient affecter ton niveau d'énergie.",
           mp_ebp_factor_info_p_7: "Activité et exercice physique :",
-          mp_ebp_factor_info_p_8: "Suis la quantité d'exercice physique ou la participation à d'autres formes d'activité physique.",
+          mp_ebp_factor_info_p_8:
+            "Suis la quantité d'exercice physique ou la participation à d'autres formes d'activité physique.",
           mp_ebp_factor_info_p_9: "Cycles biologiques :",
-          mp_ebp_factor_info_p_10: "En suivant tes règles, tu pourras comprendre comment elles affectent ton bien-être émotionnel.",
+          mp_ebp_factor_info_p_10:
+            "En suivant tes règles, tu pourras comprendre comment elles affectent ton bien-être émotionnel.",
           mp_ebp_selected_factors: "Facteurs sélectionnés :",
           mp_ebp_available_factors: "Facteurs disponibles :",
           mp_ebp_hello_how_are_you: "Salut ! Comment vas-tu ?",
@@ -2773,7 +3158,8 @@ i18n
 
           // === ACCUEIL SANTÉ MENTALE ===
           mp_mhp_title: "Ton calme commence ici.",
-          mp_mhp_sub_title: "Nous avons rassemblé des outils qui aident à rester équilibré même les jours les plus stressants.",
+          mp_mhp_sub_title:
+            "Nous avons rassemblé des outils qui aident à rester équilibré même les jours les plus stressants.",
           mp_mhp_test_card_title: "Tests d'état",
           mp_mhp_test_card_btn_text: "Faire le test",
           mp_mhp_breathing_card_title: "Exercices de respiration",
@@ -2787,71 +3173,104 @@ i18n
           mp_mtp_test_data_answers_1_1: "Avec enthousiasme et des projets",
           mp_mtp_test_data_answers_1_2: "Avec un verre d'eau et un gros soupir",
           mp_mtp_test_data_answers_1_3: "« Quoi, encore cette journée ? »",
-          mp_mtp_test_data_question_2: "Quand quelque chose ne va pas, ta réaction est :",
-          mp_mtp_test_data_answers_2_1: "Ok, je vais trouver comment arranger ça",
+          mp_mtp_test_data_question_2:
+            "Quand quelque chose ne va pas, ta réaction est :",
+          mp_mtp_test_data_answers_2_1:
+            "Ok, je vais trouver comment arranger ça",
           mp_mtp_test_data_answers_2_2: "Bon, c'est la vie",
-          mp_mtp_test_data_answers_2_3: "Tout est perdu, je vais dans mon plaid",
-          mp_mtp_test_data_question_3: "Qu'est-ce qui te sauve le plus souvent du stress ?",
+          mp_mtp_test_data_answers_2_3:
+            "Tout est perdu, je vais dans mon plaid",
+          mp_mtp_test_data_question_3:
+            "Qu'est-ce qui te sauve le plus souvent du stress ?",
           mp_mtp_test_data_answers_3_1: "Le sport ou une promenade",
-          mp_mtp_test_data_answers_3_2: "La nourriture, les séries ou les memes",
+          mp_mtp_test_data_answers_3_2:
+            "La nourriture, les séries ou les memes",
           mp_mtp_test_data_answers_3_3: "Je reste juste prostré(e) sans force",
-          mp_mtp_test_data_question_4: "Ta sensation d'énergie ces derniers temps :",
+          mp_mtp_test_data_question_4:
+            "Ta sensation d'énergie ces derniers temps :",
           mp_mtp_test_data_answers_4_1: "Normal, la batterie tient",
           mp_mtp_test_data_answers_4_2: "Comme une batterie à 30%",
-          mp_mtp_test_data_answers_4_3: "Comme un téléphone qui s'éteint dans le froid",
-          mp_mtp_test_data_question_5: "Que penses-tu quand tu entends le mot « repos » ?",
+          mp_mtp_test_data_answers_4_3:
+            "Comme un téléphone qui s'éteint dans le froid",
+          mp_mtp_test_data_question_5:
+            "Que penses-tu quand tu entends le mot « repos » ?",
           mp_mtp_test_data_answers_5_1: "Je planifie quelque chose d'agréable",
           mp_mtp_test_data_answers_5_2: "Rester à la maison et ne rien faire",
           mp_mtp_test_data_answers_5_3: "Je n'ai pas le temps de me reposer",
           mp_mtp_test_result_title_1: "Ta santé mentale va bien.",
-          mp_mtp_test_result_description_1: "Tu as un excellent niveau d'énergie et d'optimisme. Continue de prendre soin de toi et maintiens cet état !",
+          mp_mtp_test_result_description_1:
+            "Tu as un excellent niveau d'énergie et d'optimisme. Continue de prendre soin de toi et maintiens cet état !",
           mp_mtp_test_result_title_2: "Ta santé mentale est globalement bonne.",
-          mp_mtp_test_result_description_2: "La plupart des choses vont bien, mais certains domaines nécessitent un peu plus d'attention et de soin.",
+          mp_mtp_test_result_description_2:
+            "La plupart des choses vont bien, mais certains domaines nécessitent un peu plus d'attention et de soin.",
           mp_mtp_test_result_title_3: "Ta santé mentale est un peu épuisée",
-          mp_mtp_test_result_description_3: "Tu ressens une légère fatigue. Trouve du temps pour te reposer et de petits plaisirs.",
+          mp_mtp_test_result_description_3:
+            "Tu ressens une légère fatigue. Trouve du temps pour te reposer et de petits plaisirs.",
           mp_mtp_test_result_title_4: "Ta santé mentale demande des soins",
-          mp_mtp_test_result_description_4: "Tu as besoin de plus de repos, de joie et de soutien. Porte attention à tes besoins.",
+          mp_mtp_test_result_description_4:
+            "Tu as besoin de plus de repos, de joie et de soutien. Porte attention à tes besoins.",
           mp_mtp_test_result_title_5: "Ta santé mentale crie SOS",
-          mp_mtp_test_result_description_5: "Tu pourrais être en burn-out. N'hésite pas à demander de l'aide et trouve du temps pour un repos sérieux.",
-          mp_mtp_test_result_title_6: "Ta santé mentale est comme des montagnes russes.",
-          mp_mtp_test_result_description_6: "Ton état change souvent. Certains jours sont géniaux, d'autres - plus difficiles. Essaie de trouver un équilibre.",
-          mp_mtp_start_message: "Attention ! Le test n'a pas de valeur diagnostique, mais il indique ton niveau de stress ou d'épuisement.",
+          mp_mtp_test_result_description_5:
+            "Tu pourrais être en burn-out. N'hésite pas à demander de l'aide et trouve du temps pour un repos sérieux.",
+          mp_mtp_test_result_title_6:
+            "Ta santé mentale est comme des montagnes russes.",
+          mp_mtp_test_result_description_6:
+            "Ton état change souvent. Certains jours sont géniaux, d'autres - plus difficiles. Essaie de trouver un équilibre.",
+          mp_mtp_start_message:
+            "Attention ! Le test n'a pas de valeur diagnostique, mais il indique ton niveau de stress ou d'épuisement.",
           mp_mtp_test_title: "Test sur l'état de ta santé mentale",
-          mp_mtp_test_description: "Clique sur les réponses qui correspondent à ton état)",
+          mp_mtp_test_description:
+            "Clique sur les réponses qui correspondent à ton état)",
 
           // === NADI SHODHANA ===
           mp_nsp_title: "Nadi Shodhana",
           mp_nsp_subtitle: "Une respiration qui équilibre l'énergie",
-          mp_nsp_description_1: "Technique de respiration alternée par les narines pour harmoniser l'esprit et le corps.",
-          mp_nsp_description_2: "Pratique pendant 3 à 5 minutes pour obtenir l'effet.",
+          mp_nsp_description_1:
+            "Technique de respiration alternée par les narines pour harmoniser l'esprit et le corps.",
+          mp_nsp_description_2:
+            "Pratique pendant 3 à 5 minutes pour obtenir l'effet.",
           mp_nsp_technique_title: "Technique :",
           mp_nsp_technique_step_1: "Assieds-toi confortablement, le dos droit.",
-          mp_nsp_technique_step_2: "De la main, bouche la narine droite, inspire par la gauche.",
-          mp_nsp_technique_step_3: "Puis bouche la gauche — expire par la droite.",
-          mp_nsp_technique_step_4: "Inspire par la droite — expire par la gauche.",
-          mp_nsp_technique_step_5: "Continue pendant plusieurs minutes à un rythme calme.",
+          mp_nsp_technique_step_2:
+            "De la main, bouche la narine droite, inspire par la gauche.",
+          mp_nsp_technique_step_3:
+            "Puis bouche la gauche — expire par la droite.",
+          mp_nsp_technique_step_4:
+            "Inspire par la droite — expire par la gauche.",
+          mp_nsp_technique_step_5:
+            "Continue pendant plusieurs minutes à un rythme calme.",
           mp_nsp_result_title: "Résultat :",
-          mp_nsp_result_description_1: "Déjà après quelques minutes, une sensation de calme apparaît. Le niveau de tension diminue. L'esprit s'éclaircit, comme après un court repos.",
-          mp_nsp_result_description_2: "Une pratique régulière aide à mieux s'endormir, à se concentrer et à préserver l'équilibre intérieur même dans des situations stressantes.",
+          mp_nsp_result_description_1:
+            "Déjà après quelques minutes, une sensation de calme apparaît. Le niveau de tension diminue. L'esprit s'éclaircit, comme après un court repos.",
+          mp_nsp_result_description_2:
+            "Une pratique régulière aide à mieux s'endormir, à se concentrer et à préserver l'équilibre intérieur même dans des situations stressantes.",
 
           // === RESPIRATION CARRÉE ===
           mp_sbp_title: "Respiration carrée",
           mp_sbp_subtitle: "Une respiration qui ramène le calme",
-          mp_sbp_description_1: "Assieds-toi confortablement. Détends tes épaules. Pratique pendant au moins 3 à 5 minutes.",
-          mp_sbp_description_2: "Reviens à la respiration dès que tu sens une tension.",
+          mp_sbp_description_1:
+            "Assieds-toi confortablement. Détends tes épaules. Pratique pendant au moins 3 à 5 minutes.",
+          mp_sbp_description_2:
+            "Reviens à la respiration dès que tu sens une tension.",
 
           // === TA SANTÉ ===
           mp_yhp_main_title: "Ta santé —",
-          mp_yhp_main_subtitle: "Ton super-pouvoir. Elle repose sur 3 piliers :",
+          mp_yhp_main_subtitle:
+            "Ton super-pouvoir. Elle repose sur 3 piliers :",
           mp_yhp_activity_title: "Activité",
-          mp_yhp_activity_description_1: "Même 15 minutes par jour font la différence.",
-          mp_yhp_activity_description_2: "Marche, corde à sauter, Pilates – choisis ce que tu aimes, et ton corps te remerciera.",
+          mp_yhp_activity_description_1:
+            "Même 15 minutes par jour font la différence.",
+          mp_yhp_activity_description_2:
+            "Marche, corde à sauter, Pilates – choisis ce que tu aimes, et ton corps te remerciera.",
           mp_yhp_sleep_title: "Sommeil",
           mp_yhp_sleep_description_1: "C'est le plus important !",
-          mp_yhp_sleep_description_2: "Le sommeil n'est pas de la paresse, mais ton câble de recharge interne. 7 à 8 heures de repos de qualité aident le corps à récupérer et le cerveau à travailler vite et de manière créative.",
+          mp_yhp_sleep_description_2:
+            "Le sommeil n'est pas de la paresse, mais ton câble de recharge interne. 7 à 8 heures de repos de qualité aident le corps à récupérer et le cerveau à travailler vite et de manière créative.",
           mp_yhp_nutrition_title: "Alimentation",
-          mp_yhp_nutrition_description_1: "La nourriture, c'est du carburant. Plus il est de qualité, mieux ton « moteur » fonctionne.",
-          mp_yhp_nutrition_description_2: "Il ne s'agit pas de régimes, mais d'équilibre : plus de légumes, moins de stress avec les grignotages.",
+          mp_yhp_nutrition_description_1:
+            "La nourriture, c'est du carburant. Plus il est de qualité, mieux ton « moteur » fonctionne.",
+          mp_yhp_nutrition_description_2:
+            "Il ne s'agit pas de régimes, mais d'équilibre : plus de légumes, moins de stress avec les grignotages.",
 
           // === SANTÉ MASCULINE ===
           hormonas_diagram: "Graphique de santé masculine",
@@ -2863,7 +3282,8 @@ i18n
           mp_hormones_block_content_label_2: "Signes de carence",
           mp_hormones_block_content_value_2_1: "fatigue",
           mp_hormones_block_content_value_2_2: "baisse de la libido",
-          mp_hormones_block_content_value_2_3: "diminution de la masse musculaire",
+          mp_hormones_block_content_value_2_3:
+            "diminution de la masse musculaire",
           mp_hormones_block_content_label_3: "Que faire ?",
           mp_hormones_block_content_value_3_1: "analyses régulières",
           mp_hormones_block_content_value_3_2: "entraînement musculaire",
@@ -2871,7 +3291,8 @@ i18n
           mp_hormones_block_content_value_3_4: "moins de stress",
           mp_add_hormones_data: "Saisir les indicateurs",
           mp_analyses_block_title: "Analyses et prévention",
-          mp_analyses_block_content_label_1: "Numération sanguine et analyse d'urine",
+          mp_analyses_block_content_label_1:
+            "Numération sanguine et analyse d'urine",
           mp_analyses_block_content_value_1: "annuellement",
           mp_analyses_block_content_label_2: "Profil hormonal",
           mp_analyses_block_content_value_2: "si nécessaire",
@@ -2883,27 +3304,36 @@ i18n
           mp_analyses_block_content_value_5: "sur recommandation du médecin",
           mp_reproductive_block_title: "Santé reproductive",
           mp_reproductive_block_content_label_1: "Fertilité",
-          mp_reproductive_block_content_value_1: "la qualité du sperme dépend du mode de vie",
+          mp_reproductive_block_content_value_1:
+            "la qualité du sperme dépend du mode de vie",
           mp_reproductive_block_content_label_2: "Risques",
-          mp_reproductive_block_content_value_2: "surchauffe, alcool, tabagisme, obésité",
+          mp_reproductive_block_content_value_2:
+            "surchauffe, alcool, tabagisme, obésité",
           mp_reproductive_block_content_label_3: "Recommandations",
           mp_reproductive_block_content_value_3: "Urologue 1/an, spermogramme",
           mp_urinary_block_title: "Système urinaire",
           mp_urinary_block_content_label_1: "Contrôle de la prostate",
-          mp_urinary_block_content_value_1: "à partir de 40 ans — PSA et échographie 1/an",
+          mp_urinary_block_content_value_1:
+            "à partir de 40 ans — PSA et échographie 1/an",
           mp_urinary_block_content_label_2: "Alerte !",
-          mp_urinary_block_content_value_2: "douleur, sang dans les urines, mictions fréquentes",
+          mp_urinary_block_content_value_2:
+            "douleur, sang dans les urines, mictions fréquentes",
           mp_urinary_block_content_label_3: "Que faire ?",
-          mp_urinary_block_content_value_3: "ne supporte pas l'inconfort, cours chez l'urologue",
+          mp_urinary_block_content_value_3:
+            "ne supporte pas l'inconfort, cours chez l'urologue",
           mp_potency_block_title: "Puissance",
           mp_potency_block_content_label_1: "Pourquoi diminue-t-elle ?",
-          mp_potency_block_content_value_1: "stress, alcool, tabagisme, maladies cardiaques",
+          mp_potency_block_content_value_1:
+            "stress, alcool, tabagisme, maladies cardiaques",
           mp_potency_block_content_label_2: "Comment la soutenir ?",
-          mp_potency_block_content_value_2: "sport, sommeil de qualité, alimentation équilibrée",
+          mp_potency_block_content_value_2:
+            "sport, sommeil de qualité, alimentation équilibrée",
           mp_potency_block_content_label_3: "Quand consulter ?",
-          mp_potency_block_content_value_3: "si les problèmes durent plus de 2 mois",
+          mp_potency_block_content_value_3:
+            "si les problèmes durent plus de 2 mois",
           mp_subtitle_2: "Prends soin de toi comme de ta voiture préférée",
-          mp_form_subtitle: "Remplis les champs si tu as des données actuelles, et nous établirons ton graphique",
+          mp_form_subtitle:
+            "Remplis les champs si tu as des données actuelles, et nous établirons ton graphique",
           mp_form_testosterone: "Testostérone",
           mp_form_free_testosterone: "Testostérone libre",
           mp_form_free_testosterone_2: "T libre",
@@ -2917,13 +3347,15 @@ i18n
           mp_form_pg_ml: "pg/ml",
           mp_form_mO_l: "mU/l",
           mp_form_save_btn: "Sauvegarder les indicateurs",
-          mp_diagram_hormons_value_not_found: "Aucune donnée hormonale trouvée. Merci de saisir tes indicateurs.",
-          mp_diagram_hormons_data_not_found: "Erreur lors du chargement des données. Contacte le support technique.",
+          mp_diagram_hormons_value_not_found:
+            "Aucune donnée hormonale trouvée. Merci de saisir tes indicateurs.",
+          mp_diagram_hormons_data_not_found:
+            "Erreur lors du chargement des données. Contacte le support technique.",
           mp_diagram_low: "Faible",
           mp_diagram_norm: "Normal",
           mp_diagram_high: "Élevé",
         },
-      }
+      },
       es: {
         translation: {
           // === TRADUCCIONES PRINCIPALES DE LA PLATAFORMA ===
@@ -2938,38 +3370,51 @@ i18n
           more_energy: "MÁS ENERGÍA.",
           healthy_lifestyle: "TU ESTILO DE VIDA SALUDABLE EN UN SOLO LUGAR.",
           register: "Registrarse",
-          description_part1: " es una plataforma que te ayuda a cuidarte fácilmente y con una sonrisa.",
-          description_part2: "Controla tu alimentación y entrenamientos, monitorea tu salud y recibe apoyo de especialistas.",
-          description_part3: "Encuentra productos útiles y comparte tu motivación con la comunidad.",
-          description_part4: "Junto con Nomyfy, desarrollas hábitos saludables paso a paso y te sientes mejor cada día.",
+          description_part1:
+            " es una plataforma que te ayuda a cuidarte fácilmente y con una sonrisa.",
+          description_part2:
+            "Controla tu alimentación y entrenamientos, monitorea tu salud y recibe apoyo de especialistas.",
+          description_part3:
+            "Encuentra productos útiles y comparte tu motivación con la comunidad.",
+          description_part4:
+            "Junto con Nomyfy, desarrollas hábitos saludables paso a paso y te sientes mejor cada día.",
 
           // === SECCIÓN DE EXPERTOS ===
           specialist_title_line1: "¡TU TALENTO ES NECESARIO AQUÍ!",
           specialist_title_line2: "¡BUSCAMOS PROFESIONALES COMO TÚ!",
-          specialist_text_line1: "Si eres especialista en psicología, nutrición o eres entrenador,",
-          specialist_text_line2: "hagamos este mundo mejor. Trabajar con profesionales.",
+          specialist_text_line1:
+            "Si eres especialista en psicología, nutrición o eres entrenador,",
+          specialist_text_line2:
+            "hagamos este mundo mejor. Trabajar con profesionales.",
           specialist_text_line3: "¡Eres para nosotros!",
           become_specialist: "Convertirse en especialista",
 
           // === MARKETPLACE ===
           marketplace_title: "MARKETPLACE DE SOLUCIONES SALUDABLES.",
-          marketplace_subtitle: "Todo lo que ayuda a vivir saludablemente reunido en un solo lugar.",
+          marketplace_subtitle:
+            "Todo lo que ayuda a vivir saludablemente reunido en un solo lugar.",
           marketplace_button: "Marketplace",
 
           // === PREGUNTAS FRECUENTES ===
           faq_title: "Preguntas frecuentes",
           faq_q1_title: "¿Qué es NOMYFY?",
-          faq_q1_answer: "NOMYFY es terapia individual para el agotamiento emocional.",
+          faq_q1_answer:
+            "NOMYFY es terapia individual para el agotamiento emocional.",
           faq_q2_title: "¿Para quién es NOMYFY?",
-          faq_q2_answer: "Para quienes buscan formas de mejorar su salud mental.",
+          faq_q2_answer:
+            "Para quienes buscan formas de mejorar su salud mental.",
           faq_q3_title: "¿Qué beneficios tiene NOMYFY?",
-          faq_q3_answer: "NOMYFY ayuda a poner orden en tu vida, empezando por ti mismo.",
+          faq_q3_answer:
+            "NOMYFY ayuda a poner orden en tu vida, empezando por ti mismo.",
           faq_q4_title: "¿Se pueden usar los servicios gratuitamente?",
-          faq_q4_answer: "Sí, tenemos opciones gratuitas, pero la mayoría de servicios son de pago.",
+          faq_q4_answer:
+            "Sí, tenemos opciones gratuitas, pero la mayoría de servicios son de pago.",
           faq_q5_title: "¿Cómo empezar?",
-          faq_q5_answer: "Debes registrarte en nuestra plataforma y elegir un servicio.",
+          faq_q5_answer:
+            "Debes registrarte en nuestra plataforma y elegir un servicio.",
           faq_q6_title: "¿Cómo ser partner de NOMYFY?",
-          faq_q6_answer: "Deja una solicitud en nuestro sitio y nos contactaremos contigo.",
+          faq_q6_answer:
+            "Deja una solicitud en nuestro sitio y nos contactaremos contigo.",
 
           // === PIE DE PÁGINA ===
           specialists: "Especialistas",
@@ -3010,7 +3455,8 @@ i18n
           password_update_success: "contraseña actualizada exitosamente",
           to_login: "Volver al inicio de sesión",
           user_not_exist: "El usuario con este email no existe",
-          reset_password_error: "Error al restablecer la contraseña. Inténtalo de nuevo.",
+          reset_password_error:
+            "Error al restablecer la contraseña. Inténtalo de nuevo.",
           user_exist: "Ya existe un usuario con este email",
           auth_fail: "Error de autenticación. Verifica tus datos.",
 
@@ -3040,7 +3486,8 @@ i18n
           bmi_requires: "Por favor ingresa información sobre tu altura y peso",
 
           // === PERFIL DE USUARIO ===
-          p_error_upadate: "No se pudo actualizar el perfil. Por favor completa todos los campos.",
+          p_error_upadate:
+            "No se pudo actualizar el perfil. Por favor completa todos los campos.",
           p_male: "Hombre",
           p_female: "Mujer",
           p_other: "Otro",
@@ -3137,11 +3584,13 @@ i18n
           ch_create_success: "¡Desafío creado exitosamente!",
           ch_create_error: "No se pudo crear el desafío.",
           ch_confirmJoinTitle: "Confirmar unión al desafío",
-          ch_confirmJoinText: "¿Estás seguro de que quieres unirte a este desafío?",
+          ch_confirmJoinText:
+            "¿Estás seguro de que quieres unirte a este desafío?",
           yes: "Sí",
           no: "No",
           ch_confirmDeleteTitle: "Confirmar eliminación del desafío",
-          ch_confirmDeleteText: "¿Estás seguro de que quieres eliminar este desafío? Esta acción no se puede deshacer.",
+          ch_confirmDeleteText:
+            "¿Estás seguro de que quieres eliminar este desafío? Esta acción no se puede deshacer.",
           ch_joinedTitle: "¡Éxito!",
           ch_joinedText: "Te has unido al desafío exitosamente.",
           ok: "OK",
@@ -3156,15 +3605,18 @@ i18n
           ch_saving: "Guardando...",
           ch_edit_success: "¡Desafío actualizado exitosamente!",
           ch_edit_success_title: "¡Éxito!",
-          ch_edit_error: "No se pudo actualizar el desafío. Inténtalo de nuevo.",
+          ch_edit_error:
+            "No se pudo actualizar el desafío. Inténtalo de nuevo.",
           ch_leave: "Abandonar",
           ch_complete: "Completar",
           ch_confirmLeaveTitle: "Confirmar salida del desafío",
-          ch_confirmLeaveText: "¿Estás seguro de que quieres abandonar este desafío?",
+          ch_confirmLeaveText:
+            "¿Estás seguro de que quieres abandonar este desafío?",
           ch_leftTitle: "Desafío abandonado",
           ch_leftText: "Has abandonado el desafío exitosamente.",
           ch_completedTitle: "Desafío completado",
-          ch_completedText: "¡Felicidades! Has completado el desafío exitosamente.",
+          ch_completedText:
+            "¡Felicidades! Has completado el desafío exitosamente.",
 
           // === CALENDARIO MENSTRUAL ===
           last_cycle_first_day: "Primer día del último ciclo",
@@ -3173,7 +3625,8 @@ i18n
           female: "Mujer",
           gender: "Salud por género",
           female_health: "Salud femenina",
-          female_health_fine: "Salud femenina sin tabúes - honesta, simple y con cuidado de ti.",
+          female_health_fine:
+            "Salud femenina sin tabúes - honesta, simple y con cuidado de ti.",
           cycle_info: "Todo sobre tu ciclo",
           reproductive_health: "Salud reproductiva",
           hormonas: "Hormonas",
@@ -3185,43 +3638,60 @@ i18n
           plan: "Planificar",
           preventive_check: "examen preventivo al menos una vez al año",
           hormonas_health: "Hormonas saludables",
-          hormonas_important: "Por qué es importante controlar los niveles hormonales",
+          hormonas_important:
+            "Por qué es importante controlar los niveles hormonales",
           cycle_health: "¿El ciclo es importante?",
           cycle_important: "Por qué es importante seguir cada ciclo",
           examination_health: "Exámenes generales",
-          examination_important: "Por qué es importante controlar los niveles hormonales",
+          examination_important:
+            "Por qué es importante controlar los niveles hormonales",
           find_doctor: "Encuentra un médico cercano",
           your_cycle: "Tu ciclo",
-          cycle_control: "Sigue tu ciclo, controla tu bienestar y recibe recordatorios a tiempo",
+          cycle_control:
+            "Sigue tu ciclo, controla tu bienestar y recibe recordatorios a tiempo",
           calendar_cycle: "Calendario menstrual",
           calc_cycle: "Calcular mi calendario menstrual",
-          warning_calc: "*Los cálculos de nuestro calendario menstrual pueden no ser 100% precisos, porque cada cuerpo y cada ciclo es diferente. Ayúdanos a hacer tu calendario más preciso.",
+          warning_calc:
+            "*Los cálculos de nuestro calendario menstrual pueden no ser 100% precisos, porque cada cuerpo y cada ciclo es diferente. Ayúdanos a hacer tu calendario más preciso.",
           cycle: "Ciclo",
           why_should_calendar: "¿Por qué llevar un calendario menstrual?",
-          preview_calendar: "Llevar un calendario menstrual no es solo recordar 'esos días'. Es un pequeño ritual de autocuidado que ayuda a entender mejor tu cuerpo y estado de ánimo.",
+          preview_calendar:
+            "Llevar un calendario menstrual no es solo recordar 'esos días'. Es un pequeño ritual de autocuidado que ayuda a entender mejor tu cuerpo y estado de ánimo.",
           predict_cycle: "Predice el ciclo",
-          predict_cycle_desc: "Siempre sabes cuándo comenzarán tu período y ovulación. Esto ayuda a planificar eventos, vacaciones o reuniones importantes.",
+          predict_cycle_desc:
+            "Siempre sabes cuándo comenzarán tu período y ovulación. Esto ayuda a planificar eventos, vacaciones o reuniones importantes.",
           listen_yourself: "Escucharte a ti misma",
-          listen_yourself_desc: "El calendario ayuda a notar cómo cambian la energía, el estado de ánimo y el apetito en las diferentes fases del ciclo.",
+          listen_yourself_desc:
+            "El calendario ayuda a notar cómo cambian la energía, el estado de ánimo y el apetito en las diferentes fases del ciclo.",
           regularity: "Detectar regularidades",
-          regularity_desc: "El dolor, el SPM, los cambios de humor o los cambios en la piel se vuelven más notorios. Puedes seguir fácilmente lo que se repite y lo que te ayuda a sentirte mejor.",
+          regularity_desc:
+            "El dolor, el SPM, los cambios de humor o los cambios en la piel se vuelven más notorios. Puedes seguir fácilmente lo que se repite y lo que te ayuda a sentirte mejor.",
           doctor_help: "Ayuda al médico",
-          doctor_help_desc: "Si necesitas consultar a un ginecólogo, un registro preciso de tu ciclo y síntomas hace la consulta más efectiva.",
+          doctor_help_desc:
+            "Si necesitas consultar a un ginecólogo, un registro preciso de tu ciclo y síntomas hace la consulta más efectiva.",
           planing: "Planificación de salud y fitness",
-          planing_desc: "Puedes adaptar tus entrenamientos, alimentación o descanso a tu ritmo para obtener el máximo beneficio.",
-          finalize_calendar: "Un calendario menstrual no es una obligación, sino una herramienta de autoconocimiento. Te ayuda a sentirte más segura, prever cambios de humor y simplemente cuidarte.",
+          planing_desc:
+            "Puedes adaptar tus entrenamientos, alimentación o descanso a tu ritmo para obtener el máximo beneficio.",
+          finalize_calendar:
+            "Un calendario menstrual no es una obligación, sino una herramienta de autoconocimiento. Te ayuda a sentirte más segura, prever cambios de humor y simplemente cuidarte.",
           phase: "Fases del ciclo menstrual",
           proccess_in_body: "Qué sucede en el cuerpo de una mujer",
-          proccess_in_body_desc: "El ciclo menstrual no son solo 'esos días'. Es todo un ritmo natural que ayuda al organismo a funcionar armoniosamente. Se divide en varias fases, y cada una influye en nuestro bienestar, estado de ánimo y energía.",
+          proccess_in_body_desc:
+            "El ciclo menstrual no son solo 'esos días'. Es todo un ritmo natural que ayuda al organismo a funcionar armoniosamente. Se divide en varias fases, y cada una influye en nuestro bienestar, estado de ánimo y energía.",
           phase_1_5: "Fase menstrual\n(días 1 a 5)",
-          phase_1_5_desc: "Es el inicio del ciclo. El cuerpo se deshace del revestimiento uterino antiguo, de ahí el sangrado. Durante este tiempo la energía puede ser menor, así que date más descanso.",
+          phase_1_5_desc:
+            "Es el inicio del ciclo. El cuerpo se deshace del revestimiento uterino antiguo, de ahí el sangrado. Durante este tiempo la energía puede ser menor, así que date más descanso.",
           phase_6_13: "Fase folicular\n(días 6 a 13)",
-          phase_6_13_desc: "El nivel de estrógeno aumenta gradualmente, y con él regresan la fuerza y la motivación. Es un buen período para nuevas ideas, trabajo activo y deporte.",
+          phase_6_13_desc:
+            "El nivel de estrógeno aumenta gradualmente, y con él regresan la fuerza y la motivación. Es un buen período para nuevas ideas, trabajo activo y deporte.",
           phase_14_16: "Fase de ovulación\n(días 14 a 16)",
-          phase_14_16_desc: "Se libera un óvulo maduro. La mujer puede sentirse segura, atractiva, llena de energía. Son los días 'pico', cuando el cuerpo está listo para la concepción.",
+          phase_14_16_desc:
+            "Se libera un óvulo maduro. La mujer puede sentirse segura, atractiva, llena de energía. Son los días 'pico', cuando el cuerpo está listo para la concepción.",
           phase_17_28: "Fase lútea\n(días 17 a 28)",
-          phase_17_28_desc: "Si no ocurre el embarazo, domina la progesterona. Pueden aparecer somnolencia, cambios de humor, antojos de dulces. En este período es importante escucharse, descansar más y cuidar el confort emocional.",
-          finalize_cycle: "El ciclo menstrual no es un enemigo, sino un calendario natural de nuestro cuerpo. Si escuchas sus fases, puedes planificar mejor tu día, entender los cambios de humor y estar más en armonía contigo misma.",
+          phase_17_28_desc:
+            "Si no ocurre el embarazo, domina la progesterona. Pueden aparecer somnolencia, cambios de humor, antojos de dulces. En este período es importante escucharse, descansar más y cuidar el confort emocional.",
+          finalize_cycle:
+            "El ciclo menstrual no es un enemigo, sino un calendario natural de nuestro cuerpo. Si escuchas sus fases, puedes planificar mejor tu día, entender los cambios de humor y estar más en armonía contigo misma.",
           go_back: "Volver",
           now: "ahora",
           menstruation: "menstruación",
@@ -3234,23 +3704,29 @@ i18n
           high_chance: "Alta probabilidad de embarazo",
           no_chance: "Probabilidad muy baja de embarazo",
           myth_facts: "Mitos y hechos",
-          one: 'día',
-          few: 'días',
-          other: 'días',
+          one: "día",
+          few: "días",
+          other: "días",
           c_long: "¡Tu ciclo duró {{cLong}} días. Lo cual es normal!",
-          phase_1: "¡Ahora estás en la fase menstrual!\nEs el inicio del ciclo.\n¡Puedes sentir falta de energía!\n¡Durante este tiempo es mejor cuidarte y descansar!",
-          phase_2: "¡Ahora estás en la fase folicular!\nLa hormona estrógeno aumenta activamente.\n¡Tu estado de ánimo mejora. La piel mejora!\n¡Estás lista para conquistar el mundo!",
-          phase_3: "¡Ahora estás en la fase de ovulación!\nSe libera un óvulo maduro.\n¡Te sientes segura y llena de energía!\n¡Hoy es un día maravilloso para hacer lo que te da alegría!",
-          phase_4: "¡Ahora estás en la fase lútea!\n¡La progesterona comienza a dominar!\n¡Durante este período pueden ocurrir cambios de humor y somnolencia!\n¡Cuida tu confort y escucha tus sensaciones!",
+          phase_1:
+            "¡Ahora estás en la fase menstrual!\nEs el inicio del ciclo.\n¡Puedes sentir falta de energía!\n¡Durante este tiempo es mejor cuidarte y descansar!",
+          phase_2:
+            "¡Ahora estás en la fase folicular!\nLa hormona estrógeno aumenta activamente.\n¡Tu estado de ánimo mejora. La piel mejora!\n¡Estás lista para conquistar el mundo!",
+          phase_3:
+            "¡Ahora estás en la fase de ovulación!\nSe libera un óvulo maduro.\n¡Te sientes segura y llena de energía!\n¡Hoy es un día maravilloso para hacer lo que te da alegría!",
+          phase_4:
+            "¡Ahora estás en la fase lútea!\n¡La progesterona comienza a dominar!\n¡Durante este período pueden ocurrir cambios de humor y somnolencia!\n¡Cuida tu confort y escucha tus sensaciones!",
           super: "¡Súper!",
-          gynecology_sub: "Todo sobre exámenes regulares, prevención, cuidado de la salud femenina — sin tabúes en lenguaje simple.",
+          gynecology_sub:
+            "Todo sobre exámenes regulares, prevención, cuidado de la salud femenina — sin tabúes en lenguaje simple.",
           womens_tests: "Exámenes y análisis",
           regular_review: "Exámenes regulares",
           articles_: "Artículos",
           read: "Leer",
           how_often: "¿Con qué frecuencia\nvisitar al\nginecólogo?",
           top_5_tests: "TOP 5 análisis\npara salud femenina",
-          review_sub: "El cuidado de la salud comienza con la prevención. Una vez al año — y vas un paso por delante de los problemas.",
+          review_sub:
+            "El cuidado de la salud comienza con la prevención. Una vez al año — y vas un paso por delante de los problemas.",
           what_to_check_regulary: "¿Qué hacer regularmente?",
           gynecology_review: "Examen ginecológico",
           one_time_per_year: "una vez al año",
@@ -3262,33 +3738,47 @@ i18n
           mammography: "Mamografía",
           after_40_years: "después de los 40 años",
           examination_head: "Exámenes y análisis",
-          examination_desc: "Los análisis correctos en el momento correcto — la clave para la tranquilidad sobre tu salud. Descubre qué análisis y exámenes hacer regularmente.",
+          examination_desc:
+            "Los análisis correctos en el momento correcto — la clave para la tranquilidad sobre tu salud. Descubre qué análisis y exámenes hacer regularmente.",
           base_review: "Examen básico",
           gynecology_examination: "Examen ginecológico",
           add_to_calendar: "Añadir al calendario",
           ultrasound_glands: "Ultrasonido mamario",
           need_I_test: "¿Debo hacerme análisis si me siento bien?",
-          examination_tip_need: "Los exámenes médicos regulares son importantes incluso cuando no hay quejas. Muchas enfermedades se desarrollan de forma asintomática en etapas tempranas, y los análisis básicos realizados a tiempo (hemograma, orina, nivel de azúcar, colesterol) ayudan a detectar problemas antes de que aparezcan los primeros signos.\n\nControles planificados una vez al año – es una inversión en tu salud. Te permiten controlar el estado de tu organismo, ajustar tu alimentación y estilo de vida a tiempo, y evitar complicaciones.\n\n¿Te sientes bien? – maravilloso, pero la prevención siempre es más fácil y económica que el tratamiento.",
+          examination_tip_need:
+            "Los exámenes médicos regulares son importantes incluso cuando no hay quejas. Muchas enfermedades se desarrollan de forma asintomática en etapas tempranas, y los análisis básicos realizados a tiempo (hemograma, orina, nivel de azúcar, colesterol) ayudan a detectar problemas antes de que aparezcan los primeros signos.\n\nControles planificados una vez al año – es una inversión en tu salud. Te permiten controlar el estado de tu organismo, ajustar tu alimentación y estilo de vida a tiempo, y evitar complicaciones.\n\n¿Te sientes bien? – maravilloso, pero la prevención siempre es más fácil y económica que el tratamiento.",
           what_needed_blood: "¿Qué preparar antes de un análisis de sangre?",
-          what_needed_blood_info: "Para que tu análisis de sangre sea preciso, prepárate con anticipación:\n\nAnálisis en ayunas la última comida debe ser 8-12 horas antes\n\nBebe solo agua sin gas esto no afecta los resultados\n\nEvita el alcohol, comidas grasas y muy dulces 1-2 días antes\n\nEl día del análisis evita esfuerzos físicos intensos y estrés\n\nSi tomas medicamentos, infórmale obligatoriamente a tu médico",
-          what_diff_ultrasound_mam: "¿En qué se diferencia el ultrasonido de la mamografía?",
-          what_diff_ultrasound_mam_info: "El ultrasonido utiliza ondas sonoras para visualizar tejidos y muestra bien las estructuras blandas de los senos, especialmente en mujeres jóvenes con tejido denso\n\nLa mamografía es un examen de rayos X que permite detectar microcalcificaciones y signos tempranos de tumores incluso antes de que aparezcan bultos\n\nEl ultrasonido no utiliza radiación y es adecuado para control adicional\nLa mamografía sigue siendo el método principal de cribado para mujeres mayores de 40 años\n\nAmbos métodos se usan a menudo combinados para un diagnóstico más preciso",
-          why_pap_test: "¿Para qué sirve la citología (test PAP) y con qué frecuencia?",
-          why_pap_test_info: "La citología o test PAP ayuda a detectar cambios en las células del cuello uterino en etapas tempranas cuando aún no hay síntomas\n\nLos exámenes regulares permiten prevenir el desarrollo de cáncer y tratar procesos inflamatorios a tiempo\n\nGeneralmente el test PAP se realiza una vez al año si no hay problemas, o más frecuentemente por recomendación del médico\n\nEl examen es rápido, indoloro y toma solo unos minutos\n\nIncluso si te sientes bien, el test te ayuda a cuidar tu salud",
+          what_needed_blood_info:
+            "Para que tu análisis de sangre sea preciso, prepárate con anticipación:\n\nAnálisis en ayunas la última comida debe ser 8-12 horas antes\n\nBebe solo agua sin gas esto no afecta los resultados\n\nEvita el alcohol, comidas grasas y muy dulces 1-2 días antes\n\nEl día del análisis evita esfuerzos físicos intensos y estrés\n\nSi tomas medicamentos, infórmale obligatoriamente a tu médico",
+          what_diff_ultrasound_mam:
+            "¿En qué se diferencia el ultrasonido de la mamografía?",
+          what_diff_ultrasound_mam_info:
+            "El ultrasonido utiliza ondas sonoras para visualizar tejidos y muestra bien las estructuras blandas de los senos, especialmente en mujeres jóvenes con tejido denso\n\nLa mamografía es un examen de rayos X que permite detectar microcalcificaciones y signos tempranos de tumores incluso antes de que aparezcan bultos\n\nEl ultrasonido no utiliza radiación y es adecuado para control adicional\nLa mamografía sigue siendo el método principal de cribado para mujeres mayores de 40 años\n\nAmbos métodos se usan a menudo combinados para un diagnóstico más preciso",
+          why_pap_test:
+            "¿Para qué sirve la citología (test PAP) y con qué frecuencia?",
+          why_pap_test_info:
+            "La citología o test PAP ayuda a detectar cambios en las células del cuello uterino en etapas tempranas cuando aún no hay síntomas\n\nLos exámenes regulares permiten prevenir el desarrollo de cáncer y tratar procesos inflamatorios a tiempo\n\nGeneralmente el test PAP se realiza una vez al año si no hay problemas, o más frecuentemente por recomendación del médico\n\nEl examen es rápido, indoloro y toma solo unos minutos\n\nIncluso si te sientes bien, el test te ayuda a cuidar tu salud",
           reproductive: "Salud reproductiva",
-          reproductive_sub: "¡Planifica con nosotros! Cuida tu cuerpo y planifica tu futuro con confianza.",
+          reproductive_sub:
+            "¡Planifica con nosotros! Cuida tu cuerpo y planifica tu futuro con confianza.",
           myth_main: "Existen muchos mitos alrededor de la menstruación.",
           myth_sub: "Aquí tienes una pequeña selección)",
           cant_sport: "No se puede hacer deporte durante la menstruación",
-          cant_sport_desc: "En realidad, la actividad física ligera, como yoga, caminatas o incluso entrenamientos moderados, puede aliviar los calambres y mejorar el estado de ánimo.",
+          cant_sport_desc:
+            "En realidad, la actividad física ligera, como yoga, caminatas o incluso entrenamientos moderados, puede aliviar los calambres y mejorar el estado de ánimo.",
           c_long_: "El ciclo siempre dura exactamente 28 días",
-          c_long_desc: "El ciclo es individual en cada persona: se considera normal un intervalo de aproximadamente 21 a 35 días.",
+          c_long_desc:
+            "El ciclo es individual en cada persona: se considera normal un intervalo de aproximadamente 21 a 35 días.",
           cant_swim: "No se puede nadar o bañarse durante la menstruación",
-          cant_swim_desc: "Nadar y ducharse es seguro. Los productos de higiene (tampones, copas menstruales) permiten nadar cómodamente y mantener la limpieza.",
-          cant_get_pregnant: "No se puede quedar embarazada durante la menstruación",
-          cant_get_pregnant_desc: "La probabilidad es menor, pero no cero: los espermatozoides pueden vivir en el cuerpo varios días, y la ovulación a veces ocurre antes o después de lo esperado.",
+          cant_swim_desc:
+            "Nadar y ducharse es seguro. Los productos de higiene (tampones, copas menstruales) permiten nadar cómodamente y mantener la limpieza.",
+          cant_get_pregnant:
+            "No se puede quedar embarazada durante la menstruación",
+          cant_get_pregnant_desc:
+            "La probabilidad es menor, pero no cero: los espermatozoides pueden vivir en el cuerpo varios días, y la ovulación a veces ocurre antes o después de lo esperado.",
           pain_is_ok: "El dolor menstrual siempre es normal",
-          pain_is_ok_desc: "Una molestia leve es típica, pero un dolor intenso o agotador puede indicar endometriosis u otras enfermedades, y vale la pena consultar a un médico.",
+          pain_is_ok_desc:
+            "Una molestia leve es típica, pero un dolor intenso o agotador puede indicar endometriosis u otras enfermedades, y vale la pena consultar a un médico.",
 
           // === SALUD MENTAL ===
           your: "Tu salud",
@@ -3316,7 +3806,8 @@ i18n
 
           // === DIARIO DE EMOCIONES ===
           mp_aew_notes: "Nota",
-          mp_aew_describe_your_feelings: "Describe tus sensaciones con más detalle...",
+          mp_aew_describe_your_feelings:
+            "Describe tus sensaciones con más detalle...",
           mp_aew_ok: "Ok",
           mp_aew_balance: "Equilibrio",
           mp_aew_safety: "Seguridad",
@@ -3416,7 +3907,8 @@ i18n
           mp_aew_wizard_title_step_1: "Me siento",
           mp_aew_wizard_title_step_2: "¿Cuál fue la causa de estas emociones?",
           mp_aew_wizard_title_step_3: "¿Quieres escribir algo sobre",
-          mp_aew_wizard_description_step_3: "Tu nota es privada y solo visible para ti.",
+          mp_aew_wizard_description_step_3:
+            "Tu nota es privada y solo visible para ti.",
           mp_return_back: "Volver atrás",
           mp_btn_next: "Siguiente",
           mp_btn_add: "Añadir",
@@ -3432,23 +3924,29 @@ i18n
           // === EJERCICIOS DE RESPIRACIÓN ===
           mp_bpp_title: "Ejercicios de respiración",
           mp_bpp_subtitle: "Exhala estrés — inhala calma 🌿",
-          mp_bpp_description_1: "Ejercicios simples de respiración ayudan a aliviar la tensión, recuperar energía y clarificar la mente. Puedes empezar en cualquier lugar: en casa, en el trabajo o incluso en transporte.",
-          mp_bpp_description_2: "Pruébalo — y siente cómo tu cuerpo se relaja y tu estado de ánimo se aligera.",
+          mp_bpp_description_1:
+            "Ejercicios simples de respiración ayudan a aliviar la tensión, recuperar energía y clarificar la mente. Puedes empezar en cualquier lugar: en casa, en el trabajo o incluso en transporte.",
+          mp_bpp_description_2:
+            "Pruébalo — y siente cómo tu cuerpo se relaja y tu estado de ánimo se aligera.",
           mp_bpp_card_title_1: "Respiración diafragmática",
           mp_bpp_card_description_1_1: "Reduce el estrés y la ansiedad.",
           mp_bpp_card_description_1_2: "Relaja, alivia tensiones.",
           mp_bpp_card_title_2: "Respiración cuadrada",
-          mp_bpp_card_description_2_1: "Alivia la ansiedad y ayuda a concentrarse.",
+          mp_bpp_card_description_2_1:
+            "Alivia la ansiedad y ayuda a concentrarse.",
           mp_bpp_card_title_3: "Nadi Shodhana",
-          mp_bpp_card_description_3_1: "Respiración alternada por fosas nasales.",
+          mp_bpp_card_description_3_1:
+            "Respiración alternada por fosas nasales.",
           mp_bpp_card_description_3_2: "Ayuda a reducir el estrés.",
           mp_bpp_card_description_3_3: "Restablece el equilibrio interior.",
 
           // === RESPIRACIÓN DIAFRAGMÁTICA ===
           mp_dbp_title: "Respiración diafragmática",
           mp_dbp_subtitle: "Respiración que devuelve la calma",
-          mp_dbp_description_1_1: "Siéntate cómodamente. Relaja los hombros. Practica durante al menos 3-5 minutos.",
-          mp_dbp_description_1_2: "Vuelve a la respiración cuando sientas tensión.",
+          mp_dbp_description_1_1:
+            "Siéntate cómodamente. Relaja los hombros. Practica durante al menos 3-5 minutos.",
+          mp_dbp_description_1_2:
+            "Vuelve a la respiración cuando sientas tensión.",
           mp_dbp_inhale: "INHALA",
           mp_dbp_hold: "MANTÉN",
           mp_dbp_exhale: "EXHALA",
@@ -3457,16 +3955,22 @@ i18n
           // === DIARIO DE EMOCIONES ===
           mp_ebp_title: "Diario de emociones",
           mp_ebp_factor_title: "Factores del estado de ánimo",
-          mp_ebp_factor_info_p_1: "Todos los factores - tus posibles desencadenantes.",
-          mp_ebp_factor_info_p_2: "Por ejemplo, podrías no notar que el deporte, el café o las drogas influyen en tu estado de ánimo y forman patrones de comportamiento.",
-          mp_ebp_factor_info_p_3: "Puedes seguir la influencia de los factores en tu bienestar más tarde en la sección de análisis.",
+          mp_ebp_factor_info_p_1:
+            "Todos los factores - tus posibles desencadenantes.",
+          mp_ebp_factor_info_p_2:
+            "Por ejemplo, podrías no notar que el deporte, el café o las drogas influyen en tu estado de ánimo y forman patrones de comportamiento.",
+          mp_ebp_factor_info_p_3:
+            "Puedes seguir la influencia de los factores en tu bienestar más tarde en la sección de análisis.",
           mp_ebp_factor_info_p_4: "Ejemplo",
           mp_ebp_factor_info_p_5: "Alimentación y estimulantes:",
-          mp_ebp_factor_info_p_6: "Registra tu consumo de café, vitaminas o alimentos que puedan afectar tu nivel de energía.",
+          mp_ebp_factor_info_p_6:
+            "Registra tu consumo de café, vitaminas o alimentos que puedan afectar tu nivel de energía.",
           mp_ebp_factor_info_p_7: "Actividad y ejercicio físico:",
-          mp_ebp_factor_info_p_8: "Controla la cantidad de ejercicio físico o participación en otras formas de actividad física.",
+          mp_ebp_factor_info_p_8:
+            "Controla la cantidad de ejercicio físico o participación en otras formas de actividad física.",
           mp_ebp_factor_info_p_9: "Ciclos biológicos:",
-          mp_ebp_factor_info_p_10: "Siguiendo tu menstruación, podrás entender cómo afecta tu bienestar emocional.",
+          mp_ebp_factor_info_p_10:
+            "Siguiendo tu menstruación, podrás entender cómo afecta tu bienestar emocional.",
           mp_ebp_selected_factors: "Factores seleccionados:",
           mp_ebp_available_factors: "Factores disponibles:",
           mp_ebp_hello_how_are_you: "¡Hola! ¿Cómo estás?",
@@ -3475,7 +3979,8 @@ i18n
 
           // === INICIO DE SALUD MENTAL ===
           mp_mhp_title: "Tu calma comienza aquí.",
-          mp_mhp_sub_title: "Hemos reunido herramientas que ayudan a mantenerse equilibrado incluso en los días más estresantes.",
+          mp_mhp_sub_title:
+            "Hemos reunido herramientas que ayudan a mantenerse equilibrado incluso en los días más estresantes.",
           mp_mhp_test_card_title: "Tests de estado",
           mp_mhp_test_card_btn_text: "Hacer test",
           mp_mhp_breathing_card_title: "Ejercicios de respiración",
@@ -3487,7 +3992,8 @@ i18n
           // === TEST DE ESTADO ===
           mp_mtp_test_data_question_1: "¿Cómo te despiertas por la mañana?",
           mp_mtp_test_data_answers_1_1: "Con entusiasmo y planes",
-          mp_mtp_test_data_answers_1_2: "Con un vaso de agua y un suspiro pesado",
+          mp_mtp_test_data_answers_1_2:
+            "Con un vaso de agua y un suspiro pesado",
           mp_mtp_test_data_answers_1_3: "«¿Qué, otra vez este día?»",
           mp_mtp_test_data_question_2: "Cuando algo sale mal, tu reacción es:",
           mp_mtp_test_data_answers_2_1: "Ok, pensaré cómo arreglarlo",
@@ -3500,60 +4006,86 @@ i18n
           mp_mtp_test_data_question_4: "Tu sensación de energía últimamente:",
           mp_mtp_test_data_answers_4_1: "Normal, la batería aguanta",
           mp_mtp_test_data_answers_4_2: "Como una batería al 30%",
-          mp_mtp_test_data_answers_4_3: "Como un teléfono que se apaga con el frío",
-          mp_mtp_test_data_question_5: "¿Qué piensas cuando escuchas la palabra «descanso»?",
+          mp_mtp_test_data_answers_4_3:
+            "Como un teléfono que se apaga con el frío",
+          mp_mtp_test_data_question_5:
+            "¿Qué piensas cuando escuchas la palabra «descanso»?",
           mp_mtp_test_data_answers_5_1: "Planeo algo agradable",
           mp_mtp_test_data_answers_5_2: "Quedarme en casa y no hacer nada",
           mp_mtp_test_data_answers_5_3: "No tengo tiempo para descansar",
           mp_mtp_test_result_title_1: "Tu salud mental está bien.",
-          mp_mtp_test_result_description_1: "Tienes un nivel excelente de energía y optimismo. ¡Sigue cuidándote y mantén este estado!",
+          mp_mtp_test_result_description_1:
+            "Tienes un nivel excelente de energía y optimismo. ¡Sigue cuidándote y mantén este estado!",
           mp_mtp_test_result_title_2: "Tu salud mental está mayormente bien.",
-          mp_mtp_test_result_description_2: "La mayoría de las cosas van bien, pero algunas áreas necesitan un poco más de atención y cuidado.",
+          mp_mtp_test_result_description_2:
+            "La mayoría de las cosas van bien, pero algunas áreas necesitan un poco más de atención y cuidado.",
           mp_mtp_test_result_title_3: "Tu salud mental está un poco agotada",
-          mp_mtp_test_result_description_3: "Sientes una ligera fatiga. Encuentra tiempo para descansar y pequeños placeres.",
+          mp_mtp_test_result_description_3:
+            "Sientes una ligera fatiga. Encuentra tiempo para descansar y pequeños placeres.",
           mp_mtp_test_result_title_4: "Tu salud mental pide cuidado",
-          mp_mtp_test_result_description_4: "Necesitas más descanso, alegría y apoyo. Presta atención a tus necesidades.",
+          mp_mtp_test_result_description_4:
+            "Necesitas más descanso, alegría y apoyo. Presta atención a tus necesidades.",
           mp_mtp_test_result_title_5: "Tu salud mental grita SOS",
-          mp_mtp_test_result_description_5: "Podrías estar experimentando agotamiento. No dudes en buscar ayuda y encuentra tiempo para un descanso serio.",
-          mp_mtp_test_result_title_6: "Tu salud mental es como una montaña rusa.",
-          mp_mtp_test_result_description_6: "Tu estado cambia a menudo. Algunos días son geniales, otros - más difíciles. Intenta encontrar un equilibrio.",
-          mp_mtp_start_message: "¡Atención! El test no tiene valor diagnóstico, pero muestra tu nivel de estrés o agotamiento.",
+          mp_mtp_test_result_description_5:
+            "Podrías estar experimentando agotamiento. No dudes en buscar ayuda y encuentra tiempo para un descanso serio.",
+          mp_mtp_test_result_title_6:
+            "Tu salud mental es como una montaña rusa.",
+          mp_mtp_test_result_description_6:
+            "Tu estado cambia a menudo. Algunos días son geniales, otros - más difíciles. Intenta encontrar un equilibrio.",
+          mp_mtp_start_message:
+            "¡Atención! El test no tiene valor diagnóstico, pero muestra tu nivel de estrés o agotamiento.",
           mp_mtp_test_title: "Test sobre el estado de tu salud mental",
-          mp_mtp_test_description: "Haz clic en las respuestas que correspondan a tu estado)",
+          mp_mtp_test_description:
+            "Haz clic en las respuestas que correspondan a tu estado)",
 
           // === NADI SHODHANA ===
           mp_nsp_title: "Nadi Shodhana",
           mp_nsp_subtitle: "Respiración que equilibra la energía",
-          mp_nsp_description_1: "Técnica de respiración alternada por fosas nasales para armonizar mente y cuerpo.",
-          mp_nsp_description_2: "Practica durante 3-5 minutos para lograr el efecto.",
+          mp_nsp_description_1:
+            "Técnica de respiración alternada por fosas nasales para armonizar mente y cuerpo.",
+          mp_nsp_description_2:
+            "Practica durante 3-5 minutos para lograr el efecto.",
           mp_nsp_technique_title: "Técnica:",
           mp_nsp_technique_step_1: "Siéntate cómodamente, endereza la espalda.",
-          mp_nsp_technique_step_2: "Con la mano, cierra la fosa nasal derecha, inhala por la izquierda.",
-          mp_nsp_technique_step_3: "Luego cierra la izquierda — exhala por la derecha.",
-          mp_nsp_technique_step_4: "Inhala por la derecha — exhala por la izquierda.",
-          mp_nsp_technique_step_5: "Continúa varios minutos a un ritmo tranquilo.",
+          mp_nsp_technique_step_2:
+            "Con la mano, cierra la fosa nasal derecha, inhala por la izquierda.",
+          mp_nsp_technique_step_3:
+            "Luego cierra la izquierda — exhala por la derecha.",
+          mp_nsp_technique_step_4:
+            "Inhala por la derecha — exhala por la izquierda.",
+          mp_nsp_technique_step_5:
+            "Continúa varios minutos a un ritmo tranquilo.",
           mp_nsp_result_title: "Resultado:",
-          mp_nsp_result_description_1: "Ya después de unos minutos aparece una sensación de calma. Disminuye el nivel de tensión. La mente se aclara, como después de un breve descanso.",
-          mp_nsp_result_description_2: "La práctica regular ayuda a conciliar mejor el sueño, concentrarse y preservar el equilibrio interior incluso en situaciones estresantes.",
+          mp_nsp_result_description_1:
+            "Ya después de unos minutos aparece una sensación de calma. Disminuye el nivel de tensión. La mente se aclara, como después de un breve descanso.",
+          mp_nsp_result_description_2:
+            "La práctica regular ayuda a conciliar mejor el sueño, concentrarse y preservar el equilibrio interior incluso en situaciones estresantes.",
 
           // === RESPIRACIÓN CUADRADA ===
           mp_sbp_title: "Respiración cuadrada",
           mp_sbp_subtitle: "Respiración que devuelve la calma",
-          mp_sbp_description_1: "Siéntate cómodamente. Relaja los hombros. Practica durante al menos 3-5 minutos.",
-          mp_sbp_description_2: "Vuelve a la respiración cuando sientas tensión.",
+          mp_sbp_description_1:
+            "Siéntate cómodamente. Relaja los hombros. Practica durante al menos 3-5 minutos.",
+          mp_sbp_description_2:
+            "Vuelve a la respiración cuando sientas tensión.",
 
           // === TU SALUD ===
           mp_yhp_main_title: "Tu salud —",
           mp_yhp_main_subtitle: "Tu superpoder. Se apoya en 3 pilares:",
           mp_yhp_activity_title: "Actividad",
-          mp_yhp_activity_description_1: "Incluso 15 minutos al día ya marcan la diferencia.",
-          mp_yhp_activity_description_2: "Caminata, cuerda, Pilates — elige lo que te guste, y tu cuerpo te lo agradecerá.",
+          mp_yhp_activity_description_1:
+            "Incluso 15 minutos al día ya marcan la diferencia.",
+          mp_yhp_activity_description_2:
+            "Caminata, cuerda, Pilates — elige lo que te guste, y tu cuerpo te lo agradecerá.",
           mp_yhp_sleep_title: "Sueño",
           mp_yhp_sleep_description_1: "¡Es lo más importante!",
-          mp_yhp_sleep_description_2: "El sueño no es pereza, sino tu cable de carga interno. 7-8 horas de descanso de calidad ayudan al cuerpo a recuperarse y al cerebro a trabajar rápido y creativamente.",
+          mp_yhp_sleep_description_2:
+            "El sueño no es pereza, sino tu cable de carga interno. 7-8 horas de descanso de calidad ayudan al cuerpo a recuperarse y al cerebro a trabajar rápido y creativamente.",
           mp_yhp_nutrition_title: "Alimentación",
-          mp_yhp_nutrition_description_1: "La comida es combustible. Cuanto más calidad tenga, mejor funcionará tu 'motor'.",
-          mp_yhp_nutrition_description_2: "No se trata de dietas, sino de equilibrio: más verduras, menos estrés con los snacks.",
+          mp_yhp_nutrition_description_1:
+            "La comida es combustible. Cuanto más calidad tenga, mejor funcionará tu 'motor'.",
+          mp_yhp_nutrition_description_2:
+            "No se trata de dietas, sino de equilibrio: más verduras, menos estrés con los snacks.",
 
           // === SALUD MASCULINA ===
           hormonas_diagram: "Gráfico de salud masculina",
@@ -3585,27 +4117,37 @@ i18n
           mp_analyses_block_content_value_5: "por recomendación médica",
           mp_reproductive_block_title: "Salud reproductiva",
           mp_reproductive_block_content_label_1: "Fertilidad",
-          mp_reproductive_block_content_value_1: "la calidad del semen depende del estilo de vida",
+          mp_reproductive_block_content_value_1:
+            "la calidad del semen depende del estilo de vida",
           mp_reproductive_block_content_label_2: "Riesgos",
-          mp_reproductive_block_content_value_2: "sobrecalentamiento, alcohol, tabaquismo, obesidad",
+          mp_reproductive_block_content_value_2:
+            "sobrecalentamiento, alcohol, tabaquismo, obesidad",
           mp_reproductive_block_content_label_3: "Recomendaciones",
-          mp_reproductive_block_content_value_3: "Urólogo 1/año, espermatograma",
+          mp_reproductive_block_content_value_3:
+            "Urólogo 1/año, espermatograma",
           mp_urinary_block_title: "Sistema urinario",
           mp_urinary_block_content_label_1: "Control de próstata",
-          mp_urinary_block_content_value_1: "desde 40 años — PSA y ultrasonido 1/año",
+          mp_urinary_block_content_value_1:
+            "desde 40 años — PSA y ultrasonido 1/año",
           mp_urinary_block_content_label_2: "¡Alerta!",
-          mp_urinary_block_content_value_2: "dolor, sangre en orina, micción frecuente",
+          mp_urinary_block_content_value_2:
+            "dolor, sangre en orina, micción frecuente",
           mp_urinary_block_content_label_3: "¿Qué hacer?",
-          mp_urinary_block_content_value_3: "no toleres molestias, corre al urólogo",
+          mp_urinary_block_content_value_3:
+            "no toleres molestias, corre al urólogo",
           mp_potency_block_title: "Potencia",
           mp_potency_block_content_label_1: "¿Por qué disminuye?",
-          mp_potency_block_content_value_1: "estrés, alcohol, tabaquismo, enfermedades cardíacas",
+          mp_potency_block_content_value_1:
+            "estrés, alcohol, tabaquismo, enfermedades cardíacas",
           mp_potency_block_content_label_2: "¿Cómo apoyar?",
-          mp_potency_block_content_value_2: "deporte, sueño de calidad, alimentación balanceada",
+          mp_potency_block_content_value_2:
+            "deporte, sueño de calidad, alimentación balanceada",
           mp_potency_block_content_label_3: "¿Cuándo al médico?",
-          mp_potency_block_content_value_3: "si los problemas duran más de 2 meses",
+          mp_potency_block_content_value_3:
+            "si los problemas duran más de 2 meses",
           mp_subtitle_2: "Cuídate como a tu coche favorito",
-          mp_form_subtitle: "Completa los campos si tienes datos actuales, y crearemos tu gráfico",
+          mp_form_subtitle:
+            "Completa los campos si tienes datos actuales, y crearemos tu gráfico",
           mp_form_testosterone: "Testosterona",
           mp_form_free_testosterone: "Testosterona libre",
           mp_form_free_testosterone_2: "T libre",
@@ -3619,13 +4161,15 @@ i18n
           mp_form_pg_ml: "pg/ml",
           mp_form_mO_l: "mU/l",
           mp_form_save_btn: "Guardar indicadores",
-          mp_diagram_hormons_value_not_found: "No se encontraron datos hormonales. Por favor ingresa tus indicadores.",
-          mp_diagram_hormons_data_not_found: "Error al cargar los datos. Contacta al soporte técnico.",
+          mp_diagram_hormons_value_not_found:
+            "No se encontraron datos hormonales. Por favor ingresa tus indicadores.",
+          mp_diagram_hormons_data_not_found:
+            "Error al cargar los datos. Contacta al soporte técnico.",
           mp_diagram_low: "Bajo",
           mp_diagram_norm: "Normal",
           mp_diagram_high: "Alto",
         },
-      }
+      },
     },
     fallbackLng: "uk",
     interpolation: {
