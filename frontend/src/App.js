@@ -10,6 +10,7 @@ import LoginPage from "./components/pages/LoginPage";
 import HomePage from "./components/pages/HomePage";
 import DashboardPage from "./components/pages/DashboardPage";
 import ProfilePage from "./components/pages/ProfilePage";
+import SpecialistProfilePage from "./components/pages/SpecialistProfilePage";
 import RestorePasswordPage from "./components/pages/RestorePasswordPage";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import Menu from "./components/elements/Menu";
@@ -89,6 +90,9 @@ function AppRoutes() {
       <Route path="/profile" element={<PrivateRoute><Menu><ProfilePage /></Menu></PrivateRoute>} />
 
       <Route path="/profile" element={<PrivateRoute><Menu><ProfilePage /></Menu></PrivateRoute>} />
+
+      {/* Профіль спеціалістів */}
+      <Route path="/profile/specialist" element={<PrivateRoute><Menu><SpecialistProfilePage /></Menu></PrivateRoute>} />
 
       {/* Социальные челленджи */}
       <Route path="/social" element={<PrivateRoute><Menu><ChallengesPage /></Menu></PrivateRoute>} />
