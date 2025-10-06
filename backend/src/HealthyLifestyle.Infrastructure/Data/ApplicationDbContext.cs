@@ -47,6 +47,9 @@ namespace HealthyLifestyle.Infrastructure.Data
         public DbSet<CalendarEvent> CalendarEvents { get; set; }
         public DbSet<Achievement> Achievements { get; set; }
         public DbSet<Purchase> Purchases { get; set; }
+        public DbSet<Recipe> Recipes { get; set; }
+        public DbSet<Ingredient> Ingredients { get; set; }
+        public DbSet<RecipeStep> RecipeSteps { get; set; }
 
         #endregion
 

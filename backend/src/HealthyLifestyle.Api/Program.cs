@@ -78,6 +78,7 @@ using YourProject.Application.Services;
 using HealthyLifestyle.Application.Services.Payments;
 using HealthyLifestyle.Application.Services.Payments.Handlers;
 using HealthyLifestyle.Application.Services.Payment.Handlers;
+using HealthyLifestyle.Core.Interfaces.MealTracker;
 
 
 // Створюємо білдер для веб-програми
@@ -188,6 +189,7 @@ builder.Services.AddScoped<IGroupService, GroupService>();
 builder.Services.AddScoped<IChallengeService, ChallengeService>();
 builder.Services.AddScoped<INotificationService, NotificationService>();
 builder.Services.AddScoped<IMealService, MealService>();
+builder.Services.AddScoped<IRecipeService, RecipeService>();
 builder.Services.AddScoped<IDietPlanService, DietPlanService>();
 builder.Services.AddScoped<IWorkoutService, WorkoutService>();
 builder.Services.AddScoped<ISubscriptionService, SubscriptionService>();
@@ -220,6 +222,7 @@ builder.Services.AddScoped<IMentalHealthRecordRepository, MentalHealthRecordRepo
 builder.Services.AddScoped<ISleepRecordRepository, SleepRecordRepository>();
 builder.Services.AddScoped<INotificationRepository, NotificationRepository>();
 builder.Services.AddScoped<IMealRepository, MealRepository>();
+builder.Services.AddScoped<IRecipeRepository, RecipeRepository>();
 builder.Services.AddScoped<IDietPlanRepository, DietPlanRepository>();
 builder.Services.AddScoped<IWorkoutRepository, WorkoutRepository>();
 builder.Services.AddScoped<IFitnessActivityRepository, FitnessActivityRepository>();
