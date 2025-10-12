@@ -985,7 +985,7 @@ i18n
           invite_friend: "Invite a friend",
           link: "Link",
           add_title: "Add a title",
-
+          go_to_main_page: "HOME",
         },
       },
       uk: {
@@ -1994,6 +1994,7 @@ i18n
           invite_friend: "Запросити друга",
           link: "Посилання",
           add_title: "Додай назву",
+          go_to_main_page: "НА ГОЛОВНУ",
         },
       },
       de: {
@@ -3021,7 +3022,7 @@ i18n
           invite_friend: "Freund einladen",
           link: "Link",
           add_title: "Titel hinzufügen",
-
+          go_to_main_page: "HEIM",
         },
       },
       fr: {
@@ -4052,7 +4053,7 @@ i18n
           invite_friend: "Inviter un ami",
           link: "Lien",
           add_title: "Ajouter un titre",
-
+          go_to_main_page: "MAISON",
         },
       },
       es: {
@@ -5077,6 +5078,7 @@ i18n
           invite_friend: "Invitar a un amigo",
           link: "Enlace",
           add_title: "Agregar título",
+          go_to_main_page: "HOGAR",
         },
       },
     },
