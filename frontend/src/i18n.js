@@ -156,6 +156,7 @@ i18n
           p_btn_save: "Save",
           p_btn_saving: "Saving...",
           p_specialist_profile: "Specialist Profile",
+          p_profile_incomplete_alert: "Please complete your user profile",
 
           // --- Custom calendar translations (user birthday) ---
           p_january: "january",
@@ -319,6 +320,8 @@ i18n
             "Congratulations! You have completed the challenge.",
 
           // --- Menstrual calendar translations ---
+          m_long: "Duration of menstruation (days)",
+          c_long_wh: "Cycle length",
           menstruation_calendar: "Menstrual calendar",
           male: "Male",
           female: "Female",
@@ -1144,6 +1147,7 @@ i18n
           p_btn_save: "Зберегти",
           p_btn_saving: "Збереження...",
           p_specialist_profile: "Профіль спеціаліста",
+          p_profile_incomplete_alert: "Будь ласка, заповніть профіль користувача",
 
           // === КАЛЕНДАР (ДЕНЬ НАРОДЖЕННЯ) ===
           p_january: "січень",
@@ -1623,6 +1627,8 @@ i18n
           mp_article_not_found: "Статтю не знайдено",
           mp_article_not_found_desc_1: "Стаття з ID",
           mp_article_not_found_desc_2: "не існує.",
+          m_long: "Тривалість місячних(дні)",
+          c_long_wh: "Тривалість циклу",
 
           // === ЕМОЦІЙНИЙ ЩОДЕННИК ===
           mp_aew_notes: "Нотатка",
@@ -2156,6 +2162,7 @@ i18n
           p_btn_save: "Speichern",
           p_btn_saving: "Wird gespeichert...",
           p_specialist_profile: "Spezialistenprofil",
+          p_profile_incomplete_alert: "Bitte vervollständigen Sie Ihr Benutzerprofil",
 
           // === KALENDER (GEBURTSTAG) ===
           p_january: "Januar",
@@ -2481,6 +2488,8 @@ i18n
           pain_is_ok: "Menstruationsbeschwerden sind immer normal",
           pain_is_ok_desc:
             "Leichtes Unbehagen ist typisch, aber starke oder erschöpfende Schmerzen können auf Endometriose oder andere Erkrankungen hinweisen, und es lohnt sich, einen Arzt aufzusuchen.",
+          m_long: "Dauer der Menstruation (Tage)",
+          c_long_wh: "Zykluslänge",
 
           // === PSYCHISCHE GESUNDHEIT ===
           your: "Deine Gesundheit",
@@ -3185,6 +3194,7 @@ i18n
           p_btn_save: "Sauvegarder",
           p_btn_saving: "Sauvegarde en cours...",
           p_specialist_profile: "Spezialistenprofil",
+          p_profile_incomplete_alert: "Veuillez compléter votre profil utilisateur",
 
           // === CALENDRIER (ANNIVERSAIRE) ===
           p_january: "janvier",
@@ -3665,6 +3675,8 @@ i18n
           mp_article_not_found: "Article non trouvé",
           mp_article_not_found_desc_1: "L'article avec l'ID",
           mp_article_not_found_desc_2: "n'existe pas.",
+          m_long: "Durée des menstruations (jours)",
+          c_long_wh: "Durée du cycle",
 
           // === JOURNAL DES ÉMOTIONS ===
           mp_aew_notes: "Note",
@@ -4216,6 +4228,7 @@ i18n
           p_btn_save: "Guardar",
           p_btn_saving: "Guardando...",
           p_specialist_profile: "Spezialistenprofil",
+          p_profile_incomplete_alert: "Por favor, completa tu perfil de usuario",
 
           // === CALENDARIO (CUMPLEAÑOS) ===
           p_january: "enero",
@@ -4696,6 +4709,8 @@ i18n
           mp_article_not_found: "Artículo no encontrado",
           mp_article_not_found_desc_1: "El artículo con ID",
           mp_article_not_found_desc_2: "no existe.",
+          m_long: "Duración de la menstruación (días)",
+          c_long_wh: "Duración del ciclo",
 
           // === DIARIO DE EMOCIONES ===
           mp_aew_notes: "Nota",
