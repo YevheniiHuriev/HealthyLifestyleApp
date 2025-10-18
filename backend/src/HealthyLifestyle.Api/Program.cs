@@ -79,6 +79,7 @@ using HealthyLifestyle.Application.Services.Payments;
 using HealthyLifestyle.Application.Services.Payments.Handlers;
 using HealthyLifestyle.Application.Services.Payment.Handlers;
 using HealthyLifestyle.Core.Interfaces.MealTracker;
+using HealthyLifestyle.Application.Services.MealTracker;
 
 
 // Створюємо білдер для веб-програми
@@ -209,6 +210,7 @@ builder.Services.AddScoped<IShopCartService, ShopCartService>();
 // 6. Реєстрація репозиторію та Unit of Work
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IConsultationRepository, ConsultationRepository>();
