@@ -52,6 +52,13 @@ import MaleHormonesDiagramPage from "./components/pages/HealthPages/GenderHealth
 import CalendarPage from './components/pages/CalendarPage';
 import NotFoundPage from "./components/pages/NotFoundPage";
 
+import SubscriptionPage from './components/pages/Subscription/SubscriptionPage';
+import SubscriptionDetailsPage from './components/pages/Subscription/SubscriptionDetailsPage';
+import SubscriptionPaymentPage from './components/pages/Subscription/SubscriptionPaymentPage';
+
+import PaymentSuccessPage from "./components/pages/PaymentSuccessPage";
+
+
 function App() {
   console.log("Using ", process.env.REACT_APP_API_URL, "as API URL");
 
@@ -128,14 +135,22 @@ function AppRoutes() {
 
       <Route path="/calendar" element={<PrivateRoute><Menu><CalendarPage /></Menu></PrivateRoute>} />
 
-
       {/* Мужское здоровье */}
       <Route path="/health/gender/male" element={<PrivateRoute><Menu><HealthPageMenu><MaleHealthPage /></HealthPageMenu></Menu></PrivateRoute>} />
       <Route path="/health/gender/male/hormonas" element={<PrivateRoute><Menu><HealthPageMenu><MaleHormonesFormPage /></HealthPageMenu></Menu></PrivateRoute>} />
       <Route path="/health/gender/male/hormonas_diagram" element={<PrivateRoute><Menu><HealthPageMenu><MaleHormonesDiagramPage /></HealthPageMenu></Menu></PrivateRoute>} />
 
+      {/* Подписки */}
+      <Route path="/premium" element={<PrivateRoute><Menu><SubscriptionPage /></Menu></PrivateRoute>} />
+      <Route path="/premium/details" element={<PrivateRoute><Menu><SubscriptionDetailsPage /></Menu></PrivateRoute>} />
+      <Route path="/premium/payment" element={<PrivateRoute><Menu><SubscriptionPaymentPage /></Menu></PrivateRoute>} />
+
+      {/* Success and canceled payment */}
+      <Route path="/success" element={<PrivateRoute><Menu><PaymentSuccessPage /></Menu></PrivateRoute>} />
+
       {/* Not found */}
       <Route path="*" element={<NotFoundPage />} />
+
     </Routes>
   );
 }

@@ -12,6 +12,7 @@ using HealthyLifestyle.Application.Interfaces.HealthTracker;
 using HealthyLifestyle.Application.Interfaces.Location;
 using HealthyLifestyle.Application.Interfaces.Notification;
 using HealthyLifestyle.Application.Interfaces.ObjectStorage;
+using HealthyLifestyle.Application.Interfaces.Payment;
 using HealthyLifestyle.Application.Interfaces.ProfessionalQualification;
 using HealthyLifestyle.Application.Interfaces.Record;
 using HealthyLifestyle.Application.Interfaces.Shop;
@@ -30,6 +31,7 @@ using HealthyLifestyle.Application.Services.GroupS;
 using HealthyLifestyle.Application.Services.HealthTracker;
 using HealthyLifestyle.Application.Services.Location;
 using HealthyLifestyle.Application.Services.ObjectStorage;
+using HealthyLifestyle.Application.Services.Payment;
 using HealthyLifestyle.Application.Services.ProfessionalQualification;
 using HealthyLifestyle.Application.Services.Record;
 using HealthyLifestyle.Application.Services.Shop;
@@ -73,6 +75,8 @@ using StackExchange.Redis;
 using System.Text;
 using System.Text.Json.Serialization;
 using YourProject.Application.Services;
+using HealthyLifestyle.Application.Services.Payments;
+using HealthyLifestyle.Application.Services.Payments.Handlers;
 
 
 // Створюємо білдер для веб-програми
@@ -193,6 +197,9 @@ Console.WriteLine("Используется MinIO.");
 builder.Services.AddSingleton<IObjectStorageService, MinioService>();
 builder.Services.AddScoped<IAchievementService, AchievementService>();
 builder.Services.AddScoped<IPurchaseService, PurchaseService>();
+builder.Services.AddScoped<IPaymentService, PaymentService>();
+builder.Services.AddScoped<IWebhookHandler, SubscriptionWebhookHandler>();
+builder.Services.AddScoped<WebhookProcessingService>();
 
 // 6. Реєстрація репозиторію та Unit of Work
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
@@ -214,6 +221,7 @@ builder.Services.AddScoped<IDietPlanRepository, DietPlanRepository>();
 builder.Services.AddScoped<IWorkoutRepository, WorkoutRepository>();
 builder.Services.AddScoped<IFitnessActivityRepository, FitnessActivityRepository>();
 builder.Services.AddScoped<ISubscriptionRepository, SubscriptionRepository>();
+builder.Services.AddScoped<IFamilySubscriptionRepository, FamilySubscriptionRepository>();
 builder.Services.AddScoped<ICalendarRepository, CalendarRepository>();
 builder.Services.Configure<MinioSettings>(builder.Configuration.GetSection("MinIO"));
 builder.Services.AddScoped<IAchievementRepository, AchievementRepository>();

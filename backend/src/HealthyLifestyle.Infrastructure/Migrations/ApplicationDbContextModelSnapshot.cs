@@ -364,6 +364,33 @@ namespace HealthyLifestyle.Infrastructure.Migrations
                     b.ToTable("DoctorDetails");
                 });
 
+            modelBuilder.Entity("HealthyLifestyle.Core.Entities.FamilySubscriptionMember", b =>
+                {
+                    b.Property<Guid>("SubscriptionId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("MemberId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("AddedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("SubscriptionId", "MemberId");
+
+                    b.HasIndex("MemberId");
+
+                    b.ToTable("FamilySubscriptionMembers");
+                });
+
             modelBuilder.Entity("HealthyLifestyle.Core.Entities.FemaleHealthTracker", b =>
                 {
                     b.Property<Guid>("UserId")
@@ -1110,6 +1137,9 @@ namespace HealthyLifestyle.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("StripeSubscriptionId")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -1673,6 +1703,25 @@ namespace HealthyLifestyle.Infrastructure.Migrations
                     b.Navigation("UserProfessionalQualification");
                 });
 
+            modelBuilder.Entity("HealthyLifestyle.Core.Entities.FamilySubscriptionMember", b =>
+                {
+                    b.HasOne("HealthyLifestyle.Core.Entities.User", "Member")
+                        .WithMany("FamilyMemberships")
+                        .HasForeignKey("MemberId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("HealthyLifestyle.Core.Entities.Subscription", "Subscription")
+                        .WithMany("FamilyMembers")
+                        .HasForeignKey("SubscriptionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Member");
+
+                    b.Navigation("Subscription");
+                });
+
             modelBuilder.Entity("HealthyLifestyle.Core.Entities.FemaleHealthTracker", b =>
                 {
                     b.HasOne("HealthyLifestyle.Core.Entities.User", "User")
@@ -2013,6 +2062,11 @@ namespace HealthyLifestyle.Infrastructure.Migrations
                     b.Navigation("Participations");
                 });
 
+            modelBuilder.Entity("HealthyLifestyle.Core.Entities.Subscription", b =>
+                {
+                    b.Navigation("FamilyMembers");
+                });
+
             modelBuilder.Entity("HealthyLifestyle.Core.Entities.User", b =>
                 {
                     b.Navigation("Achievements");
@@ -2028,6 +2082,8 @@ namespace HealthyLifestyle.Infrastructure.Migrations
                     b.Navigation("CreatedGroups");
 
                     b.Navigation("DietPlans");
+
+                    b.Navigation("FamilyMemberships");
 
                     b.Navigation("FemaleHealthTracker");
 
