@@ -77,6 +77,7 @@ using System.Text.Json.Serialization;
 using YourProject.Application.Services;
 using HealthyLifestyle.Application.Services.Payments;
 using HealthyLifestyle.Application.Services.Payments.Handlers;
+using HealthyLifestyle.Application.Services.Payment.Handlers;
 
 
 // Створюємо білдер для веб-програми
@@ -199,7 +200,9 @@ builder.Services.AddScoped<IAchievementService, AchievementService>();
 builder.Services.AddScoped<IPurchaseService, PurchaseService>();
 builder.Services.AddScoped<IPaymentService, PaymentService>();
 builder.Services.AddScoped<IWebhookHandler, SubscriptionWebhookHandler>();
+builder.Services.AddScoped<IWebhookHandler, OrderWebhookHandler>();
 builder.Services.AddScoped<WebhookProcessingService>();
+builder.Services.AddScoped<IShopCartService, ShopCartService>();
 
 // 6. Реєстрація репозиторію та Unit of Work
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
@@ -226,6 +229,7 @@ builder.Services.AddScoped<ICalendarRepository, CalendarRepository>();
 builder.Services.Configure<MinioSettings>(builder.Configuration.GetSection("MinIO"));
 builder.Services.AddScoped<IAchievementRepository, AchievementRepository>();
 builder.Services.AddScoped<IPurchaseRepository, PurchaseRepository>();
+builder.Services.AddScoped<IShopCartRepository, ShopCartRepository>();
 
 // 7. Конфігурація CORS
 builder.Services.AddCors(options =>

@@ -58,6 +58,10 @@ import SubscriptionPaymentPage from './components/pages/Subscription/Subscriptio
 
 import PaymentSuccessPage from "./components/pages/PaymentSuccessPage";
 
+import MarketplacePage from "./components/pages/Marketplace/MarketplacePage";
+import ProductPage from "./components/pages/Marketplace/ProductPage";
+import ShoppingCartPage from "./components/pages/Marketplace/ShoppingCartPage";
+import MarketplacePayment from "./components/pages/Marketplace/MarketplacePayment";
 
 function App() {
   console.log("Using ", process.env.REACT_APP_API_URL, "as API URL");
@@ -148,9 +152,15 @@ function AppRoutes() {
       {/* Success and canceled payment */}
       <Route path="/success" element={<PrivateRoute><Menu><PaymentSuccessPage /></Menu></PrivateRoute>} />
 
+      {/* Магазин */}
+      <Route path="/marketplace" element={<PrivateRoute><Menu><MarketplacePage /></Menu></PrivateRoute>} />
+      <Route path="/marketplace/product" element={<PrivateRoute><Menu><ProductPage /></Menu></PrivateRoute>} />
+      <Route path="/marketplace/shopping_cart" element={<PrivateRoute><Menu><ShoppingCartPage /></Menu></PrivateRoute>} />
+      <Route path="/marketplace/payment" element={<PrivateRoute><Menu><MarketplacePayment /></Menu></PrivateRoute>} />
+
       {/* Not found */}
       <Route path="*" element={<NotFoundPage />} />
-
+      
     </Routes>
   );
 }
