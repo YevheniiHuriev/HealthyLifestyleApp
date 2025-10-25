@@ -1,5 +1,6 @@
-﻿using HealthyLifestyle.Core.Enums;
+using HealthyLifestyle.Core.Enums;
 using System;
+using HealthyLifestyle.Core.Enums;
 
 namespace HealthyLifestyle.Core.Entities
 {
@@ -19,7 +20,7 @@ namespace HealthyLifestyle.Core.Entities
         /// <summary>
         /// Користувач, пов’язаний із записом (обов’язково).
         /// </summary>
-        public required User User { get; set; }
+        public User? User { get; set; }
 
         /// <summary>
         /// Ідентифікатор плану харчування (опціонально).
@@ -34,7 +35,7 @@ namespace HealthyLifestyle.Core.Entities
         /// <summary>
         /// Назва продукту (обов’язково).
         /// </summary>
-        public required string FoodItemName { get; set; }
+        public string? FoodItemName { get; set; }
 
         /// <summary>
         /// Кількість продукту (у грамах або одиницях).
@@ -71,6 +72,9 @@ namespace HealthyLifestyle.Core.Entities
         /// </summary>
         public DateTime EntryDate { get; set; }
 
+        public Guid? RecipeId { get; set; } // Связь с рецептом
+        public virtual Recipe? Recipe { get; set; }
+
         #endregion
 
         #region Конструктори
@@ -98,6 +102,7 @@ namespace HealthyLifestyle.Core.Entities
         /// <exception cref="ArgumentException">Виникає, якщо передані недійсні дані (наприклад, від’ємні значення або порожня назва продукту).</exception>
         public MealEntry(
             Guid userId,
+            User user,
             string foodItemName,
             decimal quantity,
             double proteinsG,
@@ -121,6 +126,7 @@ namespace HealthyLifestyle.Core.Entities
                 throw new ArgumentException("Кількість калорій не може бути від’ємною.", nameof(calories));
 
             UserId = userId;
+            User = user;
             FoodItemName = foodItemName;
             Quantity = quantity;
             ProteinsG = proteinsG;

@@ -47,6 +47,10 @@ namespace HealthyLifestyle.Infrastructure.Data
         public DbSet<CalendarEvent> CalendarEvents { get; set; }
         public DbSet<Achievement> Achievements { get; set; }
         public DbSet<Purchase> Purchases { get; set; }
+        public DbSet<Recipe> Recipes { get; set; }
+        public DbSet<Ingredient> Ingredients { get; set; }
+        public DbSet<RecipeStep> RecipeSteps { get; set; }
+        public DbSet<WeightLog> WeightLogs { get; set; } = null!;
 
         #endregion
 
@@ -222,6 +226,10 @@ namespace HealthyLifestyle.Infrastructure.Data
                    .WithMany(dp => dp.MealEntries)
                    .HasForeignKey(me => me.DietPlanId)
                    .OnDelete(DeleteBehavior.SetNull);
+                entity.HasOne(me => me.Recipe)
+                .WithMany()
+                .HasForeignKey(me => me.RecipeId)
+                .OnDelete(DeleteBehavior.SetNull);
             });
         }
 

@@ -78,6 +78,11 @@ using YourProject.Application.Services;
 using HealthyLifestyle.Application.Services.Payments;
 using HealthyLifestyle.Application.Services.Payments.Handlers;
 using HealthyLifestyle.Application.Services.Payment.Handlers;
+using HealthyLifestyle.Core.Interfaces.MealTracker;
+using HealthyLifestyle.Application.Services.MealTracker;
+using HealthyLifestyle.Infrastructure.Repositories.Weight;
+using HealthyLifestyle.Application.Services.Weight;
+using HealthyLifestyle.Application.Interfaces.Weight;
 
 
 // Створюємо білдер для веб-програми
@@ -188,6 +193,8 @@ builder.Services.AddScoped<IGroupService, GroupService>();
 builder.Services.AddScoped<IChallengeService, ChallengeService>();
 builder.Services.AddScoped<INotificationService, NotificationService>();
 builder.Services.AddScoped<IMealService, MealService>();
+builder.Services.AddScoped<IRecipeService, RecipeService>();
+builder.Services.AddScoped<IWeightService, WeightService>();
 builder.Services.AddScoped<IDietPlanService, DietPlanService>();
 builder.Services.AddScoped<IWorkoutService, WorkoutService>();
 builder.Services.AddScoped<ISubscriptionService, SubscriptionService>();
@@ -207,6 +214,7 @@ builder.Services.AddScoped<IShopCartService, ShopCartService>();
 // 6. Реєстрація репозиторію та Unit of Work
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IConsultationRepository, ConsultationRepository>();
@@ -220,6 +228,8 @@ builder.Services.AddScoped<IMentalHealthRecordRepository, MentalHealthRecordRepo
 builder.Services.AddScoped<ISleepRecordRepository, SleepRecordRepository>();
 builder.Services.AddScoped<INotificationRepository, NotificationRepository>();
 builder.Services.AddScoped<IMealRepository, MealRepository>();
+builder.Services.AddScoped<IRecipeRepository, RecipeRepository>();
+builder.Services.AddScoped<IWeightLogRepository, WeightLogRepository>();
 builder.Services.AddScoped<IDietPlanRepository, DietPlanRepository>();
 builder.Services.AddScoped<IWorkoutRepository, WorkoutRepository>();
 builder.Services.AddScoped<IFitnessActivityRepository, FitnessActivityRepository>();
