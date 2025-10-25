@@ -205,7 +205,7 @@ const RecipeDetailsPage = () => {
               </div>
             </div>
 
-            <div className="ingredients-card glass-card">
+            <div className="ingredients-card glass-card-recipe-details">
               <h2 className="card-title-white">
                 {t("ingredients")}
               </h2>
@@ -219,7 +219,7 @@ const RecipeDetailsPage = () => {
               </ul>
             </div>
 
-            <div className="video-recipe-card glass-card">
+            <div className="video-recipe-card glass-card-recipe-details">
               <h2 className="card-title-white">
                 {t("videoRecipe")}
               </h2>

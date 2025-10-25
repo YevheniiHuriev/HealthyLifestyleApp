@@ -183,19 +183,11 @@ public class MinioService : IObjectStorageService
 
     public async Task<string> GetPresignedUrlAsync(string objectName, int expiryInSeconds)
     {
-        try
-        {
-            var args = new PresignedGetObjectArgs()
-                .WithBucket(_settings.BucketName)
-                .WithObject(objectName)
-                .WithExpiry(expiryInSeconds);
+        var args = new PresignedGetObjectArgs()
+            .WithBucket(_settings.BucketName)
+            .WithObject(objectName)
+            .WithExpiry(expiryInSeconds);
 
-            return await _minioClient.PresignedGetObjectAsync(args).ConfigureAwait(false);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine($"Помилка генерації pre-signed URL: {e.Message}");
-            throw;
-        }
+        return await _publicClient.PresignedGetObjectAsync(args);
     }
 }

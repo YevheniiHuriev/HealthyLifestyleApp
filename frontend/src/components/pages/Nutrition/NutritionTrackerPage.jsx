@@ -320,7 +320,7 @@ const NutritionTrackerPage = () => {
                             </div>
                         </div>
                         
-                        <div className="meals-card glass-card">
+                        <div className="meals-card glass-card-nutrion-tracker">
                             <h2 className="card-title-yellow">{t("nt_meals_title") || 'Прийоми їжі'}</h2>
                             
                             <div className="meals-list"> 
@@ -368,7 +368,7 @@ const NutritionTrackerPage = () => {
                             onDateChange={handleDateChange}
                             onPrevDay={handlePrevDay}
                             onNextDay={handleNextDay} />
-                        <div className="widget motivation-widget glass-card">
+                        <div className="widget motivation-widget glass-card-nutrion-tracker">
                             <h2 className="card-title-blue">{t("nt_motivation_title") || 'Мотивація'}</h2>
                             <p className="motivation-text">
                                 {motivationMessage}

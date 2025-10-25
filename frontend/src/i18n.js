@@ -114,7 +114,6 @@ i18n
           premium: "Premium",
           exit: "Exit",
           search_placeholder: "Search",
-          welcome: "Hi",
           health_one_place: "Your health in one place!",
           mental: "Mental health",
 
@@ -1495,7 +1494,6 @@ i18n
           article_7: "Профілактика та подолання вигорання",
 
           // === Сторінка харчування ===
-          welcome: "Ласкаво просимо",
           nt_tracker_tab: "Трекер харчування",
           nt_recipes_tab: "Рецепти",
           nt_date_label: "Дата",
@@ -2876,7 +2874,6 @@ i18n
           article_6: "Strategien zur Verbesserung des Selbstwertgefühls",
           article_7: "Prävention und Überwindung von Burnout",
 
-          welcome: "Willkommen",
           nt_tracker_tab: "Ernährungs-Tracker",
           nt_recipes_tab: "Rezepte",
           nt_date_label: "Datum",
@@ -4219,7 +4216,6 @@ i18n
           article_6: "Stratégies pour améliorer l'estime de soi",
           article_7: "Prévention et surmonter l'épuisement professionnel",
 
-          welcome: "Bienvenue",
           nt_tracker_tab: "Suivi Nutritionnel",
           nt_recipes_tab: "Recettes",
           nt_date_label: "Date",
@@ -5563,7 +5559,6 @@ i18n
           article_6: "Estrategias para mejorar la autoestima",
           article_7: "Prevención y superación del agotamiento",
 
-          welcome: "Bienvenido",
           nt_tracker_tab: "Seguimiento de Nutrición",
           nt_recipes_tab: "Recetas",
           nt_date_label: "Fecha",

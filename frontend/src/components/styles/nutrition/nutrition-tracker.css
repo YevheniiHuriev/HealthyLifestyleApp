@@ -93,7 +93,7 @@
     padding-bottom: 20px;
 }
 
-.glass-card {
+.glass-card-nutrion-tracker {
     background-color: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(10px);

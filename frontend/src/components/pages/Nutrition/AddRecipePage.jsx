@@ -177,7 +177,7 @@ const AddRecipePage = () => {
 
           <div className="main-media-column">
             <form onSubmit={handleSubmit}>
-              <div className="main-image-card glass-card">
+              <div className="main-image-card glass-card-add-recipe">
                 <div className="image-upload-section">
                   <h2 className="card-title-white">{t("recipeImage")}</h2>                
                   <div 
@@ -220,7 +220,7 @@ const AddRecipePage = () => {
                 </div>
               </div>
 
-              <div className="recipe-steps-card glass-card">
+              <div className="recipe-steps-card glass-card-add-recipe">
                 <h2 className="card-title-white">{t("cookingSteps")} *</h2>
                 <div className="steps-list">
                   {formData.steps.map((step, index) => (
@@ -357,7 +357,7 @@ const AddRecipePage = () => {
               </div>
             </div>
 
-            <div className="ingredients-card glass-card">
+            <div className="ingredients-card glass-card-add-recipe">
               <h2 className="card-title-white">{t("ingredients")} *</h2>
               <div className="ingredient-list-wrapper">
                 {formData.ingredients.map((ingredient, index) => (
