@@ -5,11 +5,11 @@
     cursor: pointer;
     transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     flex-shrink: 1;
-    height: 450px;
+    height: 485px;
 }
 
 .cs-card-narrow {
-    width: 152px;
+    width: 160px;
 }
 
 .cs-card-wide {
@@ -39,6 +39,7 @@
 
 .cs-card .cs-card-open {
     display: none;
+    height: 485px;
 }
 
 .cs-card.cs-card-open .cs-card-open {
@@ -47,4 +48,28 @@
 
 .cs-card.cs-card-open .cs-card-closed {
     display: none;
+}
+
+/* Мобільна версія для Card */
+@media (max-width: 431px) {
+    .cs-card {
+        height: 490px;
+        flex-shrink: 0;
+        transition: none;
+    }
+
+    .cs-card-narrow {
+        width: 162px;
+    }
+
+    .cs-card-wide {
+        width: 280px;
+    }
+
+    .cs-card-open {
+        width: calc(100vw - 20px) !important;
+        height: 490px;
+        position: relative;
+        z-index: 10;
+    } 
 }

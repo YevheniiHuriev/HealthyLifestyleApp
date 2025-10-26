@@ -1,8 +1,8 @@
-body {
+/* body {
     padding: 0 30px;
     margin: 0;
     overflow-x: hidden;
-}
+} */
 
 .recipe-page-content-wrapper {
     min-height: 80vh;
@@ -438,9 +438,9 @@ body {
 
 @media (max-width: 768px) {
 
-    body {
+    /* body {
         padding: 0 15px;
-    }
+    } */
 
     .recipe-page-grid-v2 {
         grid-template-columns: 1fr;

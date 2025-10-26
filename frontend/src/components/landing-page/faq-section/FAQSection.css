@@ -52,27 +52,59 @@
     text-align: center;
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-    .faq-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
+/* Мобільна версія для FAQSection */
+@media (max-width: 431px) {
+    .faq-section {
+        padding: 40px 15px;
     }
 
     .faq-section h2 {
-        font-size: 40px;
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 100%;
     }
 
     .faq-item {
-        padding: 20px;
         height: auto;
+        min-height: 200px;
+        padding: 20px 15px;
+        border-radius: 25px;
     }
 
     .faq-item p {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .faq-item strong {
-        font-size: 24px;
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+}
+
+@media (min-width: 350px) and (max-width: 390px) {
+    .faq-section {
+        padding: 30px 10px;
+    }
+
+    .faq-section h2 {
+        font-size: 28px;
+    }
+
+    .faq-item {
+        min-height: 180px;
+        padding: 15px 12px;
+    }
+
+    .faq-item p {
+        font-size: 15px;
+    }
+
+    .faq-item strong {
+        font-size: 16px;
     }
 }
