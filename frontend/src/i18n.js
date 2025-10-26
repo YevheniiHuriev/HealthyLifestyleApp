@@ -4393,7 +4393,6 @@ i18n
           uploading: "Téléchargement...",
           download: "Télécharger",
           remove: "Supprimer",
-          p_specialist_profile: "Spezialistenprofil",
           p_profile_incomplete_alert: "Veuillez compléter votre profil utilisateur",
 
 
@@ -5788,7 +5787,6 @@ i18n
           uploading: "Subiendo...",
           download: "Descargar",
           remove: "Eliminar",
-          p_specialist_profile: "Spezialistenprofil",
           p_profile_incomplete_alert: "Por favor, completa tu perfil de usuario",
 
           // === CALENDARIO (CUMPLEAÑOS) ===
