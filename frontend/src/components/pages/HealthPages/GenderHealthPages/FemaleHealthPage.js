@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import mascot from "../../../img/mascot.png";
+import mascot from "../../../../assets/your-health-img/FemaleNomi.png";
 import tipImg from "../../../img/Tip.png";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -14,7 +14,7 @@ const FemaleHealthPage = () => {
                 <div className="title">{t("female_health")}</div>
                 <div className="sub-title">{t("female_health_fine")}</div>
             </div>
-            <img src={mascot} className="mascot-img" />
+            <img src={mascot} className="mascot-img-fmale" />
 
             <div className="female-health-options">
                 <button onClick={() => navigate(`${location.pathname}/cycle`)}>{t("cycle_info")}</button>

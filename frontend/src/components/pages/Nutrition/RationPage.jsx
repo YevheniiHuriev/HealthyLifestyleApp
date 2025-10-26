@@ -308,14 +308,15 @@ const RationPage = () => {
                     {t("nt_recipes_tab") || "Рецепти"}
                 </Link>
             </div>
-
-            <DatePickerComponent
+            <div className="ntp-dp">
+                <DatePickerComponent
                 selectedDate={selectedDate}
                 onDateChange={handleDateChange}
                 onPrevDay={handlePrevDay}
                 onNextDay={handleNextDay}
             />
-
+            </div>
+            
             <div className="scrollable-main-content scroll-data">
                 <div className="ration-progress-bar-container">
                     <div className="macro-item macro-calories">

@@ -263,3 +263,124 @@ background: rgba(255, 255, 255, 0.4);
     text-align: left;
     white-space: pre-line;
 }
+
+/* МОБІЛЬНА АДАПТАЦІЯ ДЛЯ СТОРІНКИ РЕЦЕПТІВ */
+@media (max-width: 431px) {
+    .recipes-grid-wrapper {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding-bottom: 15px;
+    }
+
+    .recipe-card {
+        height: 300px;
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 25px;
+    }
+
+    .recipe-card.add-recipe-card {
+        width: 100%;
+        height: 300px;
+    }
+
+    .recipe-time-tag {
+        top: 20px;
+        left: -10px;
+        padding: 6px 12px 6px 25px;
+        font-size: 0.8rem;
+    }
+
+    .heart-icon {
+        top: 20px;
+        right: 20px;
+        font-size: 1.3rem;
+    }
+
+    .recipe-image-wrapper {
+        border-radius: 25px;
+    }
+
+    .recipe-image,
+    .recipe-image-placeholder {
+        border-radius: 25px;
+    }
+
+    .recipe-info {
+        height: 200px;
+        padding: 15px 20px;
+    }
+
+    .recipe-info::before {
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+    }
+
+    .recipe-name {
+        font-size: 1.1rem;
+        margin-bottom: 3px;
+    }
+
+    .recipe-macros {
+        font-size: 0.85rem;
+    }
+
+    .recipe-card.add-recipe-card .add-icon {
+        height: 70%;
+        width: 70%;
+        left: 15%;
+        top: 10%;
+    }
+
+    .add-recipe-text {
+        font-size: 18px;
+        bottom: 30px;
+        left: 30px;
+        width: auto;
+        height: auto;
+    }
+
+    .recipe-card.add-recipe-card .add-gradient-effect,
+    .add-gradient-effect {
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+    }
+}
+
+@media (min-width: 350px) and (max-width: 390px) {
+    .recipe-card {
+        height: 280px;
+    }
+
+    .recipe-card.add-recipe-card {
+        height: 280px;
+    }
+
+    .recipe-info {
+        height: 180px;
+        padding: 12px 18px;
+    }
+
+    .recipe-name {
+        font-size: 1rem;
+    }
+
+    .recipe-macros {
+        font-size: 0.8rem;
+    }
+
+    .add-recipe-text {
+        font-size: 16px;
+        bottom: 25px;
+        left: 25px;
+    }
+
+    .recipe-time-tag {
+        font-size: 0.75rem;
+        padding: 5px 10px 5px 20px;
+    }
+
+    .heart-icon {
+        font-size: 1.2rem;
+    }
+}

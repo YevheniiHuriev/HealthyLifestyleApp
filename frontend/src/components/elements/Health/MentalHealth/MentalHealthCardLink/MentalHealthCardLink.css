@@ -74,6 +74,10 @@
     overflow: hidden;
 }
 
+.m-card-link:hover .card-image {
+    background: var(--lim) !important;
+}
+
 .m-card-link .title {
     font-size: 18px;
     font-weight: 600;

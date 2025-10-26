@@ -212,8 +212,8 @@ const ChallengeDetailsPage = () => {
               <h3 className="modal-title">{t("ch_confirmJoinTitle")}</h3>
               <p className="modal-message">{t("ch_confirmJoinText")}</p>
               <div className="modal-actions">
-                <button className="modal-btn confirm" onClick={handleJoinChallenge}>{t("yes")}</button>
                 <button className="modal-btn close" onClick={handleCloseModal}>{t("no")}</button>
+                <button className="modal-btn confirm" onClick={handleJoinChallenge}>{t("yes")}</button>
               </div>
             </>
           )}
@@ -222,8 +222,8 @@ const ChallengeDetailsPage = () => {
               <h3 className="modal-title">{t("ch_confirmLeaveTitle")}</h3>
               <p className="modal-message">{t("ch_confirmLeaveText")}</p>
               <div className="modal-actions">
-                <button className="modal-btn confirm" onClick={handleLeaveChallenge}>{t("yes")}</button>
                 <button className="modal-btn close" onClick={handleCloseModal}>{t("no")}</button>
+                <button className="modal-btn confirm" onClick={handleLeaveChallenge}>{t("yes")}</button>
               </div>
             </>
           )}

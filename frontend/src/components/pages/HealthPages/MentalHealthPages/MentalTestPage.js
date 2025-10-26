@@ -281,7 +281,7 @@ const MentalTestPage = () => {
         setSelectedAnswer(null);
     };
 
-    // 🔹 Функція розрахунку рівня стресу
+    // Функція розрахунку рівня стресу
     const calculateStressLevel = (answersObj) => {
         const answerCounts = {1: 0, 2: 0, 3: 0};
         

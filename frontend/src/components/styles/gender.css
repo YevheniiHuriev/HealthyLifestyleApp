@@ -35,12 +35,11 @@
     transform: scale(1.05);
 }
 
-.img-but-div {
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    background-color: #D9D9D9;
-    margin-bottom: 16px;
+.ghs-img-fnomi, .ghs-img-mnomi {
+    width: 150px;
+    height: 150px;
+
+    margin-top: 20px;
 }
 
 .female-health-info {
@@ -103,7 +102,17 @@
     position: absolute;
     top: 70px;
     right: 0;
-    width: 300px;
+    width: 200px;
+    height: 400px;
+    z-index: 5;
+}
+
+.mascot-img-fmale {
+    position: absolute;
+    top: 30px;
+    right: 60px;
+    width: 250px;
+    height: 400px;
     z-index: 5;
 }
 
@@ -587,7 +596,19 @@
 }
 
 @media (max-width: 431px) {
-    .mascot-img {
+
+    .gender-health-selector {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        max-width: 400px;
+        margin-left: 10px;
+    }
+
+    .mascot-img, .mascot-img-fmale {
         display: none;
     }
 

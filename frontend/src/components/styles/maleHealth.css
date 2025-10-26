@@ -61,8 +61,8 @@
 }
 
 .mhp-nomic-mascot {
-    width: 145px;
-    height: 145px;
+    width: 140px;
+    height: 130px;
 }
 
 .mhp-container {
@@ -398,7 +398,7 @@
 
     .mhp-nomic-mascot {
         width: 100px;
-        height: 100px;
+        height: 80px !important;
     }
 
     .mhp-container {
