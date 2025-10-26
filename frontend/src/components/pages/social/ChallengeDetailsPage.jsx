@@ -158,7 +158,8 @@ const ChallengeDetailsPage = () => {
     }
   };
 
-  if (isLoading) return <div className="loading-message">{t("ch_loading")}</div>;
+  // if (isLoading) return <div className="loading-message">{t("ch_loading")}</div>;
+  if (isLoading) return;
   if (error) return <div className="error-message">{error}</div>;
   if (!challenge) return <div className="no-challenges-message">{t("ch_not_found")}</div>;
 

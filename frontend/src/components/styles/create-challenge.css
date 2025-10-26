@@ -19,7 +19,7 @@
 
 .ch-create-title {
     text-align: center;
-    color: #0066C3;
+    color: #FFF;
     font-size: 28px;
     font-weight: 500;
     margin-bottom: 25px;
@@ -44,7 +44,7 @@
     width: 100%;
     padding: 12px 14px;
     border: 1px solid rgba(0, 102, 195, 0.4);
-    border-radius: 10px;
+    border-radius: 25px;
     font-size: 15px;
     font-family: "Roboto", sans-serif;
     background: rgba(255, 255, 255, 0.6);
@@ -69,25 +69,30 @@
     display: flex;
     justify-content: space-between;
     gap: 15px;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .ch-button {
     width: 100%;
-    padding: 14px;
-    background-color: #0066C3;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.1em;
-    font-weight: 500;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 10px 15px;
+    border-radius: 40px;
+    text-align: center;
+    height: 43px;
+    background: #fff;
+    color: #116FCF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    border: 0 solid transparent;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .ch-button:hover {
-    background-color: #004a8f;
-    transform: scale(1.02);
+    transform:translateY(-2px);
+    background-color: #D6FF00;
 }
 
 .ch--button:disabled {
@@ -131,4 +136,10 @@
 
 .scrollable-form-container::-webkit-scrollbar-thumb:hover {
     background: #0661CC;
+}
+
+@media (max-width: 431px) {
+    .challenge-form {
+        border-radius: 35px;
+    }
 }

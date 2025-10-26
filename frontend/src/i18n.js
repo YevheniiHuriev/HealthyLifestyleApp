@@ -2612,6 +2612,8 @@ i18n
           delivery: "Доставка",
           post_index: "Почтовий індекс",
           shopping_cart: "Кошик",
+
+          create_challenge: "Створити челендж",
         },
       },
       de: {

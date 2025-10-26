@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;370&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
 
 .page-container {
@@ -16,24 +16,35 @@
 }
 
 .create-challenge-link {
-    padding: 10px 10px;
-    background-color: #007bff;
-    color: #fff;
     text-decoration: none;
-    border-radius: 5px;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s ease;
+
+    padding: 10px 15px;
+    border-radius: 40px;
+    text-align: center;
+    min-width: 300px;
+    height: 46px;
+    background: #fff;
+    color: #116FCF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    border: 0 solid transparent;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .create-challenge-link:hover {
-    background-color: #0056b3;
+    transform:translateY(-2px);
+    background-color: #D6FF00;
 }
 
 .ch-page-title {
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 10px;
-    color: #d6ff00;
+    color: #FFF;
 }
 
 /* Контейнер для списка челленджей */
@@ -49,8 +60,8 @@
     background-color: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(10px);
-    border-radius: 12px;
-    padding: 10px;
+    border-radius: 25px;
+    padding: 15px;
     color: black;
     display: flex;
     flex-direction: column;
@@ -61,48 +72,69 @@
 
 /* Заголовок челленджа */
 .challenge-title {
+    text-align: center;
     font-family: "Roboto", sans-serif;
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 17px;
+    font-weight: 700;
     margin: 10px 0 5px 0;
-    color: black;
+    color: #FFF;
 }
 
 /* Описание челленджа */
 .challenge-description {
     font-family: "Roboto", sans-serif;
     font-size: 14px;
-    font-weight: 370;
-    color: black;
+    font-weight: 400;
+    color: #FFF;
     margin-bottom: 10px;
     line-height: 1.2;
+    text-align: center;
 }
 
 /* Даты челленджа */
 .challenge-dates {
-    font-family: "MuseoModerno", sans-serif;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
     font-size: 16px;
     color: #d6ff00;
     margin-top: auto;
     font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.challenge-participants {
+    text-align: center;
+    margin-top: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    color: #FFF;
+    margin-top: auto;
+    font-weight: 400;
 }
 
 /* "Подробнее" */
 .details-link {
     display: inline-block;
     margin-top: 15px;
-    padding: 8px 16px;
-    background-color: #116fcf;
-    color: #fff;
     text-decoration: none;
     border-radius: 20px;
     text-align: center;
     font-weight: 600;
     transition: background-color 0.2s ease-in-out;
+    padding: 10px 15px;
+    border-radius: 40px;
+    text-align: center;
+    background: #fff;
+    color: #116FCF;
+    font-size: 16px;
+    border: 0 solid transparent;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .details-link:hover {
-    background-color: #0c57a2;
+    transform:translateY(-2px);
+    background-color: #D6FF00;
 }
 
 /* Сообщение "нет челленджей" */
@@ -141,4 +173,193 @@
 
 .scrollable-card-container::-webkit-scrollbar-thumb:hover {
     background: #0661CC;
+}
+
+/* Мобільна версія для ChallengesPage */
+@media (max-width: 431px) {
+    .page-container {
+        margin-left: 0;
+        padding: 5px;
+    }
+
+    .scrollable-form-container {
+        min-height: 775px;
+    }
+
+    /* Заголовок страницы челленджей */
+    .ch-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .ch-page-title {
+        font-size: 20px;
+        margin-bottom: 0;
+        order: 1;
+    }
+
+    .create-challenge-link {
+        min-width: 250px;
+        height: 44px;
+        font-size: 16px;
+        order: 3;
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .animation-container {
+        order: 2;
+        margin: 10px 0;
+    }
+
+    .animation-container lottie-react {
+        width: 80px !important;
+        height: 80px !important;
+    }
+
+    /* Контейнер для списка челленджей */
+    .challenge-list {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 5px 0;
+    }
+
+    /* Карточка челленджа */
+    .challenge-card {
+        padding: 15px;
+        border-radius: 30px;
+        margin: 0 5px;
+    }
+
+    /* Заголовок челленджа */
+    .challenge-title {
+        font-size: 16px;
+        margin: 8px 0 5px 0;
+    }
+
+    /* Описание челленджа */
+    .challenge-description {
+        font-size: 13px;
+        margin-bottom: 8px;
+        line-height: 1.3;
+    }
+
+    /* Даты челленджа */
+    .challenge-dates {
+        font-size: 14px;
+        margin-bottom: 3px;
+    }
+
+    .challenge-participants {
+        font-size: 14px;
+    }
+
+    /* "Подробнее" */
+    .details-link {
+        font-size: 14px;
+        padding: 8px 12px;
+        margin-top: 12px;
+    }
+
+    /* Сообщение "нет челленджей" */
+    .no-challenges-message {
+        font-size: 16px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding: 0 10px;
+    }
+
+    /* --- Скрол-контейнер для карток --- */
+    .scrollable-card-container {
+        max-height: 620px;
+        padding: 5px;
+    }
+
+    /* --- Стилі для скролбара --- */
+    .scrollable-card-container::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .scrollable-card-container::-webkit-scrollbar-track {
+        border-radius: 8px;
+        margin: 3px 0;
+    }
+
+    .scrollable-card-container::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+    }
+}
+
+@media (min-width: 350px) and (max-width: 390px) {
+    .page-container {
+        padding: 5px 0;
+    }
+
+    .scrollable-form-container {
+        min-height: 670px;
+    }
+
+    .ch-header {
+        gap: 12px;
+        margin-bottom: 15px;
+    }
+
+    .ch-page-title {
+        font-size: 18px;
+    }
+
+    .create-challenge-link {
+        min-width: 220px;
+        height: 42px;
+        font-size: 15px;
+        max-width: 260px;
+    }
+
+    .animation-container lottie-react {
+        width: 70px !important;
+        height: 70px !important;
+    }
+
+    .challenge-list {
+        gap: 12px;
+    }
+
+    .challenge-card {
+        padding: 12px;
+        border-radius: 25px;
+    }
+
+    .challenge-title {
+        font-size: 15px;
+    }
+
+    .challenge-description {
+        font-size: 12px;
+    }
+
+    .challenge-dates {
+        font-size: 13px;
+    }
+
+    .challenge-participants {
+        font-size: 13px;
+    }
+
+    .details-link {
+        font-size: 13px;
+        padding: 7px 10px;
+    }
+
+    .no-challenges-message {
+        font-size: 15px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    .scrollable-card-container {
+        max-height: 445px;
+    }
 }
