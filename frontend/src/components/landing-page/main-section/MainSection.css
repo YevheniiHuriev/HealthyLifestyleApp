@@ -115,27 +115,66 @@
     .header {
         width: 100%;
         padding: 15px 20px;
+        position: relative;
+        min-height: 50px;
+        display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+    }
+
+    .header > *:nth-child(3) {
+        position: absolute;
+        left: 10px;
+        top: 12px;
+        z-index: 2;
+        order: 1;
+    }
+
+    .header__logo {
+        position: absolute;
+        left: 33%;
+        transform: translateX(-50%);
+        top: 18px;
+        z-index: 2;
+        order: 2;
     }
 
     .header__logo img {
         height: 30px;
-        margin-left: 0;
-    }
-
-    .header__nav {
-        display: none;
     }
 
     .header__button {
+        position: absolute;
+        right: 10px;
+        top: 12px;
         padding: 10px 20px;
         font-size: 14px;
-        margin-right: 0;
+        z-index: 2;
+        margin: 0;
+        order: 3;
+    }
+
+    .header__nav {
+        display: block;
+        width: 100%;
+        margin-top: 60px;
+        position: relative;
+        z-index: 1;
+        order: 4;
+    }
+
+    .header__nav .nav__list {
+        display: none;
+    }
+
+    .header__nav .nav__item a {
+        color: #D6FF00;
+        text-decoration: none;
+        font-size: 14px;
+        white-space: nowrap;
     }
 
     .hero-content {
-        margin-top: 80px;
+        margin-top: 100px;
         width: 100%;
         padding: 0 20px;
         align-items: center;
@@ -166,8 +205,36 @@
         min-height: 550px;
     }
 
+    .header {
+        min-height: 45px;
+    }
+
+    .header > *:nth-child(3) {
+        top: 15px;
+        left: 7px;
+    }
+
+    .header__logo {
+        top: 18px;
+        left: 29%;
+    }
+
+    .header__button {
+        right: 7px;
+        top: 12px;
+    }
+
+    .header__nav {
+        margin-top: 55px;
+    }
+
+
+    .header__nav .nav__item a {
+        font-size: 13px;
+    }
+
     .hero-content {
-        margin-top: 60px;
+        margin-top: 90px;
     }
 
     .hero-content h1 {
