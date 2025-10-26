@@ -26,6 +26,12 @@ namespace HealthyLifestyle.Application.Interfaces.ObjectStorage
         Task DeleteFileAsync(string fileUrl);
 
         /// <summary>
+        /// Удаляет файл по его имени объекта (для обратной совместимости).
+        /// </summary>
+        /// <param name="objectName">Имя объекта в хранилище.</param>
+        Task DeleteFileByObjectNameAsync(string objectName);
+
+        /// <summary>
         /// Presigned URL (тимчасові посилання)
         /// </summary>
         /// <param name="objectName"></param>

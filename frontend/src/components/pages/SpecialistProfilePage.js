@@ -34,31 +34,24 @@ const emptyToNull = (value) => {
 
 // Конвертує перекладений текст навичок назад в ключі перекладу
 const convertTranslatedSkillsToKeys = (translatedSkills, allSkills, t) => {
-  console.log("convertTranslatedSkillsToKeys - вхідні дані:", translatedSkills);
-  
   // Якщо передано рядок замість масиву, конвертуємо в масив
   if (typeof translatedSkills === 'string') {
-    console.log("Передано рядок, конвертуємо в масив");
     translatedSkills = translatedSkills.trim() ? [translatedSkills.trim()] : [];
   }
   
   if (!translatedSkills || !Array.isArray(translatedSkills)) {
-    console.log("Невалідні дані, повертаємо порожній масив");
     return [];
   }
   
   // Фільтруємо порожні рядки та пробіли
   const filteredSkills = translatedSkills.filter(skill => skill && skill.trim() !== '');
-  console.log("Відфільтровані навички:", filteredSkills);
   
   const result = filteredSkills.map(translatedSkill => {
     // Знаходимо ключ, для якого переклад дорівнює перекладеному тексту
     const foundKey = allSkills.find(skillKey => t(skillKey) === translatedSkill);
-    console.log(`Шукаємо ключ для "${translatedSkill}":`, foundKey);
     return foundKey || translatedSkill; // Якщо не знайдено, повертаємо оригінал
   });
   
-  console.log("Результат конвертації:", result);
   return result;
 };
 
@@ -187,22 +180,17 @@ const SpecialistsProfilePage = () => {
 
             if (response.data && response.data.token) {
                 localStorage.setItem("helth-token", response.data.token);
-                console.log("Token refreshed successfully");
             }
         } catch (error) {
-            console.error("Error refreshing token:", error);
             // Не показуємо помилку користувачу, оскільки це не критично
         }
     };
 
     // Load specialist data
     const fetchSpecialistData = useCallback(async () => {
-        console.log("=== ПОЧАТОК ЗАВАНТАЖЕННЯ ДАНИХ СПЕЦІАЛІСТА ===");
         try {
             const token = localStorage.getItem("helth-token");
-            console.log("Token exists:", !!token);
             if (!token) {
-                console.log("No token found, redirecting to login");
                 navigate("/login");
                 return;
             }
@@ -217,13 +205,8 @@ const SpecialistsProfilePage = () => {
                 }
             );
 
-            console.log("=== ВСІ ТИПИ КВАЛІФІКАЦІЙ ===");
-            console.log("Types from API:", typesResponse.data);
-
             // ПОРІВНЯННЯ ТИПІВ - ВИКОНУЄМО ЗАВЖДИ
             const specialistTypeFromStorage = getSpecialistType();
-            console.log("=== ПОРІВНЯННЯ ТИПІВ ===");
-            console.log("Specialist type from localStorage:", specialistTypeFromStorage);
             
             // Знаходимо ID кваліфікації по типу спеціаліста
             const matchingType = typesResponse.data.find(type => 
@@ -232,26 +215,10 @@ const SpecialistsProfilePage = () => {
             
             if (matchingType) {
                 setProfessionalRoleTypeId(matchingType.Id);
-                // console.log("=== ЗНАЙДЕНИЙ ID КВАЛІФІКАЦІЇ ===");
-                // console.log("Matching type found:", matchingType);
-                // console.log("Qualification ID for", specialistTypeFromStorage, ":", matchingType.Id);
-                // console.log("=== ДЕТАЛЬНА ІНФОРМАЦІЯ ПРО ЗБІГ ===");
-                // console.log("Тип з localStorage:", specialistTypeFromStorage);
-                // console.log("Знайдений тип в API:", matchingType.Name);
-                // console.log("ID знайденого типу:", matchingType.Id);
-                // console.log("Опис типу:", matchingType.Description);
-                // console.log("Годинна ставка за замовчуванням:", matchingType.DefaultHourlyRate);
             } else {
-                // console.log("=== ПОМИЛКА: ТИП НЕ ЗНАЙДЕНО ===");
-                // console.log("No matching type found for:", specialistTypeFromStorage);
-                // console.log("Available types:", typesResponse.data.map(t => t.Name));
-                // console.log("=== СПРОБА ЗНАЙТИ ЧАСТКОВИЙ ЗБІГ ===");
                 const partialMatch = typesResponse.data.find(type => 
                     type.Name.toLowerCase() === specialistTypeFromStorage.toLowerCase()
                 );
-                if (partialMatch) {
-                    console.log("Знайдено частковий збіг (без урахування регістру):", partialMatch);
-                }
             }
 
             const response = await axios.get(
@@ -264,38 +231,26 @@ const SpecialistsProfilePage = () => {
             );
 
             const qualifications = response.data;
-            console.log("=== МОЇ КВАЛІФІКАЦІЇ ===");
-            console.log("My qualifications:", qualifications);
 
             if (qualifications && qualifications.length > 0) {
                 const currentQualification = qualifications[0]; // Take the first one
                 setQualificationData(currentQualification);
                 setUserName(currentQualification.User?.FullName || '');
                 
-                console.log("Current qualification data:", currentQualification);
-                
                 setSpecialistType(specialistTypeFromStorage);
                 
                 // Extract skills based on specialist type
                 let extractedSkills = [];
                 if (specialistTypeFromStorage === 'Trainer' && currentQualification.TrainerDetails) {
-                    console.log("=== ДІАГНОСТИКА НАВИЧОК ТРЕНЕРА ===");
-                    console.log("TrainingStyle з бекенду:", currentQualification.TrainerDetails.TrainingStyle);
-                    console.log("Тип TrainingStyle:", typeof currentQualification.TrainerDetails.TrainingStyle);
-                    console.log("Чи є масивом:", Array.isArray(currentQualification.TrainerDetails.TrainingStyle));
-                    
                     extractedSkills = currentQualification.TrainerDetails.TrainingStyle || [];
                     
                     // Якщо TrainingStyle є рядком, конвертуємо в масив
                     if (typeof extractedSkills === 'string') {
-                        console.log("TrainingStyle є рядком, конвертуємо в масив");
                         extractedSkills = extractedSkills.trim() ? [extractedSkills.trim()] : [];
                     }
                     
                     // Фільтруємо порожні рядки та пробіли
                     extractedSkills = extractedSkills.filter(skill => skill && skill.trim() !== '');
-                    
-                    console.log("extractedSkills після обробки:", extractedSkills);
                 } else if (specialistTypeFromStorage === 'Doctor' && currentQualification.DoctorDetails) {
                     extractedSkills = currentQualification.DoctorDetails.Specializations || [];
                 } else if (specialistTypeFromStorage === 'Psychologist' && currentQualification.PsychologistDetails) {
@@ -306,7 +261,6 @@ const SpecialistsProfilePage = () => {
                 
                 // Конвертуємо перекладений текст назад в ключі перекладу
                 const skillKeys = convertTranslatedSkillsToKeys(extractedSkills, ALL_SKILLS, t);
-                console.log("skillKeys після конвертації:", skillKeys);
                 setSkills(skillKeys);
                 
                 // Extract form fields
@@ -361,12 +315,8 @@ const SpecialistsProfilePage = () => {
                 }
             }
         } catch (error) {
-            console.error("=== ПОМИЛКА ПРИ ЗАВАНТАЖЕННІ ДАНИХ СПЕЦІАЛІСТА ===");
-            console.error("Error fetching specialist data:", error);
-            console.error("Error details:", error.response?.data);
-            console.error("Error status:", error.response?.status);
+            // Error handling
         } finally {
-            console.log("=== ЗАВЕРШЕННЯ ЗАВАНТАЖЕННЯ ДАНИХ ===");
             setIsLoading(false);
         }
     }, [navigate]);
@@ -483,22 +433,17 @@ const SpecialistsProfilePage = () => {
                         window.location.reload();
                     }
                 } catch (error) {
-                    console.error('Помилка завантаження фото:', error);
                     showError('Помилка завантаження фото: ' + error.message);
                 }
             }
             
             // Якщо кваліфікація не існує, створюємо нову
             if (!qualificationData) {
-                console.log("=== СТВОРЕННЯ НОВОЇ КВАЛІФІКАЦІЇ ===");
                 
                 if (!professionalRoleTypeId) {
                     throw new Error("Professional role type ID not found");
                 }
 
-                console.log("WorkFormat ключі (створення):", workFormats);
-                console.log("WorkFormat переклади (створення):", workFormats.map(format => t(format)));
-                console.log("Приклад перекладу (створення):", t('work_format_online_telegram'));
                 
                 // Перекладаємо ключі в текст з fallback логікою
                 const translatedWorkFormats = workFormats.map(format => {
@@ -511,8 +456,6 @@ const SpecialistsProfilePage = () => {
                     return translation;
                 });
                 
-                console.log("WorkFormat фінальні переклади (створення):", translatedWorkFormats);
-                console.log("🔄 [FRONTEND] Відправляємо WorkFormat при створенні:", translatedWorkFormats);
                 
                 const createQualificationData = {
                     ProfessionalRoleTypeId: professionalRoleTypeId,
@@ -522,7 +465,6 @@ const SpecialistsProfilePage = () => {
                     //CertificatesUrl: certificates.length > 0 ? certificates[0].url : "https://kach-running.com"
                 };
 
-                console.log("Creating qualification with data:", createQualificationData);
 
                 const response = await axios.post(
                     `${process.env.REACT_APP_API_URL}/api/ProfessionalQualification/apply`,
@@ -535,7 +477,6 @@ const SpecialistsProfilePage = () => {
                     }
                 );
 
-                console.log("Qualification created successfully:", response.data);
                 
                 // Створюємо деталі спеціаліста для нової кваліфікації
                 const newQualificationId = response.data.Id;
@@ -558,15 +499,10 @@ const SpecialistsProfilePage = () => {
                     specialistDetailsData.specializations = skills.map(skill => t(skill));
                     specialistDetailsData.clinicAffiliation = emptyToNull(formFields.clinicAffiliation);
                 } else if (specialistType === 'Trainer') {
-                    console.log("=== ЗБЕРЕЖЕННЯ НАВИЧОК ТРЕНЕРА (СТВОРЕННЯ) ===");
-                    console.log("skills перед обробкою:", skills);
-                    
                     // Фільтруємо порожні рядки та пробіли перед збереженням
                     const filteredSkills = skills.filter(skill => skill && skill.trim() !== '');
-                    console.log("Відфільтровані skills:", filteredSkills);
                     
                     specialistDetailsData.trainingStyle = filteredSkills.map(skill => t(skill));
-                    console.log("trainingStyle для відправки:", specialistDetailsData.trainingStyle);
                     
                     specialistDetailsData.preferredWorkoutStyles = formFields.preferredWorkoutStyles || [];
                     specialistDetailsData.hourlyRate = formFields.hourlyRate ? parseFloat(formFields.hourlyRate) : null;
@@ -584,7 +520,6 @@ const SpecialistsProfilePage = () => {
                 // Завантажуємо фото після створення кваліфікації та деталей (для нових спеціалістів)
                 if (avatarFile) {
                     try {
-                        console.log("=== ЗАВАНТАЖЕННЯ ФОТО ДЛЯ НОВОГО СПЕЦІАЛІСТА ===");
                         const formData = new FormData();
                         formData.append('file', avatarFile);
                         formData.append('specialistId', newQualificationId); // ID нової кваліфікації
@@ -608,12 +543,10 @@ const SpecialistsProfilePage = () => {
                                 cleanUrl = cleanUrl.substring('minio:9000/images/'.length);
                             }
                             
-                            console.log("Фото успішно завантажено для нового спеціаліста:", cleanUrl);
                             setProfilePhotoUrl(cleanUrl); // Update the photo URL
                             setAvatarFile(null); // Очищаємо файл після успішного завантаження
                         }
                     } catch (error) {
-                        console.error('Помилка завантаження фото для нового спеціаліста:', error);
                         // Не показуємо помилку користувачу, оскільки основні дані вже збережені
                     }
                 }
@@ -633,7 +566,6 @@ const SpecialistsProfilePage = () => {
                 }, 1500); // Give user time to see success message
             } else {
                 // Якщо кваліфікація існує, оновлюємо її
-                console.log("=== ОНОВЛЕННЯ ІСНУЮЧОЇ КВАЛІФІКАЦІЇ ===");
                 
                 const qualificationId = qualificationData.Id;
                 
@@ -657,15 +589,10 @@ const SpecialistsProfilePage = () => {
                     specialistDetailsData.specializations = skills.map(skill => t(skill));
                     specialistDetailsData.clinicAffiliation = emptyToNull(formFields.clinicAffiliation);
                 } else if (specialistType === 'Trainer') {
-                    console.log("=== ЗБЕРЕЖЕННЯ НАВИЧОК ТРЕНЕРА (ОНОВЛЕННЯ) ===");
-                    console.log("skills перед обробкою:", skills);
-                    
                     // Фільтруємо порожні рядки та пробіли перед збереженням
                     const filteredSkills = skills.filter(skill => skill && skill.trim() !== '');
-                    console.log("Відфільтровані skills:", filteredSkills);
                     
                     specialistDetailsData.trainingStyle = filteredSkills.map(skill => t(skill));
-                    console.log("trainingStyle для відправки:", specialistDetailsData.trainingStyle);
                     
                     specialistDetailsData.preferredWorkoutStyles = formFields.preferredWorkoutStyles || [];
                     specialistDetailsData.hourlyRate = formFields.hourlyRate ? parseFloat(formFields.hourlyRate) : null;
@@ -678,9 +605,6 @@ const SpecialistsProfilePage = () => {
                 }
 
                 // Оновлюємо WorkFormat через UpdateQualification endpoint
-                console.log("WorkFormat ключі:", workFormats);
-                console.log("WorkFormat переклади:", workFormats.map(format => t(format)));
-                console.log("Приклад перекладу:", t('work_format_online_telegram'));
                 
                 // Перекладаємо ключі в текст з fallback логікою
                 const translatedWorkFormats = workFormats.map(format => {
@@ -693,8 +617,6 @@ const SpecialistsProfilePage = () => {
                     return translation;
                 });
                 
-                console.log("WorkFormat фінальні переклади:", translatedWorkFormats);
-                console.log("🔄 [FRONTEND] Відправляємо WorkFormat при оновленні:", translatedWorkFormats);
                 
                 const qualificationUpdateData = {
                     Description: formFields.biography || "",
@@ -702,7 +624,6 @@ const SpecialistsProfilePage = () => {
                     WorkFormat: translatedWorkFormats
                 };
                 
-                console.log("Updating qualification with WorkFormat:", qualificationUpdateData);
                 await updateProfessionalQualification(qualificationId, qualificationUpdateData, token);
 
                 // Перевіряємо, чи існують деталі спеціаліста
@@ -722,7 +643,6 @@ const SpecialistsProfilePage = () => {
                 // Завантажуємо фото після оновлення деталей (для існуючих спеціалістів)
                 if (avatarFile) {
                     try {
-                        console.log("=== ЗАВАНТАЖЕННЯ ФОТО ДЛЯ ІСНУЮЧОГО СПЕЦІАЛІСТА ===");
                         const formData = new FormData();
                         formData.append('file', avatarFile);
                         formData.append('specialistId', qualificationId); // ID існуючої кваліфікації
@@ -746,11 +666,9 @@ const SpecialistsProfilePage = () => {
                                 cleanUrl = cleanUrl.substring('minio:9000/images/'.length);
                             }
                             
-                            console.log("Фото успішно завантажено для існуючого спеціаліста:", cleanUrl);
                             setAvatarFile(null); // Очищаємо файл після успішного завантаження
                         }
                     } catch (error) {
-                        console.error('Помилка завантаження фото для існуючого спеціаліста:', error);
                         // Не показуємо помилку користувачу, оскільки основні дані вже збережені
                     }
                 }
@@ -759,7 +677,6 @@ const SpecialistsProfilePage = () => {
                 showSuccess(t("sp_save_success") || "Дані успішно збережено!");
             }
         } catch (error) {
-            console.error("Error saving specialist data:", error);
             showError(t("sp_save_error") || "Помилка збереження даних: " + error.message);
         } finally {
             setIsSaving(false);

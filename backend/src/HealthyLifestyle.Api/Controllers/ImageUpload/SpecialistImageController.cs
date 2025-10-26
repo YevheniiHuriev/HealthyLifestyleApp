@@ -443,12 +443,8 @@ namespace HealthyLifestyle.Api.Controllers.ImageUpload
                 _logger.LogInformation("🖼️ [UPLOAD] Зображення завантажено: {ImageUrl}", result.ImageUrl);
                 
                 // Remove MinIO prefix before saving to database
-                var cleanImageUrl = result.ImageUrl;
-                if (cleanImageUrl.StartsWith("minio:9000/images/"))
-                {
-                    cleanImageUrl = cleanImageUrl.Substring("minio:9000/images/".Length);
-                    _logger.LogInformation("🖼️ [UPLOAD] Очищено URL зображення: {CleanUrl}", cleanImageUrl);
-                }
+                var cleanImageUrl = CleanImageUrlForDatabase(result.ImageUrl);
+                _logger.LogInformation("🖼️ [UPLOAD] Очищено URL зображення: {CleanUrl}", cleanImageUrl);
                 
                 // Save URL to database
                 _logger.LogInformation("🖼️ [UPLOAD] Зберігаємо URL в БД для спеціаліста {SpecialistId}: {ImageUrl}", specialistId, cleanImageUrl);
@@ -631,6 +627,46 @@ namespace HealthyLifestyle.Api.Controllers.ImageUpload
                 ".bmp" => "image/bmp",
                 _ => "application/octet-stream"
             };
+        }
+
+        /// <summary>
+        /// Очищає URL зображення від MinIO префіксу для збереження в базі даних.
+        /// </summary>
+        /// <param name="imageUrl">Повний URL зображення з MinIO.</param>
+        /// <returns>Очищений шлях для збереження в БД.</returns>
+        private string CleanImageUrlForDatabase(string imageUrl)
+        {
+            if (string.IsNullOrWhiteSpace(imageUrl))
+                return imageUrl;
+
+            // Список можливих префіксів MinIO з bucket'ом
+            var prefixes = new[]
+            {
+                "localhost:9000/healthylifestyle-bucket/images/",
+                "minio:9000/healthylifestyle-bucket/images/",
+                "http://localhost:9000/healthylifestyle-bucket/images/",
+                "https://localhost:9000/healthylifestyle-bucket/images/",
+                "http://minio:9000/healthylifestyle-bucket/images/",
+                "https://minio:9000/healthylifestyle-bucket/images/",
+                // Також підтримуємо старі формати без bucket'а
+                "localhost:9000/images/",
+                "minio:9000/images/",
+                "http://localhost:9000/images/",
+                "https://localhost:9000/images/",
+                "http://minio:9000/images/",
+                "https://minio:9000/images/"
+            };
+
+            foreach (var prefix in prefixes)
+            {
+                if (imageUrl.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
+                {
+                    return imageUrl.Substring(prefix.Length);
+                }
+            }
+
+            // Якщо не знайдено відповідний префікс, повертаємо оригінальний URL
+            return imageUrl;
         }
 
     }

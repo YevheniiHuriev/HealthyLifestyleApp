@@ -2,9 +2,9 @@ using Minio;
 using Minio.Exceptions;
 using Minio.DataModel.Args;
 using Microsoft.Extensions.Options;
-using Microsoft.Extensions.Logging;
 using HealthyLifestyle.Application.Interfaces.ObjectStorage;
 using System.Threading;
+using Minio.ApiEndpoints;
 
 namespace HealthyLifestyle.Application.Services.ObjectStorage;
 
@@ -13,12 +13,10 @@ public class MinioService : IObjectStorageService
     private readonly IMinioClient _minioClient;
     private readonly IMinioClient _publicClient;
     private readonly MinioSettings _settings;
-    private readonly ILogger<MinioService> _logger;
 
-    public MinioService(IOptions<MinioSettings> settings, ILogger<MinioService> logger)
+    public MinioService(IOptions<MinioSettings> settings)
     {
         _settings = settings.Value;
-        _logger = logger;
 
         _minioClient = new MinioClient()
             .WithEndpoint(_settings.Endpoint)
@@ -26,25 +24,22 @@ public class MinioService : IObjectStorageService
             .Build();
 
         _publicClient = new MinioClient()
-        .WithEndpoint(_settings.PublicEndpoint)
-        .WithCredentials(_settings.AccessKey, _settings.SecretKey)
-        .Build();
+            .WithEndpoint(_settings.PublicEndpoint)
+            .WithCredentials(_settings.AccessKey, _settings.SecretKey)
+            .Build();
     }
 
     public async Task<string> UploadFileAsync(Stream stream, string objectName, string contentType)
     {
         try
         {
-            _logger.LogInformation("Starting upload of file: {ObjectName}", objectName);
-
-            var bucketExistsArgs = new BucketExistsArgs().WithBucket(_settings.BucketName);
-            bool bucketExists = await _minioClient.BucketExistsAsync(bucketExistsArgs);
-
-            if (!bucketExists)
+            var foundArgs = new BucketExistsArgs().WithBucket(_settings.BucketName);
+            bool found = await _minioClient.BucketExistsAsync(foundArgs).ConfigureAwait(false);
+            if (!found)
             {
-                var makeBucketArgs = new MakeBucketArgs().WithBucket(_settings.BucketName);
-                await _minioClient.MakeBucketAsync(makeBucketArgs);
-                _logger.LogInformation("Bucket '{BucketName}' created successfully", _settings.BucketName);
+                var mkBucketArgs = new MakeBucketArgs().WithBucket(_settings.BucketName);
+                await _minioClient.MakeBucketAsync(mkBucketArgs).ConfigureAwait(false);
+                Console.WriteLine($"Бакет '{_settings.BucketName}' успешно создан.");
             }
 
             var putObjectArgs = new PutObjectArgs()
@@ -54,149 +49,210 @@ public class MinioService : IObjectStorageService
                 .WithObjectSize(stream.Length)
                 .WithContentType(contentType);
 
-            await _minioClient.PutObjectAsync(putObjectArgs);
-            _logger.LogInformation("File '{ObjectName}' uploaded successfully", objectName);
+            await _minioClient.PutObjectAsync(putObjectArgs).ConfigureAwait(false);
+            Console.WriteLine($"Файл '{objectName}' успешно загружен.");
 
-            //return $"{_settings.Endpoint}/{_settings.BucketName}/{objectName}";
             return $"{_settings.PublicEndpoint}/{_settings.BucketName}/{objectName}";
         }
-        catch (MinioException ex)
+        catch (MinioException e)
         {
-            _logger.LogError(ex, "MinIO error during upload of file '{ObjectName}'", objectName);
+            Console.WriteLine($"Ошибка MinIO: {e.Message}");
             throw;
         }
-        catch (Exception ex)
+        catch (Exception e)
         {
-            _logger.LogError(ex, "General error during upload of file '{ObjectName}'", objectName);
+            Console.WriteLine($"Общая ошибка: {e.Message}");
             throw;
         }
     }
 
-    public async Task DeleteFileAsync(string fileUrl)
+    public async Task DeleteFileAsync(string objectName)
     {
         try
         {
-            _logger.LogInformation("Starting deletion of file: {FileUrl}", fileUrl);
-
-            // Extract object name from URL
-            var uri = new Uri(fileUrl);
-            var objectName = string.Join("", uri.Segments.Skip(2));
-
             var removeObjectArgs = new RemoveObjectArgs()
                 .WithBucket(_settings.BucketName)
                 .WithObject(objectName);
 
-            await _minioClient.RemoveObjectAsync(removeObjectArgs);
-            _logger.LogInformation("File '{ObjectName}' deleted successfully", objectName);
+            await _minioClient.RemoveObjectAsync(removeObjectArgs).ConfigureAwait(false);
+            Console.WriteLine($"Файл '{objectName}' успішно видалено.");
         }
-        catch (Exception ex)
+        catch (Exception e)
         {
-            _logger.LogError(ex, "Error deleting file '{FileUrl}'", fileUrl);
+            Console.WriteLine($"Помилка видалення об'єкта {objectName}: {e.Message}");
             throw;
         }
     }
 
-    public async Task<Stream> GetFileAsync(string objectName, CancellationToken cancellationToken)
+    public async Task DeleteFileByObjectNameAsync(string objectName)
     {
-        for (int attempt = 1; attempt <= 3; attempt++)
+        try
         {
-            try
-            {
-                _logger.LogInformation("Starting download of file: {ObjectName} (attempt {Attempt}/3)", objectName, attempt);
+            var removeObjectArgs = new RemoveObjectArgs()
+                .WithBucket(_settings.BucketName)
+                .WithObject(objectName);
 
-                var memoryStream = new MemoryStream();
-
-                var getObjectArgs = new GetObjectArgs()
-                    .WithBucket(_settings.BucketName)
-                    .WithObject(objectName)
-                    .WithCallbackStream(async s =>
-                    {
-                        using var temp = new MemoryStream();
-                        await s.CopyToAsync(temp, cancellationToken);
-                        temp.Seek(0, SeekOrigin.Begin);
-                        await temp.CopyToAsync(memoryStream, cancellationToken);
-                    });
-
-                await _minioClient.GetObjectAsync(getObjectArgs, cancellationToken);
-
-                memoryStream.Seek(0, SeekOrigin.Begin);
-                _logger.LogInformation("File '{ObjectName}' downloaded successfully, size: {Size} bytes", objectName, memoryStream.Length);
-                return memoryStream;
-            }
-            catch (IOException ex)
-            {
-                _logger.LogWarning("Network error during download attempt {Attempt} for file '{ObjectName}': {Message}", attempt, objectName, ex.Message);
-                if (attempt == 3)
-                {
-                    _logger.LogError(ex, "Failed to download file '{ObjectName}' after 3 attempts", objectName);
-                    throw;
-                }
-                await Task.Delay(1000, cancellationToken);
-            }
-            catch (OperationCanceledException)
-            {
-                _logger.LogWarning("Download of file '{ObjectName}' was cancelled", objectName);
-                throw;
-            }
-            catch (MinioException ex)
-            {
-                _logger.LogError(ex, "MinIO error during download of file '{ObjectName}'", objectName);
-                throw new FileNotFoundException($"File '{objectName}' not found in MinIO", ex);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "General error during download of file '{ObjectName}'", objectName);
-                throw;
-            }
+            await _minioClient.RemoveObjectAsync(removeObjectArgs).ConfigureAwait(false);
+            Console.WriteLine($"Файл '{objectName}' успішно видалено через DeleteFileByObjectNameAsync.");
         }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Помилка видалення об'єкта {objectName} через DeleteFileByObjectNameAsync: {e.Message}");
+            throw;
+        }
+    }
 
-        throw new InvalidOperationException($"Failed to download file '{objectName}' after 3 attempts");
+    public async Task<Stream> GetFileAsync(string objectName, CancellationToken cancellationToken = default)
+    {
+        MemoryStream memoryStream = null;
+        try
+        {
+            Console.WriteLine($"🖼️ [MINIO] Початок завантаження файлу: {objectName}");
+            memoryStream = new MemoryStream();
+
+            // Check if already cancelled
+            cancellationToken.ThrowIfCancellationRequested();
+
+            var getObjectArgs = new GetObjectArgs()
+                .WithBucket(_settings.BucketName)
+                .WithObject(objectName)
+                .WithCallbackStream((stream) =>
+                {
+                    try
+                    {
+                        // Check cancellation before copying
+                        if (cancellationToken.IsCancellationRequested)
+                        {
+                            Console.WriteLine($"🖼️ [MINIO] Запит скасовано для файлу: {objectName}");
+                            return;
+                        }
+
+                        Console.WriteLine($"🖼️ [MINIO] Початок копіювання потоку для файлу: {objectName}");
+
+                        // Copy with buffer and check cancellation periodically
+                        byte[] buffer = new byte[81920]; // 80KB buffer
+                        int bytesRead;
+                        while ((bytesRead = stream.Read(buffer, 0, buffer.Length)) > 0)
+                        {
+                            if (cancellationToken.IsCancellationRequested)
+                            {
+                                Console.WriteLine($"🖼️ [MINIO] Копіювання скасовано для файлу: {objectName}");
+                                return;
+                            }
+                            memoryStream.Write(buffer, 0, bytesRead);
+                        }
+
+                        Console.WriteLine($"🖼️ [MINIO] Завершено копіювання потоку для файлу: {objectName}");
+                    }
+                    catch (Exception ex) when (ex is OperationCanceledException || cancellationToken.IsCancellationRequested)
+                    {
+                        Console.WriteLine($"🖼️ [MINIO] Операція скасована для файлу {objectName}");
+                        throw;
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"🖼️ [MINIO] Помилка в callback для файлу {objectName}: {ex.Message}");
+                        throw;
+                    }
+                });
+
+            Console.WriteLine($"🖼️ [MINIO] Викликаємо GetObjectAsync для файлу: {objectName}");
+            await _minioClient.GetObjectAsync(getObjectArgs, cancellationToken).ConfigureAwait(false);
+
+            if (cancellationToken.IsCancellationRequested || memoryStream.Length == 0)
+            {
+                memoryStream?.Dispose();
+                throw new OperationCanceledException("Operation was cancelled");
+            }
+
+            memoryStream.Position = 0;
+            Console.WriteLine($"🖼️ [MINIO] Файл успішно завантажено: {objectName}, розмір: {memoryStream.Length} байт");
+            return memoryStream;
+        }
+        catch (OperationCanceledException)
+        {
+            memoryStream?.Dispose();
+            Console.WriteLine($"🖼️ [MINIO] Завантаження скасовано для файлу: {objectName}");
+            throw;
+        }
+        catch (MinioException e)
+        {
+            memoryStream?.Dispose();
+            Console.WriteLine($"🖼️ [MINIO] Помилка MinIO для файлу {objectName}: {e.Message}");
+            throw new FileNotFoundException($"Файл '{objectName}' не знайдено в MinIO", e);
+        }
+        catch (Exception e)
+        {
+            memoryStream?.Dispose();
+            Console.WriteLine($"🖼️ [MINIO] Загальна помилка для файлу {objectName}: {e.Message}");
+            throw;
+        }
     }
 
     public async Task<string> GetPresignedUrlAsync(string objectName, int expiryInSeconds)
     {
         try
         {
-            _logger.LogInformation("Generating presigned URL for file: {ObjectName}", objectName);
-
             var args = new PresignedGetObjectArgs()
                 .WithBucket(_settings.BucketName)
                 .WithObject(objectName)
                 .WithExpiry(expiryInSeconds);
 
-            var url = await _minioClient.PresignedGetObjectAsync(args);
-            _logger.LogInformation("Presigned URL generated successfully for file: {ObjectName}", objectName);
-            return url;
+            return await _publicClient.PresignedGetObjectAsync(args).ConfigureAwait(false);
         }
-        catch (Exception ex)
+        catch (Exception e)
         {
-            _logger.LogError(ex, "Error generating presigned URL for file '{ObjectName}'", objectName);
+            Console.WriteLine($"Помилка генерації pre-signed URL: {e.Message}");
             throw;
         }
     }
-    public async Task<bool> FileExistsAsync(string objectName, CancellationToken cancellationToken = default)
+
+    public async Task<bool> FileExistsAsync(string objectName)
     {
         try
         {
-            _logger.LogInformation("Checking if file exists: {ObjectName}", objectName);
-
             var statObjectArgs = new StatObjectArgs()
                 .WithBucket(_settings.BucketName)
                 .WithObject(objectName);
 
-            await _minioClient.StatObjectAsync(statObjectArgs, cancellationToken);
-            _logger.LogInformation("File '{ObjectName}' exists", objectName);
+            await _minioClient.StatObjectAsync(statObjectArgs).ConfigureAwait(false);
             return true;
         }
-        catch (ObjectNotFoundException)
+        catch (MinioException)
         {
-            _logger.LogInformation("File '{ObjectName}' does not exist", objectName);
             return false;
         }
-        catch (Exception ex)
+        catch (Exception)
         {
-            _logger.LogError(ex, "Error checking if file '{ObjectName}' exists", objectName);
             return false;
+        }
+    }
+
+    public async Task<List<string>> ListFilesAsync(string prefix = "")
+    {
+        var list = new List<string>();
+        var args = new ListObjectsArgs()
+            .WithBucket(_settings.BucketName)
+            .WithPrefix(prefix)
+            .WithRecursive(true);
+
+        var observable = _minioClient.ListObjectsAsync(args);
+
+        var tcs = new TaskCompletionSource<List<string>>();
+
+        IDisposable subscription = observable.Subscribe(
+            item => { if (!item.IsDir) list.Add(item.Key); },
+            ex => tcs.SetException(ex),
+            () => tcs.SetResult(list)
+        );
+
+        try
+        {
+            return await tcs.Task;
+        }
+        finally
+        {
+            subscription.Dispose();
         }
     }
 }
