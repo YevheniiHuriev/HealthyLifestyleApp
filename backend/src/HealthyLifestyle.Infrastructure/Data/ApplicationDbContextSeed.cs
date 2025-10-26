@@ -633,7 +633,7 @@ namespace HealthyLifestyle.Infrastructure.Data
 
                 // Перевіряємо, чи всі необхідні користувачі існують
                 if (regularUser == null || psychologist == null || dietitian == null ||
-                    trainer == null || trainer1 == null || trainer2 == null /*|| trainer3 == null */)
+                    trainer == null || trainer1 == null || trainer2 == null /*|| trainer3 == null*/)
                 {
                     throw new InvalidOperationException("Необхідні користувачі відсутні. Спочатку виконайте SeedDefaultUserAndRolesAsync.");
                 }

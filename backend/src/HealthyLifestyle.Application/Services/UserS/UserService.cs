@@ -90,13 +90,22 @@ namespace HealthyLifestyle.Application.Services.UserS
                 // Якщо вже є старе зображення — видаляємо
                 if (!string.IsNullOrEmpty(user.ProfilePictureUrl))
                 {
-                    await _objectStorageService.DeleteFileAsync(user.ProfilePictureUrl);
+                    // Check if it's a full URL or just object name
+                    if (user.ProfilePictureUrl.StartsWith("http"))
+                    {
+                        await _objectStorageService.DeleteFileAsync(user.ProfilePictureUrl);
+                    }
+                    else
+                    {
+                        // Use the new interface method for object names
+                        await _objectStorageService.DeleteFileByObjectNameAsync(user.ProfilePictureUrl);
+                    }
                 }
 
                 var fileName = $"{userId}_{Guid.NewGuid()}{Path.GetExtension(updateDto.ProfilePictureFile.FileName)}";
 
-                await _objectStorageService.UploadFileAsync(updateDto.ProfilePictureFile.OpenReadStream(), fileName, updateDto.ProfilePictureFile.ContentType);
-                user.ProfilePictureUrl = fileName;
+                var uploadedUrl = await _objectStorageService.UploadFileAsync(updateDto.ProfilePictureFile.OpenReadStream(), fileName, updateDto.ProfilePictureFile.ContentType);
+                user.ProfilePictureUrl = fileName; // Store object name, not full URL
 
             }
             else if (updateDto.ProfilePictureUrl == "")
@@ -104,7 +113,16 @@ namespace HealthyLifestyle.Application.Services.UserS
                 // Сигнал видалити існуюче зображення
                 if (!string.IsNullOrEmpty(user.ProfilePictureUrl))
                 {
-                    await _objectStorageService.DeleteFileAsync(user.ProfilePictureUrl);
+                    // Check if it's a full URL or just object name
+                    if (user.ProfilePictureUrl.StartsWith("http"))
+                    {
+                        await _objectStorageService.DeleteFileAsync(user.ProfilePictureUrl);
+                    }
+                    else
+                    {
+                        // Use the new interface method for object names
+                        await _objectStorageService.DeleteFileByObjectNameAsync(user.ProfilePictureUrl);
+                    }
                     user.ProfilePictureUrl = null;
                 }
             }
@@ -145,7 +163,16 @@ namespace HealthyLifestyle.Application.Services.UserS
             // Якщо у користувача є зображення, видаляємо його зі сховища
             if (!string.IsNullOrEmpty(user.ProfilePictureUrl))
             {
-                await _objectStorageService.DeleteFileAsync(user.ProfilePictureUrl);
+                // Check if it's a full URL or just object name
+                if (user.ProfilePictureUrl.StartsWith("http"))
+                {
+                    await _objectStorageService.DeleteFileAsync(user.ProfilePictureUrl);
+                }
+                else
+                {
+                    // Use the new interface method for object names
+                    await _objectStorageService.DeleteFileByObjectNameAsync(user.ProfilePictureUrl);
+                }
             }
 
             var result = await _userManager.DeleteAsync(user);

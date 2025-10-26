@@ -17,13 +17,19 @@ namespace HealthyLifestyle.Application.Interfaces.ObjectStorage
         /// </summary>
         /// <param name="objectName">Имя файла (объекта) в хранилище.</param>
         /// <returns>Поток данных файла.</returns>
-        Task<Stream> GetFileAsync(string objectName);
+        Task<Stream> GetFileAsync(string objectName, CancellationToken cancellationToken);
 
         /// <summary>
         /// Удаляет файл по его URL.
         /// </summary>
         /// <param name="fileUrl">Полный URL-адрес файла для удаления.</param>
         Task DeleteFileAsync(string fileUrl);
+
+        /// <summary>
+        /// Удаляет файл по его имени объекта (для обратной совместимости).
+        /// </summary>
+        /// <param name="objectName">Имя объекта в хранилище.</param>
+        Task DeleteFileByObjectNameAsync(string objectName);
 
         /// <summary>
         /// Presigned URL (тимчасові посилання)

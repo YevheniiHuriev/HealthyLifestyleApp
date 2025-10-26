@@ -14,6 +14,7 @@ import card5Img from '../../../../assets/specialists-img/card-5.png';
 import card2Img from '../../../../assets/specialists-img/card-2.png';
 import card3Img from '../../../../assets/specialists-img/card-3.png';
 import card6Img from '../../../../assets/specialists-img/card-6.png';
+import card7Img from '../../../../assets/specialists-img/img_not_found.png';
 
 import SubscribeSection from '../../../elements/Specialists/SubscribeSection/SubscribeSection';
 import ReviewSection from '../../../elements/Specialists/ReviewSection/ReviewSection';
@@ -52,13 +53,10 @@ const SpecialistSocialLinks = ({ specialist }) => {
     const website = specialist.TrainerDetails?.Website ||
                     specialist.DoctorDetails?.Website ||
                     specialist.PsychologistDetails?.Website ||
-                    specialist.DietitianDetails?.Website ||
-                    '#';
+                    specialist.DietitianDetails?.Website;
+    
     return {
-      facebook: website,
-      google: website,
-      telegram: website,
-      instagram: website
+      google: website || '#'  // Google використовує Website поле
     };
   };
 
@@ -66,13 +64,7 @@ const SpecialistSocialLinks = ({ specialist }) => {
 
   return (
     <div className="icons-container">
-      <a href='#' target="_blank" rel="noopener noreferrer">
-        <svg className="social-icons" width="50" height="50" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="50" height="50" rx="30" fill="white" />
-          <path d="M27.0713 25.456H31.7241L32.4546 20.7007H27.0704V18.1017C27.0704 16.1262 27.712 14.3745 29.5487 14.3745H32.5V10.2247C31.9814 10.1543 30.8847 10 28.8124 10C24.4852 10 22.7817 12.2991 22.7817 17.5372V20.7007H17.5V25.456H22.7817V38.5262C23.6627 38.6596 24.5549 38.75 25.471 38.75C26.2989 38.75 27.107 38.6738 27.0713 38.5653V25.456Z" fill="#0661CC" />
-        </svg>
-      </a>
-      <a href='#' target="_blank" rel="noopener noreferrer">
+      <a href={socialLinks.google} target="_blank" rel="noopener noreferrer">
         <svg className="social-icons" width="50" height="50" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M50 25C50 11.1929 38.8071 0 25 0C11.1929 0 0 11.1929 0 25C0 38.8071 11.1929 50 25 50C38.8071 50 50 38.8071 50 25Z" fill="white" />
           <path fillRule="evenodd" clipRule="evenodd" d="M37.2344 25.2847C37.2344 24.3983 37.1548 23.5461 36.9905 22.7278H25.2344V27.5631H31.9617C31.6717 29.1256 30.7912 30.4495 29.4673 31.3358V34.4722H33.5071C35.8708 32.2961 37.2344 29.0915 37.2344 25.2847Z" fill="#0661CC" />
@@ -81,57 +73,65 @@ const SpecialistSocialLinks = ({ specialist }) => {
           <path fillRule="evenodd" clipRule="evenodd" d="M25.233 17.4716C27.0682 17.4716 28.716 18.1022 30.0114 19.3409L33.5967 15.7557C31.4318 13.7387 28.6023 12.5 25.233 12.5C20.3466 12.5 15.9527 15.3011 13.7292 19.3864L18.2387 22.625C19.2216 19.6705 21.9773 17.4716 25.233 17.4716Z" fill="#0661CC" />
         </svg>
       </a>
-      <a href='#' target="_blank" rel="noopener noreferrer">
-        <svg className="social-icons" width="50" height="50" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="50" height="50" rx="25" fill="white" />
-          <path d="M35 15.7528L31.2433 35.3653C31.2433 35.3653 30.7176 36.7252 29.2736 36.073C19.7733 29.1907 19.7322 29.1704 20.9038 27.9618C23.3155 25.6283 30.8155 19.6283 31.2123 19.2452C31.8266 18.6517 31.4452 18.2984 30.732 18.7467L17.321 27.5662L12.1471 25.7634C12.1471 25.7634 11.3328 25.4635 11.2545 24.8114C11.1752 24.1582 12.1738 23.8048 12.1738 23.8048L33.2664 15.2362C33.2664 15.2362 35 14.4474 35 15.7528Z" fill="#0661CC" />
-        </svg>
-      </a>
     </div>
   );
 };
-  // Get specialist image from API or fallback to local images
-  const getSpecialistImage = (specialist) => {
-    // First try to get ExpertDetailsPictureUrl from API
-    if (specialist.PsychologistDetails?.ExpertDetailsPictureUrl) {
-      return specialist.PsychologistDetails.ExpertDetailsPictureUrl;
-    }
-    if (specialist.DietitianDetails?.ExpertDetailsPictureUrl) {
-      return specialist.DietitianDetails.ExpertDetailsPictureUrl;
-    }
-    if (specialist.TrainerDetails?.ExpertDetailsPictureUrl) {
-      return specialist.TrainerDetails.ExpertDetailsPictureUrl;
-    }
-    if (specialist.DoctorDetails?.ExpertDetailsPictureUrl) {
-      return specialist.DoctorDetails.ExpertDetailsPictureUrl;
-    }
-    
-    // Then try SpecialistCardPictureUrl
-    if (specialist.PsychologistDetails?.SpecialistCardPictureUrl) {
-      return specialist.PsychologistDetails.SpecialistCardPictureUrl;
-    }
-    if (specialist.DietitianDetails?.SpecialistCardPictureUrl) {
-      return specialist.DietitianDetails.SpecialistCardPictureUrl;
-    }
-    if (specialist.TrainerDetails?.SpecialistCardPictureUrl) {
-      return specialist.TrainerDetails.SpecialistCardPictureUrl;
-    }
-    if (specialist.DoctorDetails?.SpecialistCardPictureUrl) {
-      return specialist.DoctorDetails.SpecialistCardPictureUrl;
-    }
-    
-    // Fallback to local images
-    const imageMap = {
-      'Маргарита Дронова': card1Img,
-      'Олексій Соколенко': card4Img,
-      'Антоніна Смила': card5Img,
-      'Олександр Медичний': card3Img,
-      'Андрій Кач': card6Img,
-      'Олеся Мамкіна': card2Img,
-      'Дмитро Делитанович': card6Img,
-    };
-    return imageMap[specialist.User?.FullName] || card6Img;
+
+// Helper function to get static specialist image by name
+const getSpecialistImageStatic = (fullName) => {
+  const imageMap = {
+    'Маргарита Дронова': card1Img,
+    'Олексій Соколенко': card4Img,
+    'Антоніна Смила': card5Img,
+    'Олександр Медичний': card3Img,
+    'Андрій Кач': card6Img,
+    'Олеся Мамкіна': card2Img,
+    'Дмитро Делитанович': card6Img,
   };
+  return imageMap[fullName] || card7Img;
+};
+
+// Helper function to get MinIO URL from specialist details
+const getCardPictureUrlMinio = (specialist) => {
+  const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+  
+  if (!specialist) {
+    return null;
+  }
+
+  // Find the non-null details object
+  const details = specialist.TrainerDetails || 
+                 specialist.DoctorDetails || 
+                 specialist.DietitianDetails || 
+                 specialist.PsychologistDetails;
+
+  if (details && details.CardPictureUrl) {
+    // Fix double images/ path
+    let correctedPath = details.CardPictureUrl;
+    if (correctedPath.startsWith('images/images/')) {
+      correctedPath = correctedPath.replace('images/images/', 'images/');
+    }
+    
+    // Form full URL for MinIO proxy endpoint
+    const minioUrl = `${API_BASE_URL}/api/SpecialistImage/proxy/${correctedPath}`;
+    return minioUrl;
+  }
+
+  return null;
+};
+
+// Get image with fallback: try MinIO first, then static images
+const getSpecialistImage = (specialist) => {
+  // Try to get MinIO URL first
+  const minioUrl = getCardPictureUrlMinio(specialist);
+  if (minioUrl) {
+    return minioUrl;
+  }
+
+  // Fallback to static images
+  const staticImage = getSpecialistImageStatic(specialist.User?.FullName);
+  return staticImage;
+};
 
 const ExpertDetailsPage = () => {
   const { t } = useTranslation();
@@ -214,11 +214,13 @@ useEffect(() => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    // return <div>Loading...</div>;
+    return <div></div>;
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    // return <div>Error: {error}</div>;
+    return <div></div>;
   }
 
 return (
@@ -235,7 +237,16 @@ return (
                 alt={specialist.fullName || "Specialist"}
                 src={getSpecialistImage(specialist)}
                 onError={(e) => {
-                  e.target.src = card4Img;
+                  console.log('🖼️ [EXPERT_DETAILS] Image load error for specialist:', specialist?.User?.FullName, 'src:', e.target.src);
+                  // Fallback to static image on error
+                  const staticImage = getSpecialistImageStatic(specialist.User?.FullName);
+                  if (e.target.src !== staticImage) {
+                    console.log('🖼️ [EXPERT_DETAILS] Switching to static image fallback:', staticImage);
+                    e.target.src = staticImage;
+                  }
+                }}
+                onLoad={(e) => {
+                  console.log('🖼️ [EXPERT_DETAILS] Image loaded successfully for specialist:', specialist?.User?.FullName, 'src:', e.target.src);
                 }}
               />
             </div>
