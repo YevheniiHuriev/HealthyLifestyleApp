@@ -58,4 +58,3 @@ class SpecialistImageService {
 }
 
 export default new SpecialistImageService();
-

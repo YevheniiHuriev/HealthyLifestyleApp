@@ -95,10 +95,7 @@ namespace HealthyLifestyle.Application.Services.ProfessionalQualification
             var specializationsList = createDto.Specializations ?? new List<string>();
             var therapyApproachesList = createDto.TherapyApproaches ?? new List<string>();
 
-            if (string.IsNullOrEmpty(createDto.ProfessionalLicenseNumber))
-            {
-                throw new ArgumentNullException(nameof(createDto.ProfessionalLicenseNumber), "ProfessionalLicenseNumber не може бути null або порожнім при створенні.");
-            }
+            // ProfessionalLicenseNumber може бути відсутнім при створенні; не блокуємо створення
 
             // Створення нової сутності PsychologistDetails
             var psychologistDetails = new PsychologistDetails(
@@ -169,10 +166,7 @@ namespace HealthyLifestyle.Application.Services.ProfessionalQualification
             psychologistDetails.UpdatePsychologistSpecificDetails(
                 specializations: updateDto.Specializations,
                 therapyApproaches: updateDto.TherapyApproaches,
-                professionalLicenseNumber: updateDto.ProfessionalLicenseNumber
-            );
-
-            psychologistDetails.UpdatePsychologistSpecificDetails(
+                professionalLicenseNumber: updateDto.ProfessionalLicenseNumber,
                 biography: updateDto.Biography,
                 contactEmail: updateDto.ContactEmail,
                 contactPhone: updateDto.ContactPhone,
