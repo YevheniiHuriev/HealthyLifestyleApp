@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useCallback } from "react";
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
@@ -13,6 +12,8 @@ import { DietitianIcon } from "../elements/Specialists/SpecialistsIcons/Dietitia
 import { specialistsData } from "./SpecialistPages/LocalData/SpecialistsData";
 import SpecCard from "../../components/elements/Specialists/SpecialistCard/SpecCard";
 import { CityMap } from "../elements/Specialists/LocationFilter/CityMap";
+import FilterBig from "../../assets/specialists-img/Filter_big.svg"
+import ArrowLeft from "../../assets/profile-icons/ArrowLeft.svg"
 
 const RemoveIcon = () => (
   <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -36,10 +37,26 @@ const SpecialistsPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [showSpecialistModal, setShowSpecialistModal] = useState(false);
   const [isCheckingQualification, setIsCheckingQualification] = useState(false);
+  const [showFiltersMenu, setShowFiltersMenu] = useState(false);
+  // Альтернативний більш надійний варіант з використанням стану для ширини екрану
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 431);
 
   const getToken = () => {
     return localStorage.getItem("helth-token");
   };
+
+  // Ефект для відстеження зміни розміру вікна
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 431);
+    };
+
+    window.addEventListener('resize', handleResize);
+    // Викликаємо одразу для встановлення початкового стану
+    handleResize();
+    
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Перевірка наявності кваліфікації спеціаліста
   const checkExistingQualification = async () => {
@@ -335,10 +352,86 @@ const SpecialistsPage = () => {
     return <div>{/*{t("loading")}*/}</div>;
   }
 
-
-
   return (
     <div className="specialists-page">
+       {/* Мобільний заголовок - тільки для мобільних */}
+      {isMobile && (
+        <div className="spma-mobile-specialists-header">
+          <button 
+            className="spma-mobile-back-button"
+            onClick={() => window.history.back()}
+          >
+            <img src={ArrowLeft} alt="Back" className="spma-mobile-back-arrow" />
+          </button>
+          <h1 className="spma-mobile-specialists-title">{t("specialists")}</h1>
+          <button 
+            className="spma-mobile-filter-button"
+            onClick={() => setShowFiltersMenu(true)}
+          >
+            <img src={FilterBig} alt="Filter" className="spma-mobile-filter-icon" />
+          </button>
+        </div>
+      )}
+
+      {/* Бургер-меню фільтрів - тільки для мобільних */}
+      {isMobile && (
+        <>
+          <div className={`filters-overlay ${showFiltersMenu ? 'active' : ''}`} 
+            onClick={() => setShowFiltersMenu(false)} />
+          
+          <div className={`spma-mobile-filters-menu ${showFiltersMenu ? 'active' : ''}`}>
+            <div className="spma-mobile-filters-header">
+              <button 
+                className="spma-mobile-close-filters"
+                onClick={() => setShowFiltersMenu(false)}
+              >
+                ×
+              </button>
+            </div>
+            
+            <div className="spma-mobile-filter-items">
+              {filterConfig.map(filter => (
+                <div key={filter.key} className="spma-mobile-filter-item">
+                  <Filters
+                    id={`mobile-${filter.key}Select`}
+                    placeholder={filter.label}
+                    options={filter.options}
+                    value={selectedValues[filter.key]}
+                    onChange={(value) => handleSelectChange(filter.key, value)}
+                    maxVisibleChars={15}
+                  />
+                </div>
+              ))}
+              
+              <div className="spma-mobile-filter-item spma-mobile-location-item">
+                <CityMap 
+                  city={selectedValues.city} 
+                  onCityChange={(value) => handleSelectChange("city", value)} 
+                  cities={cityOptions} 
+                />
+              </div>
+            </div>
+
+            {/* Активні фільтри */}
+            {activeFilters.length > 0 && (
+              <div className="spma-mobile-active-filters">
+                {activeFilters.map((filter) => (
+                  <div key={filter.key} className="spma-mobile-active-filter">
+                    <span>{filter.label}</span>
+                    <button 
+                      className="spma-mobile-remove-filter"
+                      onClick={() => handleRemoveFilter(filter.key)}
+                    >
+                      ×
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </>
+      )}
+      
       {/* Затемнення при відкритті модального вікна */}
       {showSpecialistModal && (
         <div 
@@ -379,27 +472,28 @@ const SpecialistsPage = () => {
         )}
       </div>
 
-      {/* Filters */}
-      <div className="filter-container">
-        {filterConfig.map(filter => (
-          <Filters
-            key={filter.key}
-            id={`${filter.key}Select`}
-            placeholder={filter.label}
-            options={filter.options}
-            value={selectedValues[filter.key]}
-            onChange={(value) => handleSelectChange(filter.key, value)}
-            maxVisibleChars={15}
+      {/* Filters - тільки для десктопу */}
+      {!isMobile && (
+        <div className="filter-container">
+          {filterConfig.map(filter => (
+            <Filters
+              key={filter.key}
+              id={`${filter.key}Select`}
+              placeholder={filter.label}
+              options={filter.options}
+              value={selectedValues[filter.key]}
+              onChange={(value) => handleSelectChange(filter.key, value)}
+              maxVisibleChars={15}
+            />
+          ))}
+          
+          <CityMap 
+            city={selectedValues.city} 
+            onCityChange={(value) => handleSelectChange("city", value)} 
+            cities={cityOptions} 
           />
-        ))}
-        
-        
-        <CityMap 
-          city={selectedValues.city} 
-          onCityChange={(value) => handleSelectChange("city", value)} 
-          cities={cityOptions} 
-        />
-      </div>
+        </div>
+      )}
 
       {/* Specialists List + Join Section */}
       <div className="content-container scroll-data">
@@ -420,8 +514,6 @@ const SpecialistsPage = () => {
         </div>
        
       </div>
-
-      
 
       {/* Модальне вікно з кнопками спеціалістів */}
       {showSpecialistModal && (

@@ -7,14 +7,13 @@
 
 }
 .content-container {
-  
     position: relative;
     overflow-y: auto;
-    height: calc(100vh - 250px);
     width: 97%;
     overflow-x: hidden;
-
+    height: 71.5vh;
 }
+
 .specialists-list {
   display: grid;
   gap: 30px;
@@ -323,4 +322,468 @@
   bottom: 0;
   background-color: rgba(255, 255, 255, 0.6);
   z-index: 999;
+}
+
+/* Мобільна адаптація для SpecialistsPage */
+@media (max-width: 431px) {
+  .specialists-page {
+    padding: 10px 5px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .pp-modal-overlay {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+
+  .spma-mobile-specialists-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 8px;
+    margin-bottom: 12px;
+  }
+
+  .spma-mobile-back-button {
+    background: transparent;
+    border: none;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .spma-mobile-back-arrow {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+  }
+
+  .spma-mobile-specialists-title {
+    color: #D6FF00;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .spma-mobile-filter-button {
+    background: transparent;
+    border: none;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .spma-mobile-filter-icon {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+  }
+
+  .filter-container {
+    display: none;
+  }
+
+  .spma-mobile-filters-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 65%;
+    height: 100vh;
+    background: #0f65ba;
+    z-index: 1000;
+    transition: right 0.3s ease;
+    padding: 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+
+  .spma-mobile-filters-menu.active {
+    right: 0;
+  }
+
+  .spma-mobile-filters-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .spma-mobile-close-filters {
+    background: none;
+    border: none;
+    font-size: 36px;
+    color: #D6FF00;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .spma-mobile-filter-items {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+  }
+
+  .spma-mobile-filter-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .spma-mobile-location-item {
+    align-self: flex-end;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .spma-mobile-location-item .city-map-container {
+    width: 100%;
+    max-width: 180px;
+  }
+
+  .spma-mobile-filters-menu .filter-select {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    border: none;
+    padding: 10px 12px;
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .spma-mobile-filters-menu .filter-select:focus {
+    background: rgba(255, 255, 255, 1);
+  }
+
+  .spma-mobile-filters-menu .location-btn {
+    width: 100%;
+    justify-content: space-between;
+    border-radius: 12px;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+  }
+
+  .spma-mobile-active-filters {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .spma-mobile-active-filters-title {
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    opacity: 0.9;
+  }
+
+  .spma-mobile-active-filters-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+
+  .spma-mobile-active-filter {
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    min-height: 36px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 4px;
+  }
+
+  .spma-mobile-active-filter-text {
+    max-width: 130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+
+  .spma-mobile-remove-filter {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .spma-mobile-remove-filter:active {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(0.9);
+  }
+
+  .spma-mobile-clear-all {
+    background: transparent;
+    border: 2px solid #D6FF00;
+    color: #D6FF00;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+  }
+
+  .spma-mobile-clear-all:active {
+    background: rgba(214, 255, 0, 0.1);
+    transform: scale(0.98);
+  }
+
+  .breadcrumbs {
+    display: none;
+  }
+
+  .content-container {
+    max-height: 77vh;
+    width: 100%;
+    padding: 0 4px;
+    margin-top: 8px;
+  }
+
+  .specialists-list {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    width: 100%;
+    padding: 6px 2px;
+    justify-items: center;
+  }
+
+  .glass-card-for-spec {
+    width: 95%;
+    max-width: 320px;
+    height: 280px;
+    border-radius: 18px;
+    padding: 12px;
+  }
+
+  .glass-card-for-spec:hover {
+    transform: none;
+  }
+
+  .join-section {
+    margin-top: 60px;
+    padding: 0 10px;
+  }
+
+  .text-wrapper {
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+
+  .property-default-wrapper {
+    width: 100%;
+    max-width: 260px;
+    font-size: 15px;
+    padding: 8px 18px;
+    border-radius: 22px;
+  }
+
+  .sp-specialist-modal {
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    max-width: 280px;
+    min-width: unset;
+    padding: 12px;
+    border-radius: 20px;
+  }
+
+  .sp-specialist-buttons {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .sp-specialist-btn {
+    min-height: 40px;
+    min-width: unset;
+    width: 100%;
+    font-size: 14px;
+    border-radius: 15px;
+  }
+
+  .spma-mobile-filters-menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .spma-mobile-filters-menu::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    margin: 10px 0;
+  }
+
+  .spma-mobile-filters-menu::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+  }
+
+  .spma-mobile-filters-menu::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  .content-container::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  .content-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1px;
+    margin: 6px 0 16px 0;
+  }
+
+  .content-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 1px;
+  }
+
+  .content-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  .filters-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+  }
+
+  .filters-overlay.active {
+    display: block;
+  }
+}
+
+@media (min-width: 350px) and (max-width: 390px) {
+  .spma-mobile-specialists-header {
+    padding: 10px 6px;
+    margin-bottom: 10px;
+  }
+
+  .spma-mobile-filters-menu {
+    width: 74%;
+    padding: 12px;
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+  }
+
+  .spma-mobile-filter-items {
+    gap: 6px;
+  }
+
+  .spma-mobile-filter-item {
+    gap: 3px;
+  }
+
+  .spma-mobile-location-item .city-map-container {
+    max-width: 160px;
+  }
+
+  .spma-mobile-active-filter {
+    padding: 6px 10px;
+    font-size: 13px;
+    min-height: 32px;
+    border-radius: 18px;
+    gap: 4px;
+  }
+
+  .spma-mobile-active-filter-text {
+    max-width: 110px;
+  }
+
+  .spma-mobile-remove-filter {
+    width: 18px;
+    height: 18px;
+    font-size: 14px;
+  }
+
+  .spma-mobile-clear-all {
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 20px;
+  }
+
+  .content-container {
+    max-height: 78vh;
+  }
+
+  .specialists-list {
+    gap: 8px;
+  }
+
+  .glass-card-for-spec {
+    height: 260px;
+    padding: 10px;
+  }
+
+  .join-section {
+    margin-top: 50px;
+  }
+
+  .text-wrapper {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .property-default-wrapper {
+    max-width: 240px;
+    font-size: 14px;
+    padding: 7px 16px;
+  }
+}
+
+/* Приховуємо мобільний заголовок на десктопі */
+@media (min-width: 432px) {
+  .spma-mobile-specialists-header {
+      display: none;
+  }
+  
+  .spma-mobile-filters-menu {
+      display: none;
+  }
+  
+  .filters-overlay {
+      display: none;
+  }
 }
