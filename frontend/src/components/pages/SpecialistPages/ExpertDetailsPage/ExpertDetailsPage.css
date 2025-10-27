@@ -241,31 +241,7 @@ padding: 20px;
   min-width: 300px;
 }
 
-/* Мобільна адаптація */
-@media (max-width: 768px) {
-  .specialist-info {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
 
-  .details-wrapper {
-    align-items: center;
-  }
-
-  .skills-list {
-    justify-content: center;
-  }
-
-  .subscribe-button {
-    width: 100%;
-    max-width: 250px;
-  }
-}
-.image-wrapper {
-  position: relative;
-  display: inline-block;
-}
 
 .specialist-image {
   
@@ -329,6 +305,260 @@ padding: 20px;
   color: #fff;
 }
 
+  .review-card
+  {
+    margin-bottom: 25px;
+  }
 
 
+/* Мобільна адаптація */
+@media (max-width: 768px) {
+  .expert-details-container {
+    padding: 10px;
+    height: calc(105vh - 120px);
+    width: 100%;
+    margin-right: 0;
+    /* Прибираємо скролл-бар для мобільних */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .reviews-container {
+    width: 103%;
+    
+  }
+  /* Прибираємо скролл-бар для WebKit браузерів */
+  .expert-details-container::-webkit-scrollbar {
+    display: none;
+  }
 
+  .two-column-layout {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .specialist-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .image-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    order: 2; /* Фото після імені */
+  }
+
+  .specialist-image {
+    width: 280px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  .details-wrapper {
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    max-width: 100%;
+    order: 1; /* Контент перед фото */
+  }
+
+  .specialist-name {
+    font-size: 28px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .line {
+    width: 100%;
+    left: 0;
+    top: 5px;
+    margin: 10px 0;
+  }
+
+  .about-header-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 15px;
+  }
+
+  .about-header {
+    font-size: 20px;
+    text-align: left;
+    margin: 0;
+  }
+
+  .biography-container {
+    width: 100%;
+    gap: 15px;
+    margin-top: 0;
+  }
+
+  .biography {
+    font-size: 14px;
+    text-align: left;
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .no-biography {
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .skills {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .skills-list {
+    justify-content: flex-start;
+    gap: 10px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .skill-item {
+    min-width: auto;
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .work-format h3,
+  .skills h3 {
+    font-size: 18px;
+    text-align: left;
+    margin-bottom: 15px;
+  }
+
+  .work-format p,
+  .skills-list {
+    font-size: 14px;
+    margin-top: 15px;
+  }
+
+  .subscribe-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 1rem;
+    left: 1rem;
+    width: auto;
+    max-width: none;
+    height: 45px;
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .status-icon {
+    width: 30px;
+    height: 30px;
+    top: 0;
+    right: 1rem;
+
+  }
+  .review-card
+  {
+    margin-bottom: 25px;
+  }
+}
+
+/* Додаткова мобільна адаптація для дуже малих екранів */
+@media (max-width: 480px) {
+  .expert-details-container {
+    padding: 8px;
+    height: calc(105vh - 120px);
+    width: 100%;
+  }
+.reviews-container {
+    width: 103%;
+    
+  }
+  .specialist-image {
+    width: 250px;
+  }
+
+  .details-wrapper {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .specialist-name {
+    font-size: 24px;
+    flex-direction: row;
+    gap: 5px;
+  }
+
+  .about-header {
+    font-size: 18px;
+  }
+
+  .biography {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .no-biography {
+    font-size: 15px;
+  }
+
+  .skill-item {
+    min-width: auto;
+    width: 100%;
+    height: 35px;
+    font-size: 12px;
+    padding: 8px 15px;
+  }
+
+  .work-format h3,
+  .skills h3 {
+    font-size: 16px;
+  }
+
+  .work-format p,
+  .skills-list {
+    font-size: 13px;
+    margin-top: 12px;
+  }
+
+  .subscribe-button {
+    height: 40px;
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .status-icon {
+    width: 25px;
+    height: 25px;
+    top: 0;
+    right: 1rem;
+  }
+
+  .about-header-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .icons-container {
+    align-self: flex-start;
+  }
+  .image-wrapper {
+        display: flex;
+  }
+  .review-card
+  {
+    margin-bottom: 25px;
+  }
+}

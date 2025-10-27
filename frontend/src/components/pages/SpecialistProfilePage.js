@@ -311,6 +311,7 @@ const SpecialistsProfilePage = () => {
                         licenseNumber: details.ProfessionalLicenseNumber || null
                     });
                     
+                    // Використовуємо presigned URL з деталей спеціаліста
                     setProfilePhotoUrl(details.CardPictureUrl || '');
                 }
             }
@@ -421,16 +422,15 @@ const SpecialistsProfilePage = () => {
                             cleanUrl = cleanUrl.substring('minio:9000/images/'.length);
                         }
                         
-                        // Примусово оновлюємо URL зображення з timestamp
-                        const timestamp = new Date().getTime();
-                        setProfilePhotoUrl(`${cleanUrl}?t=${timestamp}`);
+                        // Оновлюємо URL зображення (тепер це буде ім'я файлу, presigned URL буде згенерований на бекенді)
+                        setProfilePhotoUrl(cleanUrl);
                         setAvatarFile(null); // Очищаємо файл після успішного завантаження
                         
                         // Показуємо повідомлення про успішне оновлення
                         showSuccess('Фото успішно оновлено!');
                         
-                        // Примусово оновлюємо компонент
-                        window.location.reload();
+                        // Оновлюємо дані для отримання нового presigned URL
+                        await fetchSpecialistData();
                     }
                 } catch (error) {
                     showError('Помилка завантаження фото: ' + error.message);
@@ -666,7 +666,11 @@ const SpecialistsProfilePage = () => {
                                 cleanUrl = cleanUrl.substring('minio:9000/images/'.length);
                             }
                             
+                            setProfilePhotoUrl(cleanUrl); // Оновлюємо URL зображення
                             setAvatarFile(null); // Очищаємо файл після успішного завантаження
+                            
+                            // Оновлюємо дані для отримання нового presigned URL
+                            await fetchSpecialistData();
                         }
                     } catch (error) {
                         // Не показуємо помилку користувачу, оскільки основні дані вже збережені

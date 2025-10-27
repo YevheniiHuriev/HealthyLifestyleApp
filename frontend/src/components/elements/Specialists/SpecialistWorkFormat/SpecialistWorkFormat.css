@@ -89,6 +89,61 @@
   margin-bottom: 6px;
   
 }
+
+/* Мобільна адаптація для формату роботи */
+@media (max-width: 768px) {
+  .box {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .box .group {
+    width: 100%;
+    height: auto;
+  }
+
+  .box .div {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0;
+  }
+
+  .box .text-wrapper-exp {
+    width: auto;
+    height: 10%;
+    justify-content: flex-start;
+    font-size: 20px;
+    margin-bottom: 15px;
+    white-space: normal;
+  }
+
+  .work-format-list {
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .work-format-item {
+    margin-bottom: 8px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+@media (max-width: 480px) {
+  .box .text-wrapper-exp {
+    font-size: 18px;
+  }
+
+  .work-format-list {
+    padding-left: 15px;
+    font-size: 13px;
+  }
+
+  .work-format-item {
+    margin-bottom: 6px;
+  }
+}
 .no-skills {
   font-style: italic;
   color: #888;

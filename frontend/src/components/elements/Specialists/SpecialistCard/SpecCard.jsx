@@ -33,7 +33,7 @@ const SpecialistCard = ({ specialist, index }) => {
     return imageMap[id] || card7Img; // Use card-6.png as fallback
   };
 
-  // Get CardPictureUrl from specialist details (MinIO URL)
+  // Get CardPictureUrl from specialist details (MinIO presigned URL)
   const getCardPictureUrlMinio = (specialist) => {
     if (!specialist) {
       return null;
@@ -46,15 +46,8 @@ const SpecialistCard = ({ specialist, index }) => {
                    specialist.PsychologistDetails;
 
     if (details && details.CardPictureUrl) {
-      // Виправити подвійний images/ шлях
-      let correctedPath = details.CardPictureUrl;
-      if (correctedPath.startsWith('images/images/')) {
-        correctedPath = correctedPath.replace('images/images/', 'images/');
-      }
-      
-      // Form full URL for MinIO proxy endpoint
-      const minioUrl = `${API_BASE_URL}/api/SpecialistImage/proxy/${correctedPath}`;
-      return minioUrl;
+      // Використовуємо presigned URL безпосередньо
+      return details.CardPictureUrl;
     }
 
     return null;

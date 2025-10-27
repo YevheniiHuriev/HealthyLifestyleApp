@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using HealthyLifestyle.Application.DTOs.ProfessionalQualification;
 using HealthyLifestyle.Application.Interfaces.ProfessionalQualification;
+using HealthyLifestyle.Application.Interfaces.ObjectStorage;
 using HealthyLifestyle.Core.Entities;
 using HealthyLifestyle.Core.Enums;
 using HealthyLifestyle.Core.Interfaces;
@@ -22,6 +23,7 @@ namespace HealthyLifestyle.Application.Services.ProfessionalQualification
         private readonly IMapper _mapper;
         private readonly UserManager<User> _userManager;
         private readonly ILogger<ProfessionalQualificationService> _logger;
+        private readonly IObjectStorageService _objectStorageService;
 
         #endregion
 
@@ -34,13 +36,126 @@ namespace HealthyLifestyle.Application.Services.ProfessionalQualification
         /// <param name="mapper">Екземпляр AutoMapper для мапінгу об'єктів.</param>
         /// <param name="userManager">Менеджер користувачів для роботи з Identity.</param>
         /// <param name="logger">Логер для запису інформації про роботу сервісу.</param>
+        /// <param name="objectStorageService">Сервіс для роботи з об'єктним сховищем.</param>
         /// <exception cref="ArgumentNullException">Виникає, якщо будь-який із параметрів є null.</exception>
-        public ProfessionalQualificationService(IUnitOfWork unitOfWork, IMapper mapper, UserManager<User> userManager, ILogger<ProfessionalQualificationService> logger)
+        public ProfessionalQualificationService(IUnitOfWork unitOfWork, IMapper mapper, UserManager<User> userManager, ILogger<ProfessionalQualificationService> logger, IObjectStorageService objectStorageService)
         {
             _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
             _userManager = userManager ?? throw new ArgumentNullException(nameof(userManager));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _objectStorageService = objectStorageService ?? throw new ArgumentNullException(nameof(objectStorageService));
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        /// <summary>
+        /// Генерує presigned URL для зображень спеціалістів.
+        /// </summary>
+        /// <param name="qualifications">Колекція кваліфікацій для обробки.</param>
+        /// <returns>Завдання, що представляє асинхронну операцію.</returns>
+        private async Task GeneratePresignedUrlsForSpecialistImages(IEnumerable<UserProfessionalQualificationDto> qualifications)
+        {
+            foreach (var qualification in qualifications)
+            {
+                try
+                {
+                    // Генеруємо presigned URL для CardPictureUrl в деталях спеціаліста
+                    if (qualification.TrainerDetails?.CardPictureUrl != null)
+                    {
+                        qualification.TrainerDetails.CardPictureUrl = await _objectStorageService.GetPresignedUrlAsync(qualification.TrainerDetails.CardPictureUrl, 3600);
+                    }
+                    if (qualification.DoctorDetails?.CardPictureUrl != null)
+                    {
+                        qualification.DoctorDetails.CardPictureUrl = await _objectStorageService.GetPresignedUrlAsync(qualification.DoctorDetails.CardPictureUrl, 3600);
+                    }
+                    if (qualification.DietitianDetails?.CardPictureUrl != null)
+                    {
+                        qualification.DietitianDetails.CardPictureUrl = await _objectStorageService.GetPresignedUrlAsync(qualification.DietitianDetails.CardPictureUrl, 3600);
+                    }
+                    if (qualification.PsychologistDetails?.CardPictureUrl != null)
+                    {
+                        qualification.PsychologistDetails.CardPictureUrl = await _objectStorageService.GetPresignedUrlAsync(qualification.PsychologistDetails.CardPictureUrl, 3600);
+                    }
+
+                    // Генеруємо presigned URL для ExpertDetailsPictureUrl в деталях спеціаліста
+                    if (qualification.TrainerDetails?.ExpertDetailsPictureUrl != null)
+                    {
+                        qualification.TrainerDetails.ExpertDetailsPictureUrl = await _objectStorageService.GetPresignedUrlAsync(qualification.TrainerDetails.ExpertDetailsPictureUrl, 3600);
+                    }
+                    if (qualification.DoctorDetails?.ExpertDetailsPictureUrl != null)
+                    {
+                        qualification.DoctorDetails.ExpertDetailsPictureUrl = await _objectStorageService.GetPresignedUrlAsync(qualification.DoctorDetails.ExpertDetailsPictureUrl, 3600);
+                    }
+                    if (qualification.DietitianDetails?.ExpertDetailsPictureUrl != null)
+                    {
+                        qualification.DietitianDetails.ExpertDetailsPictureUrl = await _objectStorageService.GetPresignedUrlAsync(qualification.DietitianDetails.ExpertDetailsPictureUrl, 3600);
+                    }
+                    if (qualification.PsychologistDetails?.ExpertDetailsPictureUrl != null)
+                    {
+                        qualification.PsychologistDetails.ExpertDetailsPictureUrl = await _objectStorageService.GetPresignedUrlAsync(qualification.PsychologistDetails.ExpertDetailsPictureUrl, 3600);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogWarning("Помилка генерації presigned URL для кваліфікації {QualificationId}: {Error}", 
+                        qualification.Id, ex.Message);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Генерує presigned URL для деталей спеціаліста.
+        /// </summary>
+        /// <param name="qualification">Кваліфікація для обробки.</param>
+        /// <returns>Завдання, що представляє асинхронну операцію.</returns>
+        private async Task GeneratePresignedUrlsForSpecialistDetails(UserProfessionalQualificationDto qualification)
+        {
+            try
+            {
+                // Генеруємо presigned URL для CardPictureUrl в деталях спеціаліста
+                if (qualification.TrainerDetails?.CardPictureUrl != null)
+                {
+                    qualification.TrainerDetails.CardPictureUrl = await _objectStorageService.GetPresignedUrlAsync(qualification.TrainerDetails.CardPictureUrl, 3600);
+                }
+                if (qualification.DoctorDetails?.CardPictureUrl != null)
+                {
+                    qualification.DoctorDetails.CardPictureUrl = await _objectStorageService.GetPresignedUrlAsync(qualification.DoctorDetails.CardPictureUrl, 3600);
+                }
+                if (qualification.DietitianDetails?.CardPictureUrl != null)
+                {
+                    qualification.DietitianDetails.CardPictureUrl = await _objectStorageService.GetPresignedUrlAsync(qualification.DietitianDetails.CardPictureUrl, 3600);
+                }
+                if (qualification.PsychologistDetails?.CardPictureUrl != null)
+                {
+                    qualification.PsychologistDetails.CardPictureUrl = await _objectStorageService.GetPresignedUrlAsync(qualification.PsychologistDetails.CardPictureUrl, 3600);
+                }
+
+                // Генеруємо presigned URL для ExpertDetailsPictureUrl в деталях спеціаліста
+                if (qualification.TrainerDetails?.ExpertDetailsPictureUrl != null)
+                {
+                    qualification.TrainerDetails.ExpertDetailsPictureUrl = await _objectStorageService.GetPresignedUrlAsync(qualification.TrainerDetails.ExpertDetailsPictureUrl, 3600);
+                }
+                if (qualification.DoctorDetails?.ExpertDetailsPictureUrl != null)
+                {
+                    qualification.DoctorDetails.ExpertDetailsPictureUrl = await _objectStorageService.GetPresignedUrlAsync(qualification.DoctorDetails.ExpertDetailsPictureUrl, 3600);
+                }
+                if (qualification.DietitianDetails?.ExpertDetailsPictureUrl != null)
+                {
+                    qualification.DietitianDetails.ExpertDetailsPictureUrl = await _objectStorageService.GetPresignedUrlAsync(qualification.DietitianDetails.ExpertDetailsPictureUrl, 3600);
+                }
+                if (qualification.PsychologistDetails?.ExpertDetailsPictureUrl != null)
+                {
+                    qualification.PsychologistDetails.ExpertDetailsPictureUrl = await _objectStorageService.GetPresignedUrlAsync(qualification.PsychologistDetails.ExpertDetailsPictureUrl, 3600);
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning("Помилка генерації presigned URL для кваліфікації {QualificationId}: {Error}", 
+                    qualification.Id, ex.Message);
+            }
         }
 
         #endregion
@@ -130,7 +245,7 @@ namespace HealthyLifestyle.Application.Services.ProfessionalQualification
         /// Отримує список усіх кваліфікацій для вказаного користувача.
         /// </summary>
         /// <param name="userId">Унікальний ідентифікатор користувача.</param>
-        /// <returns>Колекція об’єктів <see cref="UserProfessionalQualificationDto"/> із даними кваліфікацій.</returns>
+        /// <returns>Колекція об'єктів <see cref="UserProfessionalQualificationDto"/> із даними кваліфікацій.</returns>
         public async Task<IEnumerable<UserProfessionalQualificationDto>> GetUserProfessionalQualificationsAsync(Guid userId)
         {
             var qualifications = await _unitOfWork.GetRepository<UserProfessionalQualification>()
@@ -144,13 +259,18 @@ namespace HealthyLifestyle.Application.Services.ProfessionalQualification
                 .Include(q => q.TrainerDetails)
                 .ToListAsync();
 
-            return _mapper.Map<IEnumerable<UserProfessionalQualificationDto>>(qualifications);
+            var qualificationsDto = _mapper.Map<IEnumerable<UserProfessionalQualificationDto>>(qualifications);
+            
+            // Генеруємо presigned URL для зображень
+            await GeneratePresignedUrlsForSpecialistImages(qualificationsDto);
+
+            return qualificationsDto;
         }
 
         /// <summary>
         /// Отримує список усіх кваліфікацій у системі.
         /// </summary>
-        /// <returns>Колекція об’єктів <see cref="UserProfessionalQualificationDto"/> із даними всіх кваліфікацій.</returns>
+        /// <returns>Колекція об'єктів <see cref="UserProfessionalQualificationDto"/> із даними всіх кваліфікацій.</returns>
         public async Task<IEnumerable<UserProfessionalQualificationDto>> GetAllProfessionalQualificationsAsync()
         {
             var qualifications = await _unitOfWork.GetRepository<UserProfessionalQualification>()
@@ -163,7 +283,12 @@ namespace HealthyLifestyle.Application.Services.ProfessionalQualification
                 .Include(q => q.TrainerDetails)
                 .ToListAsync();
 
-            return _mapper.Map<IEnumerable<UserProfessionalQualificationDto>>(qualifications);
+            var qualificationsDto = _mapper.Map<IEnumerable<UserProfessionalQualificationDto>>(qualifications);
+            
+            // Генеруємо presigned URL для зображень
+            await GeneratePresignedUrlsForSpecialistImages(qualificationsDto);
+
+            return qualificationsDto;
         }
 
         /// <summary>
@@ -211,7 +336,16 @@ namespace HealthyLifestyle.Application.Services.ProfessionalQualification
                 .Include(q => q.TrainerDetails)
                 .Include(q => q.DietitianDetails)
                 .FirstOrDefaultAsync(upq => upq.Id == qualificationId);
-            return qualification == null ? null : _mapper.Map<UserProfessionalQualificationDto>(qualification);
+            
+            if (qualification == null)
+                return null;
+
+            var qualificationDto = _mapper.Map<UserProfessionalQualificationDto>(qualification);
+            
+            // Генеруємо presigned URL для зображень
+            await GeneratePresignedUrlsForSpecialistDetails(qualificationDto);
+
+            return qualificationDto;
         }
 
         /// <summary>
@@ -231,7 +365,16 @@ namespace HealthyLifestyle.Application.Services.ProfessionalQualification
                 .Include(q => q.TrainerDetails)
                 .Include(q => q.DietitianDetails)
                 .FirstOrDefaultAsync(upq => upq.Id == qualificationId);
-            return qualification == null ? null : _mapper.Map<UserProfessionalQualificationDto>(qualification);
+            
+            if (qualification == null)
+                return null;
+
+            var qualificationDto = _mapper.Map<UserProfessionalQualificationDto>(qualification);
+            
+            // Генеруємо presigned URL для зображень
+            await GeneratePresignedUrlsForSpecialistDetails(qualificationDto);
+
+            return qualificationDto;
         }
 
         /// <summary>
