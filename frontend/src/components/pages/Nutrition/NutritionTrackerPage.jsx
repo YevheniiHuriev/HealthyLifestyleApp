@@ -220,15 +220,17 @@ const NutritionTrackerPage = () => {
             <div className="navigation-tabs-wrapper">
                 <span className="tab-item active">{t("nt_tracker_tab") || 'Трекер харчування'}</span>
                 <Link to="/eating/ration" className="tab-item gradient-tab">{t("nt_ration_tab") || 'Раціон'}</Link>  
-                <Link to="/eating/recipes" className="tab-item gradient-tab">{t("nt_recipes_tab") || 'Рецепти'}</Link> 
+                <Link to="/eating/recipes" className="tab-item gradient-tab ntp-sup">{t("nt_recipes_tab") || 'Рецепти'}</Link> 
             </div>
             
-            <DatePickerComponent
+            <div className="ntp-dp">
+                <DatePickerComponent
                 selectedDate={selectedDate}
                 onDateChange={handleDateChange}
                 onPrevDay={handlePrevDay}
                 onNextDay={handleNextDay}
             />
+            </div>
 
             <div className="scrollable-main-content scroll-data"> 
                 

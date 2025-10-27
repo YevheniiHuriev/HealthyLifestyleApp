@@ -68,7 +68,6 @@
 /* Мобільна версія для ArticlesPage */
 @media (max-width: 431px) {
     .mental-health-article-container {
-        /* padding-left: 10px; */
         box-sizing: border-box;
     }
 
@@ -77,9 +76,9 @@
     }
 
     .mental-health-articles {
-        width: 100%;
+        width: 98%;
         height: auto;
-        max-height: 70vh;
+        max-height: 68vh;
         overflow-y: auto;
         margin: 0 auto;
     }
@@ -103,7 +102,7 @@
     }
 
     .mental-health-articles::-webkit-scrollbar {
-        width: 8px;
+        display: none;
     }
 
     .mental-health-articles::-webkit-scrollbar-track {

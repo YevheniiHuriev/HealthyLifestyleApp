@@ -99,6 +99,29 @@
     .sb-square-breathing-container {
         margin-top: 0;
         margin-left: 10px;
+        width: 98%;
+        height: 80vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .sb-square-breathing-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .sb-square-breathing-container::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 2px;
+        margin: 10px 0;
+    }
+
+    .sb-square-breathing-container::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 2px;
+    }
+
+    .sb-square-breathing-container::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.5);
     }
 
     .sb-back-button {
@@ -177,7 +200,7 @@
 
 @media (min-width: 350px) and (max-width: 390px) {
     .sb-square-breathing-container {
-        height: 80vh;
+        height: 77vh;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
         padding-right: 10px;
@@ -186,7 +209,7 @@
     }
 
     .sb-square-breathing-container::-webkit-scrollbar {
-        width: 4px;
+        display: none;
     }
 
     .sb-square-breathing-container::-webkit-scrollbar-track {

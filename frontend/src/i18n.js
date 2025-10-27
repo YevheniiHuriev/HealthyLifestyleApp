@@ -1377,6 +1377,12 @@ i18n
           post_index: "Postal Code",
           shopping_cart: "Shopping cart",
 
+          // === Challenge and nutrition links ===
+          create_challenge: "Create challenge",
+          ration: "Ration",
+          recipes: "Recipes",
+          add: "Add",
+          edit: "Edit",
         },
       },
       uk: {
@@ -2779,6 +2785,13 @@ i18n
           delivery: "Доставка",
           post_index: "Почтовий індекс",
           shopping_cart: "Кошик",
+
+          // === Посилання челенджів та харчування ===
+          create_challenge: "Створити челендж",
+          ration: "Раціон",
+          recipes: "Рецепти",
+          add: "Додати",
+          edit: "Редагувати",
         },
       },
       de: {
@@ -4167,6 +4180,12 @@ i18n
           post_index: "Postleitzahl",
           shopping_cart: "Warenkorb",
 
+          // === Links zu Challenges und Ernährung ===
+          create_challenge: "Challenge erstellen",
+          ration: "Ration",
+          recipes: "Rezepte",
+          add: "Hinzufügen",
+          edit: "Bearbeiten",
         },
       },
       fr: {
@@ -4374,7 +4393,6 @@ i18n
           uploading: "Téléchargement...",
           download: "Télécharger",
           remove: "Supprimer",
-          p_specialist_profile: "Spezialistenprofil",
           p_profile_incomplete_alert: "Veuillez compléter votre profil utilisateur",
 
 
@@ -5556,6 +5574,12 @@ i18n
           post_index: "Code postal",
           shopping_cart: "Panier",
 
+          // === Liens vers les défis et la nutrition ===
+          create_challenge: "Créer un défi",
+          ration: "Ration",
+          recipes: "Recettes",
+          add: "Ajouter",
+          edit: "Modifier",
         },
       },
       es: {
@@ -5763,7 +5787,6 @@ i18n
           uploading: "Subiendo...",
           download: "Descargar",
           remove: "Eliminar",
-          p_specialist_profile: "Spezialistenprofil",
           p_profile_incomplete_alert: "Por favor, completa tu perfil de usuario",
 
           // === CALENDARIO (CUMPLEAÑOS) ===
@@ -6937,6 +6960,13 @@ i18n
           delivery: "Entrega",
           post_index: "Código postal",
           shopping_cart: "Carro de la compra",
+
+          // === Enlaces a desafíos y nutrición ===
+          create_challenge: "Crear desafío",
+          ration: "Ración",
+          recipes: "Recetas",
+          add: "Agregar",
+          edit: "Editar",
         },
       },
     },

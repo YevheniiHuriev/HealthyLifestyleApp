@@ -61,8 +61,8 @@
 }
 
 .mhp-nomic-mascot {
-    width: 145px;
-    height: 145px;
+    width: 140px;
+    height: 130px;
 }
 
 .mhp-container {
@@ -322,11 +322,11 @@
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
         margin: 0;
-        width: 98vw;
+        width: 98.5vw;
     }
 
     .mhp-overflow-container::-webkit-scrollbar {
-        width: 4px;
+        display: none;
     }
 
     .mhp-overflow-container::-webkit-scrollbar-track {
@@ -398,7 +398,7 @@
 
     .mhp-nomic-mascot {
         width: 100px;
-        height: 100px;
+        height: 80px !important;
     }
 
     .mhp-container {

@@ -135,8 +135,8 @@ const EditChallengePage = () => {
   }
 
   return (
-    <div className="page-container create-challenge-page">
-      <div className="scrollable-form-container">
+    <div className="edit-page-container create-challenge-page">
+      <div className="edit-scrollable-form-container">
         <h2 className="ch-create-title">{t("ch_edit_title")}</h2>
         <form onSubmit={handleSubmit} className="challenge-form">
           <div className="form-group">

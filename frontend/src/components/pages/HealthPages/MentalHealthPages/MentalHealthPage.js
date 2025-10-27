@@ -35,7 +35,7 @@ const MentalHealthPage = () => {
             <div className="mental-health-info">
                 <div className="title">{t("mp_mhp_title")}</div>
                 <div className="sub-title">{t("mp_mhp_sub_title")}</div>
-                <div className="info-image">Зображення</div>
+                {/* <div className="info-image"></div> */}
             </div>
             
             <div className="mental-health-container">

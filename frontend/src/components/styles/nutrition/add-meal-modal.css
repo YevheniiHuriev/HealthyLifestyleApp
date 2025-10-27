@@ -81,7 +81,7 @@
     background: #0A74E8;
     color: #fff;
     padding: 12px 15px;
-    border-radius: 10px;
+    border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.5);
     outline: none;
     font-size: 16px;
@@ -103,7 +103,7 @@
 .selected-recipe-section {
     background: #004F9F;
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.5);
     min-height: 80px;
     display: flex;
@@ -193,7 +193,7 @@
     color: #fff;
     padding: 15px 20px;
     border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 10px;
+    border-radius: 20px;
     cursor: pointer;
     font-size: 15px;
     transition: all 0.2s;
@@ -233,7 +233,7 @@
     align-items: center;
     gap: 10px;
     padding: 12px 15px;
-    border-radius: 10px;
+    border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
@@ -267,7 +267,7 @@
     color: #fff;
     border: 1px solid rgba(255, 255, 255, 0.5);
     padding: 12px 20px;
-    border-radius: 10px;
+    border-radius: 20px;
     cursor: pointer;
     font-size: 15px;
     font-weight: 500;
@@ -466,5 +466,219 @@
 
     .recipe-image-container {
         height: 120px;
+    }
+}
+
+/* Мобільна версія для AddMealModal */
+@media (max-width: 431px) {
+    .add-meal-modal-overlay {
+        padding: 10px;
+        background-color: #0A74E8;
+        align-items: flex-start;
+    }
+
+    .add-meal-modal {
+        width: 100%;
+        height: 98vh;
+        max-width: none;
+        border-radius: 15px;
+        flex-direction: column;
+    }
+
+    .modal-header {
+        padding: 15px 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        order: 1;
+    }
+
+    .modal-header h2 {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .modal-body {
+        flex-direction: column;
+        overflow: hidden;
+        order: 2;
+    }
+
+    .modal-right-panel {
+        width: 100%;
+        padding: 15px;
+        min-height: 50vh;
+        order: 1;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .search-section {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .search-wrapper {
+        padding: 10px 12px;
+        border-radius: 20px;
+    }
+
+    .search-input {
+        font-size: 0.95rem;
+    }
+
+    .refresh-button {
+        padding: 10px 15px;
+        font-size: 0.95rem;
+        border-radius: 20px;
+    }
+
+    .recipes-container {
+        padding: 2px;
+    }
+
+    .recipes-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 2px;
+    }
+
+    .recipe-card-modal {
+        border-radius: 12px;
+        min-height: 120px;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .recipe-image-container {
+        width: 80px;
+        height: 80px;
+        flex-shrink: 0;
+    }
+
+    .recipe-card-content {
+        padding: 12px;
+        gap: 6px;
+        flex: 1;
+    }
+
+    .recipe-card-name {
+        font-size: 0.95rem;
+        -webkit-line-clamp: 2;
+    }
+
+    .recipe-card-description {
+        font-size: 0.8rem;
+        -webkit-line-clamp: 2;
+        margin-top: 2px;
+    }
+
+    .recipe-card-macros {
+        font-size: 0.75rem;
+        gap: 8px;
+    }
+
+    .loading-text,
+    .no-recipes-text {
+        padding: 40px 15px;
+        font-size: 0.95rem;
+    }
+
+    .modal-left-panel {
+        width: 100%;
+        padding: 20px 15px;
+        border-right: none;
+        border-bottom: none;
+        max-height: 40vh;
+        gap: 15px;
+        order: 2;
+    }
+
+    .form-section {
+        gap: 6px;
+    }
+
+    .section-label {
+        font-size: 0.9rem;
+    }
+
+    .meal-type-select,
+    .portions-input {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+        border-radius: 20px;
+    }
+
+    .selected-recipe-section {
+        padding: 12px;
+        min-height: 60px;
+        border-radius: 20px;
+    }
+
+    .selected-recipe-section .recipe-name {
+        font-size: 0.95rem;
+    }
+
+    .recipe-macros {
+        font-size: 0.8rem;
+        gap: 8px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+        padding-top: 10px;
+    }
+
+    .add-button,
+    .cancel-button {
+        height: 44px;
+        font-size: 0.95rem;
+        border-radius: 20px;
+    }
+
+    .error-text {
+        font-size: 0.85rem;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 350px) and (max-width: 390px) {
+    .add-meal-modal {
+        height: 97vh;
+    }
+
+    /* Права панель (тепер зліва) */
+    .modal-right-panel {
+        padding: 12px;
+        min-height: 45vh;
+    }
+
+    .recipe-card-modal {
+        min-height: 110px;
+    }
+
+    .recipe-image-container {
+        width: 70px;
+        height: 70px;
+    }
+
+    .recipe-card-content {
+        padding: 10px;
+    }
+
+    .recipe-card-name {
+        font-size: 0.9rem;
+    }
+
+    .recipe-card-macros {
+        font-size: 0.7rem;
+        gap: 6px;
+    }
+
+    /* Ліва панель (тепер справа) */
+    .modal-left-panel {
+        padding: 15px 12px;
+        min-height: 40vh;
     }
 }

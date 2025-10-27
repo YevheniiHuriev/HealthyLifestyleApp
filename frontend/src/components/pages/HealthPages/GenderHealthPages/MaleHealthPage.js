@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate,useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import nomic from '../../../../assets/health-icons/nomic_with_bandage.svg';
+import nomic from '../../../../assets/your-health-img/MaleNomi.png';
 import '../../../styles/maleHealth.css';
 
 const MaleHealthPage = () => {

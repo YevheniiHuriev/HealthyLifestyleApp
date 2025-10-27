@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
-import mascot from "../../../img/mascot.png";
+// import mascot from "../../../img/mascot.png";
+import mascot from "../../../../assets/your-health-img/FemaleNomi.png";
 import "../../../styles/gender.css";
 import { useEffect, useState } from "react";
 import arrowBottom from "../../../icons/ArrowBottom.png";

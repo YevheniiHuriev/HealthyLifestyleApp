@@ -31,32 +31,47 @@
     line-height: 1.6;
 }
 
-/* Tablet Styles */
-@media (max-width: 1024px) {
-    .hero-content {
-        margin-top: 100px;
-        padding-left: 40px;
+/* Мобільна версія для MainContentBlock */
+@media (max-width: 431px) {
+    .main-content-block {
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 30px;
+        text-align: center;
     }
 
-    .hero-content h1 {
-        font-size: 36px;
+    .logo-container {
+        order: -1;
+    }
+
+    .nomyfy-logo {
+        height: 60px;
+        width: 300px;
+    }
+
+    .text-container {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .description-text {
+        font-size: 14px;
+        line-height: 1.5;
     }
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-    .hero-content {
-        align-items: center;
-        text-align: center;
-        margin-top: 80px;
-        padding: 0 20px;
+@media (min-width: 350px) and (max-width: 390px) {
+    .main-content-block {
+        padding: 30px 15px;
+        gap: 25px;
     }
 
-    .hero-content h1 {
-        font-size: 32px;
+    .nomyfy-logo {
+        height: 50px;
+        width: 250px;
     }
 
-    .hero-content p {
-        font-size: 14px;
+    .description-text {
+        font-size: 13px;
     }
 }

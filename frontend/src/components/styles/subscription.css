@@ -621,7 +621,7 @@
     }
 
     .sp-subscription-page::-webkit-scrollbar {
-        width: 6px;
+        display: none;
     }
 
     .sp-subscription-page::-webkit-scrollbar-track {

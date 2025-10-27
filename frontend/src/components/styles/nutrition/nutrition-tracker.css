@@ -62,6 +62,7 @@
     height: 65vh;
     width: 100%;
     padding-right: 15px;
+    padding-top: 10px;
     box-sizing: border-box;
 }
 
@@ -255,7 +256,7 @@
     background-color: #D6FF00;
     color: #004aad;
     text-align: center;
-    border-radius: 20px;
+    border-radius: 25px;
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 700;
@@ -335,7 +336,7 @@
 .weight-input {
     flex-grow: 1;
     padding: 10px 15px;
-    border-radius: 8px;
+    border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.4);
     background-color: rgba(0, 0, 0, 0.2);
     color: #fff;
@@ -357,7 +358,7 @@
     background-color: #D6FF00;
     color: #004aad;
     border: none;
-    border-radius: 8px;
+    border-radius: 20px;
     font-weight: 700;
     cursor: pointer;
     transition: background-color 0.2s;
@@ -414,4 +415,267 @@
 .weight-input {
     padding-right: 35px;
     cursor: text !important;
+    width: 200px;
+}
+
+/* Мобільна версія для NutritionTrackerPage */
+@media (max-width: 431px) {
+    .nutrition-tracker-page-content {
+        padding: 0px 15px;
+        height: auto;
+    }
+
+    .navigation-tabs-wrapper {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    .navigation-tabs-wrapper .tab-item {
+        padding: 12px 10px;
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .scrollable-main-content {
+        height: auto;
+        max-height: 58vh;
+        padding-right: 5px;
+    }
+
+    .scroll-data::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tracker-grid-wrapper {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding-bottom: 15px;
+    }
+
+    .glass-card-nutrion-tracker {
+        padding: 20px 15px;
+        border-radius: 30px;
+    }
+
+    .card-title-yellow {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .card-title-blue {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .progress-item {
+        margin-bottom: 15px;
+    }
+
+    .progress-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+        margin-bottom: 8px;
+    }
+
+    .progress-info {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .progress-label {
+        font-size: 1rem;
+    }
+
+    .progress-value {
+        font-size: 0.9rem;
+    }
+
+    .progress-percentage {
+        font-size: 1rem;
+        align-self: flex-end;
+    }
+
+    .progress-bar {
+        height: 10px;
+    }
+
+    .meals-card {
+        margin-top: 20px;
+    }
+
+    .meals-table-header,
+    .meal-item {
+        grid-template-columns: 1.5fr 0.6fr 0.6fr 0.6fr 0.6fr;
+        gap: 8px;
+        padding: 8px 0;
+        font-size: 0.9rem;
+    }
+
+    .meals-table-header .col-name,
+    .meal-item .col-name {
+        font-size: 0.8rem;
+        word-break: break-word;
+    }
+
+    .meals-table-header .col-kkal,
+    .meal-item .col-kkal,
+    .meals-table-header .col-protein,
+    .meal-item .col-protein,
+    .meals-table-header .col-fat,
+    .meal-item .col-fat,
+    .meals-table-header .col-carbs,
+    .meal-item .col-carbs {
+        font-size: 0.8rem;
+    }
+
+    .add-meal-button {
+        padding: 20px 0;
+        font-size: 1rem;
+        margin-top: 15px;
+        border-radius: 25px;
+    }
+
+    .motivation-widget {
+        margin-top: 15px;
+    }
+
+    .motivation-text {
+        font-size: 1rem;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    .weight-entry-widget {
+        padding: 20px 15px;
+        margin-top: 15px;
+    }
+
+    .weight-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    .weight-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .weight-input {
+        width: 100%;
+        padding: 12px 15px;
+        font-size: 1rem;
+    }
+
+    .input-with-clear {
+        width: 100%;
+    }
+
+    .weight-submit-button {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+
+    .ntp-dp {
+        margin-left: 40px;
+    }
+
+    .date-navigation {
+        gap: 10px !important;
+    }
+
+    .nav-button {
+        padding: 8px 12px !important;
+        font-size: 0.9rem !important;
+    }
+
+    .current-date {
+        font-size: 1rem !important;
+        padding: 0 10px !important;
+    }
+
+    .ntp-sup{
+        margin-top: -30px;
+    }
+}
+
+@media (min-width: 350px) and (max-width: 390px) {
+    .nutrition-tracker-page-content {
+        padding: 0px 12px;
+    }
+
+    .navigation-tabs-wrapper .tab-item {
+        padding: 10px 8px;
+        font-size: 0.9rem;
+    }
+
+    .glass-card-nutrion-tracker {
+        padding: 18px 12px;
+        border-radius: 25px;
+    }
+
+    .card-title-yellow {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+
+    .card-title-blue {
+        font-size: 1.2rem;
+    }
+
+    .progress-label {
+        font-size: 0.95rem;
+    }
+
+    .progress-value {
+        font-size: 0.85rem;
+    }
+
+    .meals-table-header,
+    .meal-item {
+        grid-template-columns: 1.2fr 0.7fr 0.7fr 0.7fr 0.7fr;
+        gap: 6px;
+        font-size: 0.85rem;
+    }
+
+    .meals-table-header .col-name,
+    .meal-item .col-name {
+        font-size: 0.75rem;
+    }
+
+    .meals-table-header .col-kkal,
+    .meal-item .col-kkal,
+    .meals-table-header .col-protein,
+    .meal-item .col-protein,
+    .meals-table-header .col-fat,
+    .meal-item .col-fat,
+    .meals-table-header .col-carbs,
+    .meal-item .col-carbs {
+        font-size: 0.75rem;
+    }
+
+    .add-meal-button {
+        padding: 18px 0;
+        font-size: 0.95rem;
+    }
+
+    .motivation-text {
+        font-size: 0.95rem;
+    }
+
+    .weight-input {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+
+    .ntp-dp {
+        margin-left: 8px;
+    }
 }

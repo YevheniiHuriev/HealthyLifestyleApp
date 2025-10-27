@@ -54,7 +54,8 @@ const ChallengesPage = () => {
   }, [t]);
 
   if (isLoading) {
-    return <div className="loading-message">{t("ch_loading")}</div>;
+    // return <div className="loading-message">{t("ch_loading")}</div>;
+    return;
   }
 
   if (error) {
@@ -65,7 +66,7 @@ const ChallengesPage = () => {
     <div className="page-container">
         <div className="ch-header">
             <h2 className="ch-page-title">{t("ch_all_challenges_title")}</h2>
-            <Link to="/social/create-challenge" className="create-challenge-link">
+            <Link to="/social/create_challenge" className="create-challenge-link">
                 {t("ch_add_challenge_button")}
             </Link>
             <div className="animation-container">

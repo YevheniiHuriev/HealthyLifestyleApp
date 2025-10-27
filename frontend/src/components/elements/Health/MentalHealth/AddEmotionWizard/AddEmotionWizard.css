@@ -373,10 +373,11 @@
 @media (max-width: 431px) {
   .aew-emotion-wizard {
     padding: 15px;
-    height: 630px;
+    height: 420px;
     border-radius: 25px;
     margin: 15px 0;
     width: 100%;
+    overflow-y: auto;
   }
 
   .aew-wizard-title {
@@ -392,6 +393,29 @@
   .aew-wizard-description {
     font-size: 12px;
     margin-bottom: 15px;
+  }
+
+  .aew-emotion-wizard::-webkit-scrollbar {
+    display: none;
+  }
+
+  .aew-emotion-wizard::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 2px;
+  }
+
+  .aew-emotion-wizard::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+  }
+
+  .aew-emotion-wizard::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  .aew-emotion-wizard {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
   }
 
   .aew-category-nav {
@@ -509,7 +533,7 @@
 
 @media (min-width: 350px) and (max-width: 390px) {
   .aew-emotion-wizard {
-    height: 550px;
+    height: 420px;
     overflow-y: auto;
   }
 
@@ -564,8 +588,7 @@
   }
 
   .aew-emotion-wizard::-webkit-scrollbar {
-    width: 4px;
-    margin: 100px 0;
+    display: none;
   }
 
   .aew-emotion-wizard::-webkit-scrollbar-track {

@@ -114,7 +114,7 @@ function AppRoutes() {
       {/* Социальные челленджи */}
       <Route path="/social" element={<PrivateRoute><Menu><ChallengesPage /></Menu></PrivateRoute>} />
       <Route path="/social/:challengeId" element={<PrivateRoute><Menu><ChallengeDetailsPage /></Menu></PrivateRoute>} />
-      <Route path="/social/create-challenge" element={<PrivateRoute><Menu><CreateChallengePage /></Menu></PrivateRoute>} />
+      <Route path="/social/create_challenge" element={<PrivateRoute><Menu><CreateChallengePage /></Menu></PrivateRoute>} />
       <Route path="/social/:id/edit" element={<PrivateRoute><Menu><EditChallengePage /></Menu></PrivateRoute>} />
 
       {/* Харчування */}

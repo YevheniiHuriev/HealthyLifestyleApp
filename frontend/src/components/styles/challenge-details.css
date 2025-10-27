@@ -7,14 +7,14 @@
     background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border-radius: 20px;
+    border-radius: 30px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     font-family: "Roboto", sans-serif;
 }
 
 .ch-details-title {
     font-size: 2rem;
-    color: #0066C3;
+    color: #FFF;
     text-align: center;
     margin-bottom: 20px;
     font-weight: 500;
@@ -27,19 +27,20 @@
     margin-bottom: 20px;
     background: rgba(255, 255, 255, 0.6);
     padding: 15px;
-    border-radius: 10px;
+    padding-left: 25px;
+    border-radius: 25px;
     border: 1px solid rgba(0, 102, 195, 0.3);
 }
 
 .ch-details-info {
     font-size: 0.95rem;
-    color: #555;
+    color: #FFF;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     padding-top: 15px;
 }
 
 .ch-details-info strong {
-    color: #0066C3;
+    color: #FFF;
 }
 
 /* Контейнер для кнопок */
@@ -55,19 +56,198 @@
 .action-button {
     padding: 12px 28px;
     font-size: 1rem;
-    font-weight: 500;
-    border: none;
-    border-radius: 10px;
     cursor: pointer;
-    background-color: #0066C3;
-    color: #fff;
-    font-family: "Roboto", sans-serif;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 10px 15px;
+    border-radius: 40px;
+    text-align: center;
+    min-width: 300px;
+    height: 43px;
+    background: #fff;
+    color: #116FCF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    border: 0 solid transparent;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .action-button:hover {
-    background-color: #004a8f;
-    transform: scale(1.05);
+    transform:translateY(-2px);
+    background-color: #D6FF00;
 }
 
+/* Мобільна версія для ChallengeDetailsPage */
+@media (max-width: 431px) {
+    .challenge-details-page {
+        margin: 20px 15px;
+        padding: 20px 15px;
+        border-radius: 30px;
+
+        max-height: 87vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* ДОДАНО: Стилі для скроллбару */
+    .challenge-details-page::-webkit-scrollbar {
+        display: none;
+    }
+
+    .challenge-details-page::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 2px;
+        margin: 10px 0 30px 0;
+    }
+
+    .challenge-details-page::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 2px;
+    }
+
+    .challenge-details-page::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.5);
+    }
+
+    .ch-details-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        line-height: 1.3;
+    }
+
+    .ch-details-description {
+        font-size: 1rem;
+        padding: 12px 15px;
+        border-radius: 20px;
+        line-height: 1.5;
+        margin-bottom: 15px;
+    }
+
+    .ch-details-info {
+        font-size: 0.9rem;
+        padding-top: 12px;
+    }
+
+    .ch-details-info p {
+        padding: 5px 0;
+    }
+
+    .ch-details-actions {
+        margin-top: 25px;
+        gap: 12px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .action-button {
+        min-width: 100%;
+        max-width: 280px;
+        height: 44px;
+        font-size: 16px;
+        padding: 10px 20px;
+        margin: 0 5px;
+    }
+
+    .action-button:first-child {
+        order: 999;
+        margin-top: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        padding-top: 15px;
+    }
+
+    .action-button:not(:first-child) {
+        order: 1;
+    }
+
+    .modal-content {
+        width: 90% !important;
+        max-width: 320px !important;
+        margin: 20px auto !important;
+        padding: 20px 15px !important;
+    }
+
+    .modal-title {
+        font-size: 1.3rem !important;
+        margin-bottom: 15px !important;
+    }
+
+    .modal-message {
+        font-size: 0.95rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 20px !important;
+    }
+
+    .modal-actions {
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+
+    .modal-btn {
+        width: 100% !important;
+        max-width: 200px !important;
+        margin: 0 auto !important;
+    }
+
+    .modal-btn.confirm {
+        order: 1;
+    }
+
+    .modal-btn.close {
+        order: 2;
+    }
+}
+
+@media (min-width: 350px) and (max-width: 390px) {
+    .challenge-details-page {
+        margin: 15px 12px;
+        padding: 18px 12px;
+    }
+
+    .ch-details-title {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+    }
+
+    .ch-details-description {
+        font-size: 0.95rem;
+        padding: 10px 12px;
+        border-radius: 18px;
+        margin-bottom: 12px;
+    }
+
+    .ch-details-info {
+        font-size: 0.85rem;
+        padding-top: 10px;
+    }
+
+    .ch-details-actions {
+        margin-top: 20px;
+        gap: 10px;
+    }
+
+    .action-button {
+        height: 42px;
+        font-size: 15px;
+        max-width: 260px;
+    }
+
+    .action-button:first-child {
+        margin-top: 12px;
+        padding-top: 12px;
+    }
+
+    .modal-content {
+        max-width: 300px !important;
+        padding: 18px 12px !important;
+    }
+
+    .modal-title {
+        font-size: 1.2rem !important;
+    }
+
+    .modal-message {
+        font-size: 0.9rem !important;
+    }
+}

@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next';
 
 import CustomDatePicker from "../../../elements/Health/FemaleHealth/CustomDatePicker/CustomDatePicker";
 import FemaleCustomSelect from "../../../elements/Health/FemaleHealth/CustomSelector/FemaleCustomSelect";
+import FemaleNomiWithEllipse from "../../../../assets/your-health-img/FemaleNomiWithEllipse.png"
+import MaleNomiWithEllipse from "../../../../assets/your-health-img/MaleNomiWithEllipse.png"
 
 import '../../../styles/gender.css'
 
@@ -16,15 +18,19 @@ const GenderHealthPage = () => {
         <div className="gender-health-selector">
             <div className="gender-option" onClick={() => navigate(`${location.pathname}/female`)}>
                 <div>
-                    {/* <img  /> */}
-                    <div className="img-but-div"></div>
                     <h3>{t("female")}</h3>
+                    {/* <img  /> */}
+                    <div className="img-but-div">
+                        <img src={FemaleNomiWithEllipse} alt="FNomi" className="ghs-img-fnomi" />
+                    </div>
                 </div>
             </div>
             <div className="gender-option" onClick={() => navigate(`${location.pathname}/male`)}>
                 <div>
-                    <div className="img-but-div"></div>
                     <h3>{t("male")}</h3>
+                    <div className="img-but-div">
+                        <img src={MaleNomiWithEllipse} alt="MNomi" className="ghs-img-mnomi" />
+                    </div>
                 </div>
             </div>
         </div>  

@@ -158,12 +158,13 @@ const ChallengeDetailsPage = () => {
     }
   };
 
-  if (isLoading) return <div className="loading-message">{t("ch_loading")}</div>;
+  // if (isLoading) return <div className="loading-message">{t("ch_loading")}</div>;
+  if (isLoading) return;
   if (error) return <div className="error-message">{error}</div>;
   if (!challenge) return <div className="no-challenges-message">{t("ch_not_found")}</div>;
 
   return (
-    <div className="page-container challenge-details-page">
+    <div className="details-page-container challenge-details-page">
       <h2 className="ch-details-title">{challenge.title}</h2>
       <p className="ch-details-description">{challenge.description}</p>
 
@@ -211,8 +212,8 @@ const ChallengeDetailsPage = () => {
               <h3 className="modal-title">{t("ch_confirmJoinTitle")}</h3>
               <p className="modal-message">{t("ch_confirmJoinText")}</p>
               <div className="modal-actions">
-                <button className="modal-btn confirm" onClick={handleJoinChallenge}>{t("yes")}</button>
                 <button className="modal-btn close" onClick={handleCloseModal}>{t("no")}</button>
+                <button className="modal-btn confirm" onClick={handleJoinChallenge}>{t("yes")}</button>
               </div>
             </>
           )}
@@ -221,8 +222,8 @@ const ChallengeDetailsPage = () => {
               <h3 className="modal-title">{t("ch_confirmLeaveTitle")}</h3>
               <p className="modal-message">{t("ch_confirmLeaveText")}</p>
               <div className="modal-actions">
-                <button className="modal-btn confirm" onClick={handleLeaveChallenge}>{t("yes")}</button>
                 <button className="modal-btn close" onClick={handleCloseModal}>{t("no")}</button>
+                <button className="modal-btn confirm" onClick={handleLeaveChallenge}>{t("yes")}</button>
               </div>
             </>
           )}

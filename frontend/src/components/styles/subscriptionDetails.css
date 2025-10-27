@@ -559,6 +559,8 @@
         max-width: 100%;
         margin-left: 0;
         padding: 0 15px;
+        height: 93vh;
+        overflow-y: auto;
     }
 
     .sdp-subscription-details-page {
@@ -769,6 +771,7 @@
 @media (min-width: 350px) and (max-width: 390px) {
     .sdp-subscription-details-main-page {
         padding: 0 10px;
+        height: 93vh;
     }
 
     .sdp-subscription-details-card {
