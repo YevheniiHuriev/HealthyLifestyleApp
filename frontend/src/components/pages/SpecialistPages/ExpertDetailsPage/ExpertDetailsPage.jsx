@@ -91,10 +91,8 @@ const getSpecialistImageStatic = (fullName) => {
   return imageMap[fullName] || card7Img;
 };
 
-// Helper function to get MinIO URL from specialist details
+// Helper function to get MinIO presigned URL from specialist details
 const getCardPictureUrlMinio = (specialist) => {
-  const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
-  
   if (!specialist) {
     return null;
   }
@@ -106,26 +104,45 @@ const getCardPictureUrlMinio = (specialist) => {
                  specialist.PsychologistDetails;
 
   if (details && details.CardPictureUrl) {
-    // Fix double images/ path
-    let correctedPath = details.CardPictureUrl;
-    if (correctedPath.startsWith('images/images/')) {
-      correctedPath = correctedPath.replace('images/images/', 'images/');
-    }
-    
-    // Form full URL for MinIO proxy endpoint
-    const minioUrl = `${API_BASE_URL}/api/SpecialistImage/proxy/${correctedPath}`;
-    return minioUrl;
+    // Використовуємо presigned URL безпосередньо
+    return details.CardPictureUrl;
   }
 
   return null;
 };
 
-// Get image with fallback: try MinIO first, then static images
+// Helper function to get ExpertDetailsPictureUrl from specialist details
+const getExpertDetailsPictureUrlMinio = (specialist) => {
+  if (!specialist) {
+    return null;
+  }
+
+  // Find the non-null details object
+  const details = specialist.TrainerDetails || 
+                 specialist.DoctorDetails || 
+                 specialist.DietitianDetails || 
+                 specialist.PsychologistDetails;
+
+  if (details && details.ExpertDetailsPictureUrl) {
+    // Використовуємо presigned URL безпосередньо
+    return details.ExpertDetailsPictureUrl;
+  }
+
+  return null;
+};
+
+// Get image with fallback: try ExpertDetailsPictureUrl first, then CardPictureUrl, then static images
 const getSpecialistImage = (specialist) => {
-  // Try to get MinIO URL first
-  const minioUrl = getCardPictureUrlMinio(specialist);
-  if (minioUrl) {
-    return minioUrl;
+  // Try to get ExpertDetailsPictureUrl first (for detailed view)
+  const expertDetailsUrl = getExpertDetailsPictureUrlMinio(specialist);
+  if (expertDetailsUrl) {
+    return expertDetailsUrl;
+  }
+
+  // Try to get CardPictureUrl as fallback
+  const cardUrl = getCardPictureUrlMinio(specialist);
+  if (cardUrl) {
+    return cardUrl;
   }
 
   // Fallback to static images
