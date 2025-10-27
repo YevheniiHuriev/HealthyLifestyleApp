@@ -84,6 +84,30 @@
         margin: 20px 15px;
         padding: 20px 15px;
         border-radius: 30px;
+
+        max-height: 87vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* ДОДАНО: Стилі для скроллбару */
+    .challenge-details-page::-webkit-scrollbar {
+        display: none;
+    }
+
+    .challenge-details-page::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 2px;
+        margin: 10px 0 30px 0;
+    }
+
+    .challenge-details-page::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 2px;
+    }
+
+    .challenge-details-page::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.5);
     }
 
     .ch-details-title {

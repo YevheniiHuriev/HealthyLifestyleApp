@@ -273,6 +273,26 @@
     .mtp-mental-test-container {
         margin-top: 0;
         margin-left: 10px;
+        height: 78vh;
+        overflow-y: auto;
+    }
+
+    .mtp-mental-test-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .mtp-mental-test-container::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 2px;
+    }
+
+    .mtp-mental-test-container::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 2px;
+    }
+
+    .mtp-mental-test-container::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.5);
     }
 
     .mtp-mental-test-description {

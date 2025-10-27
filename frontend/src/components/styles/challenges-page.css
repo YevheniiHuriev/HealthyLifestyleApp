@@ -5,6 +5,7 @@
 .page-container {
     margin-left: 40px;
     padding: 0;
+    height: 76vh;
 }
 
 /* Заголовок страницы челленджей */
@@ -149,7 +150,7 @@
 
 /* --- Скрол-контейнер для карток --- */
 .scrollable-card-container {
-    max-height: 500px;
+    max-height: 470px;
     overflow-y: scroll;
     padding-right: 10px;
 }
@@ -182,16 +183,12 @@
         padding: 5px;
     }
 
-    .scrollable-form-container {
-        min-height: 775px;
-    }
-
     /* Заголовок страницы челленджей */
     .ch-header {
         flex-direction: column;
         align-items: center;
         gap: 15px;
-        margin-bottom: 20px;
+        /* margin-bottom: 40px; */
         text-align: center;
     }
 
@@ -274,13 +271,13 @@
 
     /* --- Скрол-контейнер для карток --- */
     .scrollable-card-container {
-        max-height: 620px;
+        max-height: 74vh;
         padding: 5px;
     }
 
     /* --- Стилі для скролбара --- */
     .scrollable-card-container::-webkit-scrollbar {
-        width: 8px;
+        display: none;
     }
 
     .scrollable-card-container::-webkit-scrollbar-track {
@@ -290,6 +287,10 @@
 
     .scrollable-card-container::-webkit-scrollbar-thumb {
         border-radius: 8px;
+    }
+
+    .animation-container {
+        display: none;
     }
 }
 
@@ -318,9 +319,8 @@
         max-width: 260px;
     }
 
-    .animation-container lottie-react {
-        width: 70px !important;
-        height: 70px !important;
+    .animation-container {
+        display: none;
     }
 
     .challenge-list {

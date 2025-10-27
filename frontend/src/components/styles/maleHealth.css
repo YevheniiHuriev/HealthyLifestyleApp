@@ -322,11 +322,11 @@
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
         margin: 0;
-        width: 98vw;
+        width: 98.5vw;
     }
 
     .mhp-overflow-container::-webkit-scrollbar {
-        width: 4px;
+        display: none;
     }
 
     .mhp-overflow-container::-webkit-scrollbar-track {

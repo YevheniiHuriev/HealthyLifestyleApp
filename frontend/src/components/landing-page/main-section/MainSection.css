@@ -131,7 +131,7 @@
 
     .header__logo {
         position: absolute;
-        left: 33%;
+        left: 25%;
         transform: translateX(-50%);
         top: 18px;
         z-index: 2;
@@ -216,7 +216,7 @@
 
     .header__logo {
         top: 18px;
-        left: 29%;
+        left: 28%;
     }
 
     .header__button {

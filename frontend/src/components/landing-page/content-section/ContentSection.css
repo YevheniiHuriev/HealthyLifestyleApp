@@ -94,8 +94,7 @@
     }
 
     .cs-cards-container::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
+        display: none;
     }
 
     .cs-cards-container::-webkit-scrollbar-track {

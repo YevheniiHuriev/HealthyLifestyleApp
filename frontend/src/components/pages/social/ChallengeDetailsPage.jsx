@@ -164,7 +164,7 @@ const ChallengeDetailsPage = () => {
   if (!challenge) return <div className="no-challenges-message">{t("ch_not_found")}</div>;
 
   return (
-    <div className="page-container challenge-details-page">
+    <div className="details-page-container challenge-details-page">
       <h2 className="ch-details-title">{challenge.title}</h2>
       <p className="ch-details-description">{challenge.description}</p>
 

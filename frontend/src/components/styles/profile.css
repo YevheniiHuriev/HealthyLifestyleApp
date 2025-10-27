@@ -1098,7 +1098,7 @@ input {
   }
 
   .user-profile-wrapper::-webkit-scrollbar {
-    width: 4px;
+    display: none;
   }
 
   .user-profile-wrapper::-webkit-scrollbar-track {

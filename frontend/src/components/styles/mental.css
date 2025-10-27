@@ -119,11 +119,14 @@
 
 /* Мобільна версія */
 @media (max-width: 431px) {
-
     .mhp-mental-h-container {
         margin-left: 10px;
         width: 100%;
         box-sizing: border-box;
+        height: 80vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-right: 8px;
     }
 
     .mental-health-info {
@@ -204,7 +207,6 @@
         margin-top: 10px;
     }
 
-    /* Основний контейнер */
     .mental-health-container {
         width: 100%;
         max-height: none;
@@ -217,15 +219,35 @@
         width: 100%;
         padding: 0 5px;
     }
+
+    .mhp-mental-h-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .mhp-mental-h-container::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 2px;
+        margin: 10px 0 30px 0;
+    }
+
+    .mhp-mental-h-container::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 2px;
+    }
+
+    .mhp-mental-h-container::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.5);
+    }
 }
 
 @media (min-width: 350px) and (max-width: 390px) {
     .mhp-mental-h-container {
-        height: 100vh;
+        height: 75vh;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
         padding-right: 10px;
-        width: 96vw;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .mental-health-container {
@@ -238,15 +260,14 @@
         min-height: calc(100vh - 200px);
     }
 
-    /* Стилізація скроллбара для кращого вигляду */
     .mhp-mental-h-container::-webkit-scrollbar {
-        width: 4px;
+        display: none;
     }
 
     .mhp-mental-h-container::-webkit-scrollbar-track {
         background: rgba(255, 255, 255, 0.1);
         border-radius: 2px;
-        margin: 10px 0 150px 0;
+        margin: 10px 0 30px 0;
     }
 
     .mhp-mental-h-container::-webkit-scrollbar-thumb {

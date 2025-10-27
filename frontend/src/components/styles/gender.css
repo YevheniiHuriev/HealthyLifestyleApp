@@ -13,7 +13,7 @@
     justify-content: center;
     align-items: center;
     gap: 20vh;
-    height: 65vh; 
+    height: 65vh;
 }
 
 .gender-option {
@@ -596,6 +596,11 @@
 }
 
 @media (max-width: 431px) {
+
+    .female-health-container {
+        width: 100%;
+        margin-left: 5px;
+    }
 
     .gender-health-selector {
         display: flex;

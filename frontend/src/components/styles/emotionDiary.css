@@ -591,7 +591,7 @@
 @media (max-width: 431px) {
   .ed-mental-health-diary-container {
     margin-left: 5px;
-    width: 103%;
+    width: 100%;
   }
 
   .ed-title {
@@ -734,15 +734,14 @@
   }
 
   .ed-factors-info-container {
-    min-height: 500px;
     padding: 15px;
     border-radius: 25px;
     overflow-y: auto;
-    max-height: 80vh;
+    height: 70vh;
   }
 
   .ed-factors-info-container::-webkit-scrollbar {
-    width: 4px;
+    display: none;
   }
 
   .ed-factors-info-container::-webkit-scrollbar-track {

@@ -271,7 +271,7 @@ const SubscriptionPage = () => {
             <div className="sp-subscription-health-info">
                 <div className="sp-subscription-title">{t("sp_subscription_title")}</div>
                 <div className="sp-subscription-sub-title">{t("sp_subscription_sub_title")}</div>
-                <div className="sp-subscription-info-image">Зображення</div>
+                {/* <div className="sp-subscription-info-image">Зображення</div> */}
             </div>
 
             <div className='sp-subscription-wraper' ref={wrapperRef}>
