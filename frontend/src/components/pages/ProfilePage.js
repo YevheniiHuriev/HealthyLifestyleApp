@@ -796,7 +796,7 @@ const handleCountryChange = async (value) => {
       <div className="mobile-profile-header">
         <button 
           className="mobile-back-button"
-          onClick={() => window.location.href = '/dashboard'}
+          onClick={() => window.history.back()}
         >
           <img src={ArrowLeft} alt="Back" className="mobile-back-arrow" />
         </button>
