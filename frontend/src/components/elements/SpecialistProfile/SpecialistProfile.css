@@ -493,3 +493,175 @@
     height: 100%;
   }
 }
+
+/* Мобільна адаптація */
+@media (max-width: 768px) {
+  .sp-container {
+    padding: 10px 15px 15px 15px;
+    gap: 15px;
+    height: calc(100vh - 100px);
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Прибираємо скролл-бар для мобільних */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  /* Прибираємо скролл-бар для WebKit браузерів */
+  .sp-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .sp-specialist-type-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .sp-info-basic {
+    gap: 15px;
+  }
+  
+  .sp-info-panel {
+    gap: 10px;
+  }
+  
+  .sp-field-input {
+    padding: 8px 15px;
+    font-size: 12px;
+    height: 35px;
+  }
+  
+  .sp-photo-container {
+    width: 280px;
+    height: 350px;
+    margin: 0 auto;
+  }
+  
+  .sp-skills-section {
+    margin-bottom: 15px;
+  }
+  
+  .sp-selected-skills {
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .sp-skill-chip-selected {
+    height: 30px;
+    padding: 0 8px;
+  }
+  
+  .sp-skill-chip-selected span {
+    font-size: 9px;
+  }
+  
+  .sp-skill-chip-available {
+    height: 25px;
+    padding: 0 8px;
+  }
+  
+  .sp-skill-chip-available span {
+    font-size: 9px;
+  }
+  
+  .sp-biography-workformat-row {
+    gap: 15px;
+  }
+  
+  .sp-biography-column,
+  .sp-workformat-column {
+    min-height: 100px;
+  }
+  
+  .sp-biography-textarea {
+    min-height: 80px;
+    font-size: 12px;
+    padding: 10px;
+  }
+  
+  .sp-save-button {
+    height: 50px;
+    font-size: 16px;
+  }
+  
+  .sp-save-button-text {
+    font-size: 16px;
+  }
+  
+  .sp-toggle-label {
+    font-size: 16px;
+  }
+  
+  .sp-toggle-wrapper {
+    height: 35px;
+    width: 65px;
+  }
+  
+  .sp-toggle-switch {
+    height: 35px;
+    width: 65px;
+  }
+  
+  .sp-toggle-thumb {
+    height: 28px;
+    width: 28px;
+  }
+  
+  .sp-toggle-switch.active .sp-toggle-thumb {
+    transform: translateX(30px);
+  }
+}
+
+/* Додаткова мобільна адаптація для дуже малих екранів */
+@media (max-width: 480px) {
+  .sp-container {
+    padding: 8px 10px 10px 10px;
+    gap: 12px;
+  }
+  
+  .sp-specialist-type-title {
+    font-size: 20px;
+  }
+  
+  .sp-field-input {
+    padding: 6px 12px;
+    font-size: 11px;
+    height: 32px;
+  }
+  
+  .sp-photo-container {
+    width: 250px;
+    height: 320px;
+  }
+  
+  .sp-skill-chip-selected,
+  .sp-skill-chip-available {
+    height: 28px;
+    padding: 0 6px;
+  }
+  
+  .sp-skill-chip-selected span,
+  .sp-skill-chip-available span {
+    font-size: 8px;
+  }
+  
+  .sp-biography-textarea {
+    min-height: 70px;
+    font-size: 11px;
+    padding: 8px;
+  }
+  
+  .sp-save-button {
+    height: 45px;
+    font-size: 14px;
+  }
+  
+  .sp-save-button-text {
+    font-size: 14px;
+  }
+  
+  .sp-toggle-label {
+    font-size: 14px;
+  }
+}

@@ -245,6 +245,25 @@ return (
     <div className="two-column-layout">
       {/* Left Column: Specialist Details */}
       <div className="left-column">
+        <h1 className="specialist-name">
+            <svg
+                className="status-icon"
+                width="60"
+                height="60"
+                viewBox="0 0 60 60"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="30" cy="30" r="30" fill="#D6FF00" />
+                <path
+                  d="M2 20.1818L11.2308 27L32 2"
+                  stroke="#33363F"
+                  strokeWidth="5"
+                  transform="translate(14,16)"
+                />
+              </svg>
+              {specialist.User?.FullName || "Unknown Specialist"}
+            </h1>
         <div className="specialist-info">
           {/* Фото зліва */}
           <div className="image-wrapper">
@@ -275,25 +294,7 @@ return (
       <div className="right-column">
         {/* Текст справа */}
           <div className="details-wrapper">
-           <h1 className="specialist-name">
-            <svg
-                className="status-icon"
-                width="60"
-                height="60"
-                viewBox="0 0 60 60"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle cx="30" cy="30" r="30" fill="#D6FF00" />
-                <path
-                  d="M2 20.1818L11.2308 27L32 2"
-                  stroke="#33363F"
-                  strokeWidth="5"
-                  transform="translate(14,16)"
-                />
-              </svg>
-              {specialist.User?.FullName || "Unknown Specialist"}
-            </h1>
+           
             <div className="line">
               
             </div>
@@ -325,9 +326,9 @@ return (
             
             </div>
             <div className="view-3">
-              <div className="action-box">
+              {/* <div className="action-box">
               <button className="subscribe-button">{t('subscribe')}</button>
-            </div>
+            </div> */}
           </div>
       </div>
 

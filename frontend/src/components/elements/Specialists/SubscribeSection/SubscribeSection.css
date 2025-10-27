@@ -172,3 +172,13 @@
   white-space: nowrap;
   width: 58.5%;
 }
+@media (max-width: 768px) {
+  .subscribe-container {
+    width: 104%;
+  }
+}
+@media (max-width: 480px) {
+  .subscribe-container {
+    width: 104%;
+  }
+}
