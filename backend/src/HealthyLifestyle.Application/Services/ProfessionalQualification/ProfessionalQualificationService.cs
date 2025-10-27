@@ -245,7 +245,7 @@ namespace HealthyLifestyle.Application.Services.ProfessionalQualification
         /// Отримує список усіх кваліфікацій для вказаного користувача.
         /// </summary>
         /// <param name="userId">Унікальний ідентифікатор користувача.</param>
-        /// <returns>Колекція об’єктів <see cref="UserProfessionalQualificationDto"/> із даними кваліфікацій.</returns>
+        /// <returns>Колекція об'єктів <see cref="UserProfessionalQualificationDto"/> із даними кваліфікацій.</returns>
         public async Task<IEnumerable<UserProfessionalQualificationDto>> GetUserProfessionalQualificationsAsync(Guid userId)
         {
             var qualifications = await _unitOfWork.GetRepository<UserProfessionalQualification>()
@@ -259,7 +259,12 @@ namespace HealthyLifestyle.Application.Services.ProfessionalQualification
                 .Include(q => q.TrainerDetails)
                 .ToListAsync();
 
-            return _mapper.Map<IEnumerable<UserProfessionalQualificationDto>>(qualifications);
+            var qualificationsDto = _mapper.Map<IEnumerable<UserProfessionalQualificationDto>>(qualifications);
+            
+            // Генеруємо presigned URL для зображень
+            await GeneratePresignedUrlsForSpecialistImages(qualificationsDto);
+
+            return qualificationsDto;
         }
 
         /// <summary>

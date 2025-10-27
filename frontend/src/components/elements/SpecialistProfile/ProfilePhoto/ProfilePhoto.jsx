@@ -40,17 +40,15 @@ const ProfilePhoto = ({ specialistName, onPhotoUpdate, currentPhotoUrl, onFileSe
     reader.readAsDataURL(file);
   };
 
-  // Функція для отримання URL зображення через proxy
+  // Функція для отримання URL зображення (presigned URL або preview)
   const getImageUrl = () => {
     if (avatarPreview) {
       return avatarPreview; // Показуємо попередній перегляд
     }
     
     if (currentPhotoUrl) {
-      // Додаємо timestamp для примусового оновлення кешу
-      const timestamp = new Date().getTime();
-      // Використовуємо proxy endpoint для отримання зображення
-      return `${process.env.REACT_APP_API_URL}/api/SpecialistImage/proxy/${currentPhotoUrl}?t=${timestamp}`;
+      // Використовуємо presigned URL безпосередньо (не використовуємо проксі)
+      return currentPhotoUrl;
     }
     
     return null;
